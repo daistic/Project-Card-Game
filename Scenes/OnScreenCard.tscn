@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcyc2y6wpdfm"]
+
+[ext_resource type="Texture2D" uid="uid://b36plrlryn3bu" path="res://Assets/PlaceholderCard.webp" id="1_dduo6"]
+[ext_resource type="Script" uid="uid://badnx1vn20e04" path="res://Scripts/OnScreenCard.gd" id="2_cq344"]
+
+[node name="OnScreenCard" type="TextureRect"]
+custom_minimum_size = Vector2(80, 111)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 55.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_dduo6")
+expand_mode = 1
+script = ExtResource("2_cq344")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

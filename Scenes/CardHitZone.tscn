@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://0dnbilvg84cq"]
+
+[ext_resource type="Script" uid="uid://7rw5djyepiem" path="res://Scripts/CardHitZone.gd" id="1_gxox8"]
+
+[node name="CardHitZone" type="Panel"]
+custom_minimum_size = Vector2(1000, 450)
+size_flags_vertical = 0
+script = ExtResource("1_gxox8")

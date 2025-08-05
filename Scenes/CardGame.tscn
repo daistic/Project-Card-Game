@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bksto6n1v44j1"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/OnScreenCard.tscn" id="1_o0u37"]
+[ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/CardHitZone.tscn" id="2_5f4ku"]
+
+[node name="CardGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="OnScreenCard" parent="MarginContainer/CardContainer" instance=ExtResource("1_o0u37")]
+layout_mode = 2
+
+[node name="OnScreenCard2" parent="MarginContainer/CardContainer" instance=ExtResource("1_o0u37")]
+layout_mode = 2
+
+[node name="CardHitZone" parent="MarginContainer" instance=ExtResource("2_5f4ku")]
+layout_mode = 2
