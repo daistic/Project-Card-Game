@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://60ma3kgbspc"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/OnScreenCards/BaseOnScreenCard.tscn" id="1_jbcsv"]
+
+[node name="BasicAttack" instance=ExtResource("1_jbcsv")]

@@ -1,42 +1,10 @@
-[gd_resource type="Resource" script_class="CardsResource" load_steps=8 format=3 uid="uid://dgrl85ftw77d2"]
+[gd_resource type="Resource" script_class="CardsResource" load_steps=3 format=3 uid="uid://xt7qhi7pkjvh"]
 
-[ext_resource type="Script" uid="uid://js3yaq351i6m" path="res://Scripts/Classes/CardProperties.gd" id="1_71ia0"]
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/OnScreenCards/BaseOnScreenCard.tscn" id="1_71ia0"]
 [ext_resource type="Script" uid="uid://c4nv7abflo2aw" path="res://Scripts/Classes/CardsResource.gd" id="1_x3816"]
-[ext_resource type="Texture2D" uid="uid://b36plrlryn3bu" path="res://Assets/PlaceholderCard.webp" id="2_ilpdd"]
-[ext_resource type="Resource" uid="uid://kret8ne7xism" path="res://Resources/CardPropertiesTemplate.tres" id="3_a18wr"]
-
-[sub_resource type="Resource" id="Resource_ilpdd"]
-script = ExtResource("1_71ia0")
-name = "template"
-image = ExtResource("2_ilpdd")
-desc = ""
-damage = 1.0
-shield = 1.0
-energy_cost = 1.0
-metadata/_custom_type_script = "uid://js3yaq351i6m"
-
-[sub_resource type="Resource" id="Resource_a18wr"]
-script = ExtResource("1_71ia0")
-name = "basic atk"
-image = ExtResource("2_ilpdd")
-desc = ""
-damage = 3.0
-shield = 1.0
-energy_cost = 2.0
-metadata/_custom_type_script = "uid://js3yaq351i6m"
-
-[sub_resource type="Resource" id="Resource_d5h0t"]
-script = ExtResource("1_71ia0")
-name = "basic shield"
-image = ExtResource("2_ilpdd")
-desc = ""
-damage = 1.0
-shield = 3.0
-energy_cost = 2.0
-metadata/_custom_type_script = "uid://js3yaq351i6m"
 
 [resource]
 script = ExtResource("1_x3816")
-data = Array[ExtResource("1_71ia0")]([SubResource("Resource_ilpdd"), SubResource("Resource_a18wr"), SubResource("Resource_d5h0t")])
-null_data_exception = ExtResource("3_a18wr")
+data = Array[PackedScene]([null, null, null])
+null_data_exception = ExtResource("1_71ia0")
 metadata/_custom_type_script = "uid://c4nv7abflo2aw"

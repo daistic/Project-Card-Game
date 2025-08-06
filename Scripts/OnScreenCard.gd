@@ -2,10 +2,9 @@ class_name OnScreenCard
 
 extends TextureRect
 
-@export var card_index: Global.CARDS_INDEXES = Global.CARDS_INDEXES.TEMPLATE
+@export var properties: CardProperties
 
 static var card_being_dragged: OnScreenCard = null
-var properties: CardProperties = Global.CARDS.get_card_properties(0)
 
 const NORMAL_SIZE: Vector2 = Vector2(1.0, 1.0)
 const SCALE_SIZE: Vector2 = Vector2(1.25, 1.25)
@@ -20,7 +19,8 @@ func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
 
 func _ready() -> void:
-	properties = Global.CARDS.get_card_properties(card_index)
+	if properties == null:
+		queue_free()
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview_texture = TextureRect.new()

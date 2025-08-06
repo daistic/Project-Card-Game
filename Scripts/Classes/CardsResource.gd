@@ -2,11 +2,11 @@ class_name CardsResource
 
 extends Resource
 
-@export var data: Array[CardProperties]
-@export var null_data_exception: CardProperties
+@export var scenes: Array[PackedScene]
+@export var null_data_exception: PackedScene
 
-func get_card_properties(index: int) -> CardProperties:
-	if data[index]:
-		return data[index]
+func get_card_properties(index: int) -> PackedScene:
+	if scenes[index]:
+		return scenes[index]
 	else:
 		return null_data_exception
