@@ -31,6 +31,7 @@ layout_mode = 2
 
 [node name="OnScreenCard2" parent="MarginContainer/CardContainer" instance=ExtResource("1_o0u37")]
 layout_mode = 2
+card_index = 1
 
 [node name="CardHitZone" parent="MarginContainer" instance=ExtResource("2_5f4ku")]
 layout_mode = 2
