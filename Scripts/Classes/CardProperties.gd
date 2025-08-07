@@ -8,8 +8,7 @@ extends Resource
 @export var damage: float = 0.0
 @export var shield: float = 0.0
 
-@export var hp_cost: float = 0.0
-@export var shield_cost: float = 0.0
+@export var heal_amount: float = 0.0
 
 @export var buff_attack_amount: float = 0.0
 

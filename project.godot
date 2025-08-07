@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Globals/Global.gd"
 SignalHub="*res://Globals/SignalHub.gd"
+BattleManager="*res://Globals/BattleManager.gd"
 
 [display]
 

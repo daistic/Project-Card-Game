@@ -47,7 +47,6 @@ func _tween_scale_animation(is_mouse_entering: bool) -> void:
 
 func _on_card_used(_properties: CardProperties) -> void:
 	if card_being_dragged == self and card_being_dragged != null:
-		print(_properties.damage)
 		card_being_dragged.queue_free()
 
 func _on_mouse_entered() -> void:

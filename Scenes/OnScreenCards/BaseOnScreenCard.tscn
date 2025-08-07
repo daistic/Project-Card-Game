@@ -6,12 +6,11 @@
 
 [sub_resource type="Resource" id="Resource_cyufl"]
 script = ExtResource("3_rd3lo")
-name = ""
-desc = ""
+name = "Template"
+desc = "does nothing"
 damage = 0.0
 shield = 0.0
-hp_cost = 0.0
-shield_cost = 0.0
+heal_amount = 0.0
 buff_attack_amount = 0.0
 debuff_attack_amount = 0.0
 debuff_shiled_amount = 0.0

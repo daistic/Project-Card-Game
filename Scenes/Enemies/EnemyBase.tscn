@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44dn8uxi7m5s"]
+
+[ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Enemy.gd" id="1_iiq2q"]
+
+[node name="EnemyBase" type="TextureRect"]
+script = ExtResource("1_iiq2q")
