@@ -12,15 +12,16 @@ var current_state: BATTLE_STATE = BATTLE_STATE.PLAYER_TURN
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
 
-func calculate_damage(card_damage: float, enemy_shield: float) -> float:
+func calculate_damage(atk: float, card_damage: float, enemy_shield: float, crit_rate: float,
+						crit_damage: float) -> float:
 	
 	var total_damage: float = 0.0
 	
-	total_damage += (player.atk * card_damage) / enemy_shield
+	total_damage += (atk * card_damage) / enemy_shield
 	
-	var actual_crit_rate = clampf(player.crit_rate, MINIMUM_CRIT_RATE, MAXIMUM_CRIT_RATE)
+	var actual_crit_rate = clampf(crit_rate, MINIMUM_CRIT_RATE, MAXIMUM_CRIT_RATE)
 	if randf_range(MINIMUM_CRIT_RATE, MAXIMUM_CRIT_RATE) <= actual_crit_rate:
-		total_damage *= player.crit_damage
+		total_damage *= crit_damage
 	
 	return total_damage
 

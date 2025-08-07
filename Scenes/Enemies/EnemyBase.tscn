@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b44dn8uxi7m5s"]
+[gd_scene load_steps=5 format=3 uid="uid://b44dn8uxi7m5s"]
 
 [ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Enemy.gd" id="1_iiq2q"]
+[ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/OnScreenCards/BasicAttack.tscn" id="2_2a3kf"]
+[ext_resource type="PackedScene" uid="uid://cw2kr2ti3v8vh" path="res://Scenes/OnScreenCards/BasicHeal.tscn" id="3_m1s7c"]
+[ext_resource type="PackedScene" uid="uid://ccdbjro724ybb" path="res://Scenes/OnScreenCards/BasicShield.tscn" id="4_aahyb"]
 
 [node name="EnemyBase" type="TextureRect"]
 script = ExtResource("1_iiq2q")
+enemy_cards = Array[PackedScene]([ExtResource("2_2a3kf"), ExtResource("3_m1s7c"), ExtResource("4_aahyb")])
