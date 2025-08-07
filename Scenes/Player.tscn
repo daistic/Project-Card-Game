@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://pkka7c8d3yxx"]
+
+[ext_resource type="Script" uid="uid://cpes7tpahpxnj" path="res://Scripts/Player.gd" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://bgprd3hmldf27" path="res://Scripts/Classes/Damageable.gd" id="2_kyqiw"]
+
+[sub_resource type="Resource" id="Resource_gntrk"]
+script = ExtResource("2_kyqiw")
+hp = 10.0
+atk = 1.0
+shield = 1.0
+crit_rate = 25.0
+crit_damage = 1.25
+metadata/_custom_type_script = "uid://bgprd3hmldf27"
+
+[node name="Player" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_rpqav")
+damageable = SubResource("Resource_gntrk")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bksto6n1v44j1"]
+[gd_scene load_steps=8 format=3 uid="uid://bksto6n1v44j1"]
 
 [ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/OnScreenCards/BasicAttack.tscn" id="1_5f4ku"]
 [ext_resource type="Script" uid="uid://cn10i2g0hj3sp" path="res://Scripts/CardGame.gd" id="1_5pjvo"]
@@ -7,17 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cw2kr2ti3v8vh" path="res://Scenes/OnScreenCards/BasicHeal.tscn" id="3_oxm1c"]
 [ext_resource type="PackedScene" uid="uid://b44dn8uxi7m5s" path="res://Scenes/Enemies/EnemyBase.tscn" id="4_4l43w"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="4_5pjvo"]
-[ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Player.tscn" id="5_oxm1c"]
-[ext_resource type="Script" uid="uid://bgprd3hmldf27" path="res://Scripts/Classes/Damageable.gd" id="8_l46f8"]
-
-[sub_resource type="Resource" id="Resource_gylnk"]
-script = ExtResource("8_l46f8")
-hp = 10.0
-atk = 1.0
-shield = 1.0
-crit_rate = 25.0
-crit_damage = 1.25
-metadata/_custom_type_script = "uid://bgprd3hmldf27"
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -82,8 +71,11 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-damageable = SubResource("Resource_gylnk")
-
-[node name="Player" parent="." instance=ExtResource("5_oxm1c")]
+hp = null
+atk = null
+shield = null
+crit_rate = null
+crit_damage = null
+max_moves = null
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
