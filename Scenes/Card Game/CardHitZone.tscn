@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7rw5djyepiem" path="res://Scripts/Card Game/CardHitZone.gd" id="1_gxox8"]
 
 [node name="CardHitZone" type="Panel"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1000, 450)
 size_flags_vertical = 0
 script = ExtResource("1_gxox8")

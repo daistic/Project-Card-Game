@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://60ma3kgbspc"]
+[gd_scene load_steps=4 format=3 uid="uid://60ma3kgbspc"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_jbcsv"]
+[ext_resource type="Texture2D" uid="uid://bewyk215oph6k" path="res://Resources/Card Atlas Textures/AttackCardAtlas.tres" id="2_hn6t8"]
 [ext_resource type="Resource" uid="uid://dp7ljev13jlwf" path="res://Resources/Card Properties/BasicAttack.tres" id="2_vacag"]
 
 [node name="BasicAttack" instance=ExtResource("1_jbcsv")]
+texture = ExtResource("2_hn6t8")
 properties = ExtResource("2_vacag")

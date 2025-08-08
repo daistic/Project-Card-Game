@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://diq1yokenot1j"
-path="res://.godot/imported/Roboto_Condensed-Black.ttf-484ddabc0b4aae1b9e99370890911765.fontdata"
+uid="uid://b5bfi4tmj8epp"
+path="res://.godot/imported/Micro5-Regular.ttf-1d10ea96673eb0cad5ba374f352e4061.fontdata"
 
 [deps]
 
-source_file="res://Assets/Roboto_Condensed-Black.ttf"
-dest_files=["res://.godot/imported/Roboto_Condensed-Black.ttf-484ddabc0b4aae1b9e99370890911765.fontdata"]
+source_file="res://Assets/Fonts/Micro5-Regular.ttf"
+dest_files=["res://.godot/imported/Micro5-Regular.ttf-1d10ea96673eb0cad5ba374f352e4061.fontdata"]
 
 [params]
 

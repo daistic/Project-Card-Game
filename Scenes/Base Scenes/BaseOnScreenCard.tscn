@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkcyc2y6wpdfm"]
 
-[ext_resource type="Texture2D" uid="uid://b36plrlryn3bu" path="res://Assets/PlaceholderCard.webp" id="1_4dr6s"]
+[ext_resource type="Texture2D" uid="uid://cw71sq8f5yr05" path="res://Resources/Card Atlas Textures/PlaceholderCardAtlas.tres" id="1_fuchw"]
 [ext_resource type="Script" uid="uid://badnx1vn20e04" path="res://Scripts/Classes/OnScreenCard.gd" id="2_hm6hs"]
 [ext_resource type="Script" uid="uid://js3yaq351i6m" path="res://Scripts/Resource Classes/CardProperties.gd" id="3_a7c7u"]
 
@@ -19,23 +19,25 @@ ai_energy_cost = 0.0
 metadata/_custom_type_script = "uid://js3yaq351i6m"
 
 [node name="BaseOnScreenCard" type="TextureRect"]
+texture_filter = 1
 custom_minimum_size = Vector2(80, 111)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -40.0
+offset_top = -55.5
+offset_right = 40.0
+offset_bottom = 55.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(40, 55.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_4dr6s")
-expand_mode = 1
+texture = ExtResource("1_fuchw")
+expand_mode = 3
+stretch_mode = 5
 script = ExtResource("2_hm6hs")
 properties = SubResource("Resource_cyufl")
 

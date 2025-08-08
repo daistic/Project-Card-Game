@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bksto6n1v44j1"]
+[gd_scene load_steps=7 format=3 uid="uid://bksto6n1v44j1"]
 
 [ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="1_5f4ku"]
 [ext_resource type="Script" uid="uid://cn10i2g0hj3sp" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
-[ext_resource type="PackedScene" uid="uid://ccdbjro724ybb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="2_xt0cr"]
-[ext_resource type="PackedScene" uid="uid://cw2kr2ti3v8vh" path="res://Scenes/On Screen Cards/BasicHeal.tscn" id="3_oxm1c"]
 [ext_resource type="PackedScene" uid="uid://b44dn8uxi7m5s" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="4_4l43w"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="4_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
@@ -37,10 +35,10 @@ size_flags_vertical = 8
 [node name="BasicAttack" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
 layout_mode = 2
 
-[node name="BasicShield" parent="MarginContainer/CardContainer" instance=ExtResource("2_xt0cr")]
+[node name="BasicAttack2" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
 layout_mode = 2
 
-[node name="BasicHeal" parent="MarginContainer/CardContainer" instance=ExtResource("3_oxm1c")]
+[node name="BasicAttack3" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
