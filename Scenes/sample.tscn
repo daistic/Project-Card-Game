@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://i1l4lodpdiev"]
 
 [ext_resource type="Script" uid="uid://ddh3e5h27j286" path="res://Scripts/sample.gd" id="1_wg51d"]
-[ext_resource type="LabelSettings" uid="uid://yd1isjiche4c" path="res://Resources/Roboto_Black_24.tres" id="2_lf21a"]
+[ext_resource type="LabelSettings" uid="uid://yd1isjiche4c" path="res://Resources/Fonts/Roboto_Black_24.tres" id="2_lf21a"]
 
 [node name="Sample" type="Node2D"]
 script = ExtResource("1_wg51d")

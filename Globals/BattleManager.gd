@@ -1,6 +1,6 @@
 extends Node
 
-var player: Player = Player.new()
+var player: Player = null
 var enemy: Enemy = null
 
 enum BATTLE_STATE {
