@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pkka7c8d3yxx"]
 
-[ext_resource type="Script" uid="uid://cpes7tpahpxnj" path="res://Scripts/Player.gd" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://cpes7tpahpxnj" path="res://Scripts/Classes/Player.gd" id="1_rpqav"]
 [ext_resource type="Resource" uid="uid://by8hi4jjgkg8s" path="res://Resources/Damageables/PlayerDamageable.tres" id="2_kyqiw"]
 
 [node name="Player" type="Control"]

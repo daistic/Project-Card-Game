@@ -1,0 +1,13 @@
+[gd_scene load_steps=7 format=3 uid="uid://b44dn8uxi7m5s"]
+
+[ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Classes/Enemy.gd" id="1_iiq2q"]
+[ext_resource type="Resource" uid="uid://et5d4anvll1p" path="res://Resources/Damageables/EnemyBaseDamageable.tres" id="2_aahyb"]
+[ext_resource type="Script" uid="uid://js3yaq351i6m" path="res://Scripts/Resource Classes/CardProperties.gd" id="3_tgb06"]
+[ext_resource type="Resource" uid="uid://dp7ljev13jlwf" path="res://Resources/Card Properties/BasicAttack.tres" id="4_fj512"]
+[ext_resource type="Resource" uid="uid://dinninpxevoqm" path="res://Resources/Card Properties/BasicHeal.tres" id="5_uhgc7"]
+[ext_resource type="Resource" uid="uid://47vwb6rm3mxy" path="res://Resources/Card Properties/BasicShield.tres" id="6_4ni7a"]
+
+[node name="EnemyBase" type="TextureRect"]
+script = ExtResource("1_iiq2q")
+damageable = ExtResource("2_aahyb")
+enemy_cards = Array[ExtResource("3_tgb06")]([ExtResource("4_fj512"), ExtResource("5_uhgc7"), ExtResource("6_4ni7a")])

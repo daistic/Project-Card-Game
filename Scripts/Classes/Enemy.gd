@@ -11,14 +11,16 @@ var damage_over_time: float = 0.0
 func _enter_tree() -> void:
 	BattleManager.enemy = self
 	SignalHub.card_used.connect(_on_card_used)
-	SignalHub.switch_to_enemy_turn.connect(_on_changed_to_enemy_turn)
+	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
 
-func _on_changed_to_enemy_turn() -> void:
+func _on_player_turn_finished() -> void:
 	var moves_taken: int = 0
 	
 	while(moves_taken < max_moves):
-		SignalHub.emit_on_enemy_card_used(enemy_cards.pick_random())
+		SignalHub.emit_enemy_card_used(enemy_cards.pick_random())
 		moves_taken += 1
+	
+	BattleManager.change_state(BattleManager.BATTLE_STATE.PLAYER_TURN)
 
 func _on_card_used(_properties: CardProperties) -> void:
 	damageable.hp -= BattleManager.calculate_damage_to_self(BattleManager.player.damageable, 

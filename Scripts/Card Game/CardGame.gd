@@ -4,9 +4,9 @@ extends Control
 @onready var end_turn_button: TextureButton = $MarginContainer/VBoxContainer/EndTurnButton
 
 func _enter_tree() -> void:
-	SignalHub.switch_to_enemy_turn.connect(_on_changed_to_enemy_turn)
+	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
 
-func _on_changed_to_enemy_turn() -> void:
+func _on_player_turn_finished() -> void:
 	var cards: Array[Node] = card_container.get_children()
 	
 	for card in cards:

@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccdbjro724ybb"]
-
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/OnScreenCards/BaseOnScreenCard.tscn" id="1_g7ydn"]
-[ext_resource type="Resource" uid="uid://47vwb6rm3mxy" path="res://Resources/CardProperties/BasicShield.tres" id="2_fndih"]
-
-[node name="BasicShield" instance=ExtResource("1_g7ydn")]
-properties = ExtResource("2_fndih")

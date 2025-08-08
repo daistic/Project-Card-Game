@@ -31,8 +31,8 @@ func change_state(new_state: BATTLE_STATE) -> void:
 	current_state = new_state
 	match current_state:
 		BATTLE_STATE.PLAYER_TURN:
-			pass
+			SignalHub.emit_enemy_turn_finished()
 		BATTLE_STATE.ENEMY_TURN:
-			SignalHub.emit_switch_to_enemy_state()
+			SignalHub.emit_player_turn_finished()
 		_:
 			print("signal not found")
