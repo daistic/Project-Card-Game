@@ -17,8 +17,8 @@ func _enter_tree() -> void:
 	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 
 func _on_enemy_card_used(_properties: CardProperties) -> void:
-	damageable.hp -= BattleManager.calculate_damage(BattleManager.enemy.damageable, 
-													_properties.damage, damageable.shield)
+	damageable.hp -= BattleManager.calculate_damage_to_self(BattleManager.enemy.damageable, 
+													damageable, _properties.damage)
 	
 	print(damageable.hp)
 

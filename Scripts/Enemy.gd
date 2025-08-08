@@ -23,6 +23,6 @@ func _on_changed_to_enemy_turn() -> void:
 		moves_taken += 1
 
 func _on_card_used(_properties: CardProperties) -> void:
-	damageable.hp -= BattleManager.calculate_damage(BattleManager.player.damageable, 
-													_properties.damage, damageable.shield)
+	damageable.hp -= BattleManager.calculate_damage_to_self(BattleManager.player.damageable, 
+													damageable, _properties.damage)
 	print(damageable.hp)

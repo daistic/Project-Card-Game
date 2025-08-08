@@ -13,12 +13,12 @@ var current_state: BATTLE_STATE = BATTLE_STATE.PLAYER_TURN
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
 
-func calculate_damage(other_damageable: Damageable, card_damage: float, 
-						defender_shield: float) -> float:
+func calculate_damage_to_self(other_damageable: Damageable, self_damageable: Damageable,
+								card_damage: float) -> float:
 	
 	var total_damage: float = 0.0
 	
-	total_damage += (other_damageable.atk * card_damage) / defender_shield
+	total_damage += (other_damageable.atk * card_damage) / self_damageable.shield
 	
 	var actual_crit_rate = clampf(other_damageable.crit_rate, MINIMUM_CRIT_RATE, 
 									MAXIMUM_CRIT_RATE)
