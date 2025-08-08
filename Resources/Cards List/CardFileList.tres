@@ -1,23 +1,27 @@
-[gd_resource type="Resource" script_class="CardsList" load_steps=6 format=3 uid="uid://bg05j15ahrgdm"]
+[gd_resource type="Resource" script_class="CardsList" load_steps=9 format=3 uid="uid://bg05j15ahrgdm"]
 
 [ext_resource type="Script" uid="uid://b2d3v6io1mso0" path="res://Scripts/Resource Classes/CardsListStruct.gd" id="1_keiqt"]
 [ext_resource type="Script" uid="uid://d3pnduh5pjeht" path="res://Scripts/Resource Classes/CardsList.gd" id="2_eq52y"]
+[ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="3_bvuhf"]
+[ext_resource type="PackedScene" uid="uid://cw2kr2ti3v8vh" path="res://Scenes/On Screen Cards/BasicHeal.tscn" id="4_4hae1"]
+[ext_resource type="PackedScene" uid="uid://ccdbjro724ybb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="5_2c17g"]
 
-[sub_resource type="Resource" id="Resource_keiqt"]
+[sub_resource type="Resource" id="Resource_n7tgs"]
 script = ExtResource("1_keiqt")
 properties_path = "res://Resources/Card Properties/BasicAttack.tres"
 scene_path = "res://Scenes/On Screen Cards/BasicAttack.tscn"
 
-[sub_resource type="Resource" id="Resource_eq52y"]
+[sub_resource type="Resource" id="Resource_bvuhf"]
 script = ExtResource("1_keiqt")
 properties_path = "res://Resources/Card Properties/BasicHeal.tres"
 scene_path = "res://Scenes/On Screen Cards/BasicHeal.tscn"
 
-[sub_resource type="Resource" id="Resource_n7tgs"]
+[sub_resource type="Resource" id="Resource_4hae1"]
 script = ExtResource("1_keiqt")
 properties_path = "res://Resources/Card Properties/BasicShield.tres"
 scene_path = "res://Scenes/On Screen Cards/BasicShield.tscn"
 
 [resource]
 script = ExtResource("2_eq52y")
-file_names = Array[ExtResource("1_keiqt")]([SubResource("Resource_keiqt"), SubResource("Resource_eq52y"), SubResource("Resource_n7tgs")])
+file_names = Array[ExtResource("1_keiqt")]([SubResource("Resource_n7tgs"), SubResource("Resource_bvuhf"), SubResource("Resource_4hae1")])
+starting_deck_scenes = Array[PackedScene]([ExtResource("3_bvuhf"), ExtResource("4_4hae1"), ExtResource("5_2c17g")])

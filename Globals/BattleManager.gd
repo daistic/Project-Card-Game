@@ -9,9 +9,14 @@ enum BATTLE_STATE {
 }
 
 var current_state: BATTLE_STATE = BATTLE_STATE.PLAYER_TURN
+var player_deck: Array[PackedScene] = Global.CARDS_LIST.starting_deck_scenes
 
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
+const MAXIMUM_CARDS_ON_HAND: int = 5
+
+func _enter_tree() -> void:
+	player_deck.append(Global.get_card_scene(Global.CARDS_TYPE.Basic_ATK))
 
 func calculate_damage_to_self(other_damageable: Damageable, self_damageable: Damageable,
 								card_damage: float) -> float:
@@ -36,3 +41,6 @@ func change_state(new_state: BATTLE_STATE) -> void:
 			SignalHub.emit_player_turn_finished()
 		_:
 			print("signal not found")
+
+func draw_from_player_deck() -> PackedScene:
+	return player_deck.pick_random()

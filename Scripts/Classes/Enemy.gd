@@ -6,8 +6,6 @@ extends TextureRect
 @export var enemy_cards: Array[CardProperties] = []
 @export var max_moves: int = 2
 
-var damage_over_time: float = 0.0
-
 func _enter_tree() -> void:
 	BattleManager.enemy = self
 	SignalHub.card_used.connect(_on_card_used)

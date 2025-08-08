@@ -12,3 +12,5 @@ func add_files(sp: String, pp: String) -> void:
 		cls.properties_path = pp
 		
 		file_names.append(cls)
+
+@export var starting_deck_scenes: Array[PackedScene]
