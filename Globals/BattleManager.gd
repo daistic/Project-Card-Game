@@ -30,6 +30,8 @@ func calculate_damage_to_self(other_damageable: Damageable, self_damageable: Dam
 	if randf_range(MINIMUM_CRIT_RATE, MAXIMUM_CRIT_RATE) <= actual_crit_rate:
 		total_damage *= other_damageable.crit_damage
 	
+	total_damage -= self_damageable.damage_over_time
+	
 	return total_damage
 
 func change_state(new_state: BATTLE_STATE) -> void:
