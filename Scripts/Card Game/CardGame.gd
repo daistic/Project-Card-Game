@@ -1,6 +1,6 @@
 extends Control
 
-@onready var card_container: HBoxContainer = $MarginContainer/CardContainer
+@onready var card_container: HBoxContainer = $MarginContainer/FocusContainer/CardContainer
 @onready var end_turn_button: TextureButton = $MarginContainer/VBoxContainer/EndTurnButton
 
 func _enter_tree() -> void:

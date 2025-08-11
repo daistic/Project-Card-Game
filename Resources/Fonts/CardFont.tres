@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bu0t47efj3nub"]
+
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="1_h8mws"]
+
+[resource]
+font = ExtResource("1_h8mws")
+font_size = 200
+font_color = Color(0, 0, 0, 1)

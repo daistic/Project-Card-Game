@@ -2,6 +2,9 @@ class_name OnScreenCard
 
 extends TextureRect
 
+@onready var title_label: Label = $TitleLabel
+@onready var desc_label: RichTextLabel = $DescLabel
+
 @export var properties: CardProperties
 
 static var card_being_dragged: OnScreenCard = null
@@ -21,15 +24,16 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if properties == null:
 		queue_free()
+	
+	_setup_labels()
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	var preview_texture = TextureRect.new()
-	preview_texture.texture = texture
-	preview_texture.expand_mode = 1
-	preview_texture.size = size * SCALE_SIZE
+	var preview_scene: PackedScene = load(self.scene_file_path)
+	var preview_card: OnScreenCard = preview_scene.instantiate()
+	preview_card.size *= SCALE_SIZE
 	
 	var preview = Control.new()
-	preview.add_child(preview_texture)
+	preview.add_child(preview_card)
 	set_drag_preview(preview)
 	
 	card_being_dragged = self
@@ -48,6 +52,12 @@ func _tween_scale_animation(is_mouse_entering: bool) -> void:
 func _on_card_used(_properties: CardProperties) -> void:
 	if card_being_dragged == self and card_being_dragged != null:
 		card_being_dragged.queue_free()
+
+func _setup_labels() -> void:
+	title_label.text = properties.name
+	desc_label.text = properties.desc.format({
+		"dmg": properties.damage
+	})
 
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)

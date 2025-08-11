@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coll46iykya0u"
-path="res://.godot/imported/Card Placeholder.png-ecf71e45b5a91848d47f6a5dddf7c154.ctex"
+uid="uid://06xgutx060fu"
+path="res://.godot/imported/AI Energy Circle.png-9f3487f95490fbacad0999deae42ab45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Cards/Card Placeholder.png"
-dest_files=["res://.godot/imported/Card Placeholder.png-ecf71e45b5a91848d47f6a5dddf7c154.ctex"]
+source_file="res://Assets/Textures/Energy Circles/AI Energy Circle.png"
+dest_files=["res://.godot/imported/AI Energy Circle.png-9f3487f95490fbacad0999deae42ab45.ctex"]
 
 [params]
 

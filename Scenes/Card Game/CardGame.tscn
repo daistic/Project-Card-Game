@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://bksto6n1v44j1"]
+[gd_scene load_steps=10 format=3 uid="uid://bksto6n1v44j1"]
 
-[ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="1_5f4ku"]
 [ext_resource type="Script" uid="uid://cn10i2g0hj3sp" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="2_qep0y"]
+[ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="3_7ak25"]
 [ext_resource type="PackedScene" uid="uid://b44dn8uxi7m5s" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="4_4l43w"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="4_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
+
+[sub_resource type="Gradient" id="Gradient_qep0y"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.4, 0, 0.4, 1, 0.8, 0.2, 0.8, 1, 1, 0.4, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4idbi"]
+gradient = SubResource("Gradient_qep0y")
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -25,21 +34,51 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_bottom = 15
 
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="FocusContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer/FocusContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BasicAttack" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
+[node name="BaseOnScreenCard2" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BasicAttack2" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
+[node name="BaseOnScreenCard3" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BasicAttack3" parent="MarginContainer/CardContainer" instance=ExtResource("1_5f4ku")]
+[node name="BaseOnScreenCard4" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
+
+[node name="BaseOnScreenCard5" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
+layout_mode = 2
+
+[node name="BasicAttack" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("3_7ak25")]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/FocusContainer"]
+custom_minimum_size = Vector2(0, 12.5)
+layout_mode = 2
+
+[node name="HPBar" type="TextureProgressBar" parent="MarginContainer/FocusContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 75.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_4idbi")
+
+[node name="ShieldBar" type="TextureProgressBar" parent="MarginContainer/FocusContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+value = 25.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_4idbi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

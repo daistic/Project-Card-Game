@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkcyc2y6wpdfm"]
+[gd_scene load_steps=11 format=3 uid="uid://dkcyc2y6wpdfm"]
 
-[ext_resource type="Texture2D" uid="uid://cw71sq8f5yr05" path="res://Resources/Card Atlas Textures/PlaceholderCardAtlas.tres" id="1_fuchw"]
+[ext_resource type="Texture2D" uid="uid://c0glhnk0pd68p" path="res://Assets/Textures/Card Textures/TemplateCard.png" id="1_vbrjr"]
 [ext_resource type="Script" uid="uid://badnx1vn20e04" path="res://Scripts/Classes/OnScreenCard.gd" id="2_hm6hs"]
 [ext_resource type="Script" uid="uid://js3yaq351i6m" path="res://Scripts/Resource Classes/CardProperties.gd" id="3_a7c7u"]
+[ext_resource type="Texture2D" uid="uid://ce7gps8l0nhb" path="res://Assets/Textures/Card Frames/BlueFrame.png" id="4_bokq1"]
+[ext_resource type="LabelSettings" uid="uid://bu0t47efj3nub" path="res://Resources/Fonts/CardFont.tres" id="5_bokq1"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="6_xmtfg"]
 
 [sub_resource type="Resource" id="Resource_cyufl"]
 script = ExtResource("3_a7c7u")
-name = "Template"
-desc = "does nothing"
+name = "Templatee"
+desc = "Does [color=yellow] {dmg} [/color] damage"
 damage = 0.0
 shield = 0.0
 heal_amount = 0.0
@@ -18,28 +21,112 @@ char_energy_cost = 1.0
 ai_energy_cost = 0.0
 metadata/_custom_type_script = "uid://js3yaq351i6m"
 
+[sub_resource type="Gradient" id="Gradient_vbrjr"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.764706, 0, 1, 1, 0.8, 0.2, 1, 1, 0.968627, 0.415686, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bokq1"]
+gradient = SubResource("Gradient_vbrjr")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmtfg"]
+atlas = ExtResource("4_bokq1")
+region = Rect2(107.671, 32.823, 286.029, 435.277)
+
 [node name="BaseOnScreenCard" type="TextureRect"]
+z_index = 5
 texture_filter = 1
-custom_minimum_size = Vector2(80, 111)
+custom_minimum_size = Vector2(100, 175)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -55.5
-offset_right = 40.0
-offset_bottom = 55.5
+offset_left = -57.5287
+offset_top = -87.5
+offset_right = 57.5287
+offset_bottom = 87.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(40, 55.5)
+pivot_offset = Vector2(57.529, 87.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_fuchw")
+texture = ExtResource("1_vbrjr")
 expand_mode = 3
 stretch_mode = 5
 script = ExtResource("2_hm6hs")
 properties = SubResource("Resource_cyufl")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 29.0
+offset_right = 10.0
+offset_bottom = 69.0
+mouse_filter = 2
+max_value = 8.0
+value = 4.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_bokq1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_right = 31.9426
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(87.5, 87.5)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_xmtfg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_top = 8.5
+offset_right = 1670.0
+offset_bottom = 247.5
+grow_horizontal = 2
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 10000
+text = "Template"
+label_settings = ExtResource("5_bokq1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.5287
+offset_top = -84.0
+offset_right = 1710.47
+offset_bottom = 1296.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_xmtfg")
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "Does X Damage"
+autowrap_mode = 2
+horizontal_alignment = 3
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
