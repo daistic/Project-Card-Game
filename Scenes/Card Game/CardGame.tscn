@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=11 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsk8qv36sem5q" path="res://Scenes/On Screen Cards/BasicHeal.tscn" id="5_e1x1l"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
 [ext_resource type="PackedScene" uid="uid://b8oqih0kmstpb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="6_nkj25"]
+[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="7_nkj25"]
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -27,27 +28,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BaseOnScreenCard" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_qep0y")]
+[node name="BaseOnScreenCard" parent="MarginContainer/CardContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BasicAttack" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_7ak25")]
+[node name="BasicAttack" parent="MarginContainer/CardContainer" instance=ExtResource("3_7ak25")]
 layout_mode = 2
 
-[node name="AttackBuff" parent="MarginContainer/HBoxContainer" instance=ExtResource("4_7ak25")]
+[node name="AttackBuff" parent="MarginContainer/CardContainer" instance=ExtResource("4_7ak25")]
 layout_mode = 2
 
-[node name="BasicHeal" parent="MarginContainer/HBoxContainer" instance=ExtResource("5_e1x1l")]
+[node name="BasicHeal" parent="MarginContainer/CardContainer" instance=ExtResource("5_e1x1l")]
 layout_mode = 2
 
-[node name="BasicShield" parent="MarginContainer/HBoxContainer" instance=ExtResource("6_nkj25")]
+[node name="BasicShield" parent="MarginContainer/CardContainer" instance=ExtResource("6_nkj25")]
 layout_mode = 2
+
+[node name="EndTurnButton" type="TextureButton" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("7_nkj25")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]
 layout_mode = 1
@@ -63,9 +75,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
+offset_left = -10.0
 offset_top = -40.0
-offset_right = 0.0
+offset_right = 10.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -75,3 +87,5 @@ max_ai_energy = 5.0
 [node name="EnemyBase" parent="." instance=ExtResource("4_4l43w")]
 layout_mode = 1
 mouse_filter = 2
+
+[connection signal="pressed" from="MarginContainer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]

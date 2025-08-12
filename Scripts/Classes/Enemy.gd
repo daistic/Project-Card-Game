@@ -9,16 +9,8 @@ extends TextureRect
 func _enter_tree() -> void:
 	BattleManager.enemy = self
 	SignalHub.card_used.connect(_on_card_used)
+	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
-
-func _on_player_turn_finished() -> void:
-	var moves_taken: int = 0
-	
-	while(moves_taken < max_moves):
-		SignalHub.emit_enemy_card_used(enemy_cards.pick_random())
-		moves_taken += 1
-	
-	BattleManager.change_state(BattleManager.BATTLE_STATE.PLAYER_TURN)
 
 func _on_card_used(_card_resource: CardInterface) -> void:
 	var player_stats: Damageable = BattleManager.player.stats.get_stats_after_status()
@@ -27,3 +19,23 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 		_card_resource.get_card_damage(player_stats))
 	
 	#print(stats.cur_hp)
+
+func _on_enemy_card_used(_card_resource: CardInterface) -> void:
+	_card_resource.regenerate_stat(stats)
+	if _card_resource.is_stat_effector:
+		stats.stat_effects.append(_card_resource)
+
+func _on_player_turn_finished() -> void:
+	var move_number: int = 0
+	
+	while(move_number < max_moves):
+		SignalHub.emit_enemy_card_used(enemy_cards.get(move_number))
+		move_number += 1
+	
+	SignalHub.emit_enemy_turn_finished()
+
+func _on_enemy_turn_finished() -> void:
+	_shuffle_cards()
+
+func _shuffle_cards() -> void:
+	enemy_cards.shuffle()

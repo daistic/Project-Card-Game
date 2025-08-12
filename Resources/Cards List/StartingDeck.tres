@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardPackedList" load_steps=6 format=3 uid="uid://bptta63f664w6"]
+
+[ext_resource type="Script" uid="uid://1lgqu12mp6d2" path="res://Scripts/Resource Classes/CardsPackedList.gd" id="1_8xhis"]
+[ext_resource type="PackedScene" uid="uid://bgajc7e6x10uv" path="res://Scenes/On Screen Cards/AttackBuff.tscn" id="1_p1dc0"]
+[ext_resource type="PackedScene" uid="uid://cb4a8yajsdug5" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="2_000lq"]
+[ext_resource type="PackedScene" uid="uid://dsk8qv36sem5q" path="res://Scenes/On Screen Cards/BasicHeal.tscn" id="3_7ijsp"]
+[ext_resource type="PackedScene" uid="uid://b8oqih0kmstpb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="4_w1jkt"]
+
+[resource]
+script = ExtResource("1_8xhis")
+packed_scenes = Array[PackedScene]([ExtResource("1_p1dc0"), ExtResource("2_000lq"), ExtResource("3_7ijsp"), ExtResource("4_w1jkt")])
+metadata/_custom_type_script = "uid://1lgqu12mp6d2"

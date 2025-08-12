@@ -6,6 +6,7 @@ extends CardInterface
 
 func regenerate_stat(_damageable: Damageable) -> void:
 	_damageable.cur_hp += heal_amount
+	_damageable.cur_hp = clampf(_damageable.cur_hp, 0.0, _damageable.max_hp)
 
 func get_desc_format() -> Array:
 	return [heal_amount]

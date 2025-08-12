@@ -12,5 +12,3 @@ func add_files(sp: String, crp: String) -> void:
 		cls.card_resource_path= crp
 		
 		file_names.append(cls)
-
-@export var starting_deck_scenes: Array[PackedScene]
