@@ -5,7 +5,7 @@ extends TextureRect
 @onready var title_label: Label = $TitleLabel
 @onready var desc_label: RichTextLabel = $DescLabel
 
-@export var properties: CardProperties
+@export var card_resource: CardInterface
 
 static var card_being_dragged: OnScreenCard = null
 
@@ -22,7 +22,7 @@ func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
 
 func _ready() -> void:
-	if properties == null:
+	if card_resource == null:
 		queue_free()
 	
 	_setup_labels()
@@ -37,9 +37,9 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	set_drag_preview(preview)
 	
 	card_being_dragged = self
-	self.hide()
+	hide()
 	
-	return self.properties
+	return card_resource
 
 func _tween_scale_animation(is_mouse_entering: bool) -> void:
 	var tween: Tween = create_tween()
@@ -49,15 +49,13 @@ func _tween_scale_animation(is_mouse_entering: bool) -> void:
 	else:
 		tween.tween_property(self, "scale", NORMAL_SIZE, SCALE_TIME)
 
-func _on_card_used(_properties: CardProperties) -> void:
+func _on_card_used(_resource: CardInterface) -> void:
 	if card_being_dragged == self and card_being_dragged != null:
 		card_being_dragged.queue_free()
 
 func _setup_labels() -> void:
-	title_label.text = properties.name
-	desc_label.text = properties.desc.format({
-		"dmg": properties.damage
-	})
+	title_label.text = card_resource.name
+	desc_label.text = card_resource.desc % card_resource.get_desc_format()
 
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)

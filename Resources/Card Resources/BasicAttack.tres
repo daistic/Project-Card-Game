@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BasicAttack" load_steps=2 format=3 uid="uid://cvc6tl7xk7b0x"]
+
+[ext_resource type="Script" uid="uid://65wkse0t7nf2" path="res://Scripts/Card Interfaces/BasicAttack.gd" id="1_ck714"]
+
+[resource]
+script = ExtResource("1_ck714")
+damage = 3.0
+name = "Basic Attack"
+desc = "Does [color=yellow] %.1f [/color] damage"
+energy_cost = 1
+ai_energy_cost = 0
+metadata/_custom_type_script = "uid://65wkse0t7nf2"

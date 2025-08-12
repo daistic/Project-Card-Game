@@ -4,6 +4,6 @@
 
 [node name="CardHitZone" type="Panel"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(1000, 350)
+custom_minimum_size = Vector2(1000, 375)
 size_flags_vertical = 0
 script = ExtResource("1_gxox8")

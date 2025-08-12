@@ -1,20 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bksto6n1v44j1"]
+[gd_scene load_steps=7 format=3 uid="uid://d0iyidwt2kfsw"]
 
-[ext_resource type="Script" uid="uid://cn10i2g0hj3sp" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
+[ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="2_qep0y"]
-[ext_resource type="PackedScene" uid="uid://60ma3kgbspc" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="3_7ak25"]
-[ext_resource type="PackedScene" uid="uid://b44dn8uxi7m5s" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="4_4l43w"]
-[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="4_5pjvo"]
+[ext_resource type="PackedScene" uid="uid://cb4a8yajsdug5" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="3_7ak25"]
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="4_4l43w"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
-
-[sub_resource type="Gradient" id="Gradient_qep0y"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0.4, 0, 0.4, 1, 0.8, 0.2, 0.8, 1, 1, 0.4, 1, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4idbi"]
-gradient = SubResource("Gradient_qep0y")
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -33,64 +24,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 15
 
-[node name="FocusContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/separation = 10
-
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer/FocusContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BaseOnScreenCard2" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
+[node name="BaseOnScreenCard" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BaseOnScreenCard3" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
+[node name="BaseOnScreenCard2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BaseOnScreenCard4" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
+[node name="BaseOnScreenCard3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BaseOnScreenCard5" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("2_qep0y")]
+[node name="BaseOnScreenCard4" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_qep0y")]
 layout_mode = 2
 
-[node name="BasicAttack" parent="MarginContainer/FocusContainer/CardContainer" instance=ExtResource("3_7ak25")]
+[node name="BasicAttack" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_7ak25")]
 layout_mode = 2
-
-[node name="Spacer" type="Control" parent="MarginContainer/FocusContainer"]
-custom_minimum_size = Vector2(0, 12.5)
-layout_mode = 2
-
-[node name="HPBar" type="TextureProgressBar" parent="MarginContainer/FocusContainer"]
-custom_minimum_size = Vector2(0, 3)
-layout_mode = 2
-value = 75.0
-nine_patch_stretch = true
-texture_progress = SubResource("GradientTexture1D_4idbi")
-
-[node name="ShieldBar" type="TextureProgressBar" parent="MarginContainer/FocusContainer"]
-custom_minimum_size = Vector2(0, 3)
-layout_mode = 2
-value = 25.0
-nine_patch_stretch = true
-texture_progress = SubResource("GradientTexture1D_4idbi")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="EndTurnButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 25)
-layout_mode = 2
-texture_normal = ExtResource("4_5pjvo")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]
 layout_mode = 1
@@ -99,25 +53,20 @@ anchor_right = 1.0
 grow_horizontal = 2
 mouse_filter = 1
 
-[node name="EnemyBase" parent="." instance=ExtResource("4_4l43w")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="Player" parent="." instance=ExtResource("5_oxm1c")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
 offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[node name="EnemyBase" parent="." instance=ExtResource("4_4l43w")]
+layout_mode = 1
+mouse_filter = 2

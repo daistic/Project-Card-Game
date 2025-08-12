@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw2kr2ti3v8vh"]
-
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_n1hyv"]
-[ext_resource type="Resource" uid="uid://dinninpxevoqm" path="res://Resources/Card Properties/BasicHeal.tres" id="2_lyhyf"]
-
-[node name="BasicHeal" instance=ExtResource("1_n1hyv")]
-properties = ExtResource("2_lyhyf")

@@ -15,8 +15,8 @@ func _run() -> void:
 			if fn.ends_with(".tmp") == false:
 				var scene: PackedScene = load(CARDS_SCENES_FOLDER + fn)
 				var instance: OnScreenCard = scene.instantiate()
-				var properties_path: String = instance.properties.resource_path
+				var crp: String = instance.card_resource.resource_path
 				
-				cl.add_files(CARDS_SCENES_FOLDER + fn, properties_path)
+				cl.add_files(CARDS_SCENES_FOLDER + fn, crp)
 	
 	ResourceSaver.save(cl, RESOURCE_PATH)

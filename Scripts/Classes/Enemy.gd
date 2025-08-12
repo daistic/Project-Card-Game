@@ -3,7 +3,7 @@ class_name Enemy
 extends TextureRect
 
 @export var damageable: Damageable
-@export var enemy_cards: Array[CardProperties] = []
+@export var enemy_cards: Array[CardInterface] = []
 @export var max_moves: int = 2
 
 func _enter_tree() -> void:
@@ -20,7 +20,8 @@ func _on_player_turn_finished() -> void:
 	
 	BattleManager.change_state(BattleManager.BATTLE_STATE.PLAYER_TURN)
 
-func _on_card_used(_properties: CardProperties) -> void:
-	damageable.hp -= BattleManager.calculate_damage_to_self(BattleManager.player.damageable, 
-													damageable, _properties.damage)
-	print(damageable.hp)
+func _on_card_used(_card_resource: CardInterface) -> void:
+	damageable.hp -= damageable.card_damage(BattleManager.player.damageable, 
+			_card_resource.get_card_damage())
+	
+	print (damageable.hp)

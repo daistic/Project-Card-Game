@@ -1,12 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://60ma3kgbspc"]
+[gd_scene load_steps=3 format=3 uid="uid://cb4a8yajsdug5"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_jbcsv"]
-[ext_resource type="Texture2D" uid="uid://bepcjlkb72hd" path="res://Assets/Textures/Card Textures/AttackCard.png" id="2_hn6t8"]
-[ext_resource type="Resource" uid="uid://dp7ljev13jlwf" path="res://Resources/Card Properties/BasicAttack.tres" id="2_vacag"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/BasicAttack.tres" id="2_y3nnu"]
 
 [node name="BasicAttack" instance=ExtResource("1_jbcsv")]
-texture = ExtResource("2_hn6t8")
-properties = ExtResource("2_vacag")
-
-[node name="TextureProgressBar" parent="." index="0"]
-value = 1.0
+card_resource = ExtResource("2_y3nnu")

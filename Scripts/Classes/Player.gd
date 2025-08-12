@@ -15,17 +15,13 @@ func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
 	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 
-func _on_card_used(_properties: CardProperties) -> void:
-	damageable.hp += _properties.heal_amount
-	damageable.shield += _properties.shield
-	damageable.atk += _properties.buff_attack_amount
-	cur_energy -= _properties.char_energy_cost
-	cur_ai_energy -= _properties.ai_energy_cost
+func _on_card_used(_card_resource: CardInterface) -> void:
+	cur_energy -= _card_resource.energy_cost
+	cur_ai_energy -= _card_resource.ai_energy_cost
 	
 	print(cur_energy)
 
-func _on_enemy_card_used(_properties: CardProperties) -> void:
-	damageable.hp -= BattleManager.calculate_damage_to_self(BattleManager.enemy.damageable, 
-													damageable, _properties.damage)
+func _on_enemy_card_used(_card_resource: CardInterface) -> void:
+	#do something
 	
 	print(damageable.hp)
