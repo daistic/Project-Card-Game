@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_ck714")
 damage = 3.0
-name = "Basic Attack"
+name = "Attack"
 desc = "Does [color=yellow] %.1f [/color] damage"
 energy_cost = 1
 ai_energy_cost = 0
+is_stat_effector = false
 metadata/_custom_type_script = "uid://65wkse0t7nf2"

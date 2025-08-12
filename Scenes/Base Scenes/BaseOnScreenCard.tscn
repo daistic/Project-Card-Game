@@ -44,7 +44,7 @@ stretch_mode = 5
 script = ExtResource("2_hm6hs")
 card_resource = ExtResource("3_xmtfg")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="EnergyCostBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 29.0

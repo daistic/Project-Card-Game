@@ -4,6 +4,7 @@ extends TextureRect
 
 @onready var title_label: Label = $TitleLabel
 @onready var desc_label: RichTextLabel = $DescLabel
+@onready var energy_cost_bar: TextureProgressBar = $EnergyCostBar
 
 @export var card_resource: CardInterface
 
@@ -25,7 +26,7 @@ func _ready() -> void:
 	if card_resource == null:
 		queue_free()
 	
-	_setup_labels()
+	_setup_childrens()
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview_scene: PackedScene = load(self.scene_file_path)
@@ -53,9 +54,14 @@ func _on_card_used(_resource: CardInterface) -> void:
 	if card_being_dragged == self and card_being_dragged != null:
 		card_being_dragged.queue_free()
 
-func _setup_labels() -> void:
+func _setup_childrens() -> void:
 	title_label.text = card_resource.name
 	desc_label.text = card_resource.desc % card_resource.get_desc_format()
+	
+	if card_resource.ai_energy_cost > 0:
+		energy_cost_bar.value = card_resource.ai_energy_cost
+	else:
+		energy_cost_bar.value = card_resource.energy_cost
 
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)

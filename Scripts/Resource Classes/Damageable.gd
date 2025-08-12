@@ -2,22 +2,38 @@ class_name Damageable
 
 extends Resource
 
-@export var hp: float = 10.0
+@export var max_hp: float = 10.0
+@export var max_shield: float = 10.0
 @export var atk: float = 1.0
-@export var def: float = 1.0
 @export var crit_rate: float = 15.0
 @export var crit_damage: float = 1.25
 
-var shield: float = 0.0
+var cur_hp: float = max_hp
+var cur_shield: float = 0.0
+var stat_effects: Array[CardInterface] = []
 
 func card_damage(other_damageable: Damageable, damage: float) -> float:
 	var total_damage = 0.0
 	
-	total_damage += ((other_damageable.atk * damage) - shield) / def
-	clampf(total_damage, 0.0, total_damage)
+	total_damage += (other_damageable.atk * damage) - cur_shield 
+	total_damage = clampf(total_damage, 0.0, total_damage)
 	
 	if randf_range(BattleManager.MINIMUM_CRIT_RATE, 
 		BattleManager.MAXIMUM_CRIT_RATE) < other_damageable.crit_rate:
 			total_damage *= other_damageable.crit_damage
 	
 	return total_damage
+
+func get_stats_after_status() -> Damageable:
+	var sas: Damageable = Damageable.new()
+	
+	sas.cur_hp = cur_hp
+	sas.cur_shield = cur_shield
+	sas.atk = atk
+	sas.crit_rate = crit_rate
+	sas.crit_damage = crit_damage
+	
+	for status in stat_effects:
+		status.apply_stat_effect(sas)
+	
+	return sas

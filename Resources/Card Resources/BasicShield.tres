@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BasicShield" load_steps=2 format=3 uid="uid://bd6nnog6su5rx"]
+
+[ext_resource type="Script" uid="uid://dparogoq4lnbt" path="res://Scripts/Card Interfaces/BasicShield.gd" id="1_e68v0"]
+
+[resource]
+script = ExtResource("1_e68v0")
+shield_amount = 3.0
+name = "Shield"
+desc = "Add [color=yellow] %.1f [/color] to your current shield"
+energy_cost = 2
+ai_energy_cost = 0
+is_stat_effector = false
+metadata/_custom_type_script = "uid://dparogoq4lnbt"

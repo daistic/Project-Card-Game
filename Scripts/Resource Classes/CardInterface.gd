@@ -6,12 +6,17 @@ extends Resource
 @export var desc: String = ""
 @export var energy_cost: int = 0
 @export var ai_energy_cost: int = 0
+@export var is_stat_effector: bool = false
 
-func get_card_damage() -> float:
+func get_card_damage(_damageable: Damageable) -> float:
 	#does nothing
 	return 0.0
 
 func regenerate_stat(_damageable: Damageable) -> void:
+	#does nothing
+	pass
+
+func apply_stat_effect(_damageable: Damageable) -> void:
 	#does nothing
 	pass
 
