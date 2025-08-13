@@ -16,7 +16,8 @@ func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
-		BattleManager.new_player(self)
+	BattleManager.new_player(self)
+	SignalHub.emit_player_ready()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
 	cur_energy -= _card_resource.energy_cost
@@ -29,8 +30,9 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 		else:
 			stats.stat_effects.append(_card_resource)
 	
-	print(BattleManager.enemy.stats.stat_effects)
-	#print(stats.cur_shield)
+	SignalHub.emit_player_finished_calculations()
+	#print(BattleManager.enemy.stats.stat_effects)
+	#print(stats.cur_hp)
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	var enemy_stats: Damageable = BattleManager.enemy.stats.get_stats_after_status()
@@ -38,6 +40,7 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	stats.cur_hp -= stats.card_damage(enemy_stats, 
 		_card_resource.get_card_damage(enemy_stats))
 	
+	SignalHub.emit_player_finished_calculations()
 	#print(stats.cur_hp)
 
 func _on_player_turn_finished() -> void:

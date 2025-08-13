@@ -1,6 +1,6 @@
 extends Control
 
-@onready var card_container: HBoxContainer = $MarginContainer/CardContainer
+@onready var card_container: HBoxContainer = $PlayerInfoContainer/VBoxContainer/CardContainer
 
 func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)

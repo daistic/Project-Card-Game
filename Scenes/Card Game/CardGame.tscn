@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=13 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
 [ext_resource type="PackedScene" uid="uid://bxt63u2qao8aw" path="res://Scenes/On Screen Cards/AttackDebuff.tscn" id="6_bvi5y"]
 [ext_resource type="PackedScene" uid="uid://b8oqih0kmstpb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="6_nkj25"]
-[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="7_nkj25"]
+[ext_resource type="PackedScene" uid="uid://crddmo3afykeq" path="res://Scenes/Card Game/EndTurnButton.tscn" id="7_a4pv0"]
+[ext_resource type="PackedScene" uid="uid://drxjmjmrf8736" path="res://Scenes/Card Game/PlayerBarsContainer.tscn" id="7_p4v55"]
+[ext_resource type="PackedScene" uid="uid://dqdq1vcy27ket" path="res://Scenes/Card Game/EnergyInfoContainer.tscn" id="8_2jatd"]
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -21,7 +23,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_5pjvo")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PlayerInfoContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,34 +34,56 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 15
 
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="CardContainer" type="HBoxContainer" parent="PlayerInfoContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BasicAttack" parent="MarginContainer/CardContainer" instance=ExtResource("3_7ak25")]
+[node name="BasicAttack" parent="PlayerInfoContainer/VBoxContainer/CardContainer" instance=ExtResource("3_7ak25")]
 layout_mode = 2
 
-[node name="AttackBuff" parent="MarginContainer/CardContainer" instance=ExtResource("4_7ak25")]
+[node name="AttackBuff" parent="PlayerInfoContainer/VBoxContainer/CardContainer" instance=ExtResource("4_7ak25")]
 layout_mode = 2
 
-[node name="BasicHeal" parent="MarginContainer/CardContainer" instance=ExtResource("5_e1x1l")]
+[node name="BasicHeal" parent="PlayerInfoContainer/VBoxContainer/CardContainer" instance=ExtResource("5_e1x1l")]
 layout_mode = 2
 
-[node name="BasicShield" parent="MarginContainer/CardContainer" instance=ExtResource("6_nkj25")]
+[node name="BasicShield" parent="PlayerInfoContainer/VBoxContainer/CardContainer" instance=ExtResource("6_nkj25")]
 layout_mode = 2
 
-[node name="AttackDebuff" parent="MarginContainer/CardContainer" instance=ExtResource("6_bvi5y")]
+[node name="AttackDebuff" parent="PlayerInfoContainer/VBoxContainer/CardContainer" instance=ExtResource("6_bvi5y")]
 layout_mode = 2
 
-[node name="EndTurnButton" type="TextureButton" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 50)
+[node name="PlayerBarsContainer" parent="PlayerInfoContainer/VBoxContainer" instance=ExtResource("7_p4v55")]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture_normal = ExtResource("7_nkj25")
-ignore_texture_size = true
-stretch_mode = 0
+
+[node name="EnergyInfoContainer" parent="." instance=ExtResource("8_2jatd")]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 403.0
+offset_bottom = 568.0
+grow_vertical = 1
+
+[node name="EndTurnButton" parent="." instance=ExtResource("7_a4pv0")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 941.0
+offset_top = 535.0
+offset_right = 1041.0
+offset_bottom = 585.0
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]
 layout_mode = 1
@@ -88,4 +112,4 @@ max_ai_energy = 5.0
 layout_mode = 1
 mouse_filter = 2
 
-[connection signal="pressed" from="MarginContainer/EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

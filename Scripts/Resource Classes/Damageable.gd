@@ -15,7 +15,8 @@ var stat_effects: Array[CardInterface] = []
 func card_damage(other_damageable: Damageable, damage: float) -> float:
 	var total_damage = 0.0
 	
-	total_damage += (other_damageable.atk * damage) - cur_shield 
+	total_damage += ((other_damageable.atk * damage) / 
+		(get_stats_after_status().cur_shield + 1.0))
 	total_damage = clampf(total_damage, 0.0, total_damage)
 	
 	if randf_range(BattleManager.MINIMUM_CRIT_RATE, 

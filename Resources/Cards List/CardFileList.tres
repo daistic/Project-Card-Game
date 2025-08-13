@@ -27,4 +27,3 @@ scene_path = "res://Scenes/On Screen Cards/BasicShield.tscn"
 [resource]
 script = ExtResource("2_eq52y")
 file_names = Array[ExtResource("1_keiqt")]([SubResource("Resource_keiqt"), SubResource("Resource_eq52y"), SubResource("Resource_n7tgs"), SubResource("Resource_bvuhf")])
-starting_deck_scenes = Array[PackedScene]([])

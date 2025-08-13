@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_a1ryd")
 buff = 2.5
+is_debuff = false
 turns = 3
 name = "Attack Buff"
 desc = "Add [color=yellow] %.1f [/color] to your attack stat for [color=yellow] %d [/color] turns"
 energy_cost = 3
 ai_energy_cost = 0
-is_stat_effector = true
 metadata/_custom_type_script = "uid://cx3ovmf6dom73"

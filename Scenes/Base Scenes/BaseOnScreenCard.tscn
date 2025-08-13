@@ -9,7 +9,7 @@
 
 [sub_resource type="Gradient" id="Gradient_vbrjr"]
 offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(1, 0.764706, 0, 1, 1, 0.8, 0.2, 1, 1, 0.968627, 0.415686, 1)
+colors = PackedColorArray(1, 0.85098, 0.231373, 1, 1, 0.756863, 0.027451, 1, 1, 0.560784, 0, 1)
 metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bokq1"]
@@ -52,7 +52,7 @@ offset_right = 10.0
 offset_bottom = 69.0
 mouse_filter = 2
 max_value = 8.0
-value = 4.0
+value = 3.0
 fill_mode = 3
 nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture2D_bokq1")

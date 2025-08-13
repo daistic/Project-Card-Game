@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dta23cx31yj4g"]
+
+[ext_resource type="Texture2D" uid="uid://c7nklsrnmrpv7" path="res://Assets/Textures/Card Game/PlayerHealthBar.png" id="1_sagkb"]
+
+[resource]
+atlas = ExtResource("1_sagkb")
+region = Rect2(25.8717, 15.8926, 1768.3, 48.7603)

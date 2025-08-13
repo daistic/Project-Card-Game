@@ -17,4 +17,4 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iiq2q")
 stats = ExtResource("2_mfg40")
-enemy_cards = Array[ExtResource("3_hx8nn")]([ExtResource("4_uub75"), ExtResource("5_vdqpv"), ExtResource("6_wce4x")])
+enemy_deck = Array[ExtResource("3_hx8nn")]([ExtResource("4_uub75"), ExtResource("5_vdqpv"), ExtResource("6_wce4x")])
