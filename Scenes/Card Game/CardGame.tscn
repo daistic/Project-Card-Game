@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="2_qep0y"]
 [ext_resource type="PackedScene" uid="uid://cb4a8yajsdug5" path="res://Scenes/On Screen Cards/BasicAttack.tscn" id="3_7ak25"]
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="4_4l43w"]
 [ext_resource type="PackedScene" uid="uid://bgajc7e6x10uv" path="res://Scenes/On Screen Cards/AttackBuff.tscn" id="4_7ak25"]
 [ext_resource type="PackedScene" uid="uid://dsk8qv36sem5q" path="res://Scenes/On Screen Cards/BasicHeal.tscn" id="5_e1x1l"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
+[ext_resource type="PackedScene" uid="uid://bxt63u2qao8aw" path="res://Scenes/On Screen Cards/AttackDebuff.tscn" id="6_bvi5y"]
 [ext_resource type="PackedScene" uid="uid://b8oqih0kmstpb" path="res://Scenes/On Screen Cards/BasicShield.tscn" id="6_nkj25"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="7_nkj25"]
 
@@ -37,9 +37,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BaseOnScreenCard" parent="MarginContainer/CardContainer" instance=ExtResource("2_qep0y")]
-layout_mode = 2
-
 [node name="BasicAttack" parent="MarginContainer/CardContainer" instance=ExtResource("3_7ak25")]
 layout_mode = 2
 
@@ -50,6 +47,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="BasicShield" parent="MarginContainer/CardContainer" instance=ExtResource("6_nkj25")]
+layout_mode = 2
+
+[node name="AttackDebuff" parent="MarginContainer/CardContainer" instance=ExtResource("6_bvi5y")]
 layout_mode = 2
 
 [node name="EndTurnButton" type="TextureButton" parent="MarginContainer"]

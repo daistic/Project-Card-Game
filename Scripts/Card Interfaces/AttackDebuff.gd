@@ -1,11 +1,11 @@
-class_name AttackBuff
+class_name AttackDebuff
 
 extends StatEffector
 
-@export var buff: float = 0.0
+@export var debuff: float = 2.5
 
 func apply_stat_effect(_damageable: Damageable) -> void:
-	_damageable.atk += buff
+	_damageable.atk -= debuff
 
 func get_desc_format() -> Array:
-	return [buff, turns]
+	return[debuff, turns]

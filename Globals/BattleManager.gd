@@ -16,3 +16,9 @@ func _enter_tree() -> void:
 
 func draw_player_deck() -> PackedScene:
 	return player_deck.pick_random()
+
+func new_player(_new_player: Player) -> void:
+	player = _new_player
+
+func new_enemy(_new_enemy: Enemy) -> void:
+	enemy = _new_enemy
