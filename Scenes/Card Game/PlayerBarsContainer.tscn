@@ -44,3 +44,5 @@ texture_progress = ExtResource("4_3d88r")
 [node name="Spacer" type="Control" parent="."]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -4,16 +4,12 @@
 [ext_resource type="Script" uid="uid://badnx1vn20e04" path="res://Scripts/Classes/OnScreenCard.gd" id="2_hm6hs"]
 [ext_resource type="Resource" uid="uid://cs6w2f8ob4o6s" path="res://Resources/Card Resources/Template.tres" id="3_xmtfg"]
 [ext_resource type="Texture2D" uid="uid://ce7gps8l0nhb" path="res://Assets/Textures/Card Frames/BlueFrame.png" id="4_bokq1"]
+[ext_resource type="Gradient" uid="uid://bhp0hv7n7upx2" path="res://Resources/Gradients/PlayerEnergyBar.tres" id="4_xigoc"]
 [ext_resource type="LabelSettings" uid="uid://bu0t47efj3nub" path="res://Resources/Fonts/CardFont.tres" id="5_bokq1"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="6_xmtfg"]
 
-[sub_resource type="Gradient" id="Gradient_vbrjr"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(1, 0.85098, 0.231373, 1, 1, 0.756863, 0.027451, 1, 1, 0.560784, 0, 1)
-metadata/_snap_enabled = true
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bokq1"]
-gradient = SubResource("Gradient_vbrjr")
+gradient = ExtResource("4_xigoc")
 fill_from = Vector2(1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmtfg"]

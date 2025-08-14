@@ -45,13 +45,14 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 
 func _on_player_turn_finished() -> void:
 	for effect in stats.stat_effects:
-		if effect.is_stat_effector:
+		if effect is StatEffector:
 			effect.turns -= 1
 		
 		if effect.turns <= 0:
 			stats.stat_effects.erase(effect)
 	
 	cur_energy = max_char_energy
+	print(stats.stat_effects)
 
 func _on_enemy_turn_finished() -> void:
 	pass

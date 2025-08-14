@@ -3,9 +3,12 @@ extends VBoxContainer
 @onready var energy_label: Label = $EnergyTexture/EnergyLabel
 @onready var ai_energy_label: Label = $AIEnergyTexture/AIEnergyLabel
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	SignalHub.player_ready.connect(_on_player_ready)
 	SignalHub.player_finished_calculations.connect(_on_player_finished_calculations)
+	
+	if BattleManager.player != null:
+		_on_player_ready()
 
 func _on_player_ready() -> void:
 	_on_player_finished_calculations()

@@ -16,6 +16,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	BattleManager.new_enemy(self)
 	_new_next_cards()
+	SignalHub.emit_enemy_ready()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
 	var player_stats: Damageable = BattleManager.player.stats.get_stats_after_status()
@@ -23,6 +24,7 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	stats.cur_hp -= stats.card_damage(player_stats, 
 		_card_resource.get_card_damage(player_stats))
 	
+	SignalHub.emit_enemy_finished_calculations()
 	#print(stats.cur_hp)
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
@@ -33,6 +35,7 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 		else:
 			stats.stat_effects.append(_card_resource)
 	
+	SignalHub.emit_enemy_finished_calculations()
 	#print(BattleManager.player.stats.cur_hp)
 
 func _on_player_turn_finished() -> void:

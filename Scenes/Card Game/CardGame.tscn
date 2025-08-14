@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=14 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://crddmo3afykeq" path="res://Scenes/Card Game/EndTurnButton.tscn" id="7_a4pv0"]
 [ext_resource type="PackedScene" uid="uid://drxjmjmrf8736" path="res://Scenes/Card Game/PlayerBarsContainer.tscn" id="7_p4v55"]
 [ext_resource type="PackedScene" uid="uid://dqdq1vcy27ket" path="res://Scenes/Card Game/EnergyInfoContainer.tscn" id="8_2jatd"]
+[ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="13_kqytk"]
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -64,6 +65,22 @@ layout_mode = 2
 [node name="PlayerBarsContainer" parent="PlayerInfoContainer/VBoxContainer" instance=ExtResource("7_p4v55")]
 layout_mode = 2
 
+[node name="Player" parent="." instance=ExtResource("5_oxm1c")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -40.0
+offset_right = 10.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+max_char_energy = 5.0
+max_ai_energy = 5.0
+
 [node name="EnergyInfoContainer" parent="." instance=ExtResource("8_2jatd")]
 layout_mode = 0
 anchors_preset = 0
@@ -92,21 +109,10 @@ anchor_right = 1.0
 grow_horizontal = 2
 mouse_filter = 1
 
-[node name="Player" parent="." instance=ExtResource("5_oxm1c")]
+[node name="EnemyBarsContainer" parent="." instance=ExtResource("13_kqytk")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -40.0
-offset_right = 10.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-max_char_energy = 5.0
-max_ai_energy = 5.0
+offset_top = 5.0
+offset_bottom = 55.0
 
 [node name="EnemyBase" parent="." instance=ExtResource("4_4l43w")]
 layout_mode = 1
