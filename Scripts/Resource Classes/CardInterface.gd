@@ -6,6 +6,7 @@ extends Resource
 @export var desc: String = ""
 @export var energy_cost: int = 0
 @export var ai_energy_cost: int = 0
+@export var is_malware: bool = false
 
 func get_card_damage(_damageable: Damageable) -> float:
 	#does nothing
@@ -18,3 +19,6 @@ func regenerate_stat(_damageable: Damageable) -> void:
 func get_desc_format() -> Array:
 	#does nothing
 	return []
+
+func use_card_action(_damageable: Damageable) -> void:
+	return

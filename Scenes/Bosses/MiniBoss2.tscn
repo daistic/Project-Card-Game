@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://csa2a1epa7r04"]
+
+[ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_cyolx"]
+[ext_resource type="PackedScene" uid="uid://cg6xohcopeelx" path="res://Scenes/Enemy Gimmicks/EnergyLimitGimmick.tscn" id="2_p57sm"]
+
+[node name="MiniBoss2" instance=ExtResource("1_cyolx")]
+
+[node name="EnergyLimitGimmick" parent="." index="0" instance=ExtResource("2_p57sm")]

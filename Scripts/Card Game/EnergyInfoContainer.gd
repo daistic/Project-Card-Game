@@ -5,15 +5,15 @@ extends VBoxContainer
 
 func _ready() -> void:
 	SignalHub.player_ready.connect(_on_player_ready)
-	SignalHub.player_finished_calculations.connect(_on_player_finished_calculations)
+	SignalHub.update_energy_labels.connect(_on_update_energy_labels)
 	
 	if BattleManager.player != null:
 		_on_player_ready()
 
 func _on_player_ready() -> void:
-	_on_player_finished_calculations()
+	_on_update_energy_labels()
 
-func _on_player_finished_calculations() -> void:
+func _on_update_energy_labels() -> void:
 	var player: Player = BattleManager.player
 	energy_label.text = "%d/%d" % [player.cur_energy, player.max_char_energy]
 	ai_energy_label.text = "%d/%d" % [player.cur_ai_energy, player.max_ai_energy]

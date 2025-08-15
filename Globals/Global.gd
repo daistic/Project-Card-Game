@@ -12,6 +12,7 @@ enum CARDS_TYPE{
 }
 
 func _enter_tree() -> void:
-	for fn in CARDS_LIST.file_names:
-		cards_scene.append(load(fn.scene_path))
-		cards_resources.append(load(fn.card_resource_path))
+	pass
+	#for fn in CARDS_LIST.file_names:
+		#cards_scene.append(load(fn.scene_path))
+		#cards_resources.append(load(fn.card_resource_path))

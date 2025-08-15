@@ -12,6 +12,7 @@ func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
 	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
+	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
 	BattleManager.new_enemy(self)
@@ -29,11 +30,12 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_card_resource.regenerate_stat(stats)
-	if _card_resource is StatEffector:
+	
+	if _card_resource is StatusEffector:
 		if _card_resource.is_debuff:
-			BattleManager.player.stats.stat_effects.append(_card_resource)
+			BattleManager.player.new_status_effect(_card_resource)
 		else:
-			stats.stat_effects.append(_card_resource)
+			stats.status_effects.append(_card_resource)
 	
 	SignalHub.emit_enemy_finished_calculations()
 	#print(BattleManager.player.stats.cur_hp)
@@ -48,12 +50,15 @@ func _on_player_turn_finished() -> void:
 	SignalHub.emit_enemy_turn_finished()
 
 func _on_enemy_turn_finished() -> void:
-	for effect in stats.stat_effects:
-		if effect.is_stat_effector:
+	for effect in stats.status_effects:
+		if effect is StatusEffector:
 			effect.turns -= 1
 		
 		if effect.turns <= 0:
-			stats.stat_effects.erase(effect)
+			effect.on_erased()
+			stats.status_effects.erase(effect)
+		else:
+			effect.apply_effect()
 	
 	_new_next_cards()
 
@@ -63,3 +68,10 @@ func _new_next_cards() -> void:
 	while(draws < max_moves):
 		next_cards.append(enemy_deck.pick_random())
 		draws += 1
+	
+	SignalHub.emit_enemy_finished_calculations()
+
+func new_status_effect(_card_resource: StatusEffector) -> void:
+	if _card_resource.can_be_applied(stats):
+		stats.status_effects.append(_card_resource.duplicate())
+		_card_resource.on_appended()

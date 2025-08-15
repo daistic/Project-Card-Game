@@ -3,11 +3,11 @@ class_name Player
 extends Control
 
 @export var stats: Damageable
-@export var max_char_energy: float = 5.0
-@export var max_ai_energy: float = 5.0
+@export var max_char_energy: int = 5
+@export var max_ai_energy: int = 5
 
-var cur_energy: float = 5.0
-var cur_ai_energy: float = 5.0
+var cur_energy: int = 5
+var cur_ai_energy: int = 5
 
 func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
@@ -24,11 +24,11 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	cur_ai_energy -= _card_resource.ai_energy_cost
 	
 	_card_resource.regenerate_stat(stats)
-	if _card_resource is StatEffector:
+	if _card_resource is StatusEffector:
 		if _card_resource.is_debuff:
-			BattleManager.enemy.stats.stat_effects.append(_card_resource)
+			BattleManager.enemy.new_status_effect(_card_resource)
 		else:
-			stats.stat_effects.append(_card_resource)
+			stats.status_effects.append(_card_resource)
 	
 	SignalHub.emit_player_finished_calculations()
 	#print(BattleManager.enemy.stats.stat_effects)
@@ -44,15 +44,24 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	#print(stats.cur_hp)
 
 func _on_player_turn_finished() -> void:
-	for effect in stats.stat_effects:
-		if effect is StatEffector:
+	for effect in stats.status_effects:
+		if effect is StatusEffector:
 			effect.turns -= 1
 		
 		if effect.turns <= 0:
-			stats.stat_effects.erase(effect)
+			effect.on_erased()
+			stats.status_effects.erase(effect)
+		else:
+			effect.apply_effect()
 	
 	cur_energy = max_char_energy
-	print(stats.stat_effects)
+	SignalHub.emit_update_energy_labels()
+	#print(stats.status_effects)
 
 func _on_enemy_turn_finished() -> void:
 	pass
+
+func new_status_effect(_card_resource: StatusEffector) -> void:
+	if _card_resource.can_be_applied(stats):
+		stats.status_effects.append(_card_resource.duplicate())
+		_card_resource.on_appended()

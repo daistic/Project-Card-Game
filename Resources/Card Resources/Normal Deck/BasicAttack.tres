@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BasicAttack" load_steps=2 format=3 uid="uid://cvc6tl7xk7b0x"]
 
-[ext_resource type="Script" uid="uid://65wkse0t7nf2" path="res://Scripts/Card Interfaces/BasicAttack.gd" id="1_ck714"]
+[ext_resource type="Script" uid="uid://65wkse0t7nf2" path="res://Scripts/Card Interfaces/Normal Deck/BasicAttack.gd" id="1_ck714"]
 
 [resource]
 script = ExtResource("1_ck714")

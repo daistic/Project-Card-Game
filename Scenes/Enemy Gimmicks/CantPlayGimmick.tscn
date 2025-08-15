@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjxedmlw7sqh7"]
+
+[ext_resource type="Script" uid="uid://d35t26pakj3b8" path="res://Scripts/EnemyGimmicks/CantPlayGimmick.gd" id="1_g5m07"]
+
+[node name="CantPlayGimmick" type="Node"]
+script = ExtResource("1_g5m07")

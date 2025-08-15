@@ -10,7 +10,7 @@ extends Resource
 
 var cur_hp: float = max_hp
 var cur_shield: float = 0.0
-var stat_effects: Array[CardInterface] = []
+var status_effects: Array[CardInterface] = []
 
 func card_damage(other_damageable: Damageable, damage: float) -> float:
 	var total_damage = 0.0
@@ -34,7 +34,7 @@ func get_stats_after_status() -> Damageable:
 	sas.crit_rate = crit_rate
 	sas.crit_damage = crit_damage
 	
-	for status in stat_effects:
+	for status in status_effects:
 		status.apply_stat_effect(sas)
 	
 	return sas

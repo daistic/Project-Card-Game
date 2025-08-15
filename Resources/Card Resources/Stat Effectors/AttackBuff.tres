@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackBuff" load_steps=2 format=3 uid="uid://coc8xyap5x0fi"]
 
-[ext_resource type="Script" uid="uid://cx3ovmf6dom73" path="res://Scripts/Card Interfaces/AttackBuff.gd" id="1_a1ryd"]
+[ext_resource type="Script" uid="uid://cx3ovmf6dom73" path="res://Scripts/Card Interfaces/Stat Effectors/AttackBuff.gd" id="1_a1ryd"]
 
 [resource]
 script = ExtResource("1_a1ryd")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsk8qv36sem5q"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_kjkst"]
-[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/BasicHeal.tres" id="2_yucc2"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="2_yucc2"]
 
 [node name="BasicHeal" instance=ExtResource("1_kjkst")]
 card_resource = ExtResource("2_yucc2")

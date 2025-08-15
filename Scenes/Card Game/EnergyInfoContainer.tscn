@@ -17,7 +17,7 @@ theme_override_constants/separation = 15
 script = ExtResource("1_f0uyt")
 
 [node name="EnergyTexture" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 67.5)
 layout_mode = 2
 texture = ExtResource("1_y3jkg")
 expand_mode = 3
@@ -28,10 +28,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 52.0
-offset_top = 11.0
-offset_right = 1092.0
-offset_bottom = 1016.0
+offset_left = 42.0
+offset_top = 6.0
+offset_right = 1022.0
+offset_bottom = 991.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.05, 0.05)
@@ -42,7 +42,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AIEnergyTexture" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(200, 75)
+custom_minimum_size = Vector2(200, 67.5)
 layout_mode = 2
 texture = ExtResource("2_f0uyt")
 expand_mode = 3
@@ -53,10 +53,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 52.0
-offset_top = 11.0
-offset_right = 1092.0
-offset_bottom = 1016.0
+offset_left = 42.0
+offset_top = 6.0
+offset_right = 1002.0
+offset_bottom = 951.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.05, 0.05)

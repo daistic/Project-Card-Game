@@ -1,6 +1,6 @@
 class_name AttackDebuff
 
-extends StatEffector
+extends StatusEffector
 
 @export var debuff: float = 2.5
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://btf6sgat63t8n"]
+
+[ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_isl11"]
+[ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Scenes/Enemy Gimmicks/MorimensGimmick.tscn" id="2_hw58m"]
+[ext_resource type="PackedScene" uid="uid://cg6xohcopeelx" path="res://Scenes/Enemy Gimmicks/EnergyLimitGimmick.tscn" id="3_w6k0u"]
+[ext_resource type="PackedScene" uid="uid://cjxedmlw7sqh7" path="res://Scenes/Enemy Gimmicks/CantPlayGimmick.tscn" id="4_w6k0u"]
+
+[node name="Boss" instance=ExtResource("1_isl11")]
+
+[node name="MorimensGimmick" parent="." index="0" instance=ExtResource("2_hw58m")]
+
+[node name="EnergyLimitGimmick" parent="." index="1" instance=ExtResource("3_w6k0u")]
+
+[node name="CantPlayGimmick" parent="." index="2" instance=ExtResource("4_w6k0u")]

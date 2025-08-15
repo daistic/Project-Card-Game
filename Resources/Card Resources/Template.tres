@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_0kwnb")
 name = "Template"
-desc = ""
+desc = "Does Nothing"
+energy_cost = 0
+ai_energy_cost = 0
 metadata/_custom_type_script = "uid://dmjymo0nvqdas"

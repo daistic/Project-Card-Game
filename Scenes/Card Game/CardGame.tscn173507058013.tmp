@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=15 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqdq1vcy27ket" path="res://Scenes/Card Game/EnergyInfoContainer.tscn" id="8_2jatd"]
 [ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="13_kqytk"]
 [ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Scenes/Card Game/EnemyMessage.tscn" id="14_a4pv0"]
+[ext_resource type="PackedScene" uid="uid://dj1x1p1xscvjl" path="res://Scenes/Bosses/Miniboss1.tscn" id="14_ju3to"]
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -78,8 +79,8 @@ offset_right = 10.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
-max_char_energy = 5
-max_ai_energy = 5
+max_char_energy = 5.0
+max_ai_energy = 5.0
 
 [node name="EnergyInfoContainer" parent="." instance=ExtResource("8_2jatd")]
 layout_mode = 0
@@ -126,5 +127,15 @@ offset_top = 127.0
 offset_right = -17.8555
 offset_bottom = 302.0
 grow_horizontal = 0
+
+[node name="BossBase" parent="." instance=ExtResource("14_ju3to")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

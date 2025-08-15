@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg6xohcopeelx"]
+
+[ext_resource type="Script" uid="uid://cqjen5ix7cuot" path="res://Scripts/EnemyGimmicks/EnergyLimitGimmick.gd" id="1_028pc"]
+
+[node name="EnergyLimitGimmick" type="Node"]
+script = ExtResource("1_028pc")

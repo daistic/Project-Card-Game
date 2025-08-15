@@ -1,6 +1,6 @@
 class_name AttackBuff
 
-extends StatEffector
+extends StatusEffector
 
 @export var buff: float = 0.0
 

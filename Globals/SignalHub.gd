@@ -11,6 +11,8 @@ signal enemy_turn_finished
 signal player_finished_calculations
 signal enemy_finished_calculations
 
+signal update_energy_labels()
+
 func emit_player_ready() -> void:
 	player_ready.emit()
 
@@ -34,3 +36,6 @@ func emit_player_finished_calculations() -> void:
 
 func emit_enemy_finished_calculations() -> void:
 	enemy_finished_calculations.emit()
+
+func emit_update_energy_labels() -> void:
+	update_energy_labels.emit()

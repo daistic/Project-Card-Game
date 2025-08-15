@@ -5,6 +5,7 @@ const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
 const MAXIMUM_CARDS_ON_HAND: int = 5
 
+var game_scene: CardGame = null
 var player: Player = null
 var enemy: Enemy = null
 
@@ -16,6 +17,9 @@ func _enter_tree() -> void:
 
 func draw_player_deck() -> PackedScene:
 	return player_deck.pick_random()
+
+func card_game_ready(scene: CardGame) -> void:
+	game_scene = scene
 
 func new_player(_new_player: Player) -> void:
 	player = _new_player
