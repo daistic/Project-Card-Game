@@ -1,8 +1,10 @@
-extends Node
+extends EnemyGimmick
 
 @export var max_next_application: int = 5
 @export var min_next_application: int = 3
+@export var gimmick_message: String = ""
 
+var is_active: bool = false
 var apply_in : int
 
 func _enter_tree() -> void:
@@ -10,18 +12,23 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	_new_apply_in()
+	SignalHub.emit_gimmick_finished_calculations()
 
 func _new_apply_in() -> void:
 	apply_in = randi_range(min_next_application, max_next_application)
-	print(apply_in)
 
 func _on_enemy_turn_finished() -> void:
-	apply_in -= 1
-	print(apply_in)
-	
-	if apply_in <= 0:
-		_apply_gimmick()
+	if is_active:
+		is_active = false
 		_new_apply_in()
+	else:
+		apply_in -= 1
+		
+		if apply_in <= 0:
+			_apply_gimmick()
+			is_active = true
+	
+	SignalHub.emit_gimmick_finished_calculations()
 
 func _apply_gimmick() -> void:
 	var active_player: Player = BattleManager.player
@@ -31,3 +38,9 @@ func _apply_gimmick() -> void:
 	
 	if BattleManager.game_scene != null:
 		BattleManager.game_scene.clear_cards()
+
+func get_formatted_message() -> String:
+	if is_active:
+		return ""
+	else:
+		return (gimmick_message % apply_in) + "\n"

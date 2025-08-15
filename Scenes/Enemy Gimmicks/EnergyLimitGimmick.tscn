@@ -4,3 +4,5 @@
 
 [node name="EnergyLimitGimmick" type="Node"]
 script = ExtResource("1_028pc")
+gimmick_message = "Energy Malware in %d"
+has_message = true

@@ -4,3 +4,5 @@
 
 [node name="CantPlayGimmick" type="Node"]
 script = ExtResource("1_g5m07")
+gimmick_message = "Turn Malware in %d"
+has_message = true

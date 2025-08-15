@@ -7,8 +7,8 @@
 
 [node name="Boss" instance=ExtResource("1_isl11")]
 
-[node name="MorimensGimmick" parent="." index="0" instance=ExtResource("2_hw58m")]
+[node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_hw58m")]
 
-[node name="EnergyLimitGimmick" parent="." index="1" instance=ExtResource("3_w6k0u")]
+[node name="EnergyLimitGimmick" parent="GimmickMessageControl" index="1" instance=ExtResource("3_w6k0u")]
 
-[node name="CantPlayGimmick" parent="." index="2" instance=ExtResource("4_w6k0u")]
+[node name="CantPlayGimmick" parent="GimmickMessageControl" index="2" instance=ExtResource("4_w6k0u")]

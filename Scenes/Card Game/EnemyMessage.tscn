@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcpgwrtsvm52k"]
+[gd_scene load_steps=7 format=3 uid="uid://dcpgwrtsvm52k"]
 
 [ext_resource type="Texture2D" uid="uid://wgturn8e87rk" path="res://Assets/Textures/Card Game/EnemyMessageBG.png" id="1_jeyfb"]
 [ext_resource type="Script" uid="uid://mbsjrqojn50v" path="res://Scripts/Card Game/EnemyMessage.gd" id="2_3ncut"]
@@ -7,8 +7,13 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_3ncut"]
 font = ExtResource("3_dr2fh")
-font_size = 300
+font_size = 400
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jb6vd"]
+font = ExtResource("3_dr2fh")
+font_size = 400
+font_color = Color(0.956863, 0.94902, 0, 1)
 
 [node name="EnemyMessage" type="TextureRect"]
 self_modulate = Color(1, 1, 1, 0.553)
@@ -62,4 +67,27 @@ text = "Next Enemy Moves:
 - Basic Shield"
 label_settings = SubResource("LabelSettings_3ncut")
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.919
+offset_top = 6.0
+offset_right = 4331.08
+offset_bottom = 1586.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+
+[node name="GimmickLabel" type="Label" parent="ScrollContainer2"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+label_settings = SubResource("LabelSettings_jb6vd")
 autowrap_mode = 2

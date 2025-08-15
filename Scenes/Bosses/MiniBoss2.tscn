@@ -5,4 +5,4 @@
 
 [node name="MiniBoss2" instance=ExtResource("1_cyolx")]
 
-[node name="EnergyLimitGimmick" parent="." index="0" instance=ExtResource("2_p57sm")]
+[node name="EnergyLimitGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_p57sm")]

@@ -1,4 +1,4 @@
-extends Node
+extends EnemyGimmick
 
 @export var malware_deck: Array[PackedScene]
 

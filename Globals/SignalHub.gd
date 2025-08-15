@@ -11,7 +11,9 @@ signal enemy_turn_finished
 signal player_finished_calculations
 signal enemy_finished_calculations
 
-signal update_energy_labels()
+signal update_energy_labels
+signal gimmick_finished_calculations
+signal gimmick_message_sent(message: String)
 
 func emit_player_ready() -> void:
 	player_ready.emit()
@@ -39,3 +41,9 @@ func emit_enemy_finished_calculations() -> void:
 
 func emit_update_energy_labels() -> void:
 	update_energy_labels.emit()
+
+func emit_gimmick_message_sent(_message: String) -> void:
+	gimmick_message_sent.emit(_message)
+
+func emit_gimmick_finished_calculations() -> void:
+	gimmick_finished_calculations.emit()
