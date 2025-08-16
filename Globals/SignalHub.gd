@@ -19,6 +19,7 @@ signal gimmick_message_sent(message: String)
 
 signal battle_won
 signal card_selected
+signal battle_lost
 
 func emit_battle_start() -> void:
 	battle_start.emit()
@@ -61,3 +62,6 @@ func emit_battle_won() -> void:
 
 func emit_card_selected() -> void:
 	card_selected.emit()
+
+func emit_battle_lost() -> void:
+	battle_lost.emit()

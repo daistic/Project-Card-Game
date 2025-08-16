@@ -1,8 +1,9 @@
 extends Node
 
 const CYBER_STORY = preload("res://Resources/StoryScript/CyberStory.tres")
-const BATTLE_WON_SCREEN = preload("res://Scenes/After Battle/BattleWonScreen.tscn")
 const CARD_GAME = preload("res://Scenes/Card Game/CardGame.tscn")
+const BATTLE_WON_SCREEN = preload("res://Scenes/After Battle/BattleWonScreen.tscn")
+const BATTLE_LOST_SCREEN = preload("res://Scenes/After Battle/BattleLostScreen.tscn")
 
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
@@ -49,6 +50,9 @@ func go_to_card_game() -> void:
 
 func go_to_battle_won_screen() -> void:
 	get_tree().change_scene_to_packed(BATTLE_WON_SCREEN)
+
+func go_to_battle_lost_screen() -> void:
+	get_tree().change_scene_to_packed(BATTLE_LOST_SCREEN)
 
 func _boss_check() -> void:
 	battles_to_boss -= 1

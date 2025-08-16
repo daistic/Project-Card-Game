@@ -7,6 +7,7 @@ extends Control
 func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 	SignalHub.battle_won.connect(_on_battle_won)
+	SignalHub.battle_lost.connect(_on_battle_lost)
 
 func _ready() -> void:
 	BattleManager.card_game_ready(self)
@@ -41,6 +42,9 @@ func _draw_cards() -> void:
 
 func _on_battle_won() -> void:
 	BattleManager.go_to_battle_won_screen()
+
+func _on_battle_lost() -> void:
+	BattleManager.go_to_battle_lost_screen()
 
 func _on_end_turn_button_pressed() -> void:
 	clear_cards()

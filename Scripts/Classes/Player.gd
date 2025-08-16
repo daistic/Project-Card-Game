@@ -43,6 +43,7 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 		_card_resource.get_card_damage(enemy_stats))
 	
 	SignalHub.emit_player_finished_calculations()
+	_check_health()
 	#print(stats.cur_hp)
 
 func _on_player_turn_finished() -> void:
@@ -67,3 +68,8 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
 		stats.status_effects.append(_card_resource.duplicate())
 		_card_resource.on_appended()
+
+func _check_health() -> void:
+	if stats.cur_hp <= 0:
+		queue_free()
+		SignalHub.emit_battle_lost()
