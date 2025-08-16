@@ -15,6 +15,9 @@ signal update_energy_labels
 signal gimmick_finished_calculations
 signal gimmick_message_sent(message: String)
 
+signal battle_won
+signal card_selected
+
 func emit_player_ready() -> void:
 	player_ready.emit()
 
@@ -47,3 +50,9 @@ func emit_gimmick_message_sent(_message: String) -> void:
 
 func emit_gimmick_finished_calculations() -> void:
 	gimmick_finished_calculations.emit()
+
+func emit_battle_won() -> void:
+	battle_won.emit()
+
+func emit_card_selected() -> void:
+	card_selected.emit()

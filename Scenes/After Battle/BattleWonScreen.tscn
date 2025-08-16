@@ -1,0 +1,183 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqx2gwnp55vn8"]
+
+[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="1_44g82"]
+[ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
+[ext_resource type="Script" uid="uid://dft06778xc061" path="res://Scripts/After Battles/BattleWonScreen.gd" id="2_j0vtd"]
+[ext_resource type="Texture2D" uid="uid://b6eq3vbfh8quc" path="res://Assets/Textures/After Battle/AfterBattleBlue.png" id="3_guoxy"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_abt7p"]
+[ext_resource type="PackedScene" uid="uid://k8dkcus6ddqc" path="res://Scenes/After Battle/AddToDeckPanel.tscn" id="4_e2ejy"]
+[ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="7_j0vtd"]
+[ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="8_fomr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abt7p"]
+atlas = ExtResource("3_guoxy")
+region = Rect2(75.375, 451.591, 1909.11, 1118.68)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sq75o"]
+font = ExtResource("4_abt7p")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2ejy"]
+font = ExtResource("4_abt7p")
+font_size = 24
+font_color = Color(1, 0.85098, 0.231373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j0vtd"]
+font = ExtResource("4_abt7p")
+font_size = 400
+font_color = Color(0, 0, 0, 1)
+
+[node name="BattleWonScreen" type="TextureRect"]
+self_modulate = Color(0, 0, 0, 0.180392)
+z_index = 15
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_44g82")
+script = ExtResource("2_j0vtd")
+
+[node name="Screen" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.588235)
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5nv4g")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Frame" type="TextureRect" parent="Screen"]
+custom_minimum_size = Vector2(0, 520)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.8931
+offset_top = -48.0
+offset_right = 21.3377
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_abt7p")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Battle Won !!"
+label_settings = SubResource("LabelSettings_sq75o")
+
+[node name="Label2" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Select a card"
+label_settings = SubResource("LabelSettings_e2ejy")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Screen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Spacer" type="Control" parent="Screen/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 5)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Screen/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_44g82")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Screen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 100
+
+[node name="CardsContainer" type="HBoxContainer" parent="Screen/MarginContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 70
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_right = 150
+
+[node name="AddToDeckPanel" parent="Screen/MarginContainer/MarginContainer" instance=ExtResource("4_e2ejy")]
+layout_mode = 2
+
+[node name="NextBattleButton" type="TextureButton" parent="Screen"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.5632
+offset_top = -61.0
+offset_right = 89.4368
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+texture_normal = ExtResource("7_j0vtd")
+texture_disabled = ExtResource("8_fomr0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Screen/NextBattleButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 3286.0
+offset_bottom = 1205.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+text = "Next Battle"
+label_settings = SubResource("LabelSettings_j0vtd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Screen/NextBattleButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcm28ioymhpen"]
+
+[ext_resource type="Texture2D" uid="uid://x8moevkxeelv" path="res://Assets/Textures/After Battle/SelectFrame.png" id="1_2ejoj"]
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_n8h8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ejoj"]
+atlas = ExtResource("1_2ejoj")
+region = Rect2(66.5256, -0.0909996, 401.164, 541.717)
+
+[node name="PickCardButton" type="TextureButton"]
+z_index = 16
+custom_minimum_size = Vector2(100, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 75)
+
+[node name="SelectedFrame" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -100.0
+offset_right = 99.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+texture = SubResource("AtlasTexture_2ejoj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BaseOnScreenCard" parent="." instance=ExtResource("1_n8h8o")]
+layout_mode = 0
+anchors_preset = 0

@@ -31,6 +31,7 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 			stats.status_effects.append(_card_resource)
 	
 	SignalHub.emit_player_finished_calculations()
+	SignalHub.emit_update_energy_labels()
 	#print(BattleManager.enemy.stats.stat_effects)
 	#print(stats.cur_hp)
 

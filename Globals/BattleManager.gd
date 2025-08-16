@@ -1,18 +1,18 @@
 extends Node
 
-const STARTING_DECK: CardPackedList = preload("res://Resources/Cards List/StartingDeck.tres")
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
 const MAXIMUM_CARDS_ON_HAND: int = 5
 
-var game_scene: CardGame = null
-var player: Player = null
-var enemy: Enemy = null
+var game_scene: CardGame
+var player: Player
+var enemy: Enemy
 
 var player_deck: Array[PackedScene] = []
 
 func _enter_tree() -> void:
-	for scene in STARTING_DECK.packed_scenes:
+	var starting_deck: CardPackedList = Global.get_starting_deck()
+	for scene in starting_deck.packed_scenes:
 		player_deck.append(scene)
 
 func draw_player_deck() -> PackedScene:
@@ -26,3 +26,6 @@ func new_player(_new_player: Player) -> void:
 
 func new_enemy(_new_enemy: Enemy) -> void:
 	enemy = _new_enemy
+
+func add_to_player_deck(card_scene: PackedScene) -> void:
+	player_deck.append(card_scene)

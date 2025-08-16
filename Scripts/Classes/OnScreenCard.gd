@@ -11,7 +11,7 @@ extends TextureRect
 static var card_being_dragged: OnScreenCard = null
 
 const NORMAL_SIZE: Vector2 = Vector2(1.0, 1.0)
-const SCALE_SIZE: Vector2 = Vector2(1.25, 1.25)
+const SCALE_SIZE: Vector2 = Vector2(1.5, 1.5)
 const SCALE_TIME: float = 0.15
 const MOUSE_ENTERING: bool = true
 
@@ -31,7 +31,7 @@ func _ready() -> void:
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview_scene: PackedScene = load(self.scene_file_path)
 	var preview_card: OnScreenCard = preview_scene.instantiate()
-	preview_card.size *= SCALE_SIZE
+	preview_card.scale *= SCALE_SIZE
 	
 	var preview = Control.new()
 	preview.add_child(preview_card)
@@ -40,7 +40,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	card_being_dragged = self
 	hide()
 	
-	return card_resource
+	return self
 
 func _tween_scale_animation(is_mouse_entering: bool) -> void:
 	var tween: Tween = create_tween()
