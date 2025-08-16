@@ -17,7 +17,7 @@ func _new_enemy() -> void:
 	var enemy_scene: PackedScene
 	
 	if BattleManager.is_fighting_boss:
-		pass
+		enemy_scene = BattleManager.get_story_boss()
 	else:
 		enemy_scene= Global.get_random_enemy()
 	

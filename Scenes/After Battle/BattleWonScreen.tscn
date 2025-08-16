@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqx2gwnp55vn8"]
+[gd_scene load_steps=14 format=3 uid="uid://bqx2gwnp55vn8"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="1_44g82"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
@@ -22,6 +22,11 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("4_abt7p")
 font_size = 24
 font_color = Color(1, 0.85098, 0.231373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fomr0"]
+font = ExtResource("4_abt7p")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j0vtd"]
 font = ExtResource("4_abt7p")
@@ -117,12 +122,12 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(150, 5)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Screen/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 85)
+[node name="StoryLabel" type="Label" parent="Screen/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_44g82")
+theme_override_font_sizes/font_size = 10000
+label_settings = SubResource("LabelSettings_fomr0")
+autowrap_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="Screen/MarginContainer"]
 layout_mode = 2

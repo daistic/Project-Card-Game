@@ -15,6 +15,10 @@ var enemy: Enemy
 var player_deck: Array[PackedScene] = []
 var battles_to_boss: int
 var is_fighting_boss: bool = false
+var story_index: int = 0
+
+var story_messages_index: int = 0
+var message_index: int = -1
 
 func _enter_tree() -> void:
 	var starting_deck: CardPackedList = Global.get_starting_deck()
@@ -22,7 +26,7 @@ func _enter_tree() -> void:
 		player_deck.append(scene)
 
 func _ready() -> void:
-	battles_to_boss = CYBER_STORY.story[0].battles_to_meet
+	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
 
 func draw_player_deck() -> PackedScene:
 	return player_deck.pick_random()
@@ -40,7 +44,36 @@ func add_to_player_deck(card_scene: PackedScene) -> void:
 	player_deck.append(card_scene)
 
 func go_to_card_game() -> void:
+	_boss_check()
 	get_tree().change_scene_to_packed(CARD_GAME)
 
 func go_to_battle_won_screen() -> void:
 	get_tree().change_scene_to_packed(BATTLE_WON_SCREEN)
+
+func _boss_check() -> void:
+	battles_to_boss -= 1
+	
+	if battles_to_boss < 0:
+		is_fighting_boss = true
+		story_index += 1
+		if story_index < CYBER_STORY.story.size():
+			battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
+	else:
+		is_fighting_boss = false
+
+func get_story_boss() -> PackedScene:
+	return CYBER_STORY.story[story_index - 1].next_boss
+
+func get_formatted_story_message() -> String:
+	message_index += 1
+	
+	if message_index >= CYBER_STORY.story[story_messages_index].story_messages.size():
+		message_index = 0
+		story_messages_index += 1
+	
+	var message: String = CYBER_STORY.story[story_messages_index].story_messages[message_index]
+	
+	if message.contains("%"):
+		message = message % battles_to_boss
+	
+	return message
