@@ -4,10 +4,9 @@ extends TextureRect
 @onready var next_battle_button: TextureButton = $Screen/NextBattleButton
 
 func _enter_tree() -> void:
-	SignalHub.battle_won.connect(_on_battle_won)
 	SignalHub.card_selected.connect(_on_card_selected)
 
-func _on_battle_won() -> void:
+func _ready() -> void:
 	for scene in Global.get_3_random_winner_cards():
 		var instance: OnScreenCard = scene.instantiate()
 		cards_container.add_child(instance)
@@ -20,3 +19,4 @@ func _on_card_selected() -> void:
 
 func _on_texture_button_pressed() -> void:
 	next_battle_button.disabled = true
+	BattleManager.go_to_card_game()

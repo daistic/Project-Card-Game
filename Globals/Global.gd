@@ -3,6 +3,10 @@ extends Node
 const CARDS_LIST: CardsList = preload("res://Resources/Cards List/CardFileList.tres")
 const STARTING_DECK: CardPackedList = preload("res://Resources/Decks/StartingDeck.tres")
 const WINNER_DECK: CardPackedList = preload("res://Resources/Decks/WinnerDeck.tres")
+const ENEMY_LIST: Array[PackedScene] = [
+	preload("res://Scenes/Enemies/Enemy1.tscn"),
+	preload("res://Scenes/Enemies/Enemy2.tscn")
+]
 
 var cards_scene: Array[PackedScene]= []
 var cards_resources: Array[CardInterface] = []
@@ -21,6 +25,9 @@ func _enter_tree() -> void:
 
 func get_starting_deck() -> CardPackedList:
 	return STARTING_DECK
+
+func get_random_enemy() -> PackedScene:
+	return ENEMY_LIST.pick_random()
 
 func get_3_random_winner_cards() -> Array[PackedScene]:
 	var winner_deck: Array[PackedScene] = WINNER_DECK.packed_scenes

@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj1x1p1xscvjl"]
+[gd_scene load_steps=3 format=3 uid="uid://dj1x1p1xscvjl"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_r5s35"]
 [ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Scenes/Enemy Gimmicks/MorimensGimmick.tscn" id="2_bmm7x"]
-[ext_resource type="PackedScene" uid="uid://dr4rony2xrccf" path="res://Scenes/On Screen Cards/Malwares/Malware1.tscn" id="3_l1yw7"]
 
 [node name="Miniboss1" instance=ExtResource("1_r5s35")]
 
 [node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_bmm7x")]
-malware_deck = Array[PackedScene]([ExtResource("3_l1yw7")])
+malware_deck = Array[PackedScene]([])

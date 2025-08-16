@@ -16,6 +16,7 @@ func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
+	stats.reset_stats()
 	BattleManager.new_player(self)
 	SignalHub.emit_player_ready()
 

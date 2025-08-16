@@ -38,3 +38,8 @@ func get_stats_after_status() -> Damageable:
 		status.apply_stat_effect(sas)
 	
 	return sas
+
+func reset_stats() -> void:
+	cur_hp = max_hp
+	cur_shield = 0.0
+	status_effects.clear()

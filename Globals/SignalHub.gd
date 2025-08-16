@@ -1,5 +1,7 @@
 extends Node
 
+signal battle_start
+
 signal player_ready
 signal enemy_ready
 
@@ -17,6 +19,9 @@ signal gimmick_message_sent(message: String)
 
 signal battle_won
 signal card_selected
+
+func emit_battle_start() -> void:
+	battle_start.emit()
 
 func emit_player_ready() -> void:
 	player_ready.emit()

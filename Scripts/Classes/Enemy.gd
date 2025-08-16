@@ -15,6 +15,7 @@ func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
+	stats.reset_stats()
 	BattleManager.new_enemy(self)
 	_new_next_cards()
 	SignalHub.emit_enemy_ready()
@@ -79,4 +80,5 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
+		queue_free()
 		SignalHub.emit_battle_won()
