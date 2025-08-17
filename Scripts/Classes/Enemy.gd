@@ -1,6 +1,9 @@
 class_name Enemy
 
-extends TextureRect
+extends Control
+
+@onready var enemy_bars: BattleBars = $EnemyBarsContainer
+@onready var enemy_message: EnemyMessage = $EnemyMessage
 
 @export var stats: Damageable
 @export var enemy_deck: Array[CardInterface] = []
@@ -15,10 +18,15 @@ func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
-	stats.reset_stats()
+	_enemy_setup()
 	BattleManager.new_enemy(self)
-	_new_next_cards()
 	SignalHub.emit_enemy_ready()
+
+func _enemy_setup() -> void:
+	stats.reset_stats()
+	_new_next_cards()
+	enemy_bars.bars_setup(stats.max_hp, stats.max_shield)
+	_update_enemy_bars()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
 	var player_stats: Damageable = BattleManager.player.stats.get_stats_after_status()
@@ -26,9 +34,8 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	stats.cur_hp -= stats.card_damage(player_stats, 
 		_card_resource.get_card_damage(player_stats))
 	
-	SignalHub.emit_enemy_finished_calculations()
+	_update_enemy_bars()
 	_check_health()
-	#print(stats.cur_hp)
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_card_resource.regenerate_stat(stats)
@@ -39,7 +46,7 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 		else:
 			stats.status_effects.append(_card_resource)
 	
-	SignalHub.emit_enemy_finished_calculations()
+	_update_enemy_bars()
 	#print(BattleManager.player.stats.cur_hp)
 
 func _on_player_turn_finished() -> void:
@@ -71,7 +78,7 @@ func _new_next_cards() -> void:
 		next_cards.append(enemy_deck.pick_random())
 		draws += 1
 	
-	SignalHub.emit_enemy_finished_calculations()
+	enemy_message.update_next_move_label(next_cards)
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
@@ -82,3 +89,6 @@ func _check_health() -> void:
 	if stats.cur_hp <= 0:
 		queue_free()
 		SignalHub.emit_battle_won()
+
+func _update_enemy_bars() -> void:
+	enemy_bars.update_bars(stats.cur_hp, stats.cur_shield)

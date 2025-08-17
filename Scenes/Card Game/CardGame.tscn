@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=4 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
-[ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="13_kqytk"]
-[ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Scenes/Card Game/EnemyMessage.tscn" id="14_a4pv0"]
 
 [node name="CardGame" type="Control"]
 layout_mode = 3
@@ -25,21 +23,3 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 mouse_filter = 1
-
-[node name="EnemyBarsContainer" parent="." instance=ExtResource("13_kqytk")]
-layout_mode = 1
-offset_left = -303.5
-offset_top = 5.0
-offset_right = 303.5
-offset_bottom = 55.0
-
-[node name="EnemyMessage" parent="." instance=ExtResource("14_a4pv0")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -279.0
-offset_top = 86.0
-offset_right = -17.8555
-offset_bottom = 261.0
-grow_horizontal = 0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drxjmjmrf8736"]
 
-[ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Scripts/Card Game/PlayerBars.gd" id="1_3d88r"]
+[ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Scripts/Card Game/BattleBars.gd" id="1_3d88r"]
 [ext_resource type="Texture2D" uid="uid://da36hyt3i1rrv" path="res://Assets/Textures/Card Game/PlayerCircle.png" id="1_nh2up"]
 [ext_resource type="Texture2D" uid="uid://8xeiircuaiih" path="res://Assets/Textures/Card Game/PlayerBar.png" id="2_4iixn"]
 [ext_resource type="Texture2D" uid="uid://dta23cx31yj4g" path="res://Resources/Atlas Images/PlayerHealthBar.tres" id="3_83qdx"]

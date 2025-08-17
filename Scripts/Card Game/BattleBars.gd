@@ -1,6 +1,8 @@
-class_name PlayerBars
+class_name BattleBars
 
 extends HBoxContainer
+
+@export var is_enemy: bool = false
 
 @onready var hp_bar: TextureProgressBar = $VBoxContainer/HPBar
 @onready var shield_bar: TextureProgressBar = $VBoxContainer/ShieldBar

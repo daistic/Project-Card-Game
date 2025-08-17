@@ -3,7 +3,7 @@ class_name Player
 extends Control
 
 @onready var card_container: HBoxContainer = $PlayerInfoContainer/VBoxContainer/CardContainer
-@onready var player_bars: PlayerBars = $PlayerInfoContainer/VBoxContainer/PlayerBarsContainer
+@onready var player_bars: BattleBars = $PlayerInfoContainer/VBoxContainer/PlayerBarsContainer
 @onready var energy_info: EnergyInfo = $EnergyInfoContainer
 
 @export var stats: Damageable
