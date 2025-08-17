@@ -7,7 +7,6 @@ func _enter_tree() -> void:
 	SignalHub.battle_lost.connect(_on_battle_lost)
 
 func _ready() -> void:
-	BattleManager.card_game_ready(self)
 	_new_enemy()
 
 func _new_enemy() -> void:

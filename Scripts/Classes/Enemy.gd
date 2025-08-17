@@ -20,7 +20,6 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	_enemy_setup()
 	BattleManager.new_enemy(self)
-	SignalHub.emit_enemy_ready()
 
 func _enemy_setup() -> void:
 	stats.reset_stats()
