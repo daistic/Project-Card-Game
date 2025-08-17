@@ -2,6 +2,10 @@ class_name Player
 
 extends Control
 
+@onready var card_container: HBoxContainer = $PlayerInfoContainer/VBoxContainer/CardContainer
+@onready var player_bars: PlayerBars = $PlayerInfoContainer/VBoxContainer/PlayerBarsContainer
+@onready var energy_info: EnergyInfo = $EnergyInfoContainer
+
 @export var stats: Damageable
 @export var max_char_energy: int = 5
 @export var max_ai_energy: int = 5
@@ -16,9 +20,16 @@ func _enter_tree() -> void:
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
 
 func _ready() -> void:
-	stats.reset_stats()
+	_player_setup()
 	BattleManager.new_player(self)
 	SignalHub.emit_player_ready()
+
+func _player_setup() -> void:
+	stats.reset_stats()
+	_draw_cards()
+	player_bars.bars_setup(stats.max_hp, stats.max_shield)
+	_update_player_bars()
+	update_player_energy_info()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
 	cur_energy -= _card_resource.energy_cost
@@ -31,10 +42,7 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 		else:
 			stats.status_effects.append(_card_resource)
 	
-	SignalHub.emit_player_finished_calculations()
-	SignalHub.emit_update_energy_labels()
-	#print(BattleManager.enemy.stats.stat_effects)
-	#print(stats.cur_hp)
+	update_player_energy_info()
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	var enemy_stats: Damageable = BattleManager.enemy.stats.get_stats_after_status()
@@ -42,9 +50,8 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	stats.cur_hp -= stats.card_damage(enemy_stats, 
 		_card_resource.get_card_damage(enemy_stats))
 	
-	SignalHub.emit_player_finished_calculations()
+	_update_player_bars()
 	_check_health()
-	#print(stats.cur_hp)
 
 func _on_player_turn_finished() -> void:
 	for effect in stats.status_effects:
@@ -58,11 +65,11 @@ func _on_player_turn_finished() -> void:
 			effect.apply_effect()
 	
 	cur_energy = max_char_energy
-	SignalHub.emit_update_energy_labels()
+	update_player_energy_info()
 	#print(stats.status_effects)
 
 func _on_enemy_turn_finished() -> void:
-	pass
+	_draw_cards()
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
@@ -73,3 +80,25 @@ func _check_health() -> void:
 	if stats.cur_hp <= 0:
 		queue_free()
 		SignalHub.emit_battle_lost()
+
+func clear_cards() -> void:
+	for card in card_container.get_children():
+		card.queue_free()
+
+func _draw_cards() -> void:
+	var draws: int  = 0
+	
+	while(draws < BattleManager.MAXIMUM_CARDS_ON_HAND):
+		var card: OnScreenCard = BattleManager.draw_player_deck().instantiate()
+		card_container.add_child(card)
+		draws += 1
+
+func _update_player_bars() -> void:
+	player_bars.update_bars(stats.cur_hp, stats.cur_shield)
+
+func update_player_energy_info() -> void:
+	energy_info.update_energy_labels(self)
+
+func _on_end_turn_button_pressed() -> void:
+	clear_cards()
+	SignalHub.emit_player_turn_finished()

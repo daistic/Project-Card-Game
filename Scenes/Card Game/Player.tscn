@@ -1,15 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://pkka7c8d3yxx"]
+[gd_scene load_steps=6 format=3 uid="uid://pkka7c8d3yxx"]
 
 [ext_resource type="Script" uid="uid://cpes7tpahpxnj" path="res://Scripts/Classes/Player.gd" id="1_rpqav"]
 [ext_resource type="Resource" uid="uid://by8hi4jjgkg8s" path="res://Resources/Damageables/PlayerDamageable.tres" id="2_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://drxjmjmrf8736" path="res://Scenes/Card Game/PlayerBarsContainer.tscn" id="3_b2bme"]
+[ext_resource type="PackedScene" uid="uid://dqdq1vcy27ket" path="res://Scenes/Card Game/EnergyInfoContainer.tscn" id="4_hdo7l"]
+[ext_resource type="PackedScene" uid="uid://crddmo3afykeq" path="res://Scenes/Card Game/EndTurnButton.tscn" id="5_75wo7"]
 
 [node name="Player" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_rpqav")
 stats = ExtResource("2_kyqiw")
-max_char_energy = null
-max_ai_energy = null
+
+[node name="PlayerInfoContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="CardContainer" type="HBoxContainer" parent="PlayerInfoContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="PlayerBarsContainer" parent="PlayerInfoContainer/VBoxContainer" instance=ExtResource("3_b2bme")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EnergyInfoContainer" parent="." instance=ExtResource("4_hdo7l")]
+layout_mode = 1
+offset_top = -221.0
+offset_bottom = -56.0
+
+[node name="EndTurnButton" parent="." instance=ExtResource("5_75wo7")]
+layout_mode = 1
+offset_left = -199.0
+offset_top = -131.0
+offset_right = -98.9999
+offset_bottom = -81.0
+
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]

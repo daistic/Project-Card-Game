@@ -17,5 +17,7 @@ func _on_enemy_ready() -> void:
 	_on_enemy_finished_calculations()
 
 func _on_enemy_finished_calculations() -> void:
+	var damage_taken: float = hp_bar.value - BattleManager.enemy.stats.cur_hp
+	#EffectHub.display_damage(damage_taken, circle.position, true, )
 	hp_bar.value = BattleManager.enemy.stats.cur_hp
 	shield_bar.value = BattleManager.enemy.stats.cur_shield
