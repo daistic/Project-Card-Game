@@ -3,8 +3,9 @@ class_name Player
 extends Control
 
 @onready var card_container: HBoxContainer = $PlayerInfoContainer/VBoxContainer/CardContainer
-@onready var player_bars: BattleBars = $PlayerInfoContainer/VBoxContainer/PlayerBarsContainer
+@onready var player_bars: BattleBars = $PlayerInfoContainer/VBoxContainer/VBoxContainer/PlayerBarsContainer
 @onready var energy_info: EnergyInfo = $EnergyInfoContainer
+@onready var status_effect_container: StatusEffectGrid = $PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer/StatusEffectContainer
 
 @export var stats: Damageable
 @export var max_char_energy: int = 5
@@ -62,8 +63,10 @@ func _on_player_turn_finished() -> void:
 		if effect.turns <= 0:
 			effect.on_erased()
 			stats.status_effects.erase(effect)
+			status_effect_container.remove_status_effect_ui(effect)
 		else:
 			effect.apply_effect()
+			status_effect_container.update_ui_desc(effect)
 	
 	cur_energy = max_char_energy
 	update_player_energy_info()
@@ -74,8 +77,10 @@ func _on_enemy_turn_finished() -> void:
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
-		stats.status_effects.append(_card_resource.duplicate())
+		var status_effect: StatusEffector = _card_resource.duplicate()
+		stats.status_effects.append(status_effect)
 		_card_resource.on_appended()
+		status_effect_container.add_status_effect_ui(status_effect)
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://pkka7c8d3yxx"]
+[gd_scene load_steps=7 format=3 uid="uid://pkka7c8d3yxx"]
 
 [ext_resource type="Script" uid="uid://cpes7tpahpxnj" path="res://Scripts/Classes/Player.gd" id="1_rpqav"]
 [ext_resource type="Resource" uid="uid://by8hi4jjgkg8s" path="res://Resources/Damageables/PlayerDamageable.tres" id="2_kyqiw"]
 [ext_resource type="PackedScene" uid="uid://drxjmjmrf8736" path="res://Scenes/Card Game/PlayerBarsContainer.tscn" id="3_b2bme"]
+[ext_resource type="PackedScene" uid="uid://dmtoneowdgmpv" path="res://Scenes/Card Game/StatusEffectContainer.tscn" id="4_75wo7"]
 [ext_resource type="PackedScene" uid="uid://dqdq1vcy27ket" path="res://Scenes/Card Game/EnergyInfoContainer.tscn" id="4_hdo7l"]
 [ext_resource type="PackedScene" uid="uid://crddmo3afykeq" path="res://Scenes/Card Game/EndTurnButton.tscn" id="5_75wo7"]
 
@@ -40,10 +41,25 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="PlayerBarsContainer" parent="PlayerInfoContainer/VBoxContainer" instance=ExtResource("3_b2bme")]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerInfoContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -15
+
+[node name="PlayerBarsContainer" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_b2bme")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="StatusEffectContainer" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_75wo7")]
+layout_mode = 2
+size_flags_horizontal = 1
 
 [node name="EnergyInfoContainer" parent="." instance=ExtResource("4_hdo7l")]
 layout_mode = 1

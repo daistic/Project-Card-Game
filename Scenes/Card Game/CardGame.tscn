@@ -16,8 +16,6 @@ script = ExtResource("1_5pjvo")
 
 [node name="Player" parent="." instance=ExtResource("5_oxm1c")]
 layout_mode = 1
-max_char_energy = 5
-max_ai_energy = 5
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]
 layout_mode = 1
