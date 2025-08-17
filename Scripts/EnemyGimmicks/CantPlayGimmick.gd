@@ -36,8 +36,7 @@ func _apply_gimmick() -> void:
 	if active_player == null:
 		await SignalHub.player_ready
 	
-	if BattleManager.game_scene != null:
-		BattleManager.game_scene.clear_cards()
+	active_player.clear_cards()
 
 func get_formatted_message() -> String:
 	if is_active:

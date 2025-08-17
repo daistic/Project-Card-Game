@@ -78,7 +78,6 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
-		queue_free()
 		SignalHub.emit_battle_lost()
 
 func clear_cards() -> void:
