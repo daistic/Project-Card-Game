@@ -40,15 +40,16 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 		if _card_resource.is_debuff:
 			BattleManager.enemy.new_status_effect(_card_resource)
 		else:
-			stats.status_effects.append(_card_resource)
+			new_status_effect(_card_resource)
 	
+	_update_player_bars()
 	update_player_energy_info()
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	var enemy_stats: Damageable = BattleManager.enemy.stats.get_stats_after_status()
 	
 	stats.cur_hp -= stats.card_damage(enemy_stats, 
-		_card_resource.get_card_damage(enemy_stats))
+		_card_resource.get_card_damage(enemy_stats), player_bars.circle, false)
 	
 	_update_player_bars()
 	_check_health()

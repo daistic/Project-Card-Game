@@ -14,6 +14,7 @@ offset_left = -330.5
 offset_right = 330.5
 offset_bottom = 50.0
 grow_horizontal = 2
+pivot_offset = Vector2(330.5, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = -15

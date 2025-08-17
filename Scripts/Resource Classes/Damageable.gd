@@ -12,8 +12,11 @@ var cur_hp: float = max_hp
 var cur_shield: float = 0.0
 var status_effects: Array[CardInterface] = []
 
-func card_damage(other_damageable: Damageable, damage: float) -> float:
-	var total_damage = 0.0
+func card_damage(other_damageable: Damageable, damage: float, 
+		display_spawnpoint: Node, enemy_damaged: bool) -> float:
+	
+	var total_damage: float = 0.0
+	var is_crit: bool = false
 	
 	total_damage += ((other_damageable.atk * damage) / 
 		(get_stats_after_status().cur_shield + 1.0))
@@ -22,7 +25,9 @@ func card_damage(other_damageable: Damageable, damage: float) -> float:
 	if randf_range(BattleManager.MINIMUM_CRIT_RATE, 
 		BattleManager.MAXIMUM_CRIT_RATE) < other_damageable.crit_rate:
 			total_damage *= other_damageable.crit_damage
+			is_crit = true
 	
+	EffectHub.display_damage(total_damage, display_spawnpoint, enemy_damaged, is_crit)
 	return total_damage
 
 func get_stats_after_status() -> Damageable:

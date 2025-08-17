@@ -2,10 +2,11 @@ class_name BattleBars
 
 extends HBoxContainer
 
-@export var is_enemy: bool = false
-
+@onready var circle: TextureRect = $Circle
 @onready var hp_bar: TextureProgressBar = $VBoxContainer/HPBar
 @onready var shield_bar: TextureProgressBar = $VBoxContainer/ShieldBar
+
+@export var is_enemy: bool = false
 
 func bars_setup(max_hp: float, max_shield: float) -> void:
 	hp_bar.max_value = max_hp

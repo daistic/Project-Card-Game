@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cn0ab4lstqe2r" path="res://Resources/Atlas Images/ShieldBar.tres" id="4_3d88r"]
 
 [node name="PlayerBarsContainer" type="HBoxContainer"]
+pivot_offset = Vector2(293, 25)
 theme_override_constants/separation = -15
 script = ExtResource("1_3d88r")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Circle" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 texture = ExtResource("1_nh2up")
@@ -44,5 +45,3 @@ texture_progress = ExtResource("4_3d88r")
 [node name="Spacer" type="Control" parent="."]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
