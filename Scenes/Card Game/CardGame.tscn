@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=5 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
+[ext_resource type="Script" uid="uid://j4o7hdy1nvrq" path="res://Scripts/Card Game/GameCamera.gd" id="4_3f11k"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
 
 [node name="CardGame" type="Control"]
@@ -23,3 +24,7 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 mouse_filter = 1
+
+[node name="GameCamera" type="Camera2D" parent="." groups=["Camera"]]
+anchor_mode = 0
+script = ExtResource("4_3f11k")

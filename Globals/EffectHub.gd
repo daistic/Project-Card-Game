@@ -18,6 +18,9 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 	number.label_settings.font_color = color
 	parent.call_deferred("add_child", number)
 	
+	if enemy_damaged == false && value > 0:
+		trigger_camera_shake()
+	
 	await number.resized
 	number.pivot_offset = Vector2(number.size / 2)
 	
@@ -37,3 +40,7 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 	
 	await tween.finished
 	number.queue_free()
+
+func trigger_camera_shake() -> void:
+	var game_camera: GameCamera = get_tree().get_first_node_in_group("Camera")
+	game_camera.trigger_shake()
