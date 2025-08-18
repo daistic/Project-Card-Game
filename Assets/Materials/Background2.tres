@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4e5brbpd3oyi"]
+
+[ext_resource type="Shader" uid="uid://5upnbje8jd0f" path="res://Shaders/Background2.gdshader" id="1_moyyd"]
+
+[resource]
+shader = ExtResource("1_moyyd")
+shader_parameter/horizontal_oscillation = 0.01
+shader_parameter/vertical_oscillation = 0.01
+shader_parameter/scanline_wave_frequency = 40.0
+shader_parameter/scanline_wave_speed = 2.0
+shader_parameter/alternate_direction = true
+shader_parameter/viewport_size = Vector2(0, 0)
+shader_parameter/hue_shift_speed = 0.5
+shader_parameter/hue_strength = 1.0
