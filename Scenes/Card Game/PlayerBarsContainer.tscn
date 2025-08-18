@@ -1,17 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://drxjmjmrf8736"]
 
-[ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Scripts/Card Game/PlayerBars.gd" id="1_3d88r"]
+[ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Scripts/Card Game/BattleBars.gd" id="1_3d88r"]
 [ext_resource type="Texture2D" uid="uid://da36hyt3i1rrv" path="res://Assets/Textures/Card Game/PlayerCircle.png" id="1_nh2up"]
 [ext_resource type="Texture2D" uid="uid://8xeiircuaiih" path="res://Assets/Textures/Card Game/PlayerBar.png" id="2_4iixn"]
 [ext_resource type="Texture2D" uid="uid://dta23cx31yj4g" path="res://Resources/Atlas Images/PlayerHealthBar.tres" id="3_83qdx"]
 [ext_resource type="Texture2D" uid="uid://cn0ab4lstqe2r" path="res://Resources/Atlas Images/ShieldBar.tres" id="4_3d88r"]
 
 [node name="PlayerBarsContainer" type="HBoxContainer"]
+pivot_offset = Vector2(293, 25)
 theme_override_constants/separation = -15
 script = ExtResource("1_3d88r")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 50)
+[node name="Circle" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 texture = ExtResource("1_nh2up")
 expand_mode = 3
@@ -24,7 +25,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Spacer" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 3)
+custom_minimum_size = Vector2(0, 7.5)
 layout_mode = 2
 
 [node name="HPBar" type="TextureProgressBar" parent="VBoxContainer"]
@@ -41,8 +42,10 @@ nine_patch_stretch = true
 texture_under = ExtResource("2_4iixn")
 texture_progress = ExtResource("4_3d88r")
 
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
 [node name="Spacer" type="Control" parent="."]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,26 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://c83dprq02wfgx"]
 
-[ext_resource type="Script" uid="uid://cd7nhxu43jxyc" path="res://Scripts/Card Game/EnemyBars.gd" id="2_5evvn"]
+[ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Scripts/Card Game/BattleBars.gd" id="1_5evvn"]
 [ext_resource type="Texture2D" uid="uid://c66qcrcx0h7cl" path="res://Assets/Textures/Card Game/EnemyCircle.png" id="2_srgcn"]
 [ext_resource type="Texture2D" uid="uid://cxxdk1hvsr4fo" path="res://Assets/Textures/Card Game/EnemyBar.png" id="3_cfate"]
 [ext_resource type="Texture2D" uid="uid://mrofwy8xb14r" path="res://Resources/Atlas Images/EnemyHealthBar.tres" id="4_cfate"]
 [ext_resource type="Texture2D" uid="uid://cn0ab4lstqe2r" path="res://Resources/Atlas Images/ShieldBar.tres" id="4_kov8w"]
 
 [node name="EnemyBarsContainer" type="HBoxContainer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -330.5
-offset_right = 330.5
-offset_bottom = 50.0
-grow_horizontal = 2
+offset_right = 581.0
+offset_bottom = 55.0
+pivot_offset = Vector2(330.5, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = -15
-script = ExtResource("2_5evvn")
+theme_override_constants/separation = -20
+script = ExtResource("1_5evvn")
+is_enemy = true
 
 [node name="Circle" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(61.707, 55)
 layout_mode = 2
 texture = ExtResource("2_srgcn")
 expand_mode = 3
@@ -33,7 +30,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Spacer" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 2)
+custom_minimum_size = Vector2(0, 7.5)
 layout_mode = 2
 
 [node name="HPBar" type="TextureProgressBar" parent="VBoxContainer"]
@@ -52,7 +49,7 @@ texture_under = ExtResource("3_cfate")
 texture_progress = ExtResource("4_kov8w")
 
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 1)
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
 [node name="Spacer" type="Control" parent="."]

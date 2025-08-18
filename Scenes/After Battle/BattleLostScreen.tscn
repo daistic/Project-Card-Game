@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b1cr5r8tflf14"]
 
-[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/white_texture.png" id="1_jagbd"]
+[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_jagbd"]
 [ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Scripts/After Battles/BattleLostScreen.gd" id="2_211x1"]
 [ext_resource type="Texture2D" uid="uid://qwkgjcyqiqdn" path="res://Assets/Textures/After Battle/AfterBattleRedBG.png" id="2_mbpu6"]
 [ext_resource type="Texture2D" uid="uid://bv0igp0g5dyf2" path="res://Assets/Textures/After Battle/AfterBattleRed.png" id="3_211x1"]

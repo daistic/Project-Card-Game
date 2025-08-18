@@ -48,7 +48,7 @@ func _new_apply_in() -> void:
 	apply_in = randi_range(min_next_application, max_next_application)
 
 func _apply_gimmick() -> void:
-	var active_player:Player = BattleManager.player
+	var active_player: Player = BattleManager.player
 	
 	if active_player == null:
 		await SignalHub.player_ready
