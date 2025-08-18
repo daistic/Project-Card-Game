@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=3 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
+[ext_resource type="LabelSettings" uid="uid://yd1isjiche4c" path="res://Resources/Fonts/Roboto_Black_24.tres" id="2_c7oo3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,7 +11,81 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.703
+anchor_top = 0.397
+anchor_right = 0.938
+anchor_bottom = 0.562
+offset_left = 0.143982
+offset_top = -0.256012
+offset_right = 0.42395
+offset_bottom = -0.175995
+texture_normal = ExtResource("1_cdkru")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/Start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.967
+anchor_bottom = 0.86
+offset_right = -0.0570068
+offset_bottom = -0.0200272
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = ExtResource("2_c7oo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="upgrade" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.703
+anchor_top = 0.582
+anchor_right = 0.938
+anchor_bottom = 0.747
+offset_left = 0.143982
+offset_top = -0.136017
+offset_right = 0.42395
+offset_bottom = -0.0559998
+texture_normal = ExtResource("1_cdkru")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/upgrade"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.967
+anchor_bottom = 0.86
+offset_right = -0.0570068
+offset_bottom = -0.0200272
+grow_horizontal = 2
+grow_vertical = 2
+text = "Upgrade"
+label_settings = ExtResource("2_c7oo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.703
@@ -25,54 +100,58 @@ texture_normal = ExtResource("1_cdkru")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Start" type="TextureButton" parent="."]
+[node name="Label" type="Label" parent="Control/Quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.967
+anchor_bottom = 0.86
+offset_right = -0.0570068
+offset_bottom = -0.0200272
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = ExtResource("2_c7oo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.703
 anchor_top = 0.773
 anchor_right = 0.938
 anchor_bottom = 0.938
-offset_left = 0.143982
-offset_top = -243.904
-offset_right = 0.42395
-offset_bottom = -243.824
+offset_left = -809.856
+offset_top = 40.096
+offset_right = -809.576
+offset_bottom = 40.176
 texture_normal = ExtResource("1_cdkru")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="?" type="TextureButton" parent="."]
+[node name="Label" type="Label" parent="Control/Credit"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.703
-anchor_top = 0.773
-anchor_right = 0.938
-anchor_bottom = 0.938
-offset_left = 0.143982
-offset_top = -123.904
-offset_right = 0.42395
-offset_bottom = -123.824
+anchor_right = 0.967
+anchor_bottom = 0.86
+offset_right = -0.0570068
+offset_bottom = -0.0200272
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credit"
+label_settings = ExtResource("2_c7oo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Setting" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.874
+anchor_right = 0.999
+anchor_bottom = 0.219
+offset_left = 0.151978
+offset_right = 0.151855
+offset_bottom = 0.0879974
 texture_normal = ExtResource("1_cdkru")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="AI or sum to fill" type="TextureRect" parent="."]
-offset_left = 17.0
-offset_top = 23.0
-offset_right = 268.0
-offset_bottom = 377.0
-texture = ExtResource("1_cdkru")
-expand_mode = 1
-
-[node name="Chara or sum to fill" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 272.0
-offset_right = 677.0
-offset_bottom = 620.0
-texture = ExtResource("1_cdkru")
-expand_mode = 1
-
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
