@@ -12,7 +12,7 @@ theme_override_constants/separation = -15
 script = ExtResource("1_3d88r")
 
 [node name="Circle" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
 texture = ExtResource("1_nh2up")
 expand_mode = 3

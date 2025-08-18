@@ -2,8 +2,9 @@ class_name Enemy
 
 extends Control
 
-@onready var enemy_bars: BattleBars = $EnemyBarsContainer
+@onready var enemy_bars: BattleBars = $VBoxContainer/EnemyBarsContainer
 @onready var enemy_message: EnemyMessage = $EnemyMessage
+@onready var status_effect_container: StatusEffectGrid = $VBoxContainer/HBoxContainer/StatusEffectGrid
 
 @export var stats: Damageable
 @export var enemy_deck: Array[CardInterface] = []
@@ -65,8 +66,10 @@ func _on_enemy_turn_finished() -> void:
 		if effect.turns <= 0:
 			effect.on_erased()
 			stats.status_effects.erase(effect)
+			status_effect_container.remove_status_effect_ui(effect)
 		else:
 			effect.apply_effect()
+			status_effect_container.update_ui_desc(effect)
 	
 	_new_next_cards()
 
@@ -81,8 +84,10 @@ func _new_next_cards() -> void:
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
-		stats.status_effects.append(_card_resource.duplicate())
+		var status_effect: StatusEffector = _card_resource.duplicate()
+		stats.status_effects.append(status_effect)
 		_card_resource.on_appended()
+		status_effect_container.add_status_effect_ui(status_effect)
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:

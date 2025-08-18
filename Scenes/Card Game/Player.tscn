@@ -54,7 +54,7 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="Spacer" type="Control" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(65, 0)
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 
 [node name="StatusEffectContainer" parent="PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_75wo7")]
