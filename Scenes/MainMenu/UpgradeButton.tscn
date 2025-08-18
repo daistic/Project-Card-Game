@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4skj15t6oxsa"]
+
+[ext_resource type="Script" uid="uid://dj6c8xe1mxo3m" path="res://Scripts/MainMenu/UpgradeButton.gd" id="1_q20vr"]
+[ext_resource type="Texture2D" uid="uid://da36hyt3i1rrv" path="res://Assets/Textures/Card Game/PlayerCircle.png" id="2_cdn6r"]
+[ext_resource type="LabelSettings" uid="uid://d2w2x86vkrj6y" path="res://Resources/Fonts/Stat.tres" id="3_sn4m5"]
+
+[node name="UpgradeButton" type="Control" node_paths=PackedStringArray("logo")]
+layout_mode = 3
+anchor_right = 1.002
+anchor_bottom = 0.549
+offset_right = -0.304077
+offset_bottom = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_q20vr")
+logo = NodePath("HBoxContainer/Logo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.104
+anchor_right = 1.0
+anchor_bottom = 1.108
+offset_top = 0.0160007
+offset_bottom = -0.132019
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Logo" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_cdn6r")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="minus" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_cdn6r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/minus"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+123"
+label_settings = ExtResource("3_sn4m5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "1"
+label_settings = ExtResource("3_sn4m5")
+
+[node name="Add" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_cdn6r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer/Add"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-123"
+label_settings = ExtResource("3_sn4m5")
+horizontal_alignment = 1
+vertical_alignment = 1

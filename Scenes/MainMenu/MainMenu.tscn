@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=5 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
+[ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Scripts/MainMenu/MainMenu.gd" id="1_kpx3y"]
 [ext_resource type="LabelSettings" uid="uid://yd1isjiche4c" path="res://Resources/Fonts/Roboto_Black_24.tres" id="2_c7oo3"]
+[ext_resource type="PackedScene" uid="uid://c36v4r06gb0ys" path="res://Scenes/MainMenu/UpgradeMenu.tscn" id="3_sg7ab"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("Main", "Upgrade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kpx3y")
+Main = NodePath("Control")
+Upgrade = NodePath("UpgradeMenu")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -155,3 +160,7 @@ offset_bottom = 0.0879974
 texture_normal = ExtResource("1_cdkru")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("3_sg7ab")]
+visible = false
+layout_mode = 1
