@@ -34,6 +34,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview_card.scale *= SCALE_SIZE
 	
 	var preview = Control.new()
+	preview.z_index = 1
 	preview.add_child(preview_card)
 	set_drag_preview(preview)
 	
