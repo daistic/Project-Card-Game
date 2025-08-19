@@ -46,9 +46,12 @@ func _tween_scale_animation(is_mouse_entering: bool) -> void:
 	var tween: Tween = create_tween()
 	
 	if is_mouse_entering:
+		z_index += 1
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(self, "scale", SCALE_SIZE, SCALE_TIME)
 	else:
+		z_index -= 1
+		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 		tween.tween_property(self, "scale", NORMAL_SIZE, SCALE_TIME)
 
 func _on_card_used(_resource: CardInterface) -> void:
