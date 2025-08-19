@@ -41,6 +41,25 @@ stretch_mode = 5
 script = ExtResource("2_hm6hs")
 card_resource = ExtResource("3_xmtfg")
 
+[node name="Shadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = -1
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.013916
+offset_top = 8.0
+offset_right = -0.013916
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vbrjr")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="EnergyCostBar" type="TextureProgressBar" parent="."]
 use_parent_material = true
 layout_mode = 1

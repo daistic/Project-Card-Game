@@ -5,15 +5,17 @@ extends TextureRect
 @onready var title_label: Label = $TitleLabel
 @onready var desc_label: RichTextLabel = $DescLabel
 @onready var energy_cost_bar: TextureProgressBar = $EnergyCostBar
+@onready var shadow: TextureRect = $Shadow
 
 @export var card_resource: CardInterface
 
 static var card_being_dragged: OnScreenCard = null
 
 const NORMAL_SIZE: Vector2 = Vector2(1.0, 1.0)
-const SCALE_SIZE: Vector2 = Vector2(1.5, 1.5)
+const SCALE_SIZE: Vector2 = Vector2(1.4, 1.4)
 const SCALE_TIME: float = 0.15
 const MOUSE_ENTERING: bool = true
+const MAX_SHADOW_OFFSET: float = 15.0
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Mouse Click") and not visible:
@@ -27,6 +29,15 @@ func _ready() -> void:
 		queue_free()
 	
 	_setup_childrens()
+
+func _process(_delta: float) -> void:
+	_handle_shadow()
+
+func _handle_shadow() -> void:
+	var center: Vector2 = get_viewport_rect().size / 2.0
+	var distance: float = global_position.x - center.x
+	
+	shadow.position.x = lerp(0.0, -sign(distance) * MAX_SHADOW_OFFSET, abs(distance/(center.x)))
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview_scene: PackedScene = load(self.scene_file_path)
