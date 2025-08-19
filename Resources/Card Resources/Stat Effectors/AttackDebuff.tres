@@ -8,7 +8,8 @@ debuff = 2.5
 is_debuff = true
 turns = 3
 name = "Attack Debuff"
-desc = "Debuff [color=yellow] %.1f [/color] enemy's attack for [color=yellow] %d [/color] turns"
+desc = "Debuff [color=red] %.1f [/color] of enemy's attack for [color=khaki] %d [/color] turns"
 energy_cost = 0
 ai_energy_cost = 0
+is_malware = false
 metadata/_custom_type_script = "uid://tf5japeb3ugs"

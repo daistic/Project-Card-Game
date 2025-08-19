@@ -1,13 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqx2gwnp55vn8"]
+[gd_scene load_steps=17 format=3 uid="uid://bqx2gwnp55vn8"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_44g82"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
 [ext_resource type="Script" uid="uid://dft06778xc061" path="res://Scripts/After Battles/BattleWonScreen.gd" id="2_j0vtd"]
+[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Assets/Materials/Background4tres.tres" id="3_24k56"]
 [ext_resource type="Texture2D" uid="uid://b6eq3vbfh8quc" path="res://Assets/Textures/After Battle/AfterBattleBlue.png" id="3_guoxy"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_abt7p"]
 [ext_resource type="PackedScene" uid="uid://k8dkcus6ddqc" path="res://Scenes/After Battle/AddToDeckPanel.tscn" id="4_e2ejy"]
+[ext_resource type="Material" uid="uid://da72dgkjq37te" path="res://Assets/Materials/BaseRetroSunMaterial.tres" id="4_o5dal"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="7_j0vtd"]
 [ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="8_fomr0"]
+[ext_resource type="Shader" uid="uid://dbegqncfmmq0o" path="res://Shaders/VHSShader.gdshader" id="9_rthsc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abt7p"]
 atlas = ExtResource("3_guoxy")
@@ -23,15 +26,34 @@ font = ExtResource("4_abt7p")
 font_size = 24
 font_color = Color(1, 0.85098, 0.231373, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_fomr0"]
-font = ExtResource("4_abt7p")
-font_size = 24
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_j0vtd"]
 font = ExtResource("4_abt7p")
 font_size = 400
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24k56"]
+shader = ExtResource("9_rthsc")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.026
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.01
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 6.0
+shader_parameter/roll_size = 8.0
+shader_parameter/roll_variation = 5.0
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.1
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.1
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.025
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.125
+shader_parameter/vignette_opacity = 0.25
 
 [node name="BattleWonScreen" type="TextureRect"]
 self_modulate = Color(0, 0, 0, 0.196078)
@@ -45,8 +67,20 @@ mouse_filter = 0
 texture = ExtResource("1_44g82")
 script = ExtResource("2_j0vtd")
 
+[node name="Background" type="ColorRect" parent="."]
+z_index = -5
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("3_24k56")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Screen" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.588235)
+material = ExtResource("4_o5dal")
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -122,11 +156,13 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(150, 5)
 layout_mode = 2
 
-[node name="StoryLabel" type="Label" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="StoryLabel" type="RichTextLabel" parent="Screen/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10000
-label_settings = SubResource("LabelSettings_fomr0")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_abt7p")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 autowrap_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="Screen/MarginContainer"]
@@ -184,5 +220,18 @@ text = "Next Battle"
 label_settings = SubResource("LabelSettings_j0vtd")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PostProcessing" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="PostProcessing"]
+material = SubResource("ShaderMaterial_24k56")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Screen/NextBattleButton" to="." method="_on_texture_button_pressed"]
