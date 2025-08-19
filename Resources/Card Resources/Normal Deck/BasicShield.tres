@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_e68v0")
-shield_amount = 3.0
-name = "Shield"
-desc = "Add [color=darkgray] %.1f [/color] to your current shield"
+shield_amount = 0.15
+name = "Defend"
+desc = "Add [color=darkgray] %.2f [/color] to your current shield"
 energy_cost = 2
 ai_energy_cost = 0
 is_malware = false

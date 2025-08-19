@@ -20,6 +20,10 @@ func degenerate_stat(_damageable: Damageable) -> void:
 	#does nothing
 	pass
 
+func generate_energy(_energy: Variant, _ai_energy: Variant) -> void:
+	#does nothing
+	pass
+
 func get_desc_format() -> Array:
 	#does nothing
 	return []

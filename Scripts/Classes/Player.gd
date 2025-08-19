@@ -11,8 +11,14 @@ extends Control
 @export var max_char_energy: int = 5
 @export var max_ai_energy: int = 5
 
-var cur_energy: int = 5
-var cur_ai_energy: int = 5
+class Energy:
+	var current: int = 0
+	
+	func _init(max_value: int) -> void:
+		current = max_value
+
+var energy: Energy = Energy.new(max_char_energy)
+var ai_energy: Energy = Energy.new(max_ai_energy)
 
 func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
@@ -33,10 +39,11 @@ func _player_setup() -> void:
 	update_player_energy_info()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
-	cur_energy -= _card_resource.energy_cost
-	cur_ai_energy -= _card_resource.ai_energy_cost
+	energy.current -= _card_resource.energy_cost
+	ai_energy.current -= _card_resource.ai_energy_cost
 	
 	_card_resource.regenerate_stat(stats)
+	_card_resource.generate_energy(energy, ai_energy)
 	if _card_resource is StatusEffector:
 		if _card_resource.is_debuff:
 			BattleManager.enemy.new_status_effect(_card_resource)
@@ -45,6 +52,7 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	
 	_update_player_bars()
 	update_player_energy_info()
+	print(ai_energy.current)
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_card_resource.degenerate_stat(stats)
@@ -69,7 +77,7 @@ func _on_player_turn_finished() -> void:
 			effect.apply_effect()
 			status_effect_container.update_ui_desc(effect)
 	
-	cur_energy = max_char_energy
+	energy.current = max_char_energy
 	update_player_energy_info()
 	#print(stats.status_effects)
 

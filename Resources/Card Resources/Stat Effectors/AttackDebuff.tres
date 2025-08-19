@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource("1_yehl0")
-debuff = 2.5
+debuff = 1.25
 is_debuff = true
-turns = 3
-name = "Attack Debuff"
+turns = 2
+name = "Jam Signal"
 desc = "Debuff [color=red] %.1f [/color] of enemy's attack for [color=khaki] %d [/color] turns"
-energy_cost = 0
+energy_cost = 3
 ai_energy_cost = 0
 is_malware = false
 metadata/_custom_type_script = "uid://tf5japeb3ugs"

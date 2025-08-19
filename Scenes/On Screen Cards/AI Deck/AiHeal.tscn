@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2sdyp32t1deg"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_li0tw"]
+[ext_resource type="Script" uid="uid://cepurbefprwea" path="res://Scripts/Card Interfaces/AI Deck/AIHeal.gd" id="2_2jgtq"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Resources/Gradients/AiEnergyBar.tres" id="3_khrlt"]
+
+[sub_resource type="Resource" id="Resource_khrlt"]
+script = ExtResource("2_2jgtq")
+heal_amount = 17.5
+shield_amount = 0.2
+name = "AI Recovery"
+desc = "Recover [color=mediumseagreen] %.1f [/color] HP and [color=darkgray] %.1f [/color] shield"
+energy_cost = 0
+ai_energy_cost = 4
+is_malware = false
+metadata/_custom_type_script = "uid://cepurbefprwea"
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xwbq7"]
+gradient = ExtResource("3_khrlt")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="AIHeal" instance=ExtResource("1_li0tw")]
+card_resource = SubResource("Resource_khrlt")
+
+[node name="EnergyCostBar" parent="." index="0"]
+texture_progress = SubResource("GradientTexture2D_xwbq7")

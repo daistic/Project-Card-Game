@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardPackedList" load_steps=8 format=3 uid="uid://bptta63f664w6"]
+[gd_resource type="Resource" script_class="CardPackedList" load_steps=12 format=3 uid="uid://bptta63f664w6"]
 
 [ext_resource type="Script" uid="uid://1lgqu12mp6d2" path="res://Scripts/Resource Classes/CardsPackedList.gd" id="1_8xhis"]
 [ext_resource type="PackedScene" uid="uid://bgajc7e6x10uv" path="res://Scenes/On Screen Cards/Stat Effectors/AttackBuff.tscn" id="1_p1dc0"]
@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b8oqih0kmstpb" path="res://Scenes/On Screen Cards/Normal Deck/BasicShield.tscn" id="4_w1jkt"]
 [ext_resource type="PackedScene" uid="uid://bxt63u2qao8aw" path="res://Scenes/On Screen Cards/Stat Effectors/AttackDebuff.tscn" id="5_6241h"]
 [ext_resource type="PackedScene" uid="uid://be5kk5vaqgkr1" path="res://Scenes/On Screen Cards/Normal Deck/ShieldDown.tscn" id="6_68t0k"]
+[ext_resource type="PackedScene" uid="uid://7s87f3o5s4cq" path="res://Scenes/On Screen Cards/Normal Deck/AiEnergyUp.tscn" id="7_c2e5b"]
+[ext_resource type="PackedScene" uid="uid://dxf1xugkrph3d" path="res://Scenes/On Screen Cards/Normal Deck/CritDmgBuff.tscn" id="8_ign6i"]
+[ext_resource type="PackedScene" uid="uid://ddo08wwuin2xp" path="res://Scenes/On Screen Cards/AI Deck/AiAttack.tscn" id="9_g834o"]
+[ext_resource type="PackedScene" uid="uid://c2sdyp32t1deg" path="res://Scenes/On Screen Cards/AI Deck/AiHeal.tscn" id="10_lci8q"]
 
 [resource]
 script = ExtResource("1_8xhis")
-packed_scenes = Array[PackedScene]([ExtResource("1_p1dc0"), ExtResource("2_000lq"), ExtResource("3_7ijsp"), ExtResource("4_w1jkt"), ExtResource("5_6241h"), ExtResource("6_68t0k")])
+packed_scenes = Array[PackedScene]([ExtResource("2_000lq"), ExtResource("4_w1jkt"), ExtResource("3_7ijsp"), ExtResource("6_68t0k"), ExtResource("7_c2e5b"), ExtResource("1_p1dc0"), ExtResource("5_6241h"), ExtResource("8_ign6i"), ExtResource("9_g834o"), ExtResource("10_lci8q")])
 metadata/_custom_type_script = "uid://1lgqu12mp6d2"

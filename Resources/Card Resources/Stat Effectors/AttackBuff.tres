@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_a1ryd")
-buff = 2.5
+buff = 1.25
 is_debuff = false
-turns = 3
-name = "Attack Buff"
+turns = 2
+name = "Improve Code"
 desc = "Add [color=khaki] %.1f [/color] to your attack stat for [color=khaki] %d [/color] turns"
 energy_cost = 3
 ai_energy_cost = 0
