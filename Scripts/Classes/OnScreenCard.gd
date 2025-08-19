@@ -11,11 +11,15 @@ extends TextureRect
 
 static var card_being_dragged: OnScreenCard = null
 
+var last_mouse_pos: Vector2
+var mouse_velocity: Vector2
+var preview_card: OnScreenCard
+
 const NORMAL_SIZE: Vector2 = Vector2(1.0, 1.0)
 const SCALE_SIZE: Vector2 = Vector2(1.4, 1.4)
 const SCALE_TIME: float = 0.15
 const MOUSE_ENTERING: bool = true
-const MAX_SHADOW_OFFSET: float = 15.0
+const MAX_SHADOW_OFFSET: float = 20.0
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Mouse Click") and not visible:
@@ -31,7 +35,18 @@ func _ready() -> void:
 	_setup_childrens()
 
 func _process(_delta: float) -> void:
+	_handle_preview_rotation(_delta)
 	_handle_shadow()
+
+func _handle_preview_rotation(delta: float) -> void:
+	if card_being_dragged and preview_card:
+		var mouse_pos = get_viewport().get_mouse_position()
+		mouse_velocity = (mouse_pos - last_mouse_pos) / delta
+		last_mouse_pos = mouse_pos
+		
+		var target_rot: float = clamp(mouse_velocity.x * 0.002, -0.3, 0.3)
+		
+		preview_card.rotation = lerp(preview_card.rotation, target_rot, delta * 8.0)
 
 func _handle_shadow() -> void:
 	var center: Vector2 = get_viewport_rect().size / 2.0
@@ -41,7 +56,7 @@ func _handle_shadow() -> void:
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview_scene: PackedScene = load(self.scene_file_path)
-	var preview_card: OnScreenCard = preview_scene.instantiate()
+	preview_card = preview_scene.instantiate()
 	preview_card.scale *= SCALE_SIZE
 	
 	var preview = Control.new()
