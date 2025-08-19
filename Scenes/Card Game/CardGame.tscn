@@ -16,6 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_5pjvo")
+max_parallax_offset = Vector2(2.5, 2.5)
+smoothing = 5.0
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -5
@@ -26,10 +28,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 
-[node name="Player" parent="." instance=ExtResource("5_oxm1c")]
+[node name="Parallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Player" parent="Parallax" instance=ExtResource("5_oxm1c")]
 layout_mode = 1
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]
@@ -51,7 +67,12 @@ material = ExtResource("6_qep0y")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true

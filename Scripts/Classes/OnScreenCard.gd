@@ -45,7 +45,6 @@ func _handle_preview_rotation(delta: float) -> void:
 		last_mouse_pos = mouse_pos
 		
 		var target_rot: float = clamp(mouse_velocity.x * 0.002, -0.3, 0.3)
-		
 		preview_card.rotation = lerp(preview_card.rotation, target_rot, delta * 8.0)
 
 func _handle_shadow() -> void:
