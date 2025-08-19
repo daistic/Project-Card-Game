@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AttackDebuff" load_steps=2 format=3 uid="uid://bqwqocb7p0spr"]
 
-[ext_resource type="Script" uid="uid://tf5japeb3ugs" path="res://Scripts/Card Interfaces/Stat Effectors/AttackDebuff.gd" id="1_yehl0"]
+[ext_resource type="Script" uid="uid://tf5japeb3ugs" path="res://Scripts/Card Interfaces/Normal Deck/AttackDebuff.gd" id="1_yehl0"]
 
 [resource]
 script = ExtResource("1_yehl0")

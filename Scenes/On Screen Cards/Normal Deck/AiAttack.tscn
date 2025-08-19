@@ -1,19 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddo08wwuin2xp"]
+[gd_scene load_steps=5 format=3 uid="uid://ddo08wwuin2xp"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_vcqti"]
-[ext_resource type="Script" uid="uid://dfxcghjrwrldl" path="res://Scripts/Card Interfaces/AI Deck/AIAttack.gd" id="2_2qjan"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="2_1s24n"]
 [ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Resources/Gradients/AiEnergyBar.tres" id="3_hohfm"]
-
-[sub_resource type="Resource" id="Resource_1s24n"]
-script = ExtResource("2_2qjan")
-damage = 4.5
-shield_break = 0.25
-name = "AI Injection"
-desc = "Does [color=khaki] %.1f [/color] damage to the enemy, also breaks [color=khaki] %.2f [/color] of enemy's shield"
-energy_cost = 0
-ai_energy_cost = 4
-is_malware = false
-metadata/_custom_type_script = "uid://dfxcghjrwrldl"
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1s24n"]
 gradient = ExtResource("3_hohfm")
@@ -22,7 +11,7 @@ fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
 [node name="AIAttack" instance=ExtResource("1_vcqti")]
-card_resource = SubResource("Resource_1s24n")
+card_resource = ExtResource("2_1s24n")
 
 [node name="EnergyCostBar" parent="." index="0"]
 value = 5.0

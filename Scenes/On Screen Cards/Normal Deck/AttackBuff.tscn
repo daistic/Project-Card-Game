@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgajc7e6x10uv"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_q5xja"]
-[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Stat Effectors/AttackBuff.tres" id="2_xcov8"]
+[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="2_xcov8"]
 
 [node name="AttackBuff" instance=ExtResource("1_q5xja")]
 card_resource = ExtResource("2_xcov8")

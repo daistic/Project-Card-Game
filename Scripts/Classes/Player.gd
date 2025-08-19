@@ -77,7 +77,9 @@ func _on_player_turn_finished() -> void:
 			effect.apply_effect()
 			status_effect_container.update_ui_desc(effect)
 	
-	energy.current = max_char_energy
+	if energy.current < max_char_energy:
+		energy.current = max_char_energy
+	
 	update_player_energy_info()
 	#print(stats.status_effects)
 

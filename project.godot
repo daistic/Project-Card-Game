@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Card Game"
 run/main_scene="uid://d0iyidwt2kfsw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,7 +23,6 @@ EffectHub="*res://Globals/EffectHub.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

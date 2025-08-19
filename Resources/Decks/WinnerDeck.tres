@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardPackedList" load_steps=7 format=3 uid="uid://bbqm7ux2i3277"]
 
 [ext_resource type="Script" uid="uid://1lgqu12mp6d2" path="res://Scripts/Resource Classes/CardsPackedList.gd" id="1_7f2ta"]
-[ext_resource type="PackedScene" uid="uid://dr4rony2xrccf" path="res://Scenes/On Screen Cards/Malwares/Malware1.tscn" id="1_m5x8y"]
-[ext_resource type="PackedScene" uid="uid://bgajc7e6x10uv" path="res://Scenes/On Screen Cards/Stat Effectors/AttackBuff.tscn" id="2_44s4v"]
-[ext_resource type="PackedScene" uid="uid://bxt63u2qao8aw" path="res://Scenes/On Screen Cards/Stat Effectors/AttackDebuff.tscn" id="3_ox3x7"]
-[ext_resource type="PackedScene" uid="uid://cb4a8yajsdug5" path="res://Scenes/On Screen Cards/Normal Deck/BasicAttack.tscn" id="4_wj3m1"]
-[ext_resource type="PackedScene" uid="uid://dsk8qv36sem5q" path="res://Scenes/On Screen Cards/Normal Deck/BasicHeal.tscn" id="5_dqf56"]
+[ext_resource type="PackedScene" uid="uid://v2wtm6ja8fvx" path="res://Scenes/On Screen Cards/Winner Deck/AttackBasedOnHp.tscn" id="1_m5x8y"]
+[ext_resource type="PackedScene" uid="uid://kc66ujo0fqp8" path="res://Scenes/On Screen Cards/Winner Deck/CritRateBuff.tscn" id="2_44s4v"]
+[ext_resource type="PackedScene" uid="uid://bj2tfcb6a1ixi" path="res://Scenes/On Screen Cards/Winner Deck/EnergyUp.tscn" id="3_ox3x7"]
+[ext_resource type="PackedScene" uid="uid://bchtrpajlhui6" path="res://Scenes/On Screen Cards/Winner Deck/IgnoreShield.tscn" id="4_wj3m1"]
+[ext_resource type="PackedScene" uid="uid://cpl6k0ytxns62" path="res://Scenes/On Screen Cards/Winner Deck/RandomAttack.tscn" id="5_dqf56"]
 
 [resource]
 script = ExtResource("1_7f2ta")

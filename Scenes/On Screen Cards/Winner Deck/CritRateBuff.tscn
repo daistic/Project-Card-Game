@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://kc66ujo0fqp8"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_ib8xi"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="2_ib8xi"]
+
+[node name="CritRateBuff" instance=ExtResource("1_ib8xi")]
+card_resource = ExtResource("2_ib8xi")

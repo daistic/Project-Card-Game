@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AIHeal" load_steps=2 format=3 uid="uid://diu0dcc6pstyg"]
+
+[ext_resource type="Script" uid="uid://cepurbefprwea" path="res://Scripts/Card Interfaces/Normal Deck/AIHeal.gd" id="1_sry3i"]
+
+[resource]
+script = ExtResource("1_sry3i")
+heal_amount = 17.5
+shield_amount = 0.2
+name = "AI Recovery"
+desc = "Recover [color=mediumseagreen] %.1f [/color] HP and [color=darkgray] %.1f [/color] shield"
+energy_cost = 0
+ai_energy_cost = 4
+is_malware = false
+metadata/_custom_type_script = "uid://cepurbefprwea"
