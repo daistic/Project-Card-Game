@@ -16,6 +16,10 @@ func regenerate_stat(_damageable: Damageable) -> void:
 	#does nothing
 	pass
 
+func degenerate_stat(_damageable: Damageable) -> void:
+	#does nothing
+	pass
+
 func get_desc_format() -> Array:
 	#does nothing
 	return []

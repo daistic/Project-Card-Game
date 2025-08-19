@@ -29,8 +29,9 @@ func _enemy_setup() -> void:
 	_update_enemy_bars()
 
 func _on_card_used(_card_resource: CardInterface) -> void:
-	var player_stats: Damageable = BattleManager.player.stats.get_stats_after_status()
+	_card_resource.degenerate_stat(stats)
 	
+	var player_stats: Damageable = BattleManager.player.stats.get_stats_after_status()
 	stats.cur_hp -= stats.card_damage(player_stats, 
 		_card_resource.get_card_damage(player_stats), enemy_bars.circle, true)
 	

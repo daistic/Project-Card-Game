@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShieldDown" load_steps=2 format=3 uid="uid://bb20xbweeedmc"]
+
+[ext_resource type="Script" uid="uid://ddo3qwlttiwqj" path="res://Scripts/Card Interfaces/Normal Deck/ShieldDown.gd" id="1_xl3hu"]
+
+[resource]
+script = ExtResource("1_xl3hu")
+down_amount = 3.0
+name = "Break Defence"
+desc = "Take away [color=khaki] %.1f [/color] of enemy's shield"
+energy_cost = 2
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://ddo3qwlttiwqj"

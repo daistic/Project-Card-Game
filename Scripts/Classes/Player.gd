@@ -47,8 +47,9 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	update_player_energy_info()
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
-	var enemy_stats: Damageable = BattleManager.enemy.stats.get_stats_after_status()
+	_card_resource.degenerate_stat(stats)
 	
+	var enemy_stats: Damageable = BattleManager.enemy.stats.get_stats_after_status()
 	stats.cur_hp -= stats.card_damage(enemy_stats, 
 		_card_resource.get_card_damage(enemy_stats), player_bars.circle, false)
 	
