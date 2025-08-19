@@ -1,12 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj5afbjfmhc3w"]
+[gd_scene load_steps=2 format=3 uid="uid://dj5afbjfmhc3w"]
 
 [ext_resource type="Script" uid="uid://c8u5114hhmps2" path="res://Scripts/EnemyGimmicks/MorimensGimmick.gd" id="1_p857a"]
-[ext_resource type="PackedScene" uid="uid://dr4rony2xrccf" path="res://Scenes/On Screen Cards/Malwares/Malware1.tscn" id="2_rxgds"]
-[ext_resource type="PackedScene" uid="uid://dkdeqyi5wposf" path="res://Scenes/On Screen Cards/Malwares/Malware2.tscn" id="3_p1gi1"]
-[ext_resource type="PackedScene" uid="uid://sbdkbwah5b7g" path="res://Scenes/On Screen Cards/Malwares/Malware3.tscn" id="4_ivcyw"]
-[ext_resource type="PackedScene" uid="uid://b61l0n2cqxdn4" path="res://Scenes/On Screen Cards/Malwares/Malware4.tscn" id="5_nl4xe"]
-[ext_resource type="PackedScene" uid="uid://2vrn0ochouj8" path="res://Scenes/On Screen Cards/Malwares/Malware5.tscn" id="6_8wryi"]
 
 [node name="MorimensGimmick" type="Node"]
 script = ExtResource("1_p857a")
-malware_deck = Array[PackedScene]([ExtResource("2_rxgds"), ExtResource("3_p1gi1"), ExtResource("4_ivcyw"), ExtResource("5_nl4xe"), ExtResource("6_8wryi")])

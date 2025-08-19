@@ -1,11 +1,12 @@
 extends EnemyGimmick
 
-@export var malware_deck: Array[PackedScene]
+var malware_deck: Array[PackedScene]
 
 func _enter_tree() -> void:
 	SignalHub.battle_won.connect(_on_battle_won)
 
 func _ready() -> void:
+	malware_deck = Global.get_malware_deck()
 	_add_malwares()
 
 func _add_malwares() -> void:
