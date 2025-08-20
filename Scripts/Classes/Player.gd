@@ -2,10 +2,10 @@ class_name Player
 
 extends Control
 
-@onready var card_container: HBoxContainer = $PlayerInfoContainer/VBoxContainer/CardContainer
-@onready var player_bars: BattleBars = $PlayerInfoContainer/VBoxContainer/VBoxContainer/PlayerBarsContainer
+@onready var card_container: HBoxContainer = $VBoxContainer/CardContainer
+@onready var player_bars: BattleBars = $VBoxContainer/VBoxContainer/PlayerBarsContainer
 @onready var energy_info: EnergyInfo = $EnergyInfoContainer
-@onready var status_effect_container: StatusEffectGrid = $PlayerInfoContainer/VBoxContainer/VBoxContainer/HBoxContainer/StatusEffectContainer
+@onready var status_effect_container: StatusEffectGrid = $VBoxContainer/VBoxContainer/HBoxContainer/StatusEffectContainer
 
 @export var stats: Damageable
 @export var max_char_energy: int = 5

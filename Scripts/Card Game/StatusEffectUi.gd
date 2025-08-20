@@ -23,7 +23,7 @@ func _ready() -> void:
 func update_desc() -> void:
 	desc = status_effect.desc % status_effect.get_desc_format()
 
-func _on_mouse_entered() -> void:
+func _on_area_2d_mouse_entered() -> void:
 	var viewport_size: Vector2 = get_viewport_rect().size
 	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 	var offset: Vector2 = Vector2.ZERO
@@ -37,6 +37,6 @@ func _on_mouse_entered() -> void:
 	desc_label.text = desc
 	information.show()
 
-func _on_mouse_exited() -> void:
+func _on_area_2d_mouse_exited() -> void:
 	information.position = information_default_pos
 	information.hide()
