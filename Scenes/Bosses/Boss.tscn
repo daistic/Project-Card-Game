@@ -1,14 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://btf6sgat63t8n"]
+[gd_scene load_steps=7 format=3 uid="uid://cm4a7pmd3kr7k"]
 
-[ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_isl11"]
-[ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Scenes/Enemy Gimmicks/MorimensGimmick.tscn" id="2_hw58m"]
-[ext_resource type="PackedScene" uid="uid://cg6xohcopeelx" path="res://Scenes/Enemy Gimmicks/EnergyLimitGimmick.tscn" id="3_w6k0u"]
-[ext_resource type="PackedScene" uid="uid://cjxedmlw7sqh7" path="res://Scenes/Enemy Gimmicks/CantPlayGimmick.tscn" id="4_w6k0u"]
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Shaders/EnemyBase.tscn" id="1_isl11"]
+[ext_resource type="Shader" uid="uid://dcnkql0c0ucc" path="res://Shaders/Distortion.gdshader" id="5_q7rdl"]
+[ext_resource type="Texture2D" uid="uid://pu1a87wvscul" path="res://Assets/Textures/Enemies/boss.png" id="6_q7rdl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw58m"]
+shader = ExtResource("5_q7rdl")
+shader_parameter/chaos = 3.0
+shader_parameter/radius = 0.639
+shader_parameter/attenuation = 1.336
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjlkv"]
+atlas = ExtResource("6_q7rdl")
+region = Rect2(58.895, 24.679, 1118.32, 1131.66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw58m"]
+atlas = ExtResource("6_q7rdl")
+region = Rect2(58.895, 24.679, 1118.32, 1131.66)
 
 [node name="Boss" instance=ExtResource("1_isl11")]
 
-[node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_hw58m")]
+[node name="TextureRect" parent="." index="0"]
+material = SubResource("ShaderMaterial_hw58m")
+custom_minimum_size = Vector2(500, 375)
+offset_left = -263.0
+offset_top = -169.0
+offset_right = 237.0
+offset_bottom = 31.0
 
-[node name="EnergyLimitGimmick" parent="GimmickMessageControl" index="1" instance=ExtResource("3_w6k0u")]
+[node name="EnemyTexture" parent="TextureRect" index="0"]
+texture = SubResource("AtlasTexture_pjlkv")
 
-[node name="CantPlayGimmick" parent="GimmickMessageControl" index="2" instance=ExtResource("4_w6k0u")]
+[node name="Shadow" parent="TextureRect" index="1"]
+texture = SubResource("AtlasTexture_hw58m")
+
+[editable path="TextureRect"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://wwtca1lmwyls"]
+
+[ext_resource type="Shader" uid="uid://dcnkql0c0ucc" path="res://Shaders/Distortion.gdshader" id="1_lj6m7"]
+[ext_resource type="Texture2D" uid="uid://cfk5bo1sefp32" path="res://Assets/Textures/Enemies/EnemyPlaceholder.png" id="2_bk6wd"]
+[ext_resource type="Script" uid="uid://bph0lcafujvu3" path="res://Scripts/Card Game/EnemyTextureRect.gd" id="2_gi20b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkj5j"]
+shader = ExtResource("1_lj6m7")
+shader_parameter/chaos = 8.074
+shader_parameter/radius = 0.869
+shader_parameter/attenuation = 2.609
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkj5j"]
+atlas = ExtResource("2_bk6wd")
+region = Rect2(58.8953, 383.89, 1118.32, 482.283)
+
+[node name="EnemyTextureRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_hkj5j")
+custom_minimum_size = Vector2(500, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -168.665
+offset_right = 250.0
+offset_bottom = 31.335
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gi20b")
+
+[node name="EnemyTexture" type="TextureRect" parent="."]
+z_index = -5
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hkj5j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.470588)
+z_index = -6
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.66501
+offset_right = 10.0
+offset_bottom = 8.66501
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hkj5j")
+expand_mode = 3
+stretch_mode = 5

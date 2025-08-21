@@ -1,9 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj1x1p1xscvjl"]
+[gd_scene load_steps=8 format=3 uid="uid://dj1x1p1xscvjl"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_r5s35"]
 [ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Scenes/Enemy Gimmicks/MorimensGimmick.tscn" id="2_bmm7x"]
+[ext_resource type="Texture2D" uid="uid://dh1q8r5yuiynq" path="res://Assets/Textures/Enemies/miniboss1.png" id="3_l1yw7"]
+[ext_resource type="Shader" uid="uid://dcnkql0c0ucc" path="res://Shaders/Distortion.gdshader" id="3_txkff"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6tmsn"]
+shader = ExtResource("3_txkff")
+shader_parameter/chaos = 2.5
+shader_parameter/radius = 0.816
+shader_parameter/attenuation = 3.43
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txkff"]
+atlas = ExtResource("3_l1yw7")
+region = Rect2(269.617, 271.516, 656.968, 594.657)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tmsn"]
+atlas = ExtResource("3_l1yw7")
+region = Rect2(269.617, 271.516, 656.968, 594.657)
 
 [node name="Miniboss1" instance=ExtResource("1_r5s35")]
 
 [node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_bmm7x")]
-malware_deck = Array[PackedScene]([])
+
+[node name="TextureRect" parent="." index="1"]
+material = SubResource("ShaderMaterial_6tmsn")
+custom_minimum_size = Vector2(500, 325)
+offset_left = -262.0
+offset_top = -240.0
+offset_right = 238.0
+offset_bottom = 85.0
+
+[node name="EnemyTexture" parent="TextureRect" index="0"]
+texture = SubResource("AtlasTexture_txkff")
+
+[node name="Shadow" parent="TextureRect" index="1"]
+texture = SubResource("AtlasTexture_6tmsn")
+
+[editable path="TextureRect"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dr8f5oqv4ghat" path="res://Scripts/Resource Classes/StoryStruct.gd" id="2_utumb"]
 [ext_resource type="PackedScene" uid="uid://dj1x1p1xscvjl" path="res://Scenes/Bosses/MiniBoss1.tscn" id="3_v6wb0"]
 [ext_resource type="PackedScene" uid="uid://csa2a1epa7r04" path="res://Scenes/Bosses/MiniBoss2.tscn" id="4_o58i3"]
-[ext_resource type="PackedScene" uid="uid://btf6sgat63t8n" path="res://Scenes/Bosses/Boss.tscn" id="5_bc2o8"]
+[ext_resource type="PackedScene" uid="uid://cm4a7pmd3kr7k" path="res://Scenes/Bosses/Boss.tscn" id="5_bc2o8"]
 
 [sub_resource type="Resource" id="Resource_mvhjd"]
 script = ExtResource("2_utumb")
@@ -20,7 +20,7 @@ battles_to_meet = 2
 story_messages = Array[String](["Encryption is breaking… but not in my favor.[color=yellow] %d [/color] more battle", "The system is adapting faster than I can.", "The core is waking… and it knows I’m here."])
 metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
 
-[sub_resource type="Resource" id="Resource_dadda"]
+[sub_resource type="Resource" id="Resource_v6wb0"]
 script = ExtResource("2_utumb")
 next_boss = ExtResource("5_bc2o8")
 battles_to_meet = 0
@@ -29,5 +29,5 @@ metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
 
 [resource]
 script = ExtResource("1_aep6b")
-story = Array[ExtResource("2_utumb")]([SubResource("Resource_mvhjd"), SubResource("Resource_eperb"), SubResource("Resource_dadda")])
+story = Array[ExtResource("2_utumb")]([SubResource("Resource_mvhjd"), SubResource("Resource_eperb"), SubResource("Resource_v6wb0")])
 metadata/_custom_type_script = "uid://b35qq1etmlbg7"
