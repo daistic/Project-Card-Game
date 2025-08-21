@@ -21,6 +21,7 @@ Global="*res://Globals/Global.gd"
 SignalHub="*res://Globals/SignalHub.gd"
 BattleManager="*res://Globals/BattleManager.gd"
 EffectHub="*res://Globals/EffectHub.gd"
+MenuHub="*res://Globals/MenuHub.gd"
 
 [display]
 

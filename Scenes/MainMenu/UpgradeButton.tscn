@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da36hyt3i1rrv" path="res://Assets/Textures/Card Game/PlayerCircle.png" id="2_cdn6r"]
 [ext_resource type="LabelSettings" uid="uid://d2w2x86vkrj6y" path="res://Resources/Fonts/Stat.tres" id="3_sn4m5"]
 
-[node name="UpgradeButton" type="Control" node_paths=PackedStringArray("logo")]
+[node name="UpgradeButton" type="Control" node_paths=PackedStringArray("logo", "Value", "UpCost", "DownCost")]
 layout_mode = 3
 anchor_right = 1.002
 anchor_bottom = 0.549
@@ -15,6 +15,9 @@ grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_q20vr")
 logo = NodePath("HBoxContainer/Logo")
+Value = NodePath("HBoxContainer/Label")
+UpCost = NodePath("HBoxContainer/Add/Label")
+DownCost = NodePath("HBoxContainer/minus/Label")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

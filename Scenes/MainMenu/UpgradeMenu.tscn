@@ -35,12 +35,16 @@ layout_mode = 2
 
 [node name="UpgradeButton2" parent="TextureRect/VBoxContainer" instance=ExtResource("1_syq7s")]
 layout_mode = 2
+stat_type = 1
 
 [node name="UpgradeButton3" parent="TextureRect/VBoxContainer" instance=ExtResource("1_syq7s")]
 layout_mode = 2
+stat_type = 2
 
 [node name="UpgradeButton4" parent="TextureRect/VBoxContainer" instance=ExtResource("1_syq7s")]
 layout_mode = 2
+stat_type = 3
 
 [node name="UpgradeButton5" parent="TextureRect/VBoxContainer" instance=ExtResource("1_syq7s")]
 layout_mode = 2
+stat_type = 4
