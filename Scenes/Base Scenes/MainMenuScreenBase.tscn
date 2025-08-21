@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0vw4sftvguae"]
+
+[ext_resource type="Material" uid="uid://da72dgkjq37te" path="res://Assets/Materials/BaseRetroSunMaterial.tres" id="1_bokmq"]
+[ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_0p8wr"]
+[ext_resource type="Texture2D" uid="uid://b6eq3vbfh8quc" path="res://Assets/Textures/After Battle/AfterBattleBlue.png" id="3_p8o5u"]
+[ext_resource type="Texture2D" uid="uid://bkxyjkbw3jhfs" path="res://Assets/Textures/MainMenu/Exit Button.png" id="4_p8o5u"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="5_8nnbs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkjg1"]
+atlas = ExtResource("3_p8o5u")
+region = Rect2(75.375, 451.591, 1909.11, 1118.68)
+
+[node name="MainMenuScreen" type="TextureRect"]
+z_index = 5
+material = ExtResource("1_bokmq")
+custom_minimum_size = Vector2(0, 500)
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 989.126
+offset_bottom = 556.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_0p8wr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Frame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 520)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.8931
+offset_top = -48.0
+offset_right = 21.3377
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_gkjg1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 20.0
+offset_top = 18.8889
+offset_right = 70.0
+offset_bottom = 68.8889
+texture_normal = ExtResource("4_p8o5u")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_8nnbs")

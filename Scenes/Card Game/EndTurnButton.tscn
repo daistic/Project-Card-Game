@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crddmo3afykeq"]
+[gd_scene load_steps=5 format=3 uid="uid://crddmo3afykeq"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_urbml"]
-[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Card Game/EndTurnButton.gd" id="2_dau6w"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="2_dau6w"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_qtayv"]
-[ext_resource type="Script" uid="uid://bxsr1a2ra8nu3" path="res://Scripts/Composition/GreyHover.gd" id="3_qtayv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2jatd"]
 font = ExtResource("2_qtayv")
@@ -46,16 +45,3 @@ text = "End Turn"
 label_settings = SubResource("LabelSettings_2jatd")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="GreyHover" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-script = ExtResource("3_qtayv")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

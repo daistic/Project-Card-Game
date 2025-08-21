@@ -17,6 +17,8 @@ signal battle_won
 signal card_selected
 signal battle_lost
 
+signal upgrade_finalize
+
 func emit_battle_start() -> void:
 	battle_start.emit()
 
@@ -52,3 +54,6 @@ func emit_card_selected() -> void:
 
 func emit_battle_lost() -> void:
 	battle_lost.emit()
+
+func emit_upgrade_finalize() -> void:
+	upgrade_finalize.emit()
