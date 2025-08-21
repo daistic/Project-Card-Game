@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dx4xd52shm7q7"]
+[gd_scene load_steps=17 format=3 uid="uid://dx4xd52shm7q7"]
 
 [ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Classes/Enemy.gd" id="1_0p7db"]
 [ext_resource type="Resource" uid="uid://et5d4anvll1p" path="res://Resources/Damageables/EnemyBaseDamageable.tres" id="2_t24r1"]
@@ -6,14 +6,60 @@
 [ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_dleq2"]
 [ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_oy7bm"]
 [ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_rihe7"]
+[ext_resource type="Shader" uid="uid://dcnkql0c0ucc" path="res://Shaders/Distortion.gdshader" id="7_hkj5j"]
 [ext_resource type="Texture2D" uid="uid://cfk5bo1sefp32" path="res://Assets/Textures/Enemies/EnemyPlaceholder.png" id="7_t24r1"]
 [ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Scenes/Card Game/EnemyMessage.tscn" id="7_u615p"]
 [ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="8_wp4y0"]
 [ext_resource type="PackedScene" uid="uid://dmtoneowdgmpv" path="res://Scenes/Card Game/StatusEffectContainer.tscn" id="9_iuv51"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkj5j"]
+shader = ExtResource("7_hkj5j")
+shader_parameter/chaos = 8.074
+shader_parameter/radius = 0.869
+shader_parameter/attenuation = 2.609
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkj5j"]
 atlas = ExtResource("7_t24r1")
 region = Rect2(58.8953, 383.89, 1118.32, 482.283)
+
+[sub_resource type="Animation" id="Animation_hkj5j"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(326, 167), Vector2(326, 118), Vector2(326, 167), Vector2(326, 175), Vector2(326, 118)]
+}
+
+[sub_resource type="Animation" id="Animation_dleq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(326, 167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oy7bm"]
+_data = {
+&"Idle": SubResource("Animation_hkj5j"),
+&"RESET": SubResource("Animation_dleq2")
+}
 
 [node name="EnemyBase" type="Control"]
 z_index = 5
@@ -28,19 +74,29 @@ script = ExtResource("1_0p7db")
 stats = ExtResource("2_t24r1")
 enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource("5_oy7bm"), ExtResource("6_rihe7")])
 
-[node name="EnemyTexture" type="TextureRect" parent="."]
-z_index = -5
-custom_minimum_size = Vector2(150, 200)
+[node name="TextureRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hkj5j")
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -169.0
-offset_right = 209.9
-offset_bottom = 31.0
+offset_left = -250.0
+offset_top = -202.313
+offset_right = 250.0
+offset_bottom = -2.31348
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyTexture" type="TextureRect" parent="TextureRect"]
+z_index = -5
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_hkj5j")
@@ -84,3 +140,7 @@ mouse_filter = 1
 layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oy7bm")
+}
+autoplay = "Idle"
