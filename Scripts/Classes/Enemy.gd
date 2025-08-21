@@ -9,6 +9,7 @@ extends Control
 @export var stats: Damageable
 @export var enemy_deck: Array[CardInterface] = []
 @export var max_moves: int = 2
+@export var crypto_price: int = 1000
 
 var next_cards: Array[CardInterface] = []
 
@@ -92,8 +93,9 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
-		queue_free()
+		BattleManager.crypto_collected += crypto_price
 		SignalHub.emit_battle_won()
+		queue_free()
 
 func _update_enemy_bars() -> void:
 	enemy_bars.update_bars(stats.cur_hp, stats.cur_shield)

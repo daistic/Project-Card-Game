@@ -25,7 +25,7 @@ func _handle_parallax_effect(delta: float) -> void:
 	parallax.position.y = lerp(parallax.position.y, new_pos.y, smoothing * delta) 
 
 func _on_start_pressed() -> void:
-	pass # Replace with function body.
+	BattleManager.crypto_collected = 0
 
 func _on_upgrade_pressed() -> void:
 	upgrade_screen.show()

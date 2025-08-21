@@ -78,7 +78,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Screen" type="TextureRect" parent="."]
+[node name="Parallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Screen" type="TextureRect" parent="Parallax"]
 material = ExtResource("4_o5dal")
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 1
@@ -87,17 +96,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -474.563
+offset_top = -250.0
+offset_right = 474.563
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5nv4g")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Frame" type="TextureRect" parent="Screen"]
+[node name="Frame" type="TextureRect" parent="Parallax/Screen"]
 custom_minimum_size = Vector2(0, 520)
 layout_mode = 1
 anchors_preset = 15
@@ -113,7 +122,7 @@ texture = SubResource("AtlasTexture_abt7p")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Screen"]
+[node name="MarginContainer" type="MarginContainer" parent="Parallax/Screen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,39 +132,39 @@ grow_vertical = 2
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 120
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = -5
 
-[node name="Label" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 10000
 text = "Attack Sucessfull"
 label_settings = SubResource("LabelSettings_sq75o")
 
-[node name="Label2" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 10000
 text = "Select a card"
 label_settings = SubResource("LabelSettings_e2ejy")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Spacer" type="Control" parent="Screen/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Spacer" type="Control" parent="Parallax/Screen/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(150, 5)
 layout_mode = 2
 
-[node name="StoryLabel" type="RichTextLabel" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="StoryLabel" type="RichTextLabel" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 75)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -164,27 +173,27 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 autowrap_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="Screen/MarginContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Parallax/Screen/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 100
 
-[node name="CardsContainer" type="HBoxContainer" parent="Screen/MarginContainer/MarginContainer2"]
+[node name="CardsContainer" type="HBoxContainer" parent="Parallax/Screen/MarginContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 70
 
-[node name="MarginContainer" type="MarginContainer" parent="Screen/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Parallax/Screen/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/margin_right = 150
 
-[node name="AddToDeckPanel" parent="Screen/MarginContainer/MarginContainer" instance=ExtResource("4_e2ejy")]
+[node name="AddToDeckPanel" parent="Parallax/Screen/MarginContainer/MarginContainer" instance=ExtResource("4_e2ejy")]
 layout_mode = 2
 
-[node name="NextBattleButton" type="TextureButton" parent="Screen"]
+[node name="NextBattleButton" type="TextureButton" parent="Parallax/Screen"]
 custom_minimum_size = Vector2(175, 75)
 layout_mode = 1
 anchors_preset = 3
@@ -204,7 +213,7 @@ texture_disabled = ExtResource("8_fomr0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Screen/NextBattleButton"]
+[node name="Label" type="Label" parent="Parallax/Screen/NextBattleButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,4 +242,4 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Screen/NextBattleButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Parallax/Screen/NextBattleButton" to="." method="_on_texture_button_pressed"]

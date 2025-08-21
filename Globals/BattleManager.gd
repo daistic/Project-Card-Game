@@ -1,9 +1,9 @@
 extends Node
 
-const CYBER_STORY = preload("res://Resources/StoryScript/CyberStory.tres")
-const CARD_GAME = preload("res://Scenes/Card Game/CardGame.tscn")
-const BATTLE_WON_SCREEN = preload("res://Scenes/After Battle/BattleWonScreen.tscn")
-const BATTLE_LOST_SCREEN = preload("res://Scenes/After Battle/BattleLostScreen.tscn")
+const CYBER_STORY: StoryScript = preload("res://Resources/StoryScript/CyberStory.tres")
+const CARD_GAME: PackedScene = preload("res://Scenes/Card Game/CardGame.tscn")
+const BATTLE_WON_SCREEN: PackedScene = preload("res://Scenes/After Battle/BattleWonScreen.tscn")
+const BATTLE_LOST_SCREEN: PackedScene = preload("res://Scenes/After Battle/BattleLostScreen.tscn")
 
 const MINIMUM_CRIT_RATE: float = 0.0
 const MAXIMUM_CRIT_RATE: float = 100.0
@@ -19,6 +19,8 @@ var story_index: int = 0
 
 var story_messages_index: int = 0
 var message_index: int = -1
+
+var crypto_collected: int = 0
 
 func _enter_tree() -> void:
 	var starting_deck: CardPackedList = Global.get_starting_deck()
@@ -77,3 +79,6 @@ func get_formatted_story_message() -> String:
 		message = message % battles_to_boss
 	
 	return message
+
+func get_crypto_collected() -> int:
+	return crypto_collected

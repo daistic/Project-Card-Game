@@ -50,6 +50,6 @@ func _on_exit_button_pressed() -> void:
 func _on_finalize_button_pressed() -> void:
 	var total_crypto = Global.get_total_crypto() - UpgradeButton.cryto_used
 	UpgradeButton.cryto_used = 0
-	Global.save_data(temp_stats, total_crypto)
+	Global.save_data(total_crypto, temp_stats)
 	_update_cryto_held_label()
 	SignalHub.emit_upgrade_finalize()

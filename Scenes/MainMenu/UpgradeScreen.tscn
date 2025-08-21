@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dw8g5ywig87e6"]
+[gd_scene load_steps=15 format=3 uid="uid://dw8g5ywig87e6"]
 
 [ext_resource type="PackedScene" uid="uid://b0vw4sftvguae" path="res://Scenes/Base Scenes/MainMenuScreenBase.tscn" id="1_1ce0y"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_7n7s8"]
 [ext_resource type="Script" uid="uid://j4i0ll28bv7s" path="res://Scripts/MainMenu/UpgradeScreen.gd" id="2_p8o5u"]
+[ext_resource type="Texture2D" uid="uid://bq3oxv4yldnlf" path="res://Assets/Textures/MainMenu/X.png" id="3_8nnbs"]
 [ext_resource type="PackedScene" uid="uid://c4skj15t6oxsa" path="res://Scenes/MainMenu/UpgradeButton.tscn" id="3_bokmq"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="4_0p8wr"]
 
@@ -48,6 +49,9 @@ font_color = Color(0.25098, 0.729412, 0.454902, 1)
 
 [node name="UpgradeScreen" instance=ExtResource("1_1ce0y")]
 script = ExtResource("2_p8o5u")
+
+[node name="ExitButton" parent="." index="1"]
+texture_normal = ExtResource("3_8nnbs")
 
 [node name="Label" type="Label" parent="." index="2"]
 layout_mode = 1
@@ -124,7 +128,8 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-crypto_needed = 2
+upgrade_amount = 1.0
+crypto_needed = 1500
 
 [node name="Label" parent="HBoxContainer/UpgradesContainer/UpgradeButton/VBoxContainer" index="0"]
 label_settings = SubResource("LabelSettings_8nnbs")
@@ -134,7 +139,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 button_index = 1
-crypto_needed = 1
+crypto_needed = 1250
 
 [node name="Label" parent="HBoxContainer/UpgradesContainer/UpgradeButton2/VBoxContainer" index="0"]
 label_settings = SubResource("LabelSettings_31io4")
@@ -144,6 +149,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 button_index = 2
+upgrade_amount = 0.2
+crypto_needed = 750
 
 [node name="Label" parent="HBoxContainer/UpgradesContainer/UpgradeButton3/VBoxContainer" index="0"]
 label_settings = SubResource("LabelSettings_r52rg")
@@ -153,7 +160,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 button_index = 3
-crypto_needed = 3
+upgrade_amount = 0.025
+crypto_needed = 2250
 
 [node name="Label" parent="HBoxContainer/UpgradesContainer/UpgradeButton4/VBoxContainer" index="0"]
 label_settings = SubResource("LabelSettings_wj2iv")
@@ -163,6 +171,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 button_index = 4
+upgrade_amount = 5.0
+crypto_needed = 1750
 
 [node name="Label" parent="HBoxContainer/UpgradesContainer/UpgradeButton5/VBoxContainer" index="0"]
 label_settings = SubResource("LabelSettings_24sq4")

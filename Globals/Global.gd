@@ -9,6 +9,7 @@ const ENEMY_LIST: Array[PackedScene] = [
 	preload("res://Scenes/Enemies/Enemy2.tscn")
 ]
 const SAVE_PATH: String = "user://save_data.tres"
+const MAIN_MENU = preload("res://Scenes/MainMenu/MainMenu.tscn")
 
 var cards_scene: Array[PackedScene]= []
 var cards_resources: Array[CardInterface] = []
@@ -40,7 +41,8 @@ func load_data() -> void:
 		player_stats = load("res://Resources/Damageables/PlayerDamageable.tres")
 		total_crypto = 0
 
-func save_data(_player_stats: Damageable, _total_crypto: int) -> void:
+func save_data(_total_crypto: int = total_crypto,
+		_player_stats: Damageable = player_stats) -> void:
 	player_stats = _player_stats
 	total_crypto = _total_crypto
 	
@@ -68,3 +70,6 @@ func get_total_crypto() -> int:
 
 func get_player_stats() -> Damageable:
 	return player_stats
+
+func go_to_main_menu() -> void:
+	get_tree().change_scene_to_packed(MAIN_MENU)

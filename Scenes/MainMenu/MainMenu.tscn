@@ -73,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="UpgradeScreen" parent="Parallax" instance=ExtResource("3_sng02")]
+visible = false
 layout_mode = 0
 offset_left = 53.0
 offset_top = 40.0

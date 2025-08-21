@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1cr5r8tflf14"]
+[gd_scene load_steps=19 format=3 uid="uid://b1cr5r8tflf14"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_jagbd"]
 [ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Scripts/After Battles/BattleLostScreen.gd" id="2_211x1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="6_iknsa"]
 [ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="7_vxyjm"]
 [ext_resource type="Shader" uid="uid://dbegqncfmmq0o" path="res://Shaders/VHSShader.gdshader" id="9_wmc8l"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="11_vxyjm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2pnw"]
 shader = ExtResource("4_iknsa")
@@ -92,7 +93,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Screen" type="TextureRect" parent="."]
+[node name="Parallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Screen" type="TextureRect" parent="Parallax"]
 material = SubResource("ShaderMaterial_c2pnw")
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 1
@@ -101,17 +111,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -474.563
+offset_top = -250.0
+offset_right = 474.563
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_mbpu6")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Frame" type="TextureRect" parent="Screen"]
+[node name="Frame" type="TextureRect" parent="Parallax/Screen"]
 custom_minimum_size = Vector2(0, 520)
 layout_mode = 1
 anchors_preset = 15
@@ -127,7 +137,7 @@ texture = SubResource("AtlasTexture_m4xni")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Screen"]
+[node name="MarginContainer" type="MarginContainer" parent="Parallax/Screen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,30 +147,30 @@ grow_vertical = 2
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 10000
 text = "Game Over"
 label_settings = SubResource("LabelSettings_c5n0a")
 
-[node name="Label2" type="Label" parent="Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="CrytoLabel" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 10000
 text = "Crypto Collected: "
 label_settings = SubResource("LabelSettings_mbpu6")
 
-[node name="MainButton" type="TextureButton" parent="Screen/MarginContainer/VBoxContainer"]
+[node name="MainButton" type="TextureButton" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(175, 75)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -169,8 +179,9 @@ texture_normal = ExtResource("6_iknsa")
 texture_disabled = ExtResource("7_vxyjm")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("11_vxyjm")
 
-[node name="Label" type="Label" parent="Screen/MarginContainer/VBoxContainer/MainButton"]
+[node name="Label" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/MainButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,3 +209,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Parallax/Screen/MarginContainer/VBoxContainer/MainButton" to="." method="_on_main_button_pressed"]

@@ -3,6 +3,7 @@ class_name CardGame
 extends Control
 
 @onready var parallax: Control = $Parallax
+@onready var paused_layer: ColorRect = $PausedLayer
 
 @export var max_parallax_offset: Vector2
 @export var smoothing: float = 2.0
@@ -45,4 +46,13 @@ func _on_battle_won() -> void:
 	BattleManager.go_to_battle_won_screen()
 
 func _on_battle_lost() -> void:
+	BattleManager.go_to_battle_lost_screen()
+
+func _on_pause_button_pressed() -> void:
+	paused_layer.show()
+
+func _on_continue_button_pressed() -> void:
+	paused_layer.hide()
+
+func _on_quit_button_pressed() -> void:
 	BattleManager.go_to_battle_lost_screen()
