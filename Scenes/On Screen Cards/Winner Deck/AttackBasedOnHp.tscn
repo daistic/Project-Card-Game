@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://v2wtm6ja8fvx"]
+[gd_scene load_steps=4 format=3 uid="uid://v2wtm6ja8fvx"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_38ehk"]
 [ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="2_tcodj"]
+[ext_resource type="Texture2D" uid="uid://c4vdnylsue7xw" path="res://Assets/Textures/Card Textures/AttackCard.png" id="2_whg7e"]
 
 [node name="AttackBasedOnHP" instance=ExtResource("1_38ehk")]
+texture = ExtResource("2_whg7e")
 card_resource = ExtResource("2_tcodj")

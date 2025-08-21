@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4vdnylsue7xw"
-path="res://.godot/imported/AttackCard.png-b9a2d2e070e207b26ff0d50d521f1ea7.ctex"
+uid="uid://dqdi7y52svs4m"
+path="res://.godot/imported/BuffCard.png-ac2903bb4693eb9e84b8c04d2f833b6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Card Textures/AttackCard.png"
-dest_files=["res://.godot/imported/AttackCard.png-b9a2d2e070e207b26ff0d50d521f1ea7.ctex"]
+source_file="res://Assets/Textures/Card Textures/BuffCard.png"
+dest_files=["res://.godot/imported/BuffCard.png-ac2903bb4693eb9e84b8c04d2f833b6d.ctex"]
 
 [params]
 

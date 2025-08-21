@@ -21,9 +21,11 @@ Global="*res://Globals/Global.gd"
 SignalHub="*res://Globals/SignalHub.gd"
 BattleManager="*res://Globals/BattleManager.gd"
 EffectHub="*res://Globals/EffectHub.gd"
+SoundManager="*res://Globals/SoundManager.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

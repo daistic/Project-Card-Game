@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4vdnylsue7xw"
-path="res://.godot/imported/AttackCard.png-b9a2d2e070e207b26ff0d50d521f1ea7.ctex"
+uid="uid://ifcrjax0q0g7"
+path="res://.godot/imported/DebuffCard.png-ddd7815b51fabdcfe1b2fb7a07482c80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Card Textures/AttackCard.png"
-dest_files=["res://.godot/imported/AttackCard.png-b9a2d2e070e207b26ff0d50d521f1ea7.ctex"]
+source_file="res://Assets/Textures/Card Textures/DebuffCard.png"
+dest_files=["res://.godot/imported/DebuffCard.png-ddd7815b51fabdcfe1b2fb7a07482c80.ctex"]
 
 [params]
 
