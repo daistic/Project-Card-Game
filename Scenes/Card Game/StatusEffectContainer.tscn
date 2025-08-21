@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmtoneowdgmpv"]
 
 [ext_resource type="Script" uid="uid://dqq33hw548d4l" path="res://Scripts/Card Game/StatusEffectContainer.gd" id="1_i1x5l"]
-[ext_resource type="Texture2D" uid="uid://bgwncuaih5gh3" path="res://Assets/Textures/Status Effect UI/Group 87.png" id="2_sua2v"]
-[ext_resource type="Texture2D" uid="uid://b14fog3ge4prj" path="res://Assets/Textures/Status Effect UI/Group 133.png" id="3_solcf"]
-[ext_resource type="Texture2D" uid="uid://d2i2b6ufmf4wy" path="res://Assets/Textures/Status Effect UI/Group 123.png" id="4_kflth"]
+[ext_resource type="Texture2D" uid="uid://bgwncuaih5gh3" path="res://Assets/Textures/Status Effect UI/Buff.png" id="2_sua2v"]
+[ext_resource type="Texture2D" uid="uid://b14fog3ge4prj" path="res://Assets/Textures/Status Effect UI/Debuff.png" id="3_solcf"]
+[ext_resource type="Texture2D" uid="uid://d2i2b6ufmf4wy" path="res://Assets/Textures/Status Effect UI/Malware.png" id="4_kflth"]
 
 [node name="StatusEffectGrid" type="GridContainer"]
 custom_minimum_size = Vector2(0, 25)

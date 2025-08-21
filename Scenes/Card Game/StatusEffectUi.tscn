@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpqfqvi2ri3bx"]
 
-[ext_resource type="Texture2D" uid="uid://bgwncuaih5gh3" path="res://Assets/Textures/Status Effect UI/Group 87.png" id="1_bmtlp"]
+[ext_resource type="Texture2D" uid="uid://d2i2b6ufmf4wy" path="res://Assets/Textures/Status Effect UI/Malware.png" id="1_bmtlp"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="2_1mkby"]
 [ext_resource type="Script" uid="uid://brvio2olotinl" path="res://Scripts/Card Game/StatusEffectUi.gd" id="2_bmtlp"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_i4165"]

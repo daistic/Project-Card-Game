@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgwncuaih5gh3"
-path="res://.godot/imported/Group 87.png-7325fc9d29f89d0aa091b9d9ef1eb7c0.ctex"
+path="res://.godot/imported/Buff.png-c41a151f8c8295c8d23d8eba4f0835d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Status Effect UI/Group 87.png"
-dest_files=["res://.godot/imported/Group 87.png-7325fc9d29f89d0aa091b9d9ef1eb7c0.ctex"]
+source_file="res://Assets/Textures/Status Effect UI/Buff.png"
+dest_files=["res://.godot/imported/Buff.png-c41a151f8c8295c8d23d8eba4f0835d7.ctex"]
 
 [params]
 

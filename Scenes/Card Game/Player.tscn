@@ -27,9 +27,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -295.0
-offset_top = -82.0
+offset_top = -76.0
 offset_right = 296.0
-offset_bottom = -7.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -61,6 +61,7 @@ layout_mode = 2
 [node name="StatusEffectContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_75wo7")]
 layout_mode = 2
 size_flags_horizontal = 1
+theme_override_constants/h_separation = 10
 
 [node name="EnergyInfoContainer" parent="." instance=ExtResource("4_hdo7l")]
 layout_mode = 1
