@@ -1,16 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpqfqvi2ri3bx"]
 
-[ext_resource type="Texture2D" uid="uid://d24hcaj3584bm" path="res://Assets/Textures/Placeholders/Rectangle 65.png" id="1_3q2xh"]
+[ext_resource type="Texture2D" uid="uid://bgwncuaih5gh3" path="res://Assets/Textures/Status Effect UI/Group 87.png" id="1_bmtlp"]
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="2_1mkby"]
 [ext_resource type="Script" uid="uid://brvio2olotinl" path="res://Scripts/Card Game/StatusEffectUi.gd" id="2_bmtlp"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_i4165"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmtlp"]
-size = Vector2(15, 15)
+size = Vector2(25, 25)
 
 [node name="StatusEffectUI" type="TextureRect"]
 z_index = 6
-custom_minimum_size = Vector2(15, 15)
+texture_filter = 1
+custom_minimum_size = Vector2(25, 25)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -22,7 +23,7 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_3q2xh")
+texture = ExtResource("1_bmtlp")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("2_bmtlp")
@@ -30,7 +31,7 @@ script = ExtResource("2_bmtlp")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.5, 7.5)
+position = Vector2(12.5, 12.5)
 shape = SubResource("RectangleShape2D_bmtlp")
 
 [node name="Information" type="TextureRect" parent="."]
@@ -41,9 +42,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 6.0
+offset_left = 10.0
 offset_top = -62.5
-offset_right = 181.0
+offset_right = 185.0
 offset_bottom = 62.5
 grow_vertical = 2
 pivot_offset = Vector2(87.5, 62.5)
