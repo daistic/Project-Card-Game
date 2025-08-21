@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7rwahl0vi6p"
-path="res://.godot/imported/ShieldBar.png-6c11b44e46e99fe41720ade3f813613b.ctex"
+uid="uid://jrv5xffrca6q"
+path="res://.godot/imported/ShieldDownCard.png-1ac278671517b08300d0878177e24404.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Card Game/ShieldBar.png"
-dest_files=["res://.godot/imported/ShieldBar.png-6c11b44e46e99fe41720ade3f813613b.ctex"]
+source_file="res://Assets/Textures/Card Textures/ShieldDownCard.png"
+dest_files=["res://.godot/imported/ShieldDownCard.png-1ac278671517b08300d0878177e24404.ctex"]
 
 [params]
 

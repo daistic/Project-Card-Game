@@ -46,6 +46,7 @@ texture_progress = ExtResource("4_cfate")
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 step = 0.01
+value = 20.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_cfate")
 texture_progress = ExtResource("4_kov8w")
