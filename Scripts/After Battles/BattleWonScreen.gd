@@ -2,7 +2,7 @@ extends TextureRect
 
 @onready var cards_container: HBoxContainer = $Screen/MarginContainer/MarginContainer2/CardsContainer
 @onready var next_battle_button: TextureButton = $Screen/NextBattleButton
-@onready var story_label: Label = $Screen/MarginContainer/VBoxContainer/StoryLabel
+@onready var story_label: RichTextLabel = $Screen/MarginContainer/VBoxContainer/StoryLabel
 
 func _enter_tree() -> void:
 	SignalHub.card_selected.connect(_on_card_selected)

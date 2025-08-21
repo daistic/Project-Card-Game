@@ -31,6 +31,7 @@ layout_mode = 2
 [node name="HPBar" type="TextureProgressBar" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+step = 0.1
 nine_patch_stretch = true
 texture_under = ExtResource("2_4iixn")
 texture_progress = ExtResource("3_83qdx")
@@ -38,6 +39,7 @@ texture_progress = ExtResource("3_83qdx")
 [node name="ShieldBar" type="TextureProgressBar" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+step = 0.01
 nine_patch_stretch = true
 texture_under = ExtResource("2_4iixn")
 texture_progress = ExtResource("4_3d88r")

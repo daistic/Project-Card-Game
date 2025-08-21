@@ -1,11 +1,15 @@
 extends EnemyGimmick
 
-@export var malware_deck: Array[PackedScene]
+var malware_deck: Array[PackedScene]
 
 func _enter_tree() -> void:
-	SignalHub.enemy_ready.connect(_on_enemy_ready)
+	SignalHub.battle_won.connect(_on_battle_won)
 
-func _on_enemy_ready() -> void:
+func _ready() -> void:
+	malware_deck = Global.get_malware_deck()
+	_add_malwares()
+
+func _add_malwares() -> void:
 	var active_player: Player = BattleManager.player
 	
 	if active_player == null:
@@ -14,3 +18,10 @@ func _on_enemy_ready() -> void:
 	for card in malware_deck:
 		BattleManager.player_deck.append(card)
 		print(BattleManager.player_deck)
+
+func _on_battle_won() -> void:
+	for card_scene in BattleManager.player_deck:
+		var scene: OnScreenCard = card_scene.instantiate()
+		if scene.card_resource.is_malware:
+			BattleManager.player_deck.erase(card_scene)
+		scene.queue_free()

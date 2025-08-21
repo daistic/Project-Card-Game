@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxt63u2qao8aw"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_gxjr5"]
-[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Stat Effectors/AttackDebuff.tres" id="2_15e3g"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="2_15e3g"]
 
 [node name="AttackDebuff" instance=ExtResource("1_gxjr5")]
 card_resource = ExtResource("2_15e3g")

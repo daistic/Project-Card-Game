@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2sdyp32t1deg"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_li0tw"]
+[ext_resource type="Resource" uid="uid://diu0dcc6pstyg" path="res://Resources/Card Resources/Normal Deck/AiHeal.tres" id="2_neyhn"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Resources/Gradients/AiEnergyBar.tres" id="3_khrlt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xwbq7"]
+gradient = ExtResource("3_khrlt")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="AIHeal" instance=ExtResource("1_li0tw")]
+card_resource = ExtResource("2_neyhn")
+
+[node name="EnergyCostBar" parent="." index="0"]
+texture_progress = SubResource("GradientTexture2D_xwbq7")

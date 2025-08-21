@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bchtrpajlhui6"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_bdnri"]
+[ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Resources/Card Resources/Winner Deck/IgnoreShield.tres" id="2_ywh3h"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Resources/Gradients/AiEnergyBar.tres" id="3_ywh3h"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v1k2k"]
+gradient = ExtResource("3_ywh3h")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="IgnoreShield" instance=ExtResource("1_bdnri")]
+card_resource = ExtResource("2_ywh3h")
+
+[node name="EnergyCostBar" parent="." index="0"]
+texture_progress = SubResource("GradientTexture2D_v1k2k")

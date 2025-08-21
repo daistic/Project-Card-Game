@@ -54,7 +54,7 @@ func _apply_gimmick() -> void:
 		await SignalHub.player_ready
 	
 	active_player.max_char_energy = energy_cap
-	active_player.cur_energy = energy_cap
+	active_player.energy.current = energy_cap
 	SignalHub.emit_update_energy_labels()
 
 func _restore_player_max_energy() -> void:
@@ -64,7 +64,7 @@ func _restore_player_max_energy() -> void:
 		await  SignalHub.player_ready
 	
 	active_player.max_char_energy = player_max_energy
-	active_player.cur_energy = player_max_energy
+	active_player.energy.current = player_max_energy
 	SignalHub.emit_update_energy_labels()
 
 func get_formatted_message() -> String:

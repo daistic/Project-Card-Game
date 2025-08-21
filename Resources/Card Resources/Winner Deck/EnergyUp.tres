@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnergyUp" load_steps=2 format=3 uid="uid://bwnmdoj83joqm"]
+
+[ext_resource type="Script" uid="uid://buoliaf54lg7r" path="res://Scripts/Card Interfaces/Normal Deck/EnergyUp.gd" id="1_hl52s"]
+
+[resource]
+script = ExtResource("1_hl52s")
+energy = 3
+name = "Effortless AI"
+desc = "Recharge [color=khaki] %d [/color] energy for AI's Energy"
+energy_cost = 0
+ai_energy_cost = 1
+is_malware = false
+metadata/_custom_type_script = "uid://buoliaf54lg7r"

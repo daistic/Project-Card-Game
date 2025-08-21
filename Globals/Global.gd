@@ -3,6 +3,7 @@ extends Node
 const CARDS_LIST: CardsList = preload("res://Resources/Cards List/CardFileList.tres")
 const STARTING_DECK: CardPackedList = preload("res://Resources/Decks/StartingDeck.tres")
 const WINNER_DECK: CardPackedList = preload("res://Resources/Decks/WinnerDeck.tres")
+const MALWAREDECK: CardPackedList = preload("res://Resources/Decks/MalwareDeck.tres")
 const ENEMY_LIST: Array[PackedScene] = [
 	preload("res://Scenes/Enemies/Enemy1.tscn"),
 	preload("res://Scenes/Enemies/Enemy2.tscn")
@@ -33,3 +34,6 @@ func get_3_random_winner_cards() -> Array[PackedScene]:
 	var winner_deck: Array[PackedScene] = WINNER_DECK.packed_scenes
 	winner_deck.shuffle()
 	return [winner_deck[0], winner_deck[1], winner_deck[2]]
+
+func get_malware_deck() -> Array[PackedScene]:
+	return MALWAREDECK.packed_scenes

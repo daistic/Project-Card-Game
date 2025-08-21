@@ -10,14 +10,14 @@
 script = ExtResource("2_utumb")
 next_boss = ExtResource("3_v6wb0")
 battles_to_meet = 3
-story_messages = Array[String](["The signal is unstable… something’s interfering. %d more battles", "Layers of code are twisting against me. %d more battle", "The firewall is watching.", "Access granted… but at what cost?"])
+story_messages = Array[String](["The signal is unstable… something’s interfering.[color=yellow] %d [/color] more battles", "Layers of code are twisting against me. [color=yellow] %d [/color] more battle", "The firewall is watching.", "Access granted… but at what cost?"])
 metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
 
 [sub_resource type="Resource" id="Resource_eperb"]
 script = ExtResource("2_utumb")
 next_boss = ExtResource("4_o58i3")
 battles_to_meet = 2
-story_messages = Array[String](["Encryption is breaking… but not in my favor. %d more battle", "The system is adapting faster than I can.", "The core is waking… and it knows I’m here."])
+story_messages = Array[String](["Encryption is breaking… but not in my favor.[color=yellow] %d [/color] more battle", "The system is adapting faster than I can.", "The core is waking… and it knows I’m here."])
 metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
 
 [sub_resource type="Resource" id="Resource_dadda"]

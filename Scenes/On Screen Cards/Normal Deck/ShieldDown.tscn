@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5kk5vaqgkr1"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_6l4wq"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="2_eq7oj"]
+
+[node name="ShieldDown" instance=ExtResource("1_6l4wq")]
+card_resource = ExtResource("2_eq7oj")
