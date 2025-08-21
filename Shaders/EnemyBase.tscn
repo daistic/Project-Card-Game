@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx4xd52shm7q7"]
+[gd_scene load_steps=12 format=3 uid="uid://dx4xd52shm7q7"]
 
 [ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Classes/Enemy.gd" id="1_0p7db"]
 [ext_resource type="Resource" uid="uid://et5d4anvll1p" path="res://Resources/Damageables/EnemyBaseDamageable.tres" id="2_t24r1"]
@@ -6,34 +6,46 @@
 [ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_dleq2"]
 [ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_oy7bm"]
 [ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_rihe7"]
+[ext_resource type="Texture2D" uid="uid://cfk5bo1sefp32" path="res://Assets/Textures/Enemies/EnemyPlaceholder.png" id="7_t24r1"]
 [ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Scenes/Card Game/EnemyMessage.tscn" id="7_u615p"]
 [ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="8_wp4y0"]
 [ext_resource type="PackedScene" uid="uid://dmtoneowdgmpv" path="res://Scenes/Card Game/StatusEffectContainer.tscn" id="9_iuv51"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkj5j"]
+atlas = ExtResource("7_t24r1")
+region = Rect2(58.8953, 383.89, 1118.32, 482.283)
+
 [node name="EnemyBase" type="Control"]
 z_index = 5
 layout_mode = 3
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-mouse_filter = 1
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_0p7db")
 stats = ExtResource("2_t24r1")
 enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource("5_oy7bm"), ExtResource("6_rihe7")])
 
 [node name="EnemyTexture" type="TextureRect" parent="."]
+z_index = -5
+custom_minimum_size = Vector2(150, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -254.0
+offset_top = -169.0
+offset_right = 209.9
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("AtlasTexture_hkj5j")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="EnemyMessage" parent="." instance=ExtResource("7_u615p")]
 layout_mode = 1
@@ -70,3 +82,5 @@ mouse_filter = 1
 
 [node name="StatusEffectGrid" parent="VBoxContainer/HBoxContainer" instance=ExtResource("9_iuv51")]
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

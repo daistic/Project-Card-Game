@@ -6,8 +6,10 @@ extends TextureRect
 @onready var desc_label: RichTextLabel = $DescLabel
 @onready var energy_cost_bar: TextureProgressBar = $EnergyCostBar
 @onready var shadow: TextureRect = $Shadow
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var card_resource: CardInterface
+@export var on_hover_sfx: AudioStream
 
 static var card_being_dragged: OnScreenCard = null
 
@@ -95,6 +97,7 @@ func _setup_childrens() -> void:
 
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)
+	SoundManager.play_sound(audio_stream_player, on_hover_sfx)
 
 func _on_mouse_exited() -> void:
 	_tween_scale_animation(not MOUSE_ENTERING)
