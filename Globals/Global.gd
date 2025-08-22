@@ -9,7 +9,9 @@ const ENEMY_LIST: Array[PackedScene] = [
 	preload("res://Scenes/Enemies/Enemy2.tscn")
 ]
 const SAVE_PATH: String = "user://save_data.tres"
-const MAIN_MENU = preload("res://Scenes/MainMenu/MainMenu.tscn")
+const MAIN_MENU: PackedScene = preload("res://Scenes/MainMenu/MainMenu.tscn")
+const PROLOGUE: PackedScene = preload("res://Scenes/Cutscenes/Prologue.tscn")
+const EPILOGUE: PackedScene = preload("res://Scenes/Cutscenes/Epilogue.tscn")
 
 var cards_scene: Array[PackedScene]= []
 var cards_resources: Array[CardInterface] = []
@@ -73,3 +75,9 @@ func get_player_stats() -> Damageable:
 
 func go_to_main_menu() -> void:
 	get_tree().change_scene_to_packed(MAIN_MENU)
+
+func go_to_prologue() -> void:
+	get_tree().change_scene_to_packed(PROLOGUE)
+
+func go_to_epilogue() -> void:
+	get_tree().change_scene_to_packed(EPILOGUE)

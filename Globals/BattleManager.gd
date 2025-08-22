@@ -22,16 +22,39 @@ var message_index: int = -1
 
 var crypto_collected: int = 0
 
-func _enter_tree() -> void:
+func _ready() -> void:
+	set_starting_deck()
+	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
+
+func set_starting_deck() -> void:
 	var starting_deck: CardPackedList = Global.get_starting_deck()
 	for scene in starting_deck.packed_scenes:
 		player_deck.append(scene)
 
-func _ready() -> void:
-	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
+func clear_player_deck() -> void:
+	player_deck.clear()
+
+func add_to_player_deck(card_scene: PackedScene) -> void:
+	player_deck.append(card_scene)
 
 func draw_player_deck() -> PackedScene:
+	var draw
+	
 	return player_deck.pick_random()
+
+func add_malwares_to_deck() -> void:
+	if player == null:
+		await SignalHub.player_ready
+	
+	for card in Global.get_malware_deck():
+		BattleManager.player_deck.append(card)
+
+func rid_malwares_from_deck() -> void:
+	for card_scene in player_deck:
+		var scene: OnScreenCard = card_scene.instantiate()
+		
+		if scene.card_resource.is_malware:
+			player_deck.erase(card_scene)
 
 func new_player(_new_player: Player) -> void:
 	player = _new_player
@@ -39,18 +62,9 @@ func new_player(_new_player: Player) -> void:
 func new_enemy(_new_enemy: Enemy) -> void:
 	enemy = _new_enemy
 
-func add_to_player_deck(card_scene: PackedScene) -> void:
-	player_deck.append(card_scene)
-
-func go_to_card_game() -> void:
-	_boss_check()
-	get_tree().change_scene_to_packed(CARD_GAME)
-
-func go_to_battle_won_screen() -> void:
-	get_tree().change_scene_to_packed(BATTLE_WON_SCREEN)
-
-func go_to_battle_lost_screen() -> void:
-	get_tree().change_scene_to_packed(BATTLE_LOST_SCREEN)
+func on_battle_finished() -> void:
+	player = null
+	enemy = null
 
 func _boss_check() -> void:
 	battles_to_boss -= 1
@@ -79,6 +93,22 @@ func get_formatted_story_message() -> String:
 		message = message % battles_to_boss
 	
 	return message
+
+func go_to_card_game() -> void:
+	_boss_check()
+	get_tree().change_scene_to_packed(CARD_GAME)
+
+func go_to_battle_won_screen() -> void:
+	get_tree().change_scene_to_packed(BATTLE_WON_SCREEN)
+
+func go_to_battle_lost_screen() -> void:
+	get_tree().change_scene_to_packed(BATTLE_LOST_SCREEN)
+
+func handle_next_win_scene() -> void:
+	if story_index < CYBER_STORY.story.size():
+		go_to_card_game()
+	else:
+		Global.go_to_epilogue()
 
 func get_crypto_collected() -> int:
 	return crypto_collected

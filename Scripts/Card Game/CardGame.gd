@@ -14,6 +14,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	_new_enemy()
+	SoundManager.play_bgm("Battle")
 
 func _process(delta: float) -> void:
 	_handle_parallax_effect(delta)
@@ -37,15 +38,17 @@ func _new_enemy() -> void:
 	if BattleManager.is_fighting_boss:
 		enemy_scene = BattleManager.get_story_boss()
 	else:
-		enemy_scene= Global.get_random_enemy()
+		enemy_scene = Global.get_random_enemy()
 	
 	var instance: Enemy = enemy_scene.instantiate()
 	parallax.add_child(instance)
 
 func _on_battle_won() -> void:
+	BattleManager.on_battle_finished()
 	BattleManager.go_to_battle_won_screen()
 
 func _on_battle_lost() -> void:
+	BattleManager.on_battle_finished()
 	BattleManager.go_to_battle_lost_screen()
 
 func _on_pause_button_pressed() -> void:

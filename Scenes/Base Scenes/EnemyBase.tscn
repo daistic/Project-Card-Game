@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dx4xd52shm7q7"]
+[gd_scene load_steps=11 format=3 uid="uid://dx4xd52shm7q7"]
 
 [ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Scripts/Classes/Enemy.gd" id="1_0p7db"]
 [ext_resource type="Resource" uid="uid://et5d4anvll1p" path="res://Resources/Damageables/EnemyBaseDamageable.tres" id="2_t24r1"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_rihe7"]
 [ext_resource type="PackedScene" uid="uid://wwtca1lmwyls" path="res://Scenes/Card Game/EnemyTextureRect.tscn" id="7_t24r1"]
 [ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Scenes/Card Game/EnemyMessage.tscn" id="7_u615p"]
-[ext_resource type="Material" uid="uid://csecmndxv2frl" path="res://Assets/Materials/EnemyVHS.tres" id="8_pmc0e"]
 [ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Scenes/Card Game/EnemyBarsContainer.tscn" id="8_wp4y0"]
 [ext_resource type="PackedScene" uid="uid://dmtoneowdgmpv" path="res://Scenes/Card Game/StatusEffectContainer.tscn" id="9_iuv51"]
 
@@ -26,7 +25,6 @@ stats = ExtResource("2_t24r1")
 enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource("5_oy7bm"), ExtResource("6_rihe7")])
 
 [node name="TextureRect" parent="." instance=ExtResource("7_t24r1")]
-material = ExtResource("8_pmc0e")
 layout_mode = 1
 offset_top = -100.0
 offset_bottom = 100.0

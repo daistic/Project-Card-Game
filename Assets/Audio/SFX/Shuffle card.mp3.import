@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://biax00nglitxy"
+path="res://.godot/imported/Shuffle card.mp3-0ae5501f0c5acb5a04a06087d5a491e7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Shuffle card.mp3"
+dest_files=["res://.godot/imported/Shuffle card.mp3-0ae5501f0c5acb5a04a06087d5a491e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqy1180uyf8gi"
+path="res://.godot/imported/Enemy atk.mp3-8c5290e67d2b5172172d7c061d344bf1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Enemy atk.mp3"
+dest_files=["res://.godot/imported/Enemy atk.mp3-8c5290e67d2b5172172d7c061d344bf1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://imbovf41x7kx"
+path="res://.godot/imported/SFX Tombol.mp3-047763fb8ef4d7e4be21d6d6db0634fa.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/SFX Tombol.mp3"
+dest_files=["res://.godot/imported/SFX Tombol.mp3-047763fb8ef4d7e4be21d6d6db0634fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

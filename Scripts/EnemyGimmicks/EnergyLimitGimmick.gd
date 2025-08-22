@@ -35,7 +35,6 @@ func _on_enemy_turn_finished() -> void:
 			_new_apply_in()
 	else:
 		apply_in -= 1
-		print(apply_in)
 		
 		if apply_in <= 0:
 			is_active = true

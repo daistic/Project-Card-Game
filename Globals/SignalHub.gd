@@ -1,7 +1,5 @@
 extends Node
 
-signal battle_start
-
 signal player_ready
 
 signal card_used(card_resource: CardInterface)
@@ -18,9 +16,6 @@ signal card_selected
 signal battle_lost
 
 signal upgrade_finalize
-
-func emit_battle_start() -> void:
-	battle_start.emit()
 
 func emit_player_ready() -> void:
 	player_ready.emit()

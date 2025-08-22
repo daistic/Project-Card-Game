@@ -33,14 +33,14 @@ func _start_idle_animation() -> void:
 	var tween: Tween = create_tween()
 	tween.set_loops()
 	
-	tween.tween_property(enemy_texture, "scale", Vector2(1.0, 1.0), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(enemy_texture, "scale", Vector2(1.1, 1.1), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(enemy_texture, "position:y", enemy_texture.position.y - 5, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	tween.tween_property(enemy_texture, "scale", Vector2(0.95, 0.95), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(enemy_texture, "scale", Vector2(1.0, 1.0), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(enemy_texture, "position:y", enemy_texture.position.y + 5, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	tween.parallel().tween_property(shadow, "scale", Vector2(1.0, 1.0), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel().tween_property(shadow, "scale", Vector2(1.1, 1.1), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.parallel().tween_property(shadow, "position:y", shadow.position.y - 3, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	tween.parallel().tween_property(shadow, "scale", Vector2(0.95, 0.95), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel().tween_property(shadow, "scale", Vector2(1.0, 1.0), 1.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.parallel().tween_property(shadow, "position:y", shadow.position.y + 3, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

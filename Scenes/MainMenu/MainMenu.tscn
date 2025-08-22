@@ -43,8 +43,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kpx3y")
-max_parallax_offset = Vector2(2.5, 2.5)
-smoothing = 5.0
 Main = NodePath("Parallax")
 
 [node name="Background" type="ColorRect" parent="."]

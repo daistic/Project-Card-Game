@@ -1,15 +1,10 @@
 extends Control
 
 @onready var parallax: Control = $Parallax
-@onready var upgrade_screen: TextureRect = $Parallax/UpgradeScreen
+@onready var start: GameButton = $Start
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
-@export var Main:CanvasItem
-@export var Upgrade:CanvasItem
-
-func _ready() -> void:
-	SoundManager.play_bgm("Menu")
 
 func _process(delta: float) -> void:
 	_handle_parallax_effect(delta)
@@ -28,23 +23,7 @@ func _handle_parallax_effect(delta: float) -> void:
 	parallax.position.y = lerp(parallax.position.y, new_pos.y, smoothing * delta) 
 
 func _on_start_pressed() -> void:
-	BattleManager.crypto_collected = 0
-	BattleManager.clear_player_deck()
-	BattleManager.set_starting_deck()
-	Global.go_to_prologue()
-	SoundManager.disable_bgm()
+	BattleManager.go_to_card_game()
 
-func _on_upgrade_pressed() -> void:
-	upgrade_screen.show()
-
-func _on_quit_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_setting_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_how_to_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	start.show()

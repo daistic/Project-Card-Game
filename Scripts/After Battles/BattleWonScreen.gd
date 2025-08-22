@@ -42,4 +42,4 @@ func _on_card_selected() -> void:
 
 func _on_texture_button_pressed() -> void:
 	next_battle_button.disabled = true
-	BattleManager.go_to_card_game()
+	BattleManager.handle_next_win_scene()
