@@ -1,15 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://csa2a1epa7r04"]
+[gd_scene load_steps=6 format=3 uid="uid://csa2a1epa7r04"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_cyolx"]
 [ext_resource type="PackedScene" uid="uid://cg6xohcopeelx" path="res://Scenes/Enemy Gimmicks/EnergyLimitGimmick.tscn" id="2_p57sm"]
-[ext_resource type="Shader" uid="uid://dcnkql0c0ucc" path="res://Shaders/Distortion.gdshader" id="3_nrigf"]
 [ext_resource type="Texture2D" uid="uid://clytusrubr6o" path="res://Assets/Textures/Enemies/miniboss2.png" id="3_s8fmv"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wgly"]
-shader = ExtResource("3_nrigf")
-shader_parameter/chaos = 4.706
-shader_parameter/radius = 0.735
-shader_parameter/attenuation = 2.609
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrigf"]
 atlas = ExtResource("3_s8fmv")
@@ -24,7 +17,6 @@ region = Rect2(58.895, 191.769, 1118.32, 674.404)
 [node name="EnergyLimitGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_p57sm")]
 
 [node name="TextureRect" parent="." index="1"]
-material = SubResource("ShaderMaterial_6wgly")
 custom_minimum_size = Vector2(500, 350)
 offset_left = -300.0
 offset_top = -253.0
