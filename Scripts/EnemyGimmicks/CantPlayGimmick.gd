@@ -39,6 +39,8 @@ func _apply_gimmick() -> void:
 		await SignalHub.player_ready
 	
 	active_player.clear_cards()
+	
+	sfx_player.volume_db = SoundManager.get_sfx_volume()
 	sfx_player.play()
 
 func get_formatted_message() -> String:

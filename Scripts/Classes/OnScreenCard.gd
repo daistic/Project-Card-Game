@@ -98,11 +98,13 @@ func _setup_childrens() -> void:
 
 func play_on_hover_sfx() -> void:
 	sfx_player.stop()
+	sfx_player.volume_db = SoundManager.get_sfx_volume()
 	sfx_player.stream = on_hover_sfx
 	sfx_player.play()
 
 func play_cant_use_sfx() -> void:
 	sfx_player.stop()
+	sfx_player.volume_db = SoundManager.get_sfx_volume()
 	sfx_player.stream = cant_use_sfx
 	sfx_player.play()
 

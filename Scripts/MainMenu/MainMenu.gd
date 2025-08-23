@@ -3,6 +3,8 @@ extends Control
 @onready var parallax: Control = $Parallax
 @onready var upgrade_screen: TextureRect = $Parallax/UpgradeScreen
 @onready var credit_screen: TextureRect = $Parallax/CreditScreen
+@onready var how_to_screen: TextureRect = $Parallax/HowToScreen
+@onready var settings_screen: TextureRect = $Parallax/SettingsScreen
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
@@ -41,7 +43,6 @@ func _on_start_pressed() -> void:
 	BattleManager.clear_player_deck()
 	BattleManager.set_starting_deck()
 	Global.go_to_prologue()
-	SoundManager.disable_bgm()
 
 func _on_upgrade_pressed() -> void:
 	handle_screen_display(upgrade_screen)
@@ -50,10 +51,10 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_setting_pressed() -> void:
-	pass # Replace with function body.
+	handle_screen_display(settings_screen)
 
 func _on_how_to_pressed() -> void:
-	pass # Replace with function body.
+	handle_screen_display(how_to_screen)
 
 func _on_credits_pressed() -> void:
 	handle_screen_display(credit_screen)

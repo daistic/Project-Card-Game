@@ -24,6 +24,9 @@ var sfx_attack_player: AudioStreamPlayer
 var sfx_modifier_player: AudioStreamPlayer
 var sfx_general_player: AudioStreamPlayer
 
+var bgm_volume: float
+var sfx_volume: float
+
 func _ready() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	add_child(bgm_player)
@@ -79,3 +82,16 @@ func play_sound(player: AudioStreamPlayer, audio: AudioStream) -> void:
 	player.stop()
 	player.stream = audio
 	player.play()
+
+func set_bgm_volume(value: float) -> void:
+	bgm_player.volume_db = value
+	bgm_volume = value
+
+func set_sfx_volume(value: float) -> void:
+	sfx_attack_player.volume_db = value
+	sfx_modifier_player.volume_db = value
+	sfx_general_player.volume_db = value
+	sfx_volume = value
+
+func get_sfx_volume() -> float:
+	return sfx_volume

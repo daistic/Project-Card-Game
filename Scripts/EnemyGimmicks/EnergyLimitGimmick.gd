@@ -57,6 +57,8 @@ func _apply_gimmick() -> void:
 	active_player.max_char_energy = energy_cap
 	active_player.energy.current = energy_cap
 	SignalHub.emit_update_energy_labels()
+	
+	sfx_player.volume_db = SoundManager.get_sfx_volume()
 	sfx_player.play()
 
 func _restore_player_max_energy() -> void:

@@ -18,7 +18,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 118.0
-offset_top = 32.0
+offset_top = 27.0
 offset_right = -135.126
 offset_bottom = -34.0
 grow_horizontal = 2
@@ -39,12 +39,12 @@ Sprite Credits:
 - \"Red skull 47 icon\" by iconsdb.com
 - \"Crystal Knight\" by Brother Daniel on itch
 
+Background Shader Credit: \"Balatro Background Shader\" by xxidbr9 on Godot Shaders
+
 Comic Credit: @brave0malanya on X
 Battle Music Credit: Vinliat on SoundCloud
 Main Music Credit: \"Underbeat\" by David KBD on itch
-SFX Credits: from Pixabay
-
-"
+SFX Credits: from Pixabay"
 label_settings = SubResource("LabelSettings_kwbon")
 autowrap_mode = 2
 
