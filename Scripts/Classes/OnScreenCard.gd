@@ -2,14 +2,13 @@ class_name OnScreenCard
 
 extends TextureRect
 
+@onready var shadow: TextureRect = $Shadow
+@onready var energy_cost_bar: TextureProgressBar = $EnergyCostBar
+@onready var frame: TextureRect = $Frame
 @onready var title_label: Label = $TitleLabel
 @onready var desc_label: RichTextLabel = $DescLabel
-@onready var energy_cost_bar: TextureProgressBar = $EnergyCostBar
-@onready var shadow: TextureRect = $Shadow
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var card_resource: CardInterface
-@export var on_hover_sfx: AudioStream
 
 static var card_being_dragged: OnScreenCard = null
 
@@ -56,12 +55,11 @@ func _handle_shadow() -> void:
 	shadow.position.x = lerp(0.0, -sign(distance) * MAX_SHADOW_OFFSET, abs(distance/(center.x)))
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
-	var preview_scene: PackedScene = load(self.scene_file_path)
-	preview_card = preview_scene.instantiate()
+	preview_card = self.duplicate()
 	preview_card.scale *= SCALE_SIZE
 	
 	var preview = Control.new()
-	preview.z_index = 1
+	preview.z_index = 0
 	preview.add_child(preview_card)
 	set_drag_preview(preview)
 	
@@ -97,7 +95,6 @@ func _setup_childrens() -> void:
 
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)
-	SoundManager.play_sound(audio_stream_player, on_hover_sfx)
 
 func _on_mouse_exited() -> void:
 	_tween_scale_animation(not MOUSE_ENTERING)
