@@ -29,32 +29,16 @@ func _ready() -> void:
 func set_starting_deck() -> void:
 	var starting_deck: CardPackedList = Global.get_starting_deck()
 	for scene in starting_deck.packed_scenes:
-		player_deck.append(scene)
+		add_to_player_deck(scene.duplicate())
 
 func clear_player_deck() -> void:
 	player_deck.clear()
 
 func add_to_player_deck(card_scene: PackedScene) -> void:
-	player_deck.append(card_scene)
+	player_deck.append(card_scene.duplicate())
 
 func draw_player_deck() -> PackedScene:
-	var draw
-	
 	return player_deck.pick_random()
-
-func add_malwares_to_deck() -> void:
-	if player == null:
-		await SignalHub.player_ready
-	
-	for card in Global.get_malware_deck():
-		BattleManager.player_deck.append(card)
-
-func rid_malwares_from_deck() -> void:
-	for card_scene in player_deck:
-		var scene: OnScreenCard = card_scene.instantiate()
-		
-		if scene.card_resource.is_malware:
-			player_deck.erase(card_scene)
 
 func new_player(_new_player: Player) -> void:
 	player = _new_player
