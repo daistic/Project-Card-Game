@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://wwtca1lmwyls"]
 
 [ext_resource type="Material" uid="uid://csecmndxv2frl" path="res://Assets/Materials/EnemyVHS.tres" id="1_bk6wd"]
-[ext_resource type="Texture2D" uid="uid://cfk5bo1sefp32" path="res://Assets/Textures/Enemies/EnemyPlaceholder.png" id="2_bk6wd"]
 [ext_resource type="Script" uid="uid://bph0lcafujvu3" path="res://Scripts/Card Game/EnemyTextureRect.gd" id="2_gi20b"]
+[ext_resource type="Texture2D" uid="uid://b8uuwn1c0dar5" path="res://Assets/Textures/Enemies/EnemyBase.png" id="3_bk6wd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkj5j"]
-atlas = ExtResource("2_bk6wd")
-region = Rect2(58.8953, 383.89, 1118.32, 482.283)
+atlas = ExtResource("3_bk6wd")
+region = Rect2(95.0665, 321.3, 782.839, 544.872)
 
 [node name="EnemyTextureRect" type="ColorRect"]
 z_index = -5

@@ -26,8 +26,10 @@ enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource(
 
 [node name="TextureRect" parent="." instance=ExtResource("7_t24r1")]
 layout_mode = 1
-offset_top = -100.0
-offset_bottom = 100.0
+offset_left = -320.0
+offset_top = -175.0
+offset_right = 180.0
+offset_bottom = 25.0
 
 [node name="EnemyMessage" parent="." instance=ExtResource("7_u615p")]
 layout_mode = 1

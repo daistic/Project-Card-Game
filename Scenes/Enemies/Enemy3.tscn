@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dekc4bved3hgr"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_v05kr"]
+
+[node name="EnemyBase" instance=ExtResource("1_v05kr")]
+
+[node name="TextureRect" parent="." index="0"]
+modulate = Color(0.460386, 0.995358, 1, 1)

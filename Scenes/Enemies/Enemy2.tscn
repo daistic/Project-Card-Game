@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_f1y8x"]
 
 [node name="Enemy2" instance=ExtResource("1_f1y8x")]
+
+[node name="TextureRect" parent="." index="0"]
+modulate = Color(1, 1, 0.67451, 1)

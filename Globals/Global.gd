@@ -6,7 +6,9 @@ const WINNER_DECK: CardPackedList = preload("res://Resources/Decks/WinnerDeck.tr
 const MALWAREDECK: CardPackedList = preload("res://Resources/Decks/MalwareDeck.tres")
 const ENEMY_LIST: Array[PackedScene] = [
 	preload("res://Scenes/Enemies/Enemy1.tscn"),
-	preload("res://Scenes/Enemies/Enemy2.tscn")
+	preload("res://Scenes/Enemies/Enemy2.tscn"),
+	preload("res://Scenes/Enemies/Enemy3.tscn"),
+	preload("res://Scenes/Enemies/Enemy3.tscn")
 ]
 const SAVE_PATH: String = "user://save_data.tres"
 const MAIN_MENU: PackedScene = preload("res://Scenes/MainMenu/MainMenu.tscn")
