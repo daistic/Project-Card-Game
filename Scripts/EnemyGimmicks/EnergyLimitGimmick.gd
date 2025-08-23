@@ -1,5 +1,7 @@
 extends EnemyGimmick
 
+@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
+
 @export var energy_cap: int = 3
 @export var gimmick_turns: int = 2
 @export var max_next_application: int = 5
@@ -55,6 +57,7 @@ func _apply_gimmick() -> void:
 	active_player.max_char_energy = energy_cap
 	active_player.energy.current = energy_cap
 	SignalHub.emit_update_energy_labels()
+	sfx_player.play()
 
 func _restore_player_max_energy() -> void:
 	var active_player = BattleManager.player

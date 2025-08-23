@@ -28,6 +28,7 @@ func card_damage(other_damageable: Damageable, damage: float,
 			is_crit = true
 	
 	EffectHub.display_damage(total_damage, display_spawnpoint, enemy_damaged, is_crit)
+	EffectHub.handle_attack_sfx(total_damage, is_crit, enemy_damaged)
 	return total_damage
 
 func get_stats_after_status() -> Damageable:

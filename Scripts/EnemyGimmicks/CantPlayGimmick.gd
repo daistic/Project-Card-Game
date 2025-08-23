@@ -1,5 +1,7 @@
 extends EnemyGimmick
 
+@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
+
 @export var max_next_application: int = 5
 @export var min_next_application: int = 3
 @export var gimmick_message: String = ""
@@ -37,6 +39,7 @@ func _apply_gimmick() -> void:
 		await SignalHub.player_ready
 	
 	active_player.clear_cards()
+	sfx_player.play()
 
 func get_formatted_message() -> String:
 	if is_active:

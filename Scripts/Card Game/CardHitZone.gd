@@ -6,6 +6,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if data is OnScreenCard:
 		if (BattleManager.player.energy.current - data.card_resource.energy_cost < 0 or 
 			BattleManager.player.ai_energy.current - data.card_resource.ai_energy_cost < 0):
+				data.play_cant_use_sfx()
 				return false
 		else:
 			return true

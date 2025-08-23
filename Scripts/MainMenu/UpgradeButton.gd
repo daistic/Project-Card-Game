@@ -69,12 +69,14 @@ func _on_minus_pressed() -> void:
 	cryto_used -= crypto_needed
 	_update_stat_label()
 	degrade_temp.emit(index_map[button_index], upgrade_amount)
+	SoundManager.play_sfx("Button Click")
 
 func _on_plus_pressed() -> void:
 	amount_plus_pressed += 1
 	cryto_used += crypto_needed
 	_update_stat_label()
 	upgrade_temp.emit(index_map[button_index], upgrade_amount)
+	SoundManager.play_sfx("Button Click")
 
 func _on_upgrade_finalize() -> void:
 	amount_plus_pressed = 0

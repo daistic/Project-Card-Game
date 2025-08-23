@@ -53,6 +53,7 @@ func _on_battle_lost() -> void:
 
 func _on_pause_button_pressed() -> void:
 	paused_layer.show()
+	SoundManager.play_sfx("Pause")
 
 func _on_continue_button_pressed() -> void:
 	paused_layer.hide()

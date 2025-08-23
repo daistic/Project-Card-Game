@@ -17,7 +17,6 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 	
 	number.label_settings.font_color = color
 	parent.call_deferred("add_child", number)
-	
 	if enemy_damaged == false && value > 0:
 		trigger_camera_shake()
 	
@@ -44,3 +43,15 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 func trigger_camera_shake() -> void:
 	var game_camera: GameCamera = get_tree().get_first_node_in_group("Camera")
 	game_camera.trigger_shake()
+
+func handle_attack_sfx(damage: float, is_crit: bool, enemy_damaged: bool) -> void:
+	if damage <= 0:
+		return
+	
+	if is_crit:
+		SoundManager.play_attack_sfx("Crit")
+	else:
+		if enemy_damaged:
+			SoundManager.play_attack_sfx("Player Attack")
+		else:
+			SoundManager.play_attack_sfx("Enemy Attack")

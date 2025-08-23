@@ -10,3 +10,6 @@ func regenerate_stat(_damageable: Damageable) -> void:
 
 func get_desc_format() -> Array:
 	return [shield_amount]
+
+func play_sfx() -> void:
+	SoundManager.play_modifier_sfx("Shield")

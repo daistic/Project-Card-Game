@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqx2gwnp55vn8"]
+[gd_scene load_steps=18 format=3 uid="uid://bqx2gwnp55vn8"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_44g82"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="7_j0vtd"]
 [ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="8_fomr0"]
 [ext_resource type="Shader" uid="uid://dbegqncfmmq0o" path="res://Shaders/VHSShader.gdshader" id="9_rthsc"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="11_y51d7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abt7p"]
 atlas = ExtResource("3_guoxy")
@@ -212,6 +213,7 @@ texture_normal = ExtResource("7_j0vtd")
 texture_disabled = ExtResource("8_fomr0")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("11_y51d7")
 
 [node name="Label" type="Label" parent="Parallax/Screen/NextBattleButton"]
 layout_mode = 1

@@ -7,8 +7,11 @@ extends TextureRect
 @onready var frame: TextureRect = $Frame
 @onready var title_label: Label = $TitleLabel
 @onready var desc_label: RichTextLabel = $DescLabel
+@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
 
 @export var card_resource: CardInterface
+@export var on_hover_sfx: AudioStream
+@export var cant_use_sfx: AudioStream
 
 static var card_being_dragged: OnScreenCard = null
 
@@ -93,8 +96,19 @@ func _setup_childrens() -> void:
 	else:
 		energy_cost_bar.value = card_resource.energy_cost
 
+func play_on_hover_sfx() -> void:
+	sfx_player.stop()
+	sfx_player.stream = on_hover_sfx
+	sfx_player.play()
+
+func play_cant_use_sfx() -> void:
+	sfx_player.stop()
+	sfx_player.stream = cant_use_sfx
+	sfx_player.play()
+
 func _on_mouse_entered() -> void:
 	_tween_scale_animation(MOUSE_ENTERING)
+	play_on_hover_sfx()
 
 func _on_mouse_exited() -> void:
 	_tween_scale_animation(not MOUSE_ENTERING)

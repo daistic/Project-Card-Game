@@ -2,11 +2,14 @@ extends Control
 
 @onready var parallax: Control = $Parallax
 @onready var upgrade_screen: TextureRect = $Parallax/UpgradeScreen
+@onready var credit_screen: TextureRect = $Parallax/CreditScreen
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
 @export var Main:CanvasItem
 @export var Upgrade:CanvasItem
+
+var current_screen: Control = Control.new()
 
 func _ready() -> void:
 	SoundManager.play_bgm("Menu")
@@ -27,6 +30,12 @@ func _handle_parallax_effect(delta: float) -> void:
 	parallax.position.x = lerp(parallax.position.x, new_pos.x, smoothing * delta)
 	parallax.position.y = lerp(parallax.position.y, new_pos.y, smoothing * delta) 
 
+func handle_screen_display(new_screen: Control) -> void:
+	current_screen.hide()
+	current_screen = new_screen
+	new_screen.show()
+	SoundManager.play_sfx("Button Click")
+
 func _on_start_pressed() -> void:
 	BattleManager.crypto_collected = 0
 	BattleManager.clear_player_deck()
@@ -35,10 +44,10 @@ func _on_start_pressed() -> void:
 	SoundManager.disable_bgm()
 
 func _on_upgrade_pressed() -> void:
-	upgrade_screen.show()
+	handle_screen_display(upgrade_screen)
 
 func _on_quit_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().quit()
 
 func _on_setting_pressed() -> void:
 	pass # Replace with function body.
@@ -47,4 +56,4 @@ func _on_how_to_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	handle_screen_display(credit_screen)

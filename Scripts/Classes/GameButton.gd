@@ -28,6 +28,8 @@ func _on_pressed() -> void:
 	tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0), 0.05)
 	tween.tween_property(self, "modulate", Color(0.8, 0.8, 0.8), 0.05)
+	
+	SoundManager.play_sfx("Button Click")
 
 func undisable_button() -> void:
 	disabled = false

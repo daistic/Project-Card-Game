@@ -6,7 +6,7 @@
 script = ExtResource("1_223kg")
 debuff = 0.5
 is_debuff = true
-turns = 1
+turns = 2
 name = "Bypass Security"
 desc = "Ignore [color=khaki] %.1f [/color] of enemy's shield. Active for [color=khaki] %d [/color] turns"
 energy_cost = 0

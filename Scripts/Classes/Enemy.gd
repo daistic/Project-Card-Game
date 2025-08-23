@@ -48,6 +48,8 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 		else:
 			new_status_effect(_card_resource)
 	
+	_card_resource.play_sfx()
+	
 	_update_enemy_bars()
 	#print(BattleManager.player.stats.cur_hp)
 

@@ -50,6 +50,8 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 		else:
 			new_status_effect(_card_resource)
 	
+	_card_resource.play_sfx()
+	
 	_update_player_bars()
 	update_player_energy_info()
 	print(ai_energy.current)

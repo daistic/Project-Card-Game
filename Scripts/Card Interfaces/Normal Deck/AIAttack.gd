@@ -13,3 +13,6 @@ func degenerate_stat(_damageable: Damageable) -> void:
 
 func get_desc_format() -> Array:
 	return [damage, shield_break]
+
+func play_sfx() -> void:
+	SoundManager.play_modifier_sfx("Shield Break")

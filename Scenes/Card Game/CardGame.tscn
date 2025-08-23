@@ -73,6 +73,16 @@ mouse_filter = 1
 anchor_mode = 0
 script = ExtResource("4_3f11k")
 
+[node name="PauseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 65.0
+offset_bottom = 55.0
+texture_normal = ExtResource("3_7ak25")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="PausedLayer" type="ColorRect" parent="."]
 visible = false
 z_index = 10
@@ -161,16 +171,6 @@ label_settings = SubResource("LabelSettings_bvi5y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 15.0
-offset_right = 65.0
-offset_bottom = 55.0
-texture_normal = ExtResource("3_7ak25")
-ignore_texture_size = true
-stretch_mode = 5
-
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -189,8 +189,6 @@ scale = Vector2(1.1, 1.1)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PausedLayer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="PausedLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

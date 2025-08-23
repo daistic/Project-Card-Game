@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cep8t3bie017m"
+path="res://.godot/imported/Crit atk.mp3-f78213fc4293723f2353f2833d2f1047.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Crit atk.mp3"
+dest_files=["res://.godot/imported/Crit atk.mp3-f78213fc4293723f2353f2833d2f1047.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,28 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
 [ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Scripts/MainMenu/MainMenu.gd" id="1_kpx3y"]
-[ext_resource type="Shader" uid="uid://dde441t43r3fd" path="res://Shaders/Background4.gdshader" id="2_fv0xt"]
+[ext_resource type="Material" uid="uid://gip1muybp1s8" path="res://Assets/Materials/Background1.tres" id="2_sng02"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_8qovt"]
 [ext_resource type="PackedScene" uid="uid://dw8g5ywig87e6" path="res://Scenes/MainMenu/UpgradeScreen.tscn" id="3_sng02"]
+[ext_resource type="PackedScene" uid="uid://r0lurvrabhid" path="res://Scenes/MainMenu/CreditScreen.tscn" id="4_lic31"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="5_vapy7"]
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://kqnai0iox4j7" path="res://Assets/Textures/MainMenu/Setting Button.png" id="6_fv0xt"]
 [ext_resource type="Texture2D" uid="uid://dcpmqvkx11h16" path="res://Assets/Textures/MainMenu/Help Button.png" id="7_sng02"]
 [ext_resource type="Texture2D" uid="uid://yg7nsvbic0na" path="res://Assets/Textures/MainMenu/Credits Button.png" id="8_lic31"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sng02"]
-shader = ExtResource("2_fv0xt")
-shader_parameter/spin_rotation_speed = 2.0
-shader_parameter/move_speed = 5.0
-shader_parameter/offset = Vector2(0.535, -0.26)
-shader_parameter/colour_1 = Color(4.81307e-07, 0.408773, 0.581876, 1)
-shader_parameter/colour_2 = Color(0.882353, 0.0313726, 0.156863, 1)
-shader_parameter/colour_3 = Color(0.086, 0.137, 0.145, 1)
-shader_parameter/contrast = 0.93
-shader_parameter/lighting = 0.0
-shader_parameter/spin_amount = 0.03
-shader_parameter/pixel_filter = 740.0
-shader_parameter/is_rotating = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hjx5"]
 font = ExtResource("3_8qovt")
@@ -49,7 +36,7 @@ Main = NodePath("Parallax")
 z_index = -5
 texture_filter = 1
 texture_repeat = 2
-material = SubResource("ShaderMaterial_sng02")
+material = ExtResource("2_sng02")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,6 +58,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="UpgradeScreen" parent="Parallax" instance=ExtResource("3_sng02")]
+visible = false
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 1002.13
+offset_bottom = 540.0
+
+[node name="CreditScreen" parent="Parallax" instance=ExtResource("4_lic31")]
 visible = false
 layout_mode = 0
 offset_left = 53.0

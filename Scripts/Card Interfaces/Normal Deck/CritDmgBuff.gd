@@ -9,3 +9,6 @@ func apply_stat_effect(_damageable: Damageable) -> void:
 
 func get_desc_format() -> Array:
 	return [buff]
+
+func play_sfx() -> void:
+	SoundManager.play_modifier_sfx("Status Effect")

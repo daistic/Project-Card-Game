@@ -3,6 +3,7 @@ extends TextureRect
 @onready var upgrades_container: VBoxContainer = $HBoxContainer/UpgradesContainer
 @onready var label: Label = $Label
 @onready var crypto_held_label: Label = $HBoxContainer/CryptoHeldLabel
+@onready var exit_button: GameButton = $ExitButton
 
 var temp_stats: Damageable
 
@@ -45,7 +46,8 @@ func _on_degrade_temp(stat: String, upgrade: float) -> void:
 	_update_cryto_held_label()
 
 func _on_exit_button_pressed() -> void:
-	hide()
+	exit_button._reset_modulate()
+	call_deferred("hide")
 
 func _on_finalize_button_pressed() -> void:
 	var total_crypto = Global.get_total_crypto() - UpgradeButton.cryto_used
