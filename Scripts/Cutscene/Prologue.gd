@@ -6,6 +6,9 @@ extends Control
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
 
+func _ready() -> void:
+	SoundManager.disable_bgm()
+
 func _process(delta: float) -> void:
 	_handle_parallax_effect(delta)
 

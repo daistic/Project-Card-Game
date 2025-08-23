@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwh018ujyl26y"
+path="res://.godot/imported/Discord notification - sound effect - L Y.mp3-bae4b82e6e32fed7b03514523ca9c684.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Discord notification - sound effect - L Y.mp3"
+dest_files=["res://.godot/imported/Discord notification - sound effect - L Y.mp3-bae4b82e6e32fed7b03514523ca9c684.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

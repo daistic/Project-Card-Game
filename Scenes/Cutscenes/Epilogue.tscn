@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3u8j4va18uy5"]
+[gd_scene load_steps=17 format=3 uid="uid://b3u8j4va18uy5"]
 
 [ext_resource type="Script" uid="uid://d2mga4jsmo73p" path="res://Scripts/Cutscene/Epilogue.gd" id="1_e3rt6"]
 [ext_resource type="Texture2D" uid="uid://c6ffk8u1karnq" path="res://Assets/Textures/Cutscene/Epilogue/0.png" id="1_r2bk6"]
@@ -7,13 +7,55 @@
 [ext_resource type="Texture2D" uid="uid://k46f051wbb5" path="res://Assets/Textures/Cutscene/Epilogue/3.jpg" id="4_v6m3d"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="8_jdgxw"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="9_rspxb"]
+[ext_resource type="AudioStream" uid="uid://cdi73dtyg6fjc" path="res://Assets/Audio/SFX/Sigh.mp3" id="10_v6m3d"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="10_wnj7a"]
+[ext_resource type="AudioStream" uid="uid://b7ytqwi2vpidc" path="res://Assets/Audio/SFX/squeaky-desk-chair-47573.mp3" id="11_1jq20"]
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="11_qtkje"]
+[ext_resource type="AudioStream" uid="uid://b7xn7ojx7qodu" path="res://Assets/Audio/SFX/office-chair-rolling-69797.mp3" id="12_icfsj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vdet"]
 font = ExtResource("10_wnj7a")
 font_size = 500
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_e3rt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax/1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parallax/2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parallax/3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_f43tl"]
 resource_name = "cutscene"
@@ -55,45 +97,40 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_e3rt6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Parallax/1:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 2.19938,
+"stream": ExtResource("10_v6m3d")
+}, {
+"end_offset": 4.6545,
+"start_offset": 0.284969,
+"stream": ExtResource("11_1jq20")
+}],
+"times": PackedFloat32Array(0.4, 2.18497)
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Parallax/2:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 4.74949,
+"start_offset": 1.29332,
+"stream": ExtResource("12_icfsj")
+}],
+"times": PackedFloat32Array(2.19332)
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Parallax/3:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3rt6"]
 _data = {
@@ -249,6 +286,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_e3rt6")
 }
 autoplay = "cutscene"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Main" to="." method="_on_main_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://kc66ujo0fqp8" path="res://Scenes/On Screen Cards/Winner Deck/CritRateBuff.tscn" id="2_44s4v"]
 [ext_resource type="PackedScene" uid="uid://bj2tfcb6a1ixi" path="res://Scenes/On Screen Cards/Winner Deck/EnergyUp.tscn" id="3_ox3x7"]
 [ext_resource type="PackedScene" uid="uid://bchtrpajlhui6" path="res://Scenes/On Screen Cards/Winner Deck/IgnoreShield.tscn" id="4_wj3m1"]
-[ext_resource type="PackedScene" uid="uid://cpl6k0ytxns62" path="res://Scenes/On Screen Cards/Winner Deck/RandomAttack.tscn" id="5_dqf56"]
+[ext_resource type="PackedScene" uid="uid://q8ss2tpxsigd" path="res://Scenes/On Screen Cards/Winner Deck/AttackBasedOnAI.tscn" id="5_m5x8y"]
 
 [resource]
 script = ExtResource("1_7f2ta")
-packed_scenes = Array[PackedScene]([ExtResource("1_m5x8y"), ExtResource("2_44s4v"), ExtResource("3_ox3x7"), ExtResource("4_wj3m1"), ExtResource("5_dqf56")])
+packed_scenes = Array[PackedScene]([ExtResource("1_m5x8y"), ExtResource("2_44s4v"), ExtResource("3_ox3x7"), ExtResource("4_wj3m1"), ExtResource("5_m5x8y")])
 metadata/_custom_type_script = "uid://1lgqu12mp6d2"

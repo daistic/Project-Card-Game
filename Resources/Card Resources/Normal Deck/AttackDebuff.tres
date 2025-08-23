@@ -6,7 +6,7 @@
 script = ExtResource("1_yehl0")
 debuff = 1.25
 is_debuff = true
-turns = 2
+turns = 3
 name = "Jam Signal"
 desc = "Debuff [color=red] %.1f [/color] of enemy's attack for [color=khaki] %d [/color] turns"
 energy_cost = 3

@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://djrqoknywxdyc"
+uid="uid://b3nqorjxdectx"
 path="res://.godot/imported/Main Menu maybe. _DavidKBD - Code injection Pack - 01 - Underbeat.ogg-ac45c3a621c4a052305a7388c694ff4e.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Main Menu maybe. _DavidKBD - Code injection P
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnergyUp" load_steps=2 format=3 uid="uid://bwnmdoj83joqm"]
 
-[ext_resource type="Script" uid="uid://buoliaf54lg7r" path="res://Scripts/Card Interfaces/Normal Deck/EnergyUp.gd" id="1_hl52s"]
+[ext_resource type="Script" uid="uid://buoliaf54lg7r" path="res://Scripts/Card Interfaces/WinnerDeck/EnergyUp.gd" id="1_hl52s"]
 
 [resource]
 script = ExtResource("1_hl52s")

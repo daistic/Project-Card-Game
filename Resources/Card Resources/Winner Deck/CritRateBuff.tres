@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_amngm")
-buff = 0.25
+buff = 0.35
 is_debuff = false
-turns = 2
+turns = 3
 name = "Enumeration"
 desc = "Increase [color=khaki] %.2f [/color] of critical rates. On for [color=khaki] %d [/color] turns"
 energy_cost = 3

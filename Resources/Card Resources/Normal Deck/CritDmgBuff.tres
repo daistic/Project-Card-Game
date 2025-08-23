@@ -6,7 +6,7 @@
 script = ExtResource("1_e24lo")
 buff = 0.25
 is_debuff = false
-turns = 2
+turns = 3
 name = "Exploitation"
 desc = "Buff [color=khaki] %.1f [/color] of your crit damage"
 energy_cost = 3

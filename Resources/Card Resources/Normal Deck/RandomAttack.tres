@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RandomAttack" load_steps=2 format=3 uid="uid://btitqm353wa47"]
 
-[ext_resource type="Script" uid="uid://dvygnvbhmujyu" path="res://Scripts/Card Interfaces/WinnerDeck/RandomAttack.gd" id="1_gbkr1"]
+[ext_resource type="Script" uid="uid://dvygnvbhmujyu" path="res://Scripts/Card Interfaces/Normal Deck/RandomAttack.gd" id="1_gbkr1"]
 
 [resource]
 script = ExtResource("1_gbkr1")

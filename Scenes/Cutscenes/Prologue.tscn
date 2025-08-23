@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://65xocwtb24ux"]
+[gd_scene load_steps=20 format=3 uid="uid://65xocwtb24ux"]
 
 [ext_resource type="Script" uid="uid://dwnhhtk81imwn" path="res://Scripts/Cutscene/Prologue.gd" id="1_32sm6"]
 [ext_resource type="Texture2D" uid="uid://dpgc6xadsuhfw" path="res://Assets/Textures/Cutscene/Prologue/1.jpg" id="1_sh5ne"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="9_ea8dp"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="10_pd3op"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="11_nbd5i"]
+[ext_resource type="AudioStream" uid="uid://ce667872cximp" path="res://Assets/Audio/SFX/keyboard-typing-sound-effect-335503.mp3" id="13_nbd5i"]
+[ext_resource type="AudioStream" uid="uid://bcnkvj0a8ykr3" path="res://Assets/Audio/SFX/computer-mouse-click-352734.mp3" id="14_kyvna"]
+[ext_resource type="AudioStream" uid="uid://bwh018ujyl26y" path="res://Assets/Audio/SFX/Discord notification - sound effect - L Y.mp3" id="14_w7nsl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kyvna"]
 font = ExtResource("11_nbd5i")
@@ -169,6 +172,48 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.832987,
+"stream": ExtResource("13_nbd5i")
+}],
+"times": PackedFloat32Array(0.832987)
+}
+tracks/6/use_blend = true
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.767225,
+"start_offset": 0.599166,
+"stream": ExtResource("14_w7nsl")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kyvna")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kyvna")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_kyvna")
+}],
+"times": PackedFloat32Array(0.2, 4.1, 4.4, 4.7)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wqn5x"]
 _data = {
@@ -378,6 +423,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_wqn5x")
 }
 autoplay = "cutscene"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
