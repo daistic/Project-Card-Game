@@ -97,6 +97,7 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
+		stats.reset_stats()
 		SignalHub.emit_battle_lost()
 
 func clear_cards() -> void:
@@ -104,6 +105,7 @@ func clear_cards() -> void:
 		card.queue_free()
 
 func _draw_cards() -> void:
+	clear_cards()
 	var draws: int  = 0
 	
 	while(draws < BattleManager.MAXIMUM_CARDS_ON_HAND):

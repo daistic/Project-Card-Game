@@ -79,10 +79,16 @@ func go_to_card_game() -> void:
 	get_tree().change_scene_to_packed(CARD_GAME)
 
 func go_to_battle_won_screen() -> void:
+	reset_stats()
 	get_tree().change_scene_to_packed(BATTLE_WON_SCREEN)
 
 func go_to_battle_lost_screen() -> void:
+	reset_stats()
 	get_tree().change_scene_to_packed(BATTLE_LOST_SCREEN)
+
+func reset_stats() -> void:
+	player.stats.reset_stats()
+	enemy.stats.reset_stats()
 
 func handle_next_win_scene() -> void:
 	if story_index < CYBER_STORY.story.size():
@@ -97,4 +103,4 @@ func reset_battle_manager() -> void:
 	story_index = 0
 	story_messages_index = 0
 	message_index = -1
-	crypto_collected
+	crypto_collected = 0
