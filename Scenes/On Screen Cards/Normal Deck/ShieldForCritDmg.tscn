@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://km68crl1d5gl"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Scenes/Base Scenes/BaseOnScreenCard.tscn" id="1_wbiy0"]
+[ext_resource type="Texture2D" uid="uid://jrv5xffrca6q" path="res://Assets/Textures/Card Textures/ShieldDownCard.png" id="2_oyf8e"]
+[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Resources/Card Resources/Normal Deck/ShieldForCritDmg.tres" id="3_isl2k"]
+
+[node name="ShieldForCritDmg" instance=ExtResource("1_wbiy0")]
+texture = ExtResource("2_oyf8e")
+card_resource = ExtResource("3_isl2k")

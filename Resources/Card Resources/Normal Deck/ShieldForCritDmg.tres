@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShieldForCritDMG" load_steps=2 format=3 uid="uid://dvp1dj75y0r5e"]
+
+[ext_resource type="Script" uid="uid://cyh0oavnbdt4x" path="res://Scripts/Card Interfaces/Normal Deck/ShieldForCritDMG.gd" id="1_eam25"]
+
+[resource]
+script = ExtResource("1_eam25")
+shield_break = 0.25
+crit_dmg_debuff = 12.0
+is_debuff = false
+turns = 3
+name = "Exposed Attack"
+desc = "degenerate [color=darkgray]%.2f[/color] enemy's shield, but recieves [color=red]%.1f%%[/color] crit damage debuff for [color=khaki]%d[/color] turns"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://cyh0oavnbdt4x"

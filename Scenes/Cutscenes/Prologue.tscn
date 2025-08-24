@@ -180,7 +180,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "clips": [{
-"end_offset": 0.0,
+"end_offset": 0.584552,
 "start_offset": 0.832987,
 "stream": ExtResource("13_nbd5i")
 }],
@@ -196,7 +196,7 @@ tracks/7/loop_wrap = true
 tracks/7/keys = {
 "clips": [{
 "end_offset": 0.767225,
-"start_offset": 0.599166,
+"start_offset": 0.540711,
 "stream": ExtResource("14_w7nsl")
 }, {
 "end_offset": 0.0,
@@ -211,7 +211,7 @@ tracks/7/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("14_kyvna")
 }],
-"times": PackedFloat32Array(0.2, 4.1, 4.4, 4.7)
+"times": PackedFloat32Array(0.3, 4.1, 4.4, 4.7)
 }
 tracks/7/use_blend = true
 

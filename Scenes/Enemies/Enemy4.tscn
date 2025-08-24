@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr6pu4i2juo1y"]
+[gd_scene load_steps=18 format=3 uid="uid://cr6pu4i2juo1y"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_xvqq5"]
 [ext_resource type="Resource" uid="uid://crig1mi71huhh" path="res://Resources/Damageables/Enemy4.tres" id="2_q12de"]
@@ -16,10 +16,11 @@
 [ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="14_rbsy3"]
 [ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="15_8n23x"]
 [ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="16_gl44l"]
+[ext_resource type="Resource" uid="uid://dgfforbj75wuc" path="res://Resources/Card Resources/Winner Deck/BothShieldBreak.tres" id="17_yftl4"]
 
 [node name="EnemyBase" instance=ExtResource("1_xvqq5")]
 stats = ExtResource("2_q12de")
-enemy_deck = Array[ExtResource("3_an75r")]([ExtResource("4_yftl4"), ExtResource("5_5wii5"), ExtResource("6_6qdoe"), ExtResource("7_g55yn"), ExtResource("8_3eubg"), ExtResource("9_rrbck"), ExtResource("10_vqauq"), ExtResource("11_rkpih"), ExtResource("12_fu8pa"), ExtResource("13_pr6tg"), ExtResource("13_pr6tg"), ExtResource("6_6qdoe"), ExtResource("14_rbsy3"), ExtResource("12_fu8pa"), ExtResource("15_8n23x"), ExtResource("13_pr6tg"), ExtResource("16_gl44l")])
+enemy_deck = Array[ExtResource("3_an75r")]([ExtResource("4_yftl4"), ExtResource("5_5wii5"), ExtResource("6_6qdoe"), ExtResource("7_g55yn"), ExtResource("8_3eubg"), ExtResource("9_rrbck"), ExtResource("10_vqauq"), ExtResource("11_rkpih"), ExtResource("12_fu8pa"), ExtResource("13_pr6tg"), ExtResource("13_pr6tg"), ExtResource("6_6qdoe"), ExtResource("14_rbsy3"), ExtResource("12_fu8pa"), ExtResource("15_8n23x"), ExtResource("13_pr6tg"), ExtResource("16_gl44l"), ExtResource("17_yftl4")])
 crypto_price = 1231
 
 [node name="TextureRect" parent="." index="0"]

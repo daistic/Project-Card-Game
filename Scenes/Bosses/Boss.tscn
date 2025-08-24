@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cm4a7pmd3kr7k"]
+[gd_scene load_steps=24 format=3 uid="uid://cm4a7pmd3kr7k"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_isl11"]
 [ext_resource type="Resource" uid="uid://xn5bjxf0og2c" path="res://Resources/Damageables/Boss.tres" id="2_hw58m"]
@@ -19,6 +19,8 @@
 [ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="16_liadh"]
 [ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="17_d7yyi"]
 [ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="18_ydm3c"]
+[ext_resource type="Resource" uid="uid://b4y6qejb8h50g" path="res://Resources/Card Resources/Winner Deck/AiShield.tres" id="19_3f1sf"]
+[ext_resource type="Resource" uid="uid://dgfforbj75wuc" path="res://Resources/Card Resources/Winner Deck/BothShieldBreak.tres" id="20_fnh5r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjlkv"]
 atlas = ExtResource("6_q7rdl")
@@ -32,7 +34,7 @@ region = Rect2(58.895, 24.679, 1118.32, 1131.66)
 offset_top = -2.0
 offset_bottom = -2.0
 stats = ExtResource("2_hw58m")
-enemy_deck = Array[ExtResource("3_kihwa")]([ExtResource("4_cubdk"), ExtResource("5_3f1sf"), ExtResource("6_fnh5r"), ExtResource("7_elfwc"), ExtResource("8_rv7nk"), ExtResource("8_rv7nk"), ExtResource("9_xhd1i"), ExtResource("10_p465p"), ExtResource("10_p465p"), ExtResource("6_fnh5r"), ExtResource("6_fnh5r"), ExtResource("11_jtkx7"), ExtResource("12_cjv3g"), ExtResource("12_cjv3g"), ExtResource("13_aj16o"), ExtResource("14_kpq36"), ExtResource("14_kpq36"), ExtResource("15_gr7p6"), ExtResource("16_liadh"), ExtResource("13_aj16o"), ExtResource("13_aj16o"), ExtResource("17_d7yyi"), ExtResource("17_d7yyi"), ExtResource("18_ydm3c"), ExtResource("18_ydm3c"), ExtResource("5_3f1sf")])
+enemy_deck = Array[ExtResource("3_kihwa")]([ExtResource("4_cubdk"), ExtResource("5_3f1sf"), ExtResource("6_fnh5r"), ExtResource("7_elfwc"), ExtResource("8_rv7nk"), ExtResource("8_rv7nk"), ExtResource("9_xhd1i"), ExtResource("10_p465p"), ExtResource("10_p465p"), ExtResource("6_fnh5r"), ExtResource("6_fnh5r"), ExtResource("11_jtkx7"), ExtResource("12_cjv3g"), ExtResource("12_cjv3g"), ExtResource("13_aj16o"), ExtResource("14_kpq36"), ExtResource("14_kpq36"), ExtResource("15_gr7p6"), ExtResource("16_liadh"), ExtResource("13_aj16o"), ExtResource("13_aj16o"), ExtResource("17_d7yyi"), ExtResource("17_d7yyi"), ExtResource("18_ydm3c"), ExtResource("18_ydm3c"), ExtResource("5_3f1sf"), ExtResource("19_3f1sf"), ExtResource("20_fnh5r"), ExtResource("20_fnh5r")])
 max_moves = 3
 crypto_price = 2152
 

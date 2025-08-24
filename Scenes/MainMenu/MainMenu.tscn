@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://kqnai0iox4j7" path="res://Assets/Textures/MainMenu/Setting Button.png" id="6_fv0xt"]
 [ext_resource type="PackedScene" uid="uid://bfqnj4phlfd22" path="res://Scenes/MainMenu/SettingsScreen.tscn" id="6_k2pwb"]
-[ext_resource type="Texture2D" uid="uid://c2tck5vx2xkny" path="res://Assets/Textures/MainMenu/Game Logo.png" id="7_ah1a3"]
+[ext_resource type="Texture2D" uid="uid://debgp12vx7d75" path="res://Assets/Textures/MainMenu/GameTitle.png" id="7_ah1a3"]
 [ext_resource type="Texture2D" uid="uid://dcpmqvkx11h16" path="res://Assets/Textures/MainMenu/Help Button.png" id="7_sng02"]
 [ext_resource type="Texture2D" uid="uid://yg7nsvbic0na" path="res://Assets/Textures/MainMenu/Credits Button.png" id="8_lic31"]
 

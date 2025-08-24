@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dekc4bved3hgr"]
+[gd_scene load_steps=14 format=3 uid="uid://dekc4bved3hgr"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_v05kr"]
 [ext_resource type="Resource" uid="uid://cna6yyknk7now" path="res://Resources/Damageables/Enemy3.tres" id="2_hjnne"]
@@ -11,10 +11,12 @@
 [ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="9_vcugr"]
 [ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="10_emldy"]
 [ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="11_n88lv"]
+[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Resources/Card Resources/Normal Deck/ShieldForCritDmg.tres" id="12_vcugr"]
+[ext_resource type="Resource" uid="uid://dgfforbj75wuc" path="res://Resources/Card Resources/Winner Deck/BothShieldBreak.tres" id="13_emldy"]
 
 [node name="EnemyBase" instance=ExtResource("1_v05kr")]
 stats = ExtResource("2_hjnne")
-enemy_deck = Array[ExtResource("3_pu2rg")]([ExtResource("4_kp20v"), ExtResource("5_podhh"), ExtResource("6_uf21d"), ExtResource("5_podhh"), ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("7_fidup"), ExtResource("7_fidup"), ExtResource("6_uf21d"), ExtResource("8_814j2"), ExtResource("8_814j2"), ExtResource("7_fidup"), ExtResource("9_vcugr"), ExtResource("10_emldy"), ExtResource("11_n88lv")])
+enemy_deck = Array[ExtResource("3_pu2rg")]([ExtResource("4_kp20v"), ExtResource("5_podhh"), ExtResource("6_uf21d"), ExtResource("5_podhh"), ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("7_fidup"), ExtResource("7_fidup"), ExtResource("6_uf21d"), ExtResource("8_814j2"), ExtResource("8_814j2"), ExtResource("7_fidup"), ExtResource("9_vcugr"), ExtResource("10_emldy"), ExtResource("11_n88lv"), ExtResource("12_vcugr"), ExtResource("13_emldy")])
 max_moves = 3
 crypto_price = 1190
 
