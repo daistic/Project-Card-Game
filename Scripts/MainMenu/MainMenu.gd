@@ -42,6 +42,7 @@ func _on_start_pressed() -> void:
 	BattleManager.reset_battle_manager()
 	BattleManager.clear_player_deck()
 	BattleManager.set_starting_deck()
+	Global.load_data()
 	Global.go_to_prologue()
 
 func _on_upgrade_pressed() -> void:
