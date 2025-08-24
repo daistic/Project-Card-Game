@@ -11,13 +11,9 @@
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://kqnai0iox4j7" path="res://Assets/Textures/MainMenu/Setting Button.png" id="6_fv0xt"]
 [ext_resource type="PackedScene" uid="uid://bfqnj4phlfd22" path="res://Scenes/MainMenu/SettingsScreen.tscn" id="6_k2pwb"]
+[ext_resource type="Texture2D" uid="uid://c2tck5vx2xkny" path="res://Assets/Textures/MainMenu/Game Logo.png" id="7_ah1a3"]
 [ext_resource type="Texture2D" uid="uid://dcpmqvkx11h16" path="res://Assets/Textures/MainMenu/Help Button.png" id="7_sng02"]
 [ext_resource type="Texture2D" uid="uid://yg7nsvbic0na" path="res://Assets/Textures/MainMenu/Credits Button.png" id="8_lic31"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0hjx5"]
-font = ExtResource("3_8qovt")
-font_size = 75
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ua038"]
 font = ExtResource("3_8qovt")
@@ -105,13 +101,15 @@ offset_right = -19.0
 offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_constants/separation = 0
+theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="Parallax/VBoxContainer"]
+[node name="Logo" type="TextureRect" parent="Parallax/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10000
-text = "Card Game"
-label_settings = SubResource("LabelSettings_0hjx5")
+texture = ExtResource("7_ah1a3")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Start" type="TextureButton" parent="Parallax/VBoxContainer"]
 custom_minimum_size = Vector2(150, 75)

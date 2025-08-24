@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ex72u")
-max_hp = 163.0
+max_hp = 132.5
 max_shield = 3.7
 atk = 5.46
 crit_rate = 27.35
