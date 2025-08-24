@@ -44,11 +44,9 @@ func _new_enemy() -> void:
 	parallax.add_child(instance)
 
 func _on_battle_won() -> void:
-	BattleManager.on_battle_finished()
 	BattleManager.go_to_battle_won_screen()
 
 func _on_battle_lost() -> void:
-	BattleManager.on_battle_finished()
 	BattleManager.go_to_battle_lost_screen()
 
 func _on_pause_button_pressed() -> void:

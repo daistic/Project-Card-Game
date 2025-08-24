@@ -46,10 +46,6 @@ func new_player(_new_player: Player) -> void:
 func new_enemy(_new_enemy: Enemy) -> void:
 	enemy = _new_enemy
 
-func on_battle_finished() -> void:
-	player = null
-	enemy = null
-
 func _boss_check() -> void:
 	battles_to_boss -= 1
 	

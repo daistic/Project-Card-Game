@@ -42,6 +42,10 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 
 func trigger_camera_shake() -> void:
 	var game_camera: GameCamera = get_tree().get_first_node_in_group("Camera")
+	
+	if game_camera == null:
+		return
+	
 	game_camera.trigger_shake()
 
 func handle_attack_sfx(damage: float, is_crit: bool, enemy_damaged: bool) -> void:

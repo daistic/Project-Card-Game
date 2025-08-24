@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1cr5r8tflf14"]
+[gd_scene load_steps=18 format=3 uid="uid://b1cr5r8tflf14"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_jagbd"]
 [ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Scripts/After Battles/BattleLostScreen.gd" id="2_211x1"]
@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="5_vxyjm"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="6_iknsa"]
 [ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="7_vxyjm"]
-[ext_resource type="Shader" uid="uid://dbegqncfmmq0o" path="res://Shaders/VHSShader.gdshader" id="9_wmc8l"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="11_vxyjm"]
+[ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="12_vxyjm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2pnw"]
 shader = ExtResource("4_iknsa")
@@ -47,30 +47,6 @@ font = ExtResource("4_wmc8l")
 font_size = 400
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fr2c"]
-shader = ExtResource("9_wmc8l")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.026
-shader_parameter/scanlines_width = 0.0
-shader_parameter/grille_opacity = 0.01
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = false
-shader_parameter/roll = true
-shader_parameter/roll_speed = 6.0
-shader_parameter/roll_size = 8.0
-shader_parameter/roll_variation = 5.0
-shader_parameter/distort_intensity = 0.0
-shader_parameter/noise_opacity = 0.1
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.0
-shader_parameter/aberration = 4.75e-08
-shader_parameter/brightness = 1.1
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.025
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.125
-shader_parameter/vignette_opacity = 0.25
-
 [node name="BattleLostScreen" type="TextureRect"]
 self_modulate = Color(0, 0, 0, 0.196078)
 anchors_preset = 15
@@ -90,8 +66,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 
 [node name="Parallax" type="Control" parent="."]
 layout_mode = 1
@@ -197,16 +178,21 @@ label_settings = SubResource("LabelSettings_1o4u2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PostProcessing" type="CanvasLayer" parent="."]
+[node name="PostProcessing2" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="PostProcessing"]
-material = SubResource("ShaderMaterial_1fr2c")
+[node name="ColorRect" type="ColorRect" parent="PostProcessing2"]
+material = ExtResource("12_vxyjm")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
