@@ -39,7 +39,7 @@ func handle_screen_display(new_screen: Control) -> void:
 	SoundManager.play_sfx("Button Click")
 
 func _on_start_pressed() -> void:
-	BattleManager.crypto_collected = 0
+	BattleManager.reset_battle_manager()
 	BattleManager.clear_player_deck()
 	BattleManager.set_starting_deck()
 	Global.go_to_prologue()

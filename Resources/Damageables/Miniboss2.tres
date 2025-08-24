@@ -6,7 +6,7 @@
 script = ExtResource("1_8iiwr")
 max_hp = 97.5
 max_shield = 3.5
-atk = 5.3
+atk = 4.3
 crit_rate = 35.0
 crit_damage = 1.25
 metadata/_custom_type_script = "uid://bgprd3hmldf27"

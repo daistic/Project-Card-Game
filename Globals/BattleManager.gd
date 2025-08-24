@@ -92,3 +92,9 @@ func handle_next_win_scene() -> void:
 
 func get_crypto_collected() -> int:
 	return crypto_collected
+
+func reset_battle_manager() -> void:
+	story_index = 0
+	story_messages_index = 0
+	message_index = -1
+	crypto_collected
