@@ -4,3 +4,5 @@ extends Resource
 
 @export var player_stats: Damageable
 @export var total_cryto: int = 0
+@export var bgm_volume: float = 0.0
+@export var sfx_volume: float = 0.0

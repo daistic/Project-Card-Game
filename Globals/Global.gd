@@ -53,6 +53,8 @@ func save_data(_total_crypto: int = total_crypto,
 	var data = SaveData.new()
 	data.player_stats = player_stats
 	data.total_cryto = _total_crypto
+	data.bgm_volume = SoundManager.bgm_volume
+	data.sfx_volume = SoundManager.sfx_volume
 	ResourceSaver.save(data, SAVE_PATH)
 
 func get_starting_deck() -> CardPackedList:

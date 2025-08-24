@@ -19,6 +19,8 @@ const SFX_MAP: Dictionary[String, AudioStream] = {
 	"Shield Break": preload("res://Assets/Audio/SFX/Shield Break.mp3")
 }
 
+const SAVE_PATH: String = "user://save_data.tres"
+
 var bgm_player: AudioStreamPlayer
 var sfx_attack_player: AudioStreamPlayer
 var sfx_modifier_player: AudioStreamPlayer
@@ -39,6 +41,14 @@ func _ready() -> void:
 	
 	sfx_general_player = AudioStreamPlayer.new()
 	add_child(sfx_general_player)
+	
+	load_player_settings()
+
+func load_player_settings() -> void:
+	if ResourceLoader.exists(SAVE_PATH):
+		var data: SaveData = ResourceLoader.load(SAVE_PATH)
+		bgm_volume = data.bgm_volume
+		sfx_volume = data.sfx_volume
 
 func play_bgm(bgm: String) -> void:
 	if !BGM_MAP.has(bgm):
