@@ -1,7 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm4a7pmd3kr7k"]
+[gd_scene load_steps=22 format=3 uid="uid://cm4a7pmd3kr7k"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_isl11"]
+[ext_resource type="Resource" uid="uid://xn5bjxf0og2c" path="res://Resources/Damageables/Boss.tres" id="2_hw58m"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="3_kihwa"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_cubdk"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_3f1sf"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_fnh5r"]
 [ext_resource type="Texture2D" uid="uid://pu1a87wvscul" path="res://Assets/Textures/Enemies/boss.png" id="6_q7rdl"]
+[ext_resource type="Resource" uid="uid://dfnvasq4284or" path="res://Resources/Card Resources/Malwares/Malware1.tres" id="7_elfwc"]
+[ext_resource type="Resource" uid="uid://drmhb1em5kx2w" path="res://Resources/Card Resources/Malwares/Malware5.tres" id="8_rv7nk"]
+[ext_resource type="Resource" uid="uid://cvl2pncneau8f" path="res://Resources/Card Resources/Malwares/Malware3.tres" id="9_xhd1i"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="10_p465p"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Resources/Card Resources/Normal Deck/CritDmgBuff.tres" id="11_jtkx7"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="12_cjv3g"]
+[ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="13_aj16o"]
+[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="14_kpq36"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="15_gr7p6"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="16_liadh"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="17_d7yyi"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="18_ydm3c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjlkv"]
 atlas = ExtResource("6_q7rdl")
@@ -12,6 +29,10 @@ atlas = ExtResource("6_q7rdl")
 region = Rect2(58.895, 24.679, 1118.32, 1131.66)
 
 [node name="Boss" instance=ExtResource("1_isl11")]
+stats = ExtResource("2_hw58m")
+enemy_deck = Array[ExtResource("3_kihwa")]([ExtResource("4_cubdk"), ExtResource("5_3f1sf"), ExtResource("6_fnh5r"), ExtResource("7_elfwc"), ExtResource("8_rv7nk"), ExtResource("8_rv7nk"), ExtResource("9_xhd1i"), ExtResource("10_p465p"), ExtResource("10_p465p"), ExtResource("6_fnh5r"), ExtResource("6_fnh5r"), ExtResource("11_jtkx7"), ExtResource("12_cjv3g"), ExtResource("12_cjv3g"), ExtResource("13_aj16o"), ExtResource("14_kpq36"), ExtResource("14_kpq36"), ExtResource("15_gr7p6"), ExtResource("16_liadh"), ExtResource("13_aj16o"), ExtResource("13_aj16o"), ExtResource("17_d7yyi"), ExtResource("17_d7yyi"), ExtResource("18_ydm3c"), ExtResource("18_ydm3c"), ExtResource("5_3f1sf")])
+max_moves = 3
+crypto_price = 2152
 
 [node name="TextureRect" parent="." index="0"]
 custom_minimum_size = Vector2(500, 375)

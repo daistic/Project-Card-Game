@@ -1,8 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://csa2a1epa7r04"]
+[gd_scene load_steps=24 format=3 uid="uid://csa2a1epa7r04"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_cyolx"]
+[ext_resource type="Resource" uid="uid://budrtkll5u2qy" path="res://Resources/Damageables/Miniboss2.tres" id="2_nrigf"]
 [ext_resource type="PackedScene" uid="uid://cg6xohcopeelx" path="res://Scenes/Enemy Gimmicks/EnergyLimitGimmick.tscn" id="2_p57sm"]
 [ext_resource type="Texture2D" uid="uid://clytusrubr6o" path="res://Assets/Textures/Enemies/miniboss2.png" id="3_s8fmv"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="3_wrss8"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_mcvlc"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_by0oe"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_8qlhr"]
+[ext_resource type="Resource" uid="uid://drmhb1em5kx2w" path="res://Resources/Card Resources/Malwares/Malware5.tres" id="7_stqhd"]
+[ext_resource type="Resource" uid="uid://dna0xblg5f83t" path="res://Resources/Card Resources/Malwares/Malware4.tres" id="8_ydtk1"]
+[ext_resource type="Resource" uid="uid://cvl2pncneau8f" path="res://Resources/Card Resources/Malwares/Malware3.tres" id="9_tiqtr"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="10_hbrio"]
+[ext_resource type="Resource" uid="uid://diu0dcc6pstyg" path="res://Resources/Card Resources/Normal Deck/AiHeal.tres" id="11_51dvm"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="12_1abvb"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="13_hjmal"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Resources/Card Resources/Normal Deck/CritDmgBuff.tres" id="14_ggqlr"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="15_orpku"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="16_hkdnr"]
+[ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Resources/Card Resources/Winner Deck/IgnoreShield.tres" id="17_7ypo8"]
+[ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="18_7a063"]
+[ext_resource type="Resource" uid="uid://dfnvasq4284or" path="res://Resources/Card Resources/Malwares/Malware1.tres" id="19_5mtny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrigf"]
 atlas = ExtResource("3_s8fmv")
@@ -13,6 +31,10 @@ atlas = ExtResource("3_s8fmv")
 region = Rect2(58.895, 191.769, 1118.32, 674.404)
 
 [node name="MiniBoss2" instance=ExtResource("1_cyolx")]
+stats = ExtResource("2_nrigf")
+enemy_deck = Array[ExtResource("3_wrss8")]([ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("7_stqhd"), ExtResource("8_ydtk1"), ExtResource("9_tiqtr"), ExtResource("10_hbrio"), ExtResource("11_51dvm"), ExtResource("12_1abvb"), ExtResource("12_1abvb"), ExtResource("4_mcvlc"), ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("6_8qlhr"), ExtResource("13_hjmal"), ExtResource("14_ggqlr"), ExtResource("14_ggqlr"), ExtResource("13_hjmal"), ExtResource("5_by0oe"), ExtResource("15_orpku"), ExtResource("16_hkdnr"), ExtResource("17_7ypo8"), ExtResource("6_8qlhr"), ExtResource("18_7a063"), ExtResource("18_7a063"), ExtResource("19_5mtny")])
+max_moves = 3
+crypto_price = 1932
 
 [node name="EnergyLimitGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_p57sm")]
 

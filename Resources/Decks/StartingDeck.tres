@@ -16,5 +16,5 @@
 
 [resource]
 script = ExtResource("1_8xhis")
-packed_scenes = Array[PackedScene]([ExtResource("2_000lq"), ExtResource("4_w1jkt"), ExtResource("3_7ijsp"), ExtResource("6_68t0k"), ExtResource("5_g834o"), ExtResource("6_lci8q"), ExtResource("8_ign6i"), ExtResource("7_c2e5b"), ExtResource("9_g834o"), ExtResource("10_lci8q"), ExtResource("11_rkcp1"), ExtResource("12_7gik7")])
+packed_scenes = Array[PackedScene]([ExtResource("2_000lq"), ExtResource("2_000lq"), ExtResource("4_w1jkt"), ExtResource("3_7ijsp"), ExtResource("6_68t0k"), ExtResource("5_g834o"), ExtResource("6_lci8q"), ExtResource("8_ign6i"), ExtResource("7_c2e5b"), ExtResource("9_g834o"), ExtResource("10_lci8q"), ExtResource("11_rkcp1"), ExtResource("3_7ijsp"), ExtResource("12_7gik7"), ExtResource("4_w1jkt"), ExtResource("6_68t0k")])
 metadata/_custom_type_script = "uid://1lgqu12mp6d2"

@@ -97,7 +97,6 @@ func _check_health() -> void:
 	if stats.cur_hp <= 0:
 		BattleManager.crypto_collected += crypto_price
 		SignalHub.emit_battle_won()
-		queue_free()
 
 func _update_enemy_bars() -> void:
 	enemy_bars.update_bars(stats.cur_hp, stats.cur_shield)

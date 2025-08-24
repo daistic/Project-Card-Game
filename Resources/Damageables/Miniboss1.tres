@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Damageable" load_steps=2 format=3 uid="uid://dx4qr4aqtcmq0"]
+
+[ext_resource type="Script" uid="uid://bgprd3hmldf27" path="res://Scripts/Resource Classes/Damageable.gd" id="1_qd8bt"]
+
+[resource]
+script = ExtResource("1_qd8bt")
+max_hp = 135.0
+max_shield = 2.0
+atk = 5.0
+crit_rate = 17.5
+crit_damage = 1.35
+metadata/_custom_type_script = "uid://bgprd3hmldf27"

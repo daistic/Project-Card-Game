@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr6pu4i2juo1y"]
+[gd_scene load_steps=17 format=3 uid="uid://cr6pu4i2juo1y"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_xvqq5"]
+[ext_resource type="Resource" uid="uid://crig1mi71huhh" path="res://Resources/Damageables/Enemy4.tres" id="2_q12de"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="3_an75r"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_yftl4"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_5wii5"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_6qdoe"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="7_g55yn"]
+[ext_resource type="Resource" uid="uid://diu0dcc6pstyg" path="res://Resources/Card Resources/Normal Deck/AiHeal.tres" id="8_3eubg"]
+[ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Resources/Card Resources/Winner Deck/IgnoreShield.tres" id="9_rrbck"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="10_vqauq"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="11_rkpih"]
+[ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="12_fu8pa"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="13_pr6tg"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="14_rbsy3"]
+[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="15_8n23x"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="16_gl44l"]
 
 [node name="EnemyBase" instance=ExtResource("1_xvqq5")]
+stats = ExtResource("2_q12de")
+enemy_deck = Array[ExtResource("3_an75r")]([ExtResource("4_yftl4"), ExtResource("5_5wii5"), ExtResource("6_6qdoe"), ExtResource("7_g55yn"), ExtResource("8_3eubg"), ExtResource("9_rrbck"), ExtResource("10_vqauq"), ExtResource("11_rkpih"), ExtResource("12_fu8pa"), ExtResource("13_pr6tg"), ExtResource("13_pr6tg"), ExtResource("6_6qdoe"), ExtResource("14_rbsy3"), ExtResource("12_fu8pa"), ExtResource("15_8n23x"), ExtResource("13_pr6tg"), ExtResource("16_gl44l")])
+crypto_price = 1231
 
 [node name="TextureRect" parent="." index="0"]
 modulate = Color(1, 0.606983, 0.910276, 1)

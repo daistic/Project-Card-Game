@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2gt71af6k1xn"]
+[gd_scene load_steps=14 format=3 uid="uid://d2gt71af6k1xn"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_f1y8x"]
+[ext_resource type="Resource" uid="uid://d0qpiw01ueesy" path="res://Resources/Damageables/Enemy2.tres" id="2_ofn4g"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="3_bg12c"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_flf1t"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_8xoks"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_ybus4"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="7_55h75"]
+[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="8_55h75"]
+[ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="9_ptnb1"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="10_yvtyc"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Resources/Card Resources/Normal Deck/CritDmgBuff.tres" id="11_xf02t"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="12_ptnb1"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="13_yvtyc"]
 
 [node name="Enemy2" instance=ExtResource("1_f1y8x")]
+stats = ExtResource("2_ofn4g")
+enemy_deck = Array[ExtResource("3_bg12c")]([ExtResource("4_flf1t"), ExtResource("5_8xoks"), ExtResource("6_ybus4"), ExtResource("7_55h75"), ExtResource("7_55h75"), ExtResource("6_ybus4"), ExtResource("6_ybus4"), ExtResource("8_55h75"), ExtResource("8_55h75"), ExtResource("9_ptnb1"), ExtResource("9_ptnb1"), ExtResource("10_yvtyc"), ExtResource("11_xf02t"), ExtResource("12_ptnb1"), ExtResource("13_yvtyc")])
+crypto_price = 1183
 
 [node name="TextureRect" parent="." index="0"]
 modulate = Color(1, 1, 0.67451, 1)

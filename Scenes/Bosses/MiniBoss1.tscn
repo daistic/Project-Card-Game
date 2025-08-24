@@ -1,8 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj1x1p1xscvjl"]
+[gd_scene load_steps=26 format=3 uid="uid://dj1x1p1xscvjl"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_r5s35"]
 [ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Scenes/Enemy Gimmicks/MorimensGimmick.tscn" id="2_bmm7x"]
+[ext_resource type="Resource" uid="uid://dx4qr4aqtcmq0" path="res://Resources/Damageables/Miniboss1.tres" id="2_txkff"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="3_i74ed"]
 [ext_resource type="Texture2D" uid="uid://dh1q8r5yuiynq" path="res://Assets/Textures/Enemies/miniboss1.png" id="3_l1yw7"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="4_26krc"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="5_f6kfw"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="6_p7uix"]
+[ext_resource type="Resource" uid="uid://dfnvasq4284or" path="res://Resources/Card Resources/Malwares/Malware1.tres" id="7_wr782"]
+[ext_resource type="Resource" uid="uid://bcunpe4kbo0ip" path="res://Resources/Card Resources/Malwares/Malware2.tres" id="8_ik03f"]
+[ext_resource type="Resource" uid="uid://cvl2pncneau8f" path="res://Resources/Card Resources/Malwares/Malware3.tres" id="9_dyrlv"]
+[ext_resource type="Resource" uid="uid://dna0xblg5f83t" path="res://Resources/Card Resources/Malwares/Malware4.tres" id="10_homwk"]
+[ext_resource type="Resource" uid="uid://drmhb1em5kx2w" path="res://Resources/Card Resources/Malwares/Malware5.tres" id="11_036ao"]
+[ext_resource type="Resource" uid="uid://diu0dcc6pstyg" path="res://Resources/Card Resources/Normal Deck/AiHeal.tres" id="12_2e38m"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="13_78doh"]
+[ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Resources/Card Resources/Winner Deck/IgnoreShield.tres" id="14_vw11m"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="15_524ey"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="16_itmc5"]
+[ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Resources/Card Resources/Normal Deck/RandomAttack.tres" id="17_55oqv"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Resources/Card Resources/Normal Deck/CritDmgBuff.tres" id="18_hxxdd"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="19_snybs"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Resources/Card Resources/Winner Deck/AttackBasedOnHP.tres" id="20_kis38"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Resources/Card Resources/Normal Deck/AttackTakeDamage.tres" id="21_26qnr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txkff"]
 atlas = ExtResource("3_l1yw7")
@@ -13,6 +33,10 @@ atlas = ExtResource("3_l1yw7")
 region = Rect2(269.617, 271.516, 656.968, 594.657)
 
 [node name="Miniboss1" instance=ExtResource("1_r5s35")]
+stats = ExtResource("2_txkff")
+enemy_deck = Array[ExtResource("3_i74ed")]([ExtResource("4_26krc"), ExtResource("5_f6kfw"), ExtResource("6_p7uix"), ExtResource("7_wr782"), ExtResource("8_ik03f"), ExtResource("9_dyrlv"), ExtResource("10_homwk"), ExtResource("11_036ao"), ExtResource("12_2e38m"), ExtResource("13_78doh"), ExtResource("14_vw11m"), ExtResource("15_524ey"), ExtResource("15_524ey"), ExtResource("6_p7uix"), ExtResource("6_p7uix"), ExtResource("16_itmc5"), ExtResource("17_55oqv"), ExtResource("17_55oqv"), ExtResource("5_f6kfw"), ExtResource("18_hxxdd"), ExtResource("19_snybs"), ExtResource("19_snybs"), ExtResource("20_kis38"), ExtResource("21_26qnr"), ExtResource("11_036ao")])
+max_moves = 4
+crypto_price = 1778
 
 [node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("2_bmm7x")]
 
