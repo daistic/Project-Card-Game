@@ -228,7 +228,6 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="Main" type="TextureButton" parent="."]
-visible = false
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 1
 anchors_preset = 3
