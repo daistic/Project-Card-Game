@@ -100,7 +100,9 @@ func get_crypto_collected() -> int:
 	return crypto_collected
 
 func reset_battle_manager() -> void:
+	is_fighting_boss = false
 	story_index = 0
 	story_messages_index = 0
 	message_index = -1
+	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
 	crypto_collected = 0
