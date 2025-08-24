@@ -32,6 +32,7 @@ func _ready() -> void:
 	SignalHub.emit_player_ready()
 
 func _player_setup() -> void:
+	stats = Global.get_player_stats()
 	stats.reset_stats()
 	_draw_cards()
 	player_bars.bars_setup(stats.max_hp, stats.max_shield)
