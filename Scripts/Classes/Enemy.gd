@@ -95,7 +95,6 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
-		stats.reset_stats()
 		BattleManager.crypto_collected += crypto_price
 		SignalHub.emit_battle_won()
 

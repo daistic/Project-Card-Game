@@ -8,7 +8,7 @@ const ENEMY_LIST: Array[PackedScene] = [
 	preload("res://Scenes/Enemies/Enemy1.tscn"),
 	preload("res://Scenes/Enemies/Enemy2.tscn"),
 	preload("res://Scenes/Enemies/Enemy3.tscn"),
-	preload("res://Scenes/Enemies/Enemy3.tscn")
+	preload("res://Scenes/Enemies/Enemy4.tscn")
 ]
 const SAVE_PATH: String = "user://save_data.tres"
 const MAIN_MENU: PackedScene = preload("res://Scenes/MainMenu/MainMenu.tscn")

@@ -24,7 +24,15 @@ var crypto_collected: int = 0
 
 func _ready() -> void:
 	set_starting_deck()
+	reset_battle_manager()
+
+func reset_battle_manager() -> void:
+	is_fighting_boss = false
+	story_index = 0
+	story_messages_index = 0
+	message_index = -1
 	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
+	crypto_collected = 0
 
 func set_starting_deck() -> void:
 	var starting_deck: CardPackedList = Global.get_starting_deck()
@@ -98,11 +106,3 @@ func handle_next_win_scene() -> void:
 
 func get_crypto_collected() -> int:
 	return crypto_collected
-
-func reset_battle_manager() -> void:
-	is_fighting_boss = false
-	story_index = 0
-	story_messages_index = 0
-	message_index = -1
-	battles_to_boss = CYBER_STORY.story[story_index].battles_to_meet
-	crypto_collected = 0
