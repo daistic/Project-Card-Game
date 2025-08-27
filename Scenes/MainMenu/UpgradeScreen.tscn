@@ -174,7 +174,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 button_index = 4
-upgrade_amount = 0.15
+upgrade_amount = 0.04
 base_crypto = 1500
 crypto_per_level = 250
 

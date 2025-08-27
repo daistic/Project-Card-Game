@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_c2o26")
 player_stats = ExtResource("1_iicx7")
-total_cryto = 5000
+total_cryto = 0
 stat_levels = Array[int]([-1, -1, -1, -1, -1])
-bgm_volume = 1.0
-sfx_volume = 1.0
+bgm_volume = 0.0
+sfx_volume = 0.0
 metadata/_custom_type_script = "uid://uj7i8r6nrtpu"
