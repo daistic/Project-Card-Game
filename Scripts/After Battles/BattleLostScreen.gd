@@ -8,7 +8,7 @@ extends TextureRect
 
 func _ready() -> void:
 	cryto_label.text = "Cryto Collected: %d" % BattleManager.get_crypto_collected()
-	Global.save_data(Global.get_total_crypto() + BattleManager.get_crypto_collected())
+	Global.save_player_data(Global.get_total_crypto() + BattleManager.get_crypto_collected())
 
 func _process(delta: float) -> void:
 	_handle_parallax_effect(delta)

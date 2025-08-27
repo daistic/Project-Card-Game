@@ -45,6 +45,19 @@ func _on_degrade_temp(stat: String, upgrade: float) -> void:
 	
 	_update_cryto_held_label()
 
+func save_player_data(_new_total_crypto: int) -> void:
+	Global.save_player_data(_new_total_crypto, temp_stats)
+	_update_cryto_held_label()
+
+func save_upgrade_levels_data() -> void:
+	var upgrade_levels: Array[int] = Global.get_stat_levels()
+	
+	for upgrade in upgrades_container.get_children():
+		if upgrade is UpgradeButton:
+			upgrade_levels[upgrade.button_index] = upgrade.upgrade_level
+	
+	Global.save_upgrade_levels_data()
+
 func _on_exit_button_pressed() -> void:
 	exit_button._reset_modulate()
 	call_deferred("hide")
@@ -52,6 +65,8 @@ func _on_exit_button_pressed() -> void:
 func _on_finalize_button_pressed() -> void:
 	var total_crypto = Global.get_total_crypto() - UpgradeButton.cryto_used
 	UpgradeButton.cryto_used = 0
-	Global.save_data(total_crypto, temp_stats)
-	_update_cryto_held_label()
+	
+	save_player_data(total_crypto)
+	save_upgrade_levels_data()
+	
 	SignalHub.emit_upgrade_finalize()

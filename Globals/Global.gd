@@ -1,6 +1,5 @@
 extends Node
 
-const CARDS_LIST: CardsList = preload("res://Resources/Cards List/CardFileList.tres")
 const STARTING_DECK: CardPackedList = preload("res://Resources/Decks/StartingDeck.tres")
 const WINNER_DECK: CardPackedList = preload("res://Resources/Decks/WinnerDeck.tres")
 const MALWAREDECK: CardPackedList = preload("res://Resources/Decks/MalwareDeck.tres")
@@ -18,20 +17,7 @@ const EPILOGUE: PackedScene = preload("res://Scenes/Cutscenes/Epilogue.tscn")
 var cards_scene: Array[PackedScene]= []
 var cards_resources: Array[CardInterface] = []
 
-var total_crypto: int = 0
-var player_stats: Damageable
-
-enum CARDS_TYPE{
-	Basic_ATK,
-	Basic_HEAL,
-	Basic_SHIELD
-}
-
-func _enter_tree() -> void:
-	pass
-	#for fn in CARDS_LIST.file_names:
-		#cards_scene.append(load(fn.scene_path))
-		#cards_resources.append(load(fn.card_resource_path))
+var save_data: SaveData
 
 func _ready() -> void:
 	load_data()
@@ -39,23 +25,23 @@ func _ready() -> void:
 func load_data() -> void:
 	if ResourceLoader.exists(SAVE_PATH):
 		var data: SaveData = ResourceLoader.load(SAVE_PATH)
-		player_stats = data.player_stats
-		total_crypto = data.total_cryto
+		save_data = data
 	else:
-		player_stats = load("res://Resources/Damageables/PlayerDamageable.tres")
-		total_crypto = 0
+		save_data = load("res://Resources/DefaultSaveData.tres")
 
-func save_data(_total_crypto: int = total_crypto,
-		_player_stats: Damageable = player_stats) -> void:
-	player_stats = _player_stats
-	total_crypto = _total_crypto
-	
-	var data = SaveData.new()
-	data.player_stats = player_stats
-	data.total_cryto = _total_crypto
-	data.bgm_volume = SoundManager.bgm_volume
-	data.sfx_volume = SoundManager.sfx_volume
-	ResourceSaver.save(data, SAVE_PATH)
+func save_player_data(_total_crypto: int = get_total_crypto(),
+		_player_stats: Damageable = get_player_stats()) -> void:
+	save_data.player_stats = _player_stats
+	save_data.total_cryto = _total_crypto
+	ResourceSaver.save(save_data, SAVE_PATH)
+
+func save_settings_data() -> void:
+	save_data.bgm_volume = SoundManager.bgm_volume
+	save_data.sfx_volume = SoundManager.sfx_volume
+	ResourceSaver.save(save_data, SAVE_PATH)
+
+func save_upgrade_levels_data() -> void:
+	ResourceSaver.save(save_data, SAVE_PATH)
 
 func get_starting_deck() -> CardPackedList:
 	return STARTING_DECK
@@ -72,10 +58,13 @@ func get_malware_deck() -> Array[PackedScene]:
 	return MALWAREDECK.packed_scenes
 
 func get_total_crypto() -> int:
-	return total_crypto
+	return save_data.total_cryto
 
 func get_player_stats() -> Damageable:
-	return player_stats
+	return save_data.player_stats
+
+func get_stat_levels() -> Array[int]:
+	return save_data.stat_levels
 
 func go_to_main_menu() -> void:
 	get_tree().change_scene_to_packed(MAIN_MENU)

@@ -49,7 +49,7 @@ func _on_upgrade_pressed() -> void:
 	handle_screen_display(upgrade_screen)
 
 func _on_quit_pressed() -> void:
-	Global.save_data()
+	Global.save_settings_data()
 	get_tree().quit()
 
 func _on_setting_pressed() -> void:
