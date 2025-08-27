@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_xl3hu")
-down_amount = 0.15
+down_amount = 0.115
 name = "Break Defence"
-desc = "Take away [color=khaki] %.2f [/color] of enemy's shield"
+desc = "Take away [color=red]%.1f%%[/color] of the enemy's shield"
 energy_cost = 2
 ai_energy_cost = 0
 is_malware = false

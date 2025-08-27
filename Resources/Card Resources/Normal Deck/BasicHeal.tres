@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_8mdi1")
-heal_amount = 15.0
+heal_amount = 0.135
 name = "Recover"
-desc = "Heal [color=mediumseagreen] %.1f [/color] amount to your hp"
+desc = "Heal [color=mediumseagreen]%.1f%%[/color] of your max HP"
 energy_cost = 2
 ai_energy_cost = 0
 is_malware = false

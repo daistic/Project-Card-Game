@@ -2,7 +2,7 @@ class_name AttackBasedOnAI
 
 extends CardInterface
 
-@export var base_damage: float = 4.5
+@export var base_damage: float = 0.9
 
 var cur_ai_energy: int
 

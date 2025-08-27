@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_jmdav")
-base_damage = 1.0
+base_damage = 0.9
 name = "AI Support"
 desc = "Attack based on the current [color=purple]AI's[/color] energy (the higher the better)"
 energy_cost = 4

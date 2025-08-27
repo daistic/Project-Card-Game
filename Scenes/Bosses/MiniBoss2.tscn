@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://csa2a1epa7r04"]
+[gd_scene load_steps=28 format=3 uid="uid://csa2a1epa7r04"]
 
 [ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Scenes/Base Scenes/BossBase.tscn" id="1_cyolx"]
 [ext_resource type="Resource" uid="uid://budrtkll5u2qy" path="res://Resources/Damageables/Miniboss2.tres" id="2_nrigf"]
@@ -23,6 +23,8 @@
 [ext_resource type="Resource" uid="uid://dfnvasq4284or" path="res://Resources/Card Resources/Malwares/Malware1.tres" id="19_5mtny"]
 [ext_resource type="Resource" uid="uid://b4y6qejb8h50g" path="res://Resources/Card Resources/Winner Deck/AiShield.tres" id="20_1abvb"]
 [ext_resource type="Resource" uid="uid://dgfforbj75wuc" path="res://Resources/Card Resources/Winner Deck/BothShieldBreak.tres" id="21_hjmal"]
+[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Resources/Card Resources/Normal Deck/ShieldForCritDmg.tres" id="22_ggqlr"]
+[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="23_orpku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrigf"]
 atlas = ExtResource("3_s8fmv")
@@ -34,7 +36,7 @@ region = Rect2(58.895, 191.769, 1118.32, 674.404)
 
 [node name="MiniBoss2" instance=ExtResource("1_cyolx")]
 stats = ExtResource("2_nrigf")
-enemy_deck = Array[ExtResource("3_wrss8")]([ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("7_stqhd"), ExtResource("8_ydtk1"), ExtResource("9_tiqtr"), ExtResource("10_hbrio"), ExtResource("11_51dvm"), ExtResource("12_1abvb"), ExtResource("12_1abvb"), ExtResource("4_mcvlc"), ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("6_8qlhr"), ExtResource("13_hjmal"), ExtResource("14_ggqlr"), ExtResource("14_ggqlr"), ExtResource("13_hjmal"), ExtResource("5_by0oe"), ExtResource("15_orpku"), ExtResource("16_hkdnr"), ExtResource("17_7ypo8"), ExtResource("6_8qlhr"), ExtResource("18_7a063"), ExtResource("18_7a063"), ExtResource("19_5mtny"), ExtResource("20_1abvb"), ExtResource("21_hjmal")])
+enemy_deck = Array[ExtResource("3_wrss8")]([ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("7_stqhd"), ExtResource("8_ydtk1"), ExtResource("9_tiqtr"), ExtResource("10_hbrio"), ExtResource("11_51dvm"), ExtResource("12_1abvb"), ExtResource("12_1abvb"), ExtResource("4_mcvlc"), ExtResource("4_mcvlc"), ExtResource("5_by0oe"), ExtResource("6_8qlhr"), ExtResource("6_8qlhr"), ExtResource("13_hjmal"), ExtResource("14_ggqlr"), ExtResource("14_ggqlr"), ExtResource("13_hjmal"), ExtResource("5_by0oe"), ExtResource("15_orpku"), ExtResource("16_hkdnr"), ExtResource("17_7ypo8"), ExtResource("6_8qlhr"), ExtResource("18_7a063"), ExtResource("18_7a063"), ExtResource("19_5mtny"), ExtResource("20_1abvb"), ExtResource("21_hjmal"), ExtResource("19_5mtny"), ExtResource("9_tiqtr"), ExtResource("22_ggqlr"), ExtResource("6_8qlhr"), ExtResource("5_by0oe"), ExtResource("20_1abvb"), ExtResource("11_51dvm"), ExtResource("11_51dvm"), ExtResource("12_1abvb"), ExtResource("23_orpku"), ExtResource("18_7a063")])
 max_moves = 3
 crypto_price = 1932
 

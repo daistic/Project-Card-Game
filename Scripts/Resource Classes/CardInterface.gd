@@ -28,8 +28,5 @@ func get_desc_format() -> Array:
 	#does nothing
 	return []
 
-func use_card_action(_damageable: Damageable) -> void:
-	return
-
 func play_sfx() -> void:
 	return

@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_2u1x2")
 damage = 5.5
-shield_break = 0.25
+shield_break = 0.02
 name = "AI Injection"
-desc = "Does [color=khaki] %.1f [/color] damage to the enemy, also breaks [color=khaki] %.2f [/color] of enemy's shield"
+desc = "Does [color=khaki]%.1f[/color] damage to the enemy, also breaks [color=red]%.1f%%[/color] of their shield"
 energy_cost = 0
 ai_energy_cost = 4
 is_malware = false

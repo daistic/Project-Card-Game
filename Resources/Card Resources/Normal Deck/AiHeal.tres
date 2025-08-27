@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_sry3i")
-heal_amount = 17.5
-shield_amount = 0.2
+heal_amount = 0.175
+shield_amount = 0.1
 name = "AI Recovery"
-desc = "Recover [color=mediumseagreen] %.1f [/color] HP and [color=darkgray] %.1f [/color] shield"
+desc = "Recover [color=mediumseagreen]%.1f%%[/color] HP and [color=darkgray]%.1f%%[/color] shield"
 energy_cost = 0
 ai_energy_cost = 4
 is_malware = false

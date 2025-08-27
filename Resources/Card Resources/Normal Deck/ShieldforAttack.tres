@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource("1_k8pmy")
-shield = 0.25
-attack_debuff = 10.0
+shield = 0.175
+attack_debuff = 0.13
 is_debuff = false
 turns = 2
 name = "Wary"
-desc = "Recieve [color=darkgray]%.2f[/color] shield, but get [color=red]%.1f%%[/color] attack debuff for [color=khaki]%d[/color] turns"
+desc = "Receive [color=darkgray]%.1f%%[/color] shield, but get a [color=red]%.1f%%[/color] attack debuff for [color=khaki]%d[/color] turns"
 energy_cost = 2
 ai_energy_cost = 0
 is_malware = false

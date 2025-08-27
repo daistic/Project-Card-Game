@@ -35,7 +35,7 @@ offset_top = -2.0
 offset_bottom = -2.0
 stats = ExtResource("2_hw58m")
 enemy_deck = Array[ExtResource("3_kihwa")]([ExtResource("4_cubdk"), ExtResource("5_3f1sf"), ExtResource("6_fnh5r"), ExtResource("7_elfwc"), ExtResource("8_rv7nk"), ExtResource("8_rv7nk"), ExtResource("9_xhd1i"), ExtResource("10_p465p"), ExtResource("10_p465p"), ExtResource("6_fnh5r"), ExtResource("6_fnh5r"), ExtResource("11_jtkx7"), ExtResource("12_cjv3g"), ExtResource("12_cjv3g"), ExtResource("13_aj16o"), ExtResource("14_kpq36"), ExtResource("14_kpq36"), ExtResource("15_gr7p6"), ExtResource("16_liadh"), ExtResource("13_aj16o"), ExtResource("13_aj16o"), ExtResource("17_d7yyi"), ExtResource("17_d7yyi"), ExtResource("18_ydm3c"), ExtResource("18_ydm3c"), ExtResource("5_3f1sf"), ExtResource("19_3f1sf"), ExtResource("20_fnh5r"), ExtResource("20_fnh5r")])
-max_moves = 3
+max_moves = 4
 crypto_price = 2152
 
 [node name="TextureRect" parent="." index="0"]

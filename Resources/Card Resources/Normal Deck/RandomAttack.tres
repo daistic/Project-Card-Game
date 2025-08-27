@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_gbkr1")
-max_damage = 5.5
+max_damage = 5.7
 min_damage = 1.0
 name = "Random Attack"
-desc = "Does random damage between [color=khaki] %.1f - %.1f [/color]"
+desc = "Does random damage between [color=khaki]%.1f - %.1f[/color]"
 energy_cost = 3
 ai_energy_cost = 0
 is_malware = false

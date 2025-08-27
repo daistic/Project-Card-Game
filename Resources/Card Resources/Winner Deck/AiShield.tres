@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_q77jo")
-shield = 0.5
+shield = 0.175
 name = "Antivirus"
-desc = "Receive [color=darkgray]%.1f[/color] shield"
+desc = "Receive [color=darkgray]%.1f%%[/color] shield"
 energy_cost = 0
-ai_energy_cost = 4
+ai_energy_cost = 3
 is_malware = false
 metadata/_custom_type_script = "uid://dbomh7bht2fqk"

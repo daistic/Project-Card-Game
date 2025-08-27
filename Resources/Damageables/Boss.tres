@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_ex72u")
-max_hp = 132.5
-max_shield = 3.7
-atk = 5.46
-crit_rate = 27.35
-crit_damage = 1.393
+max_hp = 198.3
+max_shield = 4.0
+atk = 9.0
+crit_rate = 35.0
+crit_damage = 1.49
 metadata/_custom_type_script = "uid://bgprd3hmldf27"

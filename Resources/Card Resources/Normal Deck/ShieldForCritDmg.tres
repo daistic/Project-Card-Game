@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource("1_eam25")
-shield_break = 0.25
-crit_dmg_debuff = 12.0
+shield_break = 0.135
+crit_dmg_debuff = 0.15
 is_debuff = false
 turns = 3
 name = "Exposed Attack"
-desc = "degenerate [color=darkgray]%.2f[/color] enemy's shield, but recieves [color=red]%.1f%%[/color] crit damage debuff for [color=khaki]%d[/color] turns"
+desc = "break [color=darkgray]%.1f%%[/color] of the enemy's shield, but recieves [color=red]%.1f%%[/color] crit damage debuff for [color=khaki]%d[/color] turns"
 energy_cost = 3
 ai_energy_cost = 0
 is_malware = false

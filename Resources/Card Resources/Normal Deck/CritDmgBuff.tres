@@ -8,7 +8,7 @@ buff = 0.25
 is_debuff = false
 turns = 3
 name = "Exploitation"
-desc = "Buff [color=khaki] %.1f [/color] of your crit damage"
+desc = "Buff [color=khaki]%.1f%%[/color] of your crit damage for [color=khaki]%d[/color] turns"
 energy_cost = 3
 ai_energy_cost = 0
 is_malware = false

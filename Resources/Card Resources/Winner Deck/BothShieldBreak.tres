@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_6mt1j")
-shield_break = 0.15
-shield_break_enemy = 0.25
+shield_break = 0.115
+shield_break_enemy = 0.15
 name = "Public Domain"
-desc = "Break enemy's shield for [color=red]%.2f[/color], but also break your own shield for [color=red]%.2f[/color]"
+desc = "Break [color=red]%.1f%%[/color] of enemy's shield, but also break your own shield for [color=red]%.1f%%[/color]"
 energy_cost = 2
 ai_energy_cost = 0
 is_malware = false
