@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_3n556")
-damage = 7.3
+damage = 5.75
 name = "Desperation"
 desc = "Does damage based on HP [color=khaki]lost[/color]. [color=khaki]Lower[/color] HP means [color=khaki]higher[/color] damage"
 energy_cost = 4

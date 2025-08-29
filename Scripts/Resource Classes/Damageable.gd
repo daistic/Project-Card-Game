@@ -2,11 +2,11 @@ class_name Damageable
 
 extends Resource
 
-@export var max_hp: float = 10.0
-@export var max_shield: float = 10.0
-@export var atk: float = 1.0
-@export var crit_rate: float = 15.0
-@export var crit_damage: float = 1.25
+@export var max_hp: float
+@export var max_shield: float
+@export var atk: float
+@export var crit_rate: float
+@export var crit_damage: float
 
 var cur_hp: float = max_hp
 var cur_shield: float = 0.0
@@ -34,7 +34,9 @@ func card_damage(other_damageable: Damageable, damage: float,
 func get_stats_after_status() -> Damageable:
 	var sas: Damageable = Damageable.new()
 	
+	sas.max_hp = max_hp
 	sas.cur_hp = cur_hp
+	sas.max_shield = max_shield
 	sas.cur_shield = cur_shield
 	sas.atk = atk
 	sas.crit_rate = crit_rate
