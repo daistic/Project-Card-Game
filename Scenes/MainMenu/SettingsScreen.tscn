@@ -63,4 +63,5 @@ max_value = 20.0
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="VBoxContainer/HBoxContainer2/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
