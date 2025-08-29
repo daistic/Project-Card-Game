@@ -1,21 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://lf1iam2h4yw0"]
+[gd_scene load_steps=10 format=3 uid="uid://lf1iam2h4yw0"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Scenes/Base Scenes/EnemyBase.tscn" id="1_ktx7j"]
 [ext_resource type="Resource" uid="uid://hgr7eo568nij" path="res://Resources/Damageables/Enemy1.tres" id="2_ekph5"]
 [ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Scripts/Resource Classes/CardInterface.gd" id="2_u55p5"]
 [ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Resources/Card Resources/Normal Deck/BasicAttack.tres" id="3_ekph5"]
 [ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Resources/Card Resources/Normal Deck/BasicHeal.tres" id="4_g0dcu"]
-[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Resources/Card Resources/Normal Deck/BasicShield.tres" id="5_tdibg"]
 [ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Resources/Card Resources/Normal Deck/AttackBuff.tres" id="6_tswg8"]
-[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Resources/Card Resources/Normal Deck/CritDmgBuff.tres" id="7_na8qa"]
 [ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Resources/Card Resources/Normal Deck/ShieldDown.tres" id="8_1ipgh"]
-[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Resources/Card Resources/Winner Deck/CritRateBuff.tres" id="9_hkxee"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Resources/Card Resources/Normal Deck/AiAttack.tres" id="9_h8dw8"]
 [ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Resources/Card Resources/Normal Deck/AttackDebuff.tres" id="10_nt4ds"]
-[ext_resource type="Resource" uid="uid://c77gmb0oh3q7q" path="res://Resources/Card Resources/Normal Deck/ShieldforAttack.tres" id="12_tdibg"]
-[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Resources/Card Resources/Normal Deck/ShieldForCritDmg.tres" id="13_tswg8"]
 
 [node name="Enemy1" instance=ExtResource("1_ktx7j")]
 stats = ExtResource("2_ekph5")
-enemy_deck = Array[ExtResource("2_u55p5")]([ExtResource("3_ekph5"), ExtResource("4_g0dcu"), ExtResource("5_tdibg"), ExtResource("6_tswg8"), ExtResource("7_na8qa"), ExtResource("8_1ipgh"), ExtResource("9_hkxee"), ExtResource("3_ekph5"), ExtResource("3_ekph5"), ExtResource("5_tdibg"), ExtResource("4_g0dcu"), ExtResource("6_tswg8"), ExtResource("10_nt4ds"), ExtResource("12_tdibg"), ExtResource("13_tswg8")])
-max_moves = 3
-crypto_price = 1169
+enemy_deck = Array[ExtResource("2_u55p5")]([ExtResource("3_ekph5"), ExtResource("3_ekph5"), ExtResource("3_ekph5"), ExtResource("4_g0dcu"), ExtResource("4_g0dcu"), ExtResource("8_1ipgh"), ExtResource("6_tswg8"), ExtResource("10_nt4ds"), ExtResource("9_h8dw8")])
+crypto_price = 1037
