@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=17 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
 [ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Scripts/MainMenu/MainMenu.gd" id="1_kpx3y"]
@@ -14,13 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://debgp12vx7d75" path="res://Assets/Textures/MainMenu/GameTitle.png" id="7_ah1a3"]
 [ext_resource type="Texture2D" uid="uid://dcpmqvkx11h16" path="res://Assets/Textures/MainMenu/Help Button.png" id="7_sng02"]
 [ext_resource type="Texture2D" uid="uid://yg7nsvbic0na" path="res://Assets/Textures/MainMenu/Credits Button.png" id="8_lic31"]
+[ext_resource type="PackedScene" uid="uid://bkh7youttg5o8" path="res://Scenes/MainMenu/ResetLayer.tscn" id="14_ee4eu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ua038"]
 font = ExtResource("3_8qovt")
 font_size = 500
 font_color = Color(0, 0, 0, 1)
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("Main")]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kpx3y")
-Main = NodePath("Parallax")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -5
@@ -230,6 +230,13 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_vapy7")
 
+[node name="ResetLayer" parent="." instance=ExtResource("14_ee4eu")]
+visible = false
+layout_mode = 1
+offset_right = -74.0
+offset_bottom = -35.0
+scale = Vector2(1.1, 1.1)
+
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -248,9 +255,17 @@ scale = Vector2(1.1, 1.1)
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="Parallax/UpgradeScreen/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="Parallax/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Parallax/VBoxContainer/upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Parallax/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Parallax/HBoxContainer/Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="Parallax/HBoxContainer/HowTo" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="Parallax/HBoxContainer/Credits" to="." method="_on_credits_pressed"]
+
+[editable path="Parallax/UpgradeScreen"]
+[editable path="Parallax/UpgradeScreen/UpgradesContainer/HBoxContainer/ButtonsContainer/UpgradeButton"]
+[editable path="Parallax/UpgradeScreen/UpgradesContainer/HBoxContainer/ButtonsContainer/UpgradeButton2"]
+[editable path="Parallax/UpgradeScreen/UpgradesContainer/HBoxContainer/ButtonsContainer/UpgradeButton3"]
+[editable path="Parallax/UpgradeScreen/UpgradesContainer/HBoxContainer/ButtonsContainer/UpgradeButton4"]
+[editable path="Parallax/UpgradeScreen/UpgradesContainer/HBoxContainer/ButtonsContainer/UpgradeButton5"]

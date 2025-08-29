@@ -27,7 +27,7 @@ func load_data() -> void:
 		var data: SaveData = ResourceLoader.load(SAVE_PATH)
 		save_data = data
 	else:
-		save_data = load("res://Resources/DefaultSaveData.tres")
+		save_data = load("res://Resources/DefaultSaveData.tres").duplicate()
 
 func save_player_data(_total_crypto: int = get_total_crypto(),
 		_player_stats: Damageable = get_player_stats()) -> void:
@@ -42,6 +42,13 @@ func save_settings_data() -> void:
 
 func save_upgrade_levels_data() -> void:
 	ResourceSaver.save(save_data, SAVE_PATH)
+
+func reset_save_data() -> void:
+	var default_save_data: SaveData = load("res://Resources/DefaultSaveData.tres").duplicate()
+	save_player_data(default_save_data.total_cryto, default_save_data.player_stats)
+	
+	save_data.stat_levels = default_save_data.stat_levels
+	save_upgrade_levels_data()
 
 func get_starting_deck() -> CardPackedList:
 	return STARTING_DECK

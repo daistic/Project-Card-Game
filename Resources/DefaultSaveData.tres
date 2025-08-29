@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_c2o26")
 player_stats = ExtResource("1_iicx7")
-total_cryto = 0
+total_cryto = 6000
 stat_levels = Array[int]([-1, -1, -1, -1, -1])
 bgm_volume = 0.0
 sfx_volume = 0.0

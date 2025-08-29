@@ -5,11 +5,10 @@ extends Control
 @onready var credit_screen: TextureRect = $Parallax/CreditScreen
 @onready var how_to_screen: TextureRect = $Parallax/HowToScreen
 @onready var settings_screen: TextureRect = $Parallax/SettingsScreen
+@onready var reset_layer: ResetLayer = $ResetLayer
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
-@export var Main:CanvasItem
-@export var Upgrade:CanvasItem
 
 var current_screen: Control = Control.new()
 
@@ -60,3 +59,7 @@ func _on_how_to_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	handle_screen_display(credit_screen)
+
+func _on_reset_button_pressed() -> void:
+	reset_layer.show()
+	reset_layer.fade_in()
