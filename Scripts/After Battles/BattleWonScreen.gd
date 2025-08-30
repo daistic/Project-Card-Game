@@ -4,6 +4,8 @@ extends TextureRect
 @onready var next_battle_button: TextureButton = $Parallax/Screen/NextBattleButton
 @onready var story_label: RichTextLabel = $Parallax/Screen/MarginContainer/VBoxContainer/StoryLabel
 @onready var parallax: Control = $Parallax
+@onready var fade: ColorRect = $PostProcessing/Fade
+@onready var fade_animation: AnimationPlayer = $PostProcessing/Fade/FadeAnimation
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5.0
@@ -42,4 +44,11 @@ func _on_card_selected() -> void:
 
 func _on_texture_button_pressed() -> void:
 	next_battle_button.disabled = true
-	BattleManager.handle_next_win_scene()
+	
+	if BattleManager.story_index < BattleManager.CYBER_STORY.story.size():
+		BattleManager.handle_next_game_scene()
+	else:
+		fade.show()
+		fade_animation.play("Fade")
+		await fade_animation.animation_finished
+		Global.go_to_epilogue()

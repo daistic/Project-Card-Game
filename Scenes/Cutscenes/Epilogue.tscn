@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3u8j4va18uy5"]
+[gd_scene load_steps=20 format=3 uid="uid://b3u8j4va18uy5"]
 
 [ext_resource type="Script" uid="uid://d2mga4jsmo73p" path="res://Scripts/Cutscene/Epilogue.gd" id="1_e3rt6"]
 [ext_resource type="Texture2D" uid="uid://c6ffk8u1karnq" path="res://Assets/Textures/Cutscene/Epilogue/0.png" id="1_r2bk6"]
@@ -17,6 +17,43 @@
 font = ExtResource("10_wnj7a")
 font_size = 500
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_kyvna"]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w7nsl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4pb2"]
+_data = {
+&"Fade": SubResource("Animation_kyvna"),
+&"RESET": SubResource("Animation_w7nsl")
+}
 
 [sub_resource type="Animation" id="Animation_e3rt6"]
 length = 0.001
@@ -68,7 +105,7 @@ tracks/0/path = NodePath("Parallax/1:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 1.5),
+"times": PackedFloat32Array(0.6, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -80,7 +117,7 @@ tracks/1/path = NodePath("Parallax/2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2, 3.1),
+"times": PackedFloat32Array(2.1, 3.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -92,7 +129,7 @@ tracks/2/path = NodePath("Parallax/3:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.7, 4.8),
+"times": PackedFloat32Array(3.8, 4.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -113,7 +150,7 @@ tracks/3/keys = {
 "start_offset": 0.284969,
 "stream": ExtResource("11_1jq20")
 }],
-"times": PackedFloat32Array(0.4, 2.18497)
+"times": PackedFloat32Array(0.5, 2.18497)
 }
 tracks/3/use_blend = true
 tracks/4/type = "audio"
@@ -264,6 +301,28 @@ vertical_alignment = 1
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="Fade" type="ColorRect" parent="PostProcessing"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PostProcessing/Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_l4pb2")
+}
+autoplay = "Fade"
 
 [node name="ColorRect" type="ColorRect" parent="PostProcessing"]
 material = ExtResource("11_qtkje")

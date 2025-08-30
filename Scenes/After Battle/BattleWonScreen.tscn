@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqx2gwnp55vn8"]
+[gd_scene load_steps=20 format=3 uid="uid://bqx2gwnp55vn8"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_44g82"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
@@ -32,8 +32,46 @@ font = ExtResource("4_abt7p")
 font_size = 400
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_txptg"]
+resource_name = "Fade"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cmo68"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmo68"]
+_data = {
+&"Fade": SubResource("Animation_txptg"),
+&"RESET": SubResource("Animation_cmo68")
+}
+
 [node name="BattleWonScreen" type="TextureRect"]
-self_modulate = Color(0, 0, 0, 0.196078)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -214,6 +252,27 @@ vertical_alignment = 1
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="Fade" type="ColorRect" parent="PostProcessing"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeAnimation" type="AnimationPlayer" parent="PostProcessing/Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_cmo68")
+}
 
 [node name="ColorRect" type="ColorRect" parent="PostProcessing"]
 material = ExtResource("12_y51d7")

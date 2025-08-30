@@ -98,11 +98,8 @@ func reset_stats() -> void:
 	player.stats.reset_stats()
 	enemy.stats.reset_stats()
 
-func handle_next_win_scene() -> void:
-	if story_index < CYBER_STORY.story.size():
-		go_to_card_game()
-	else:
-		Global.go_to_epilogue()
+func handle_next_game_scene() -> void:
+	go_to_card_game()
 
 func get_crypto_collected() -> int:
 	return crypto_collected

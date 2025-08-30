@@ -33,7 +33,7 @@ void fragment() {
         float adjusted_position = vertical_origin + (1.0 - vertical_origin) * line_position;
         float line_height = mix(line_height_max, line_height_min, clamp(line_position, 0.0, 1.0));
 
-        float line_alpha = smoothstep(adjusted_position - line_height / 2.0, adjusted_position + line_height / 2.0, UV.y) 
+        float line_alpha = smoothstep(adjusted_position - line_height / 2.0, adjusted_position + line_height / 2.0, UV.y)
                          - smoothstep(adjusted_position + line_height / 2.0, adjusted_position + line_height / 2.0 + 0.01, UV.y);
         alpha *= (1.0 - line_alpha);
     }

@@ -11,7 +11,6 @@ func _ready() -> void:
 func _on_exit_button_pressed() -> void:
 	exit_button._reset_modulate()
 	call_deferred("hide")
-	Global.save_settings_data()
 
 func _on_music_slider_value_changed(value: float) -> void:
 	SoundManager.set_bgm_volume(value)
@@ -20,4 +19,8 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	SoundManager.set_sfx_volume(value)
 
 func _on_sfx_slider_drag_ended(_value_changed: bool) -> void:
+	Global.save_settings_data()
 	SoundManager.play_sfx("Button Click")
+
+func _on_music_slider_drag_ended(_value_changed: bool) -> void:
+	Global.save_settings_data()

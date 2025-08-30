@@ -6,6 +6,8 @@ extends Control
 @onready var how_to_screen: TextureRect = $Parallax/HowToScreen
 @onready var settings_screen: TextureRect = $Parallax/SettingsScreen
 @onready var reset_layer: ResetLayer = $ResetLayer
+@onready var fade: ColorRect = $PostProcessing/Fade
+@onready var fade_animation: AnimationPlayer = $PostProcessing/Fade/FadeAnimation
 
 @export var max_parallax_offset: Vector2 = Vector2(2.5, 2.5)
 @export var smoothing: float = 5
@@ -42,13 +44,17 @@ func _on_start_pressed() -> void:
 	BattleManager.clear_player_deck()
 	BattleManager.set_starting_deck()
 	Global.load_data()
+	
+	fade.show()
+	fade_animation.play("Fade")
+	await fade_animation.animation_finished
+	
 	Global.go_to_prologue()
 
 func _on_upgrade_pressed() -> void:
 	handle_screen_display(upgrade_screen)
 
 func _on_quit_pressed() -> void:
-	Global.save_settings_data()
 	get_tree().quit()
 
 func _on_setting_pressed() -> void:

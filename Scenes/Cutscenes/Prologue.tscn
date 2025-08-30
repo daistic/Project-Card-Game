@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://65xocwtb24ux"]
+[gd_scene load_steps=23 format=3 uid="uid://65xocwtb24ux"]
 
 [ext_resource type="Script" uid="uid://dwnhhtk81imwn" path="res://Scripts/Cutscene/Prologue.gd" id="1_32sm6"]
 [ext_resource type="Texture2D" uid="uid://dpgc6xadsuhfw" path="res://Assets/Textures/Cutscene/Prologue/1.jpg" id="1_sh5ne"]
@@ -20,6 +20,43 @@
 font = ExtResource("11_nbd5i")
 font_size = 500
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_kyvna"]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w7nsl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4pb2"]
+_data = {
+&"Fade": SubResource("Animation_kyvna"),
+&"RESET": SubResource("Animation_w7nsl")
+}
 
 [sub_resource type="Animation" id="Animation_k135e"]
 length = 0.001
@@ -98,7 +135,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_w4buo"]
 resource_name = "cutscene"
-length = 8.0
+length = 9.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -107,7 +144,7 @@ tracks/0/path = NodePath("Parallax/1:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.8),
+"times": PackedFloat32Array(0.4, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -119,7 +156,7 @@ tracks/1/path = NodePath("Parallax/2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.3, 2.5),
+"times": PackedFloat32Array(1.8, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -131,7 +168,7 @@ tracks/2/path = NodePath("Parallax/3:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.8, 3.5),
+"times": PackedFloat32Array(3.4, 4.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -143,7 +180,7 @@ tracks/3/path = NodePath("Parallax/4:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4, 4.6),
+"times": PackedFloat32Array(4.8, 5.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -155,7 +192,7 @@ tracks/4/path = NodePath("Parallax/5:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.2, 6.3),
+"times": PackedFloat32Array(6, 7.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -167,7 +204,7 @@ tracks/5/path = NodePath("Parallax/6:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(6.7, 7.5),
+"times": PackedFloat32Array(7.5, 8.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -180,11 +217,11 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "clips": [{
-"end_offset": 0.584552,
-"start_offset": 0.832987,
+"end_offset": 0.18,
+"start_offset": 0.272987,
 "stream": ExtResource("13_nbd5i")
 }],
-"times": PackedFloat32Array(0.832987)
+"times": PackedFloat32Array(1.1)
 }
 tracks/6/use_blend = true
 tracks/7/type = "audio"
@@ -195,8 +232,8 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "clips": [{
-"end_offset": 0.767225,
-"start_offset": 0.540711,
+"end_offset": 0.0,
+"start_offset": 0.0,
 "stream": ExtResource("14_w7nsl")
 }, {
 "end_offset": 0.0,
@@ -211,7 +248,7 @@ tracks/7/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("14_kyvna")
 }],
-"times": PackedFloat32Array(0.3, 4.1, 4.4, 4.7)
+"times": PackedFloat32Array(0, 4.5, 4.8, 5.2)
 }
 tracks/7/use_blend = true
 
@@ -401,6 +438,28 @@ vertical_alignment = 1
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="Fade" type="ColorRect" parent="PostProcessing"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PostProcessing/Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_l4pb2")
+}
+autoplay = "Fade"
 
 [node name="ColorRect" type="ColorRect" parent="PostProcessing"]
 material = ExtResource("2_4sir3")

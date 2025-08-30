@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=23 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
 [ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Scripts/MainMenu/MainMenu.gd" id="1_kpx3y"]
-[ext_resource type="Material" uid="uid://gip1muybp1s8" path="res://Assets/Materials/Background1.tres" id="2_sng02"]
+[ext_resource type="Texture2D" uid="uid://cqtvyn7yq2jrx" path="res://Assets/Textures/MainMenu/Main Menu BG.jpg" id="2_gkjg1"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_8qovt"]
 [ext_resource type="PackedScene" uid="uid://dw8g5ywig87e6" path="res://Scenes/MainMenu/UpgradeScreen.tscn" id="3_sng02"]
+[ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Shaders/RetroSun.gdshader" id="3_txptg"]
+[ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="4_cmo68"]
 [ext_resource type="PackedScene" uid="uid://r0lurvrabhid" path="res://Scenes/MainMenu/CreditScreen.tscn" id="4_lic31"]
 [ext_resource type="PackedScene" uid="uid://biui2lf4kj5s7" path="res://Scenes/MainMenu/HowToScreen.tscn" id="5_56wdt"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="5_vapy7"]
@@ -16,10 +18,63 @@
 [ext_resource type="Texture2D" uid="uid://yg7nsvbic0na" path="res://Assets/Textures/MainMenu/Credits Button.png" id="8_lic31"]
 [ext_resource type="PackedScene" uid="uid://bkh7youttg5o8" path="res://Scenes/MainMenu/ResetLayer.tscn" id="14_ee4eu"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5o35t"]
+shader = ExtResource("3_txptg")
+shader_parameter/texture_albedo = ExtResource("4_cmo68")
+shader_parameter/color_top = Color(0, 0.45098, 0.901961, 1)
+shader_parameter/color_bottom = Color(0, 0.74902, 1, 1)
+shader_parameter/position = 0.114
+shader_parameter/blend = 1.332
+shader_parameter/angle = 145.282
+shader_parameter/line_height_min = 0.0
+shader_parameter/line_height_max = 0.015
+shader_parameter/num_lines = 2
+shader_parameter/speed = 0.1
+shader_parameter/vertical_origin = 0.0
+shader_parameter/self_modulate_alpha = 0.75
+
 [sub_resource type="LabelSettings" id="LabelSettings_ua038"]
 font = ExtResource("3_8qovt")
 font_size = 500
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_txptg"]
+resource_name = "Fade"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cmo68"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmo68"]
+_data = {
+&"Fade": SubResource("Animation_txptg"),
+&"RESET": SubResource("Animation_cmo68")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,11 +85,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kpx3y")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 z_index = -5
 texture_filter = 1
 texture_repeat = 2
-material = ExtResource("2_sng02")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +100,19 @@ offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_gkjg1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -1
+material = SubResource("ShaderMaterial_5o35t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Parallax" type="Control" parent="."]
 layout_mode = 1
@@ -239,6 +306,27 @@ scale = Vector2(1.1, 1.1)
 
 [node name="PostProcessing" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="Fade" type="ColorRect" parent="PostProcessing"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeAnimation" type="AnimationPlayer" parent="PostProcessing/Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_cmo68")
+}
 
 [node name="ColorRect" type="ColorRect" parent="PostProcessing"]
 material = ExtResource("6_8qovt")
