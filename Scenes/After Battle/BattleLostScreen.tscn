@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1cr5r8tflf14"]
+[gd_scene load_steps=19 format=3 uid="uid://b1cr5r8tflf14"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_jagbd"]
 [ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Scripts/After Battles/BattleLostScreen.gd" id="2_211x1"]
 [ext_resource type="Texture2D" uid="uid://qwkgjcyqiqdn" path="res://Assets/Textures/After Battle/AfterBattleRedBG.png" id="2_mbpu6"]
 [ext_resource type="Texture2D" uid="uid://bv0igp0g5dyf2" path="res://Assets/Textures/After Battle/AfterBattleRed.png" id="3_211x1"]
 [ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Assets/Materials/Background4tres.tres" id="3_m4xni"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="4_c2pnw"]
 [ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Shaders/RetroSun.gdshader" id="4_iknsa"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_wmc8l"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="5_vxyjm"]
@@ -82,6 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("4_c2pnw")
 
 [node name="Screen" type="TextureRect" parent="Parallax"]
 material = SubResource("ShaderMaterial_c2pnw")

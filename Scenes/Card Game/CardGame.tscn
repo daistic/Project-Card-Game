@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=14 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Scripts/Card Game/CardGame.gd" id="1_5pjvo"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Scenes/Card Game/CardHitZone.tscn" id="2_5f4ku"]
 [ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Assets/Materials/Background4tres.tres" id="2_qep0y"]
 [ext_resource type="Texture2D" uid="uid://k6jhtgckk285" path="res://Assets/Textures/Card Game/PauseButton.png" id="3_7ak25"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="3_bvi5y"]
 [ext_resource type="Script" uid="uid://j4o7hdy1nvrq" path="res://Scripts/Card Game/GameCamera.gd" id="4_3f11k"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Scenes/Card Game/Player.tscn" id="5_oxm1c"]
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="6_qep0y"]
@@ -30,8 +31,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_5pjvo")
-max_parallax_offset = Vector2(2.5, 2.5)
-smoothing = 5.0
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -5
@@ -50,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
 
-[node name="Parallax" type="Control" parent="."]
+[node name="EnemyParallax" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,8 +57,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("3_bvi5y")
+max_parallax_offset = Vector2(1.5, 1.5)
+smoothing = 4.0
 
-[node name="Player" parent="Parallax" instance=ExtResource("5_oxm1c")]
+[node name="PlayerParallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_bvi5y")
+
+[node name="Player" parent="PlayerParallax" instance=ExtResource("5_oxm1c")]
 layout_mode = 1
 
 [node name="CardHitZone" parent="." instance=ExtResource("2_5f4ku")]

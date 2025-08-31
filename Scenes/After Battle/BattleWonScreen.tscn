@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqx2gwnp55vn8"]
+[gd_scene load_steps=21 format=3 uid="uid://bqx2gwnp55vn8"]
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Textures/Placeholders/white_texture.png" id="1_44g82"]
 [ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="2_5nv4g"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6eq3vbfh8quc" path="res://Assets/Textures/After Battle/AfterBattleBlue.png" id="3_guoxy"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_abt7p"]
 [ext_resource type="PackedScene" uid="uid://k8dkcus6ddqc" path="res://Scenes/After Battle/AddToDeckPanel.tscn" id="4_e2ejy"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="4_li6bc"]
 [ext_resource type="Material" uid="uid://da72dgkjq37te" path="res://Assets/Materials/BaseRetroSunMaterial.tres" id="4_o5dal"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="7_j0vtd"]
 [ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Assets/Textures/After Battle/DisabledButton.png" id="8_fomr0"]
@@ -106,6 +107,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("4_li6bc")
 
 [node name="Screen" type="TextureRect" parent="Parallax"]
 material = ExtResource("4_o5dal")

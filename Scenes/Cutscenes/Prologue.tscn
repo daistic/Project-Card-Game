@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://65xocwtb24ux"]
+[gd_scene load_steps=24 format=3 uid="uid://65xocwtb24ux"]
 
 [ext_resource type="Script" uid="uid://dwnhhtk81imwn" path="res://Scripts/Cutscene/Prologue.gd" id="1_32sm6"]
 [ext_resource type="Texture2D" uid="uid://dpgc6xadsuhfw" path="res://Assets/Textures/Cutscene/Prologue/1.jpg" id="1_sh5ne"]
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="2_4sir3"]
 [ext_resource type="Texture2D" uid="uid://ctr0n1rcl2j4w" path="res://Assets/Textures/Cutscene/Prologue/0.png" id="2_qhm4h"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="2_w7nsl"]
 [ext_resource type="Texture2D" uid="uid://mune0f2r1g2w" path="res://Assets/Textures/Cutscene/Prologue/2.jpg" id="4_qxdfy"]
 [ext_resource type="Texture2D" uid="uid://gwvsh5wn0yj4" path="res://Assets/Textures/Cutscene/Prologue/3.jpg" id="5_qxdfy"]
 [ext_resource type="Texture2D" uid="uid://be4tv2ng4sm2j" path="res://Assets/Textures/Cutscene/Prologue/4.jpg" id="6_k135e"]
@@ -275,6 +276,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_w7nsl")
 
 [node name="0" type="TextureRect" parent="Parallax"]
 texture_filter = 1

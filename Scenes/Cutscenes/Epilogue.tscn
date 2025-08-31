@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3u8j4va18uy5"]
+[gd_scene load_steps=21 format=3 uid="uid://b3u8j4va18uy5"]
 
 [ext_resource type="Script" uid="uid://d2mga4jsmo73p" path="res://Scripts/Cutscene/Epilogue.gd" id="1_e3rt6"]
 [ext_resource type="Texture2D" uid="uid://c6ffk8u1karnq" path="res://Assets/Textures/Cutscene/Epilogue/0.png" id="1_r2bk6"]
 [ext_resource type="Texture2D" uid="uid://dc43xg4rvqdkv" path="res://Assets/Textures/Cutscene/Epilogue/1.jpg" id="2_f43tl"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="2_icfsj"]
 [ext_resource type="Texture2D" uid="uid://jyfk808yslm0" path="res://Assets/Textures/Cutscene/Epilogue/2.jpg" id="3_e3rt6"]
 [ext_resource type="Texture2D" uid="uid://k46f051wbb5" path="res://Assets/Textures/Cutscene/Epilogue/3.jpg" id="4_v6m3d"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="8_jdgxw"]
@@ -192,6 +193,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_icfsj")
 
 [node name="0" type="TextureRect" parent="Parallax"]
 texture_filter = 1

@@ -1,14 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=24 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Assets/Textures/Card Game/EndTurnButton.png" id="1_cdkru"]
 [ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Scripts/MainMenu/MainMenu.gd" id="1_kpx3y"]
-[ext_resource type="Texture2D" uid="uid://cqtvyn7yq2jrx" path="res://Assets/Textures/MainMenu/Main Menu BG.jpg" id="2_gkjg1"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_8qovt"]
+[ext_resource type="Shader" uid="uid://dn55q4x8w2qor" path="res://Shaders/RetroSun2.gdshader" id="3_cmo68"]
+[ext_resource type="Texture2D" uid="uid://dwc2gl5ed6oan" path="res://Assets/Textures/MainMenu/Main Menu BG.png" id="3_ee4eu"]
 [ext_resource type="PackedScene" uid="uid://dw8g5ywig87e6" path="res://Scenes/MainMenu/UpgradeScreen.tscn" id="3_sng02"]
-[ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Shaders/RetroSun.gdshader" id="3_txptg"]
-[ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Assets/Textures/After Battle/AfterBattleBlueBG.png" id="4_cmo68"]
+[ext_resource type="Texture2D" uid="uid://ymc1t3yh3lyo" path="res://Assets/Textures/MainMenu/Main Menu BG2.png" id="3_txptg"]
 [ext_resource type="PackedScene" uid="uid://r0lurvrabhid" path="res://Scenes/MainMenu/CreditScreen.tscn" id="4_lic31"]
 [ext_resource type="PackedScene" uid="uid://biui2lf4kj5s7" path="res://Scenes/MainMenu/HowToScreen.tscn" id="5_56wdt"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Scripts/Parallax.gd" id="5_cmo68"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Scripts/Classes/GameButton.gd" id="5_vapy7"]
 [ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Assets/Materials/VHSShader.tres" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://kqnai0iox4j7" path="res://Assets/Textures/MainMenu/Setting Button.png" id="6_fv0xt"]
@@ -19,10 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://bkh7youttg5o8" path="res://Scenes/MainMenu/ResetLayer.tscn" id="14_ee4eu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5o35t"]
-shader = ExtResource("3_txptg")
-shader_parameter/texture_albedo = ExtResource("4_cmo68")
-shader_parameter/color_top = Color(0, 0.45098, 0.901961, 1)
-shader_parameter/color_bottom = Color(0, 0.74902, 1, 1)
+shader = ExtResource("3_cmo68")
+shader_parameter/color_top = Color(0.133333, 0.364706, 0.270588, 0.580392)
+shader_parameter/color_bottom = Color(0, 0.286275, 0.243137, 0.729412)
 shader_parameter/position = 0.114
 shader_parameter/blend = 1.332
 shader_parameter/angle = 145.282
@@ -85,10 +85,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kpx3y")
 
-[node name="Background" type="TextureRect" parent="."]
-z_index = -5
-texture_filter = 1
-texture_repeat = 2
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.745098)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,19 +98,69 @@ offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("2_gkjg1")
-expand_mode = 3
-stretch_mode = 5
+mouse_filter = 2
+color = Color(0.0253638, 0.0253638, 0.0253638, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-z_index = -1
-material = SubResource("ShaderMaterial_5o35t")
+[node name="BGParrallax" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_cmo68")
+max_parallax_offset = Vector2(1, 1)
+smoothing = 1.5
+
+[node name="TextureRect" type="TextureRect" parent="BGParrallax"]
+material = SubResource("ShaderMaterial_5o35t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -50.0
+offset_right = -92.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.15, 1.15)
+mouse_filter = 2
+texture = ExtResource("3_txptg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BGParrallax2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_cmo68")
+max_parallax_offset = Vector2(2, 2)
+smoothing = 3.0
+
+[node name="Background" type="TextureRect" parent="BGParrallax2"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -17.0
+offset_right = -36.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+mouse_filter = 2
+texture = ExtResource("3_ee4eu")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Parallax" type="Control" parent="."]
 layout_mode = 1
@@ -121,6 +169,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_cmo68")
 
 [node name="UpgradeScreen" parent="Parallax" instance=ExtResource("3_sng02")]
 visible = false

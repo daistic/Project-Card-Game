@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://biui2lf4kj5s7"]
+[gd_scene load_steps=8 format=3 uid="uid://biui2lf4kj5s7"]
 
 [ext_resource type="PackedScene" uid="uid://b0vw4sftvguae" path="res://Scenes/Base Scenes/MainMenuScreenBase.tscn" id="1_mpxgr"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_tc86r"]
 [ext_resource type="Script" uid="uid://dgc3a0rio0yxu" path="res://Scripts/MainMenu/HowToScreen.gd" id="2_xmv40"]
-[ext_resource type="Texture2D" uid="uid://jw6q6bpcv4ui" path="res://Assets/Textures/MainMenu/Group 147.png" id="3_ofbw3"]
-[ext_resource type="Texture2D" uid="uid://bf3oqhlyy4cha" path="res://Assets/Textures/MainMenu/Group 148.png" id="4_xmv40"]
+[ext_resource type="Texture2D" uid="uid://jw6q6bpcv4ui" path="res://Assets/Textures/MainMenu/HowTo1.png" id="3_ofbw3"]
+[ext_resource type="Texture2D" uid="uid://bf3oqhlyy4cha" path="res://Assets/Textures/MainMenu/HowTo2.png" id="4_xmv40"]
+[ext_resource type="Texture2D" uid="uid://dygphb1audyf3" path="res://Assets/Textures/MainMenu/Howto3.png" id="6_ki0tb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gakeh"]
 font = ExtResource("2_tc86r")
@@ -84,6 +85,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 10000
 text = "- Click the end turn button to finish your turn"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_ki0tb")
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "- Hover over status's logo to see their effect"
 label_settings = SubResource("LabelSettings_gakeh")
 autowrap_mode = 2
 
