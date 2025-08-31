@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=3 format=3 uid="uid://dyt508v78gdwp"]
+
+[ext_resource type="Script" uid="uid://uj7i8r6nrtpu" path="res://Utilities/Save System/SaveData.gd" id="1_c2o26"]
+[ext_resource type="Resource" uid="uid://by8hi4jjgkg8s" path="res://Entities/Player/PlayerDamageable.tres" id="1_iicx7"]
+
+[resource]
+script = ExtResource("1_c2o26")
+player_stats = ExtResource("1_iicx7")
+total_cryto = 0
+stat_levels = Array[int]([-1, -1, -1, -1, -1])
+bgm_volume = 0.0
+sfx_volume = 0.0
+metadata/_custom_type_script = "uid://uj7i8r6nrtpu"

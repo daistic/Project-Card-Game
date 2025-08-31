@@ -17,15 +17,14 @@ config/icon="uid://binbag4l4chnj"
 
 [autoload]
 
-Global="*res://Globals/Global.gd"
-SignalHub="*res://Globals/SignalHub.gd"
-BattleManager="*res://Globals/BattleManager.gd"
-EffectHub="*res://Globals/EffectHub.gd"
-SoundManager="*res://Globals/SoundManager.gd"
+Global="*res://Utilities/Global/Global.gd"
+SignalHub="*res://Utilities/SignalHub/SignalHub.gd"
+BattleManager="*res://Utilities/Battle Manager/BattleManager.gd"
+EffectHub="*res://Utilities/EffectHub/EffectHub.gd"
+SoundManager="*res://Utilities/SoundManager/SoundManager.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

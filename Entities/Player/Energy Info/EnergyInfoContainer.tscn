@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqdq1vcy27ket"]
+
+[ext_resource type="Script" uid="uid://b0x20g8pm71lw" path="res://Entities/Player/Energy Info/EnergyInfoContainer.gd" id="1_f0uyt"]
+[ext_resource type="Texture2D" uid="uid://khbnw4jadg7t" path="res://Entities/Player/Energy Info/Arts/EnergyUI.png" id="1_y3jkg"]
+[ext_resource type="Texture2D" uid="uid://binwivrgv5bam" path="res://Entities/Player/Energy Info/Arts/AIEnergyUI.png" id="2_f0uyt"]
+[ext_resource type="LabelSettings" uid="uid://drq0rxg8bdcgi" path="res://Entities/Player/Energy Info/EnergyFont.tres" id="3_g3sfe"]
+
+[node name="EnergyInfoContainer" type="VBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -261.0
+offset_right = 192.0
+offset_bottom = -96.0
+grow_vertical = 0
+theme_override_constants/separation = 15
+script = ExtResource("1_f0uyt")
+
+[node name="EnergyTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+texture = ExtResource("1_y3jkg")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="EnergyLabel" type="Label" parent="EnergyTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = 1030.0
+offset_bottom = 996.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 10000
+text = "5/5"
+label_settings = ExtResource("3_g3sfe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AIEnergyTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+texture = ExtResource("2_f0uyt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="AIEnergyLabel" type="Label" parent="AIEnergyTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = 1010.0
+offset_bottom = 956.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 10000
+text = "5/5"
+label_settings = ExtResource("3_g3sfe")
+horizontal_alignment = 1
+vertical_alignment = 1

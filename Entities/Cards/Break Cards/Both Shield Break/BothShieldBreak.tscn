@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://c66twl5mk0dfc"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_r420s"]
+[ext_resource type="Texture2D" uid="uid://jrv5xffrca6q" path="res://Entities/On Screen Cards/Arts/ShieldDownCard.png" id="2_ydkgw"]
+[ext_resource type="Resource" uid="uid://dgfforbj75wuc" path="res://Entities/Cards/Break Cards/Both Shield Break/BothShieldBreak.tres" id="3_ydkgw"]
+
+[node name="BothShieldBreak" instance=ExtResource("1_r420s")]
+texture = ExtResource("2_ydkgw")
+card_resource = ExtResource("3_ydkgw")

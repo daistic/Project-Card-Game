@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj2tfcb6a1ixi"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_a1ym8"]
+[ext_resource type="Texture2D" uid="uid://bfxbkg4suhqsn" path="res://Entities/On Screen Cards/Arts/RecoverCard.png" id="2_fp7wf"]
+[ext_resource type="Resource" uid="uid://bwnmdoj83joqm" path="res://Entities/Cards/Recover Cards/Energy Up/EnergyUp.tres" id="2_uqdb2"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Entities/On Screen Cards/Gradients/AiEnergyBar.tres" id="4_rr37c"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7slwt"]
+gradient = ExtResource("4_rr37c")
+fill_from = Vector2(0.495726, 1)
+fill_to = Vector2(0.495726, 0)
+
+[node name="EnergyUp" instance=ExtResource("1_a1ym8")]
+texture = ExtResource("2_fp7wf")
+card_resource = ExtResource("2_uqdb2")
+
+[node name="EnergyCostBar" parent="." index="1"]
+texture_progress = SubResource("GradientTexture2D_7slwt")

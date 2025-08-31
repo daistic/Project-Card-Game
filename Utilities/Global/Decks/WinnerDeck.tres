@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardPackedList" load_steps=9 format=3 uid="uid://bbqm7ux2i3277"]
+
+[ext_resource type="Script" uid="uid://1lgqu12mp6d2" path="res://Utilities/Global/Decks/CardsPackedList.gd" id="1_7f2ta"]
+[ext_resource type="PackedScene" uid="uid://v2wtm6ja8fvx" path="res://Entities/Cards/Attack Cards/Attack Based On HP/AttackBasedOnHp.tscn" id="1_m5x8y"]
+[ext_resource type="PackedScene" uid="uid://kc66ujo0fqp8" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.tscn" id="2_44s4v"]
+[ext_resource type="PackedScene" uid="uid://bj2tfcb6a1ixi" path="res://Entities/Cards/Recover Cards/Energy Up/EnergyUp.tscn" id="3_ox3x7"]
+[ext_resource type="PackedScene" uid="uid://bchtrpajlhui6" path="res://Entities/Cards/Status Cards/Debuff Cards/Ignore Shield/IgnoreShield.tscn" id="4_wj3m1"]
+[ext_resource type="PackedScene" uid="uid://q8ss2tpxsigd" path="res://Entities/Cards/Attack Cards/Attack Based On AI/AttackBasedOnAI.tscn" id="5_m5x8y"]
+[ext_resource type="PackedScene" uid="uid://y6ogxh4x1ucs" path="res://Entities/Cards/AI Cards/AI Shield/AiShield.tscn" id="6_ox3x7"]
+[ext_resource type="PackedScene" uid="uid://c66twl5mk0dfc" path="res://Entities/Cards/Break Cards/Both Shield Break/BothShieldBreak.tscn" id="7_wj3m1"]
+
+[resource]
+script = ExtResource("1_7f2ta")
+packed_scenes = Array[PackedScene]([ExtResource("1_m5x8y"), ExtResource("2_44s4v"), ExtResource("3_ox3x7"), ExtResource("4_wj3m1"), ExtResource("5_m5x8y"), ExtResource("6_ox3x7"), ExtResource("7_wj3m1")])
+metadata/_custom_type_script = "uid://1lgqu12mp6d2"

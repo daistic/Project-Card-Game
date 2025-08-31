@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4skj15t6oxsa"]
+
+[ext_resource type="Texture2D" uid="uid://b2pitpy3l1dxo" path="res://Stages/Main Menu/Screens/Upgrade Screen/Upgrades Section/Arts/MinusButton.png" id="1_f8rqt"]
+[ext_resource type="Script" uid="uid://dj6c8xe1mxo3m" path="res://Stages/Main Menu/Screens/Upgrade Screen/Upgrades Section/Upgrade Button/UpgradeButton.gd" id="1_kutgk"]
+[ext_resource type="Texture2D" uid="uid://b838ekp00soc5" path="res://Stages/Main Menu/Screens/Upgrade Screen/Upgrades Section/Arts/PlusButton.png" id="2_cdn6r"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Common/Game Button/GameButton.gd" id="2_kutgk"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_sn4m5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kutgk"]
+font = ExtResource("2_sn4m5")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3h1xw"]
+font = ExtResource("2_sn4m5")
+font_color = Color(0.252063, 0.729769, 0.456059, 1)
+
+[node name="UpgradeButton" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+script = ExtResource("1_kutgk")
+
+[node name="Minus" type="TextureButton" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("1_f8rqt")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_kutgk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Crit Damage"
+label_settings = SubResource("LabelSettings_kutgk")
+horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Crypto Needed: "
+label_settings = SubResource("LabelSettings_3h1xw")
+horizontal_alignment = 1
+
+[node name="Plus" type="TextureButton" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_cdn6r")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_kutgk")
+
+[connection signal="pressed" from="Minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Plus" to="." method="_on_plus_pressed"]

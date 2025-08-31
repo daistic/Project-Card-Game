@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="StoryScript" load_steps=9 format=3 uid="uid://cijk1ktol6sfa"]
+
+[ext_resource type="Script" uid="uid://b35qq1etmlbg7" path="res://Utilities/Battle Manager/Story/StoryScript.gd" id="1_aep6b"]
+[ext_resource type="Script" uid="uid://dr8f5oqv4ghat" path="res://Utilities/Battle Manager/Story/StoryStruct.gd" id="2_utumb"]
+[ext_resource type="PackedScene" uid="uid://dj1x1p1xscvjl" path="res://Entities/Enemies/Bosses/MiniBoss1/MiniBoss1.tscn" id="3_v6wb0"]
+[ext_resource type="PackedScene" uid="uid://csa2a1epa7r04" path="res://Entities/Enemies/Bosses/MiniBoss2/MiniBoss2.tscn" id="4_o58i3"]
+[ext_resource type="PackedScene" uid="uid://cm4a7pmd3kr7k" path="res://Entities/Enemies/Bosses/Boss/Boss.tscn" id="5_bc2o8"]
+
+[sub_resource type="Resource" id="Resource_mvhjd"]
+script = ExtResource("2_utumb")
+next_boss = ExtResource("3_v6wb0")
+battles_to_meet = 3
+story_messages = Array[String](["The signal is unstable… something’s interfering.[color=yellow] %d [/color] more battles", "Layers of code are twisting against me. [color=yellow] %d [/color] more battle", "The firewall is watching.", "Access granted… but at what cost?"])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[sub_resource type="Resource" id="Resource_eperb"]
+script = ExtResource("2_utumb")
+next_boss = ExtResource("4_o58i3")
+battles_to_meet = 2
+story_messages = Array[String](["Encryption is breaking… but not in my favor.[color=yellow] %d [/color] more battle", "The system is adapting faster than I can.", "The core is waking… and it knows I’m here."])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[sub_resource type="Resource" id="Resource_v6wb0"]
+script = ExtResource("2_utumb")
+next_boss = ExtResource("5_bc2o8")
+battles_to_meet = 0
+story_messages = Array[String](["Victory feels hollow… the network never sleeps."])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[resource]
+script = ExtResource("1_aep6b")
+story = Array[ExtResource("2_utumb")]([SubResource("Resource_mvhjd"), SubResource("Resource_eperb"), SubResource("Resource_v6wb0")])
+metadata/_custom_type_script = "uid://b35qq1etmlbg7"

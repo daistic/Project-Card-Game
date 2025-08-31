@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c15kt85tg4jxf"]
-
-[ext_resource type="Texture2D" uid="uid://ueb4j4b3op3n" path="res://Assets/Textures/Card Frames/RedFrame.png" id="1_eaafk"]
-
-[resource]
-atlas = ExtResource("1_eaafk")
-region = Rect2(107.671, 32.823, 286.029, 435.277)

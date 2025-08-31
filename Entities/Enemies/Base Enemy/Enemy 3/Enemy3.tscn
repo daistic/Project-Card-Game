@@ -1,0 +1,18 @@
+[gd_scene load_steps=9 format=3 uid="uid://dekc4bved3hgr"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Base Enemy/Base/EnemyBase.tscn" id="1_v05kr"]
+[ext_resource type="Resource" uid="uid://cna6yyknk7now" path="res://Entities/Enemies/Base Enemy/Enemy 3/Enemy3.tres" id="2_hjnne"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_pu2rg"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_kp20v"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Entities/Cards/Recover Cards/Basic Heal/BasicHeal.tres" id="5_podhh"]
+[ext_resource type="Resource" uid="uid://b4y6qejb8h50g" path="res://Entities/Cards/AI Cards/AI Shield/AiShield.tres" id="6_podhh"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Entities/Cards/Break Cards/Shield Down/ShieldDown.tres" id="8_814j2"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Entities/Cards/Status Cards/Debuff Cards/Attack Debuff/AttackDebuff.tres" id="8_uf21d"]
+
+[node name="EnemyBase" instance=ExtResource("1_v05kr")]
+stats = ExtResource("2_hjnne")
+enemy_deck = Array[ExtResource("3_pu2rg")]([ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("5_podhh"), ExtResource("5_podhh"), ExtResource("5_podhh"), ExtResource("6_podhh"), ExtResource("6_podhh"), ExtResource("8_814j2"), ExtResource("8_uf21d"), ExtResource("8_uf21d")])
+crypto_price = 1286
+
+[node name="TextureRect" parent="." index="0"]
+modulate = Color(0.460386, 0.995358, 1, 1)

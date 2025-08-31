@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2glkgctnqvgw"]
+
+[ext_resource type="Script" uid="uid://qapyifxj3607" path="res://Stages/Main Menu/Screens/Upgrade Screen/Stats Section/Stats Container/StatsContainer.gd" id="1_6ue04"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="1_jq57m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bokmq"]
+font = ExtResource("1_jq57m")
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t33t1"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekdrr"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0, 0.832885, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_icmxj"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gwh0"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0.666569, 0.666569, 0.666569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mq3v1"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0.811788, 0, 0.124721, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cemdm"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0.86185, 0.736451, 0.304068, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2q3xf"]
+font = ExtResource("1_jq57m")
+font_size = 32
+font_color = Color(0.862745, 0.737255, 0.305882, 1)
+
+[node name="StatsContainer" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 19.0
+offset_right = -0.125977
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+script = ExtResource("1_6ue04")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Player Stats"
+label_settings = SubResource("LabelSettings_bokmq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="MaxHP" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsContainer/MaxHP"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Max HP:"
+label_settings = SubResource("LabelSettings_t33t1")
+
+[node name="Score" type="Label" parent="ButtonsContainer/MaxHP"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "87.5"
+label_settings = SubResource("LabelSettings_ekdrr")
+horizontal_alignment = 2
+
+[node name="MaxShield" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsContainer/MaxShield"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Max Shield:"
+label_settings = SubResource("LabelSettings_icmxj")
+
+[node name="Score" type="Label" parent="ButtonsContainer/MaxShield"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "87.5"
+label_settings = SubResource("LabelSettings_2gwh0")
+horizontal_alignment = 2
+
+[node name="Attack" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsContainer/Attack"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Attack:"
+label_settings = SubResource("LabelSettings_icmxj")
+
+[node name="Score" type="Label" parent="ButtonsContainer/Attack"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "87.5"
+label_settings = SubResource("LabelSettings_mq3v1")
+horizontal_alignment = 2
+
+[node name="CritRate" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsContainer/CritRate"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Crit Rate:"
+label_settings = SubResource("LabelSettings_icmxj")
+
+[node name="Score" type="Label" parent="ButtonsContainer/CritRate"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "87.5"
+label_settings = SubResource("LabelSettings_cemdm")
+horizontal_alignment = 2
+
+[node name="CritDmg" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ButtonsContainer/CritDmg"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Crit Damage:"
+label_settings = SubResource("LabelSettings_icmxj")
+
+[node name="Score" type="Label" parent="ButtonsContainer/CritDmg"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "87.5"
+label_settings = SubResource("LabelSettings_2q3xf")
+horizontal_alignment = 2

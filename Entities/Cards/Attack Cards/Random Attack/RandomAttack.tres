@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RandomAttack" load_steps=2 format=3 uid="uid://btitqm353wa47"]
+
+[ext_resource type="Script" uid="uid://dvygnvbhmujyu" path="res://Entities/Cards/Attack Cards/Random Attack/RandomAttack.gd" id="1_gbkr1"]
+
+[resource]
+script = ExtResource("1_gbkr1")
+max_damage = 5.7
+min_damage = 1.0
+name = "Random Attack"
+desc = "Does random damage between [color=khaki]%.1f - %.1f[/color]"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://dvygnvbhmujyu"

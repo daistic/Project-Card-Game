@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjxedmlw7sqh7"]
+
+[ext_resource type="Script" uid="uid://d35t26pakj3b8" path="res://Entities/Enemies/Enemy Gimmicks/Can't Play/CantPlayGimmick.gd" id="1_g5m07"]
+[ext_resource type="AudioStream" uid="uid://csnspf8auhn5p" path="res://Assets/Audio/SFX/Malware 2.mp3" id="2_o427s"]
+
+[node name="CantPlayGimmick" type="Node"]
+script = ExtResource("1_g5m07")
+gimmick_message = "Turn Malware in %d"
+has_message = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o427s")

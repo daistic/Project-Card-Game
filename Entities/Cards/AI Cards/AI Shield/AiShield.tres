@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AIShield" load_steps=2 format=3 uid="uid://b4y6qejb8h50g"]
+
+[ext_resource type="Script" uid="uid://dbomh7bht2fqk" path="res://Entities/Cards/AI Cards/AI Shield/AIShield.gd" id="1_q77jo"]
+
+[resource]
+script = ExtResource("1_q77jo")
+shield = 0.175
+name = "Antivirus"
+desc = "Receive [color=darkgray]%.1f%%[/color] shield"
+energy_cost = 0
+ai_energy_cost = 3
+is_malware = false
+metadata/_custom_type_script = "uid://dbomh7bht2fqk"

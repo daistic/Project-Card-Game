@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://mrofwy8xb14r"]
+
+[ext_resource type="Texture2D" uid="uid://dkfsym7j6vpd6" path="res://Entities/Battle Bars/Enemy Bar/Arts/EnemyHealthBar.png" id="1_hau8c"]
+
+[resource]
+atlas = ExtResource("1_hau8c")
+region = Rect2(25.8717, 15.8926, 1768.3, 48.7603)

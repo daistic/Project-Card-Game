@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg6xohcopeelx"]
+
+[ext_resource type="Script" uid="uid://cqjen5ix7cuot" path="res://Entities/Enemies/Enemy Gimmicks/Energy Limit/EnergyLimitGimmick.gd" id="1_028pc"]
+[ext_resource type="AudioStream" uid="uid://dowuokyjfknri" path="res://Assets/Audio/SFX/malware.mp3" id="2_ioaei"]
+
+[node name="EnergyLimitGimmick" type="Node"]
+script = ExtResource("1_028pc")
+gimmick_message = "Energy Malware in %d"
+has_message = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ioaei")

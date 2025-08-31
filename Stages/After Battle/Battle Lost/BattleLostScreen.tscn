@@ -1,0 +1,201 @@
+[gd_scene load_steps=19 format=3 uid="uid://b1cr5r8tflf14"]
+
+[ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Placeholders/white_texture.png" id="1_jagbd"]
+[ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Stages/After Battle/Battle Lost/BattleLostScreen.gd" id="2_211x1"]
+[ext_resource type="Texture2D" uid="uid://qwkgjcyqiqdn" path="res://Stages/After Battle/Battle Lost/Arts/AfterBattleRedBG.png" id="2_mbpu6"]
+[ext_resource type="Texture2D" uid="uid://bv0igp0g5dyf2" path="res://Stages/After Battle/Battle Lost/Arts/AfterBattleRed.png" id="3_211x1"]
+[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Stages/Card Game/Background/Background4tres.tres" id="3_m4xni"]
+[ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Common/Parallax/Parallax.gd" id="4_c2pnw"]
+[ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Stages/After Battle/RetroSun.gdshader" id="4_iknsa"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_wmc8l"]
+[ext_resource type="Texture2D" uid="uid://bk0g66e8thfkw" path="res://Stages/After Battle/Battle Won/Arts/AfterBattleBlueBG.png" id="5_vxyjm"]
+[ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Common/Game Button/GameButton.png" id="6_iknsa"]
+[ext_resource type="Texture2D" uid="uid://bjsb6jp1uy50d" path="res://Stages/After Battle/DisabledButton.png" id="7_vxyjm"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Common/Game Button/GameButton.gd" id="11_vxyjm"]
+[ext_resource type="Material" uid="uid://02532mgqwkc" path="res://Common/VHS/VHSShader.tres" id="12_vxyjm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2pnw"]
+shader = ExtResource("4_iknsa")
+shader_parameter/texture_albedo = ExtResource("5_vxyjm")
+shader_parameter/color_top = Color(1, 0.101961, 0.101961, 1)
+shader_parameter/color_bottom = Color(1, 0.301961, 0.301961, 1)
+shader_parameter/position = 0.114
+shader_parameter/blend = 1.332
+shader_parameter/angle = 145.282
+shader_parameter/line_height_min = 0.0
+shader_parameter/line_height_max = 0.015
+shader_parameter/num_lines = 2
+shader_parameter/speed = 0.1
+shader_parameter/vertical_origin = 0.0
+shader_parameter/self_modulate_alpha = 0.8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4xni"]
+atlas = ExtResource("3_211x1")
+region = Rect2(75.375, 451.591, 1909.11, 1118.68)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5n0a"]
+font = ExtResource("4_wmc8l")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbpu6"]
+font = ExtResource("4_wmc8l")
+font_size = 24
+font_color = Color(0, 0.827451, 0.188235, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1o4u2"]
+font = ExtResource("4_wmc8l")
+font_size = 400
+font_color = Color(0, 0, 0, 1)
+
+[node name="BattleLostScreen" type="TextureRect"]
+self_modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jagbd")
+script = ExtResource("2_211x1")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -5
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("3_m4xni")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+
+[node name="Parallax" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("4_c2pnw")
+
+[node name="Screen" type="TextureRect" parent="Parallax"]
+material = SubResource("ShaderMaterial_c2pnw")
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -474.563
+offset_top = -250.0
+offset_right = 474.563
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mbpu6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Frame" type="TextureRect" parent="Parallax/Screen"]
+custom_minimum_size = Vector2(0, 520)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.8931
+offset_top = -48.0
+offset_right = 21.3377
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_m4xni")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Parallax/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Game Over"
+label_settings = SubResource("LabelSettings_c5n0a")
+
+[node name="CrytoLabel" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 10000
+text = "Crypto Collected: "
+label_settings = SubResource("LabelSettings_mbpu6")
+
+[node name="MainButton" type="TextureButton" parent="Parallax/Screen/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(175, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_iknsa")
+texture_disabled = ExtResource("7_vxyjm")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_vxyjm")
+
+[node name="Label" type="Label" parent="Parallax/Screen/MarginContainer/VBoxContainer/MainButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 3286.0
+offset_bottom = 1205.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_1o4u2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PostProcessing2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="PostProcessing2"]
+material = ExtResource("12_vxyjm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Parallax/Screen/MarginContainer/VBoxContainer/MainButton" to="." method="_on_main_button_pressed"]

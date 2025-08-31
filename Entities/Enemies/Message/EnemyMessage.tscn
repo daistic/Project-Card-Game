@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcpgwrtsvm52k"]
+
+[ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Stages/After Battle/RetroSun.gdshader" id="1_jb6vd"]
+[ext_resource type="Texture2D" uid="uid://wgturn8e87rk" path="res://Entities/Enemies/Message/Arts/EnemyMessageBG.png" id="1_jeyfb"]
+[ext_resource type="Script" uid="uid://mbsjrqojn50v" path="res://Entities/Enemies/Message/EnemyMessage.gd" id="2_3ncut"]
+[ext_resource type="Texture2D" uid="uid://dvivy7ybiwlt2" path="res://Entities/Enemies/Message/Arts/EnemyMessageFrame.png" id="2_dr2fh"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="3_dr2fh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8025"]
+shader = ExtResource("1_jb6vd")
+shader_parameter/texture_albedo = ExtResource("1_jeyfb")
+shader_parameter/color_top = Color(0.637816, 0.0621959, 0.108394, 1)
+shader_parameter/color_bottom = Color(0.980826, 0.285303, 0.285133, 1)
+shader_parameter/position = 0.114
+shader_parameter/blend = 1.332
+shader_parameter/angle = 145.282
+shader_parameter/line_height_min = 0.0
+shader_parameter/line_height_max = 0.015
+shader_parameter/num_lines = 2
+shader_parameter/speed = 0.1
+shader_parameter/vertical_origin = 0.0
+shader_parameter/self_modulate_alpha = 0.75
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ncut"]
+font = ExtResource("3_dr2fh")
+font_size = 400
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jb6vd"]
+font = ExtResource("3_dr2fh")
+font_size = 400
+font_color = Color(0.956863, 0.94902, 0, 1)
+
+[node name="EnemyMessage" type="TextureRect"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_v8025")
+custom_minimum_size = Vector2(0, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_jeyfb")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("2_3ncut")
+
+[node name="Frame" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 185)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -15.0
+offset_right = 13.9879
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dr2fh")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 3495.16
+offset_bottom = 2227.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+vertical_scroll_mode = 3
+
+[node name="Label" type="Label" parent="ScrollContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 10000
+text = "Next Enemy Moves:
+- Basic Attack
+- Basic Shield"
+label_settings = SubResource("LabelSettings_3ncut")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.919
+offset_top = 6.0
+offset_right = 4331.08
+offset_bottom = 1586.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+
+[node name="GimmickLabel" type="Label" parent="ScrollContainer2"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+label_settings = SubResource("LabelSettings_jb6vd")
+autowrap_mode = 2

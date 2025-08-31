@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://biui2lf4kj5s7"]
+
+[ext_resource type="PackedScene" uid="uid://b0vw4sftvguae" path="res://Stages/Main Menu/Screens/MainMenuScreenBase.tscn" id="1_mpxgr"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_tc86r"]
+[ext_resource type="Script" uid="uid://dgc3a0rio0yxu" path="res://Stages/Main Menu/Screens/How To Screen/HowToScreen.gd" id="2_xmv40"]
+[ext_resource type="Texture2D" uid="uid://jw6q6bpcv4ui" path="res://Stages/Main Menu/Screens/How To Screen/Arts/HowTo1.png" id="3_ofbw3"]
+[ext_resource type="Texture2D" uid="uid://bf3oqhlyy4cha" path="res://Stages/Main Menu/Screens/How To Screen/Arts/HowTo2.png" id="4_xmv40"]
+[ext_resource type="Texture2D" uid="uid://dygphb1audyf3" path="res://Stages/Main Menu/Screens/How To Screen/Arts/Howto3.png" id="6_ki0tb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gakeh"]
+font = ExtResource("2_tc86r")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="HowToScreen" instance=ExtResource("1_mpxgr")]
+script = ExtResource("2_xmv40")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.0
+offset_top = 27.0
+offset_right = -135.126
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "How to Play:"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "- Drag card upwards to use"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 55
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+texture = ExtResource("3_ofbw3")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 275)
+layout_mode = 2
+texture = ExtResource("4_xmv40")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "- The bar on the left indicates how many energy are needed to use that card. Yellow bar means player's energy, Purple bar means AI's Energy"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer" index="4"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "- Click the end turn button to finish your turn"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_ki0tb")
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer" index="6"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10000
+text = "- Hover over status's logo to see their effect"
+label_settings = SubResource("LabelSettings_gakeh")
+autowrap_mode = 2
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

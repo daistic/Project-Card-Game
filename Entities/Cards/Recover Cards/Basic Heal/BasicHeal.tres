@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BasicHeal" load_steps=2 format=3 uid="uid://b8cklu4ds6x02"]
+
+[ext_resource type="Script" uid="uid://bfi3thnwyom4r" path="res://Entities/Cards/Recover Cards/Basic Heal/BasicHeal.gd" id="1_8mdi1"]
+
+[resource]
+script = ExtResource("1_8mdi1")
+heal_amount = 0.135
+name = "Recover"
+desc = "Heal [color=mediumseagreen]%.1f%%[/color] of your max HP"
+energy_cost = 2
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://bfi3thnwyom4r"

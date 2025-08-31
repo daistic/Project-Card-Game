@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cn0ab4lstqe2r"]
+
+[ext_resource type="Texture2D" uid="uid://bv7rwahl0vi6p" path="res://Entities/Battle Bars/Shared Images/ShieldBar.png" id="1_bru6p"]
+
+[resource]
+atlas = ExtResource("1_bru6p")
+region = Rect2(25.8717, 15.8926, 1768.3, 48.7603)

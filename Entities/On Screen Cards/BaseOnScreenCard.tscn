@@ -1,0 +1,147 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkcyc2y6wpdfm"]
+
+[ext_resource type="Texture2D" uid="uid://c0glhnk0pd68p" path="res://Entities/On Screen Cards/Arts/TemplateCard.png" id="1_vbrjr"]
+[ext_resource type="Script" uid="uid://badnx1vn20e04" path="res://Entities/On Screen Cards/OnScreenCard.gd" id="2_hm6hs"]
+[ext_resource type="Resource" uid="uid://cs6w2f8ob4o6s" path="res://Entities/On Screen Cards/Template.tres" id="3_xmtfg"]
+[ext_resource type="AudioStream" uid="uid://vkjk683hy488" path="res://Entities/On Screen Cards/Audio/Select Card.mp3" id="4_1nufa"]
+[ext_resource type="Gradient" uid="uid://bhp0hv7n7upx2" path="res://Entities/On Screen Cards/Gradients/PlayerEnergyBar.tres" id="4_xigoc"]
+[ext_resource type="LabelSettings" uid="uid://bu0t47efj3nub" path="res://Entities/On Screen Cards/CardFont.tres" id="5_bokq1"]
+[ext_resource type="AudioStream" uid="uid://4swx5abfmpxa" path="res://Entities/On Screen Cards/Audio/SFX For you cant use your card.mp3" id="5_sveni"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="6_xmtfg"]
+[ext_resource type="Texture2D" uid="uid://bvc07ry58hf8k" path="res://Entities/On Screen Cards/Atlas Images/BlueCardFrame.tres" id="7_x22n7"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xigoc"]
+gradient = ExtResource("4_xigoc")
+fill_from = Vector2(0.495726, 1)
+fill_to = Vector2(0.495726, 0)
+
+[node name="BaseOnScreenCard" type="TextureRect"]
+z_index = 5
+texture_filter = 1
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.9861
+offset_top = -75.0
+offset_right = 56.9861
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(57.529, 75)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_vbrjr")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("2_hm6hs")
+card_resource = ExtResource("3_xmtfg")
+on_hover_sfx = ExtResource("4_1nufa")
+cant_use_sfx = ExtResource("5_sveni")
+
+[node name="Shadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.196078)
+z_index = -1
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.013916
+offset_top = 8.0
+offset_right = -0.013916
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vbrjr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EnergyCostBar" type="TextureProgressBar" parent="."]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.9861
+offset_top = -51.0
+offset_right = -40.9861
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 8.0
+value = 3.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_xigoc")
+
+[node name="Frame" type="TextureRect" parent="."]
+texture_filter = 1
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_right = 31.9426
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(87.5, 87.5)
+mouse_filter = 2
+texture = ExtResource("7_x22n7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="."]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 8.0
+offset_right = 1445.0
+offset_bottom = 217.0
+grow_horizontal = 2
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 10000
+text = "Template"
+label_settings = ExtResource("5_bokq1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="RichTextLabel" parent="."]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.9861
+offset_top = -72.0
+offset_right = 1465.01
+offset_bottom = 1148.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_xmtfg")
+theme_override_fonts/bold_font = ExtResource("6_xmtfg")
+theme_override_font_sizes/normal_font_size = 175
+bbcode_enabled = true
+text = "Does X Damage"
+autowrap_mode = 2
+horizontal_alignment = 3
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4swx5abfmpxa"
+path="res://.godot/imported/SFX For you cant use your card.mp3-778ff8709189bad139ced46ec4efccdc.mp3str"
+
+[deps]
+
+source_file="res://Entities/On Screen Cards/Audio/SFX For you cant use your card.mp3"
+dest_files=["res://.godot/imported/SFX For you cant use your card.mp3-778ff8709189bad139ced46ec4efccdc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

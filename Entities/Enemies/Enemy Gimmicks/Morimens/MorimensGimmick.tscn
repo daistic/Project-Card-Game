@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5afbjfmhc3w"]
+
+[ext_resource type="Script" uid="uid://c8u5114hhmps2" path="res://Entities/Enemies/Enemy Gimmicks/Morimens/MorimensGimmick.gd" id="1_p857a"]
+
+[node name="MorimensGimmick" type="Node"]
+script = ExtResource("1_p857a")
