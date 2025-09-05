@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://c081qt7d152w4"]
+
+[ext_resource type="PackedScene" uid="uid://b0vw4sftvguae" path="res://Stages/Main Menu/Screens/MainMenuScreenBase.tscn" id="1_qp2ek"]
+[ext_resource type="Script" uid="uid://cpvse3q00f2oq" path="res://Stages/Main Menu/Screens/Play Screen/PlayScreen.gd" id="2_gig2j"]
+[ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="2_wtddv"]
+[ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Common/Game Button/GameButton.png" id="3_wu5e4"]
+[ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Common/Game Button/GameButton.gd" id="5_ijxj1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu5e4"]
+font = ExtResource("2_wtddv")
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gig2j"]
+font = ExtResource("2_wtddv")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="PlayScreen" instance=ExtResource("1_qp2ek")]
+script = ExtResource("2_gig2j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+text = "Choose Difficulty:"
+label_settings = SubResource("LabelSettings_wu5e4")
+
+[node name="NormalMode" type="TextureButton" parent="VBoxContainer" index="1"]
+self_modulate = Color(0, 0.851964, 0.562006, 1)
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_wu5e4")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_ijxj1")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NormalMode" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/NormalMode/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Normal"
+label_settings = SubResource("LabelSettings_gig2j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardMode" type="TextureButton" parent="VBoxContainer" index="2"]
+self_modulate = Color(0.875636, 0.141123, 0.2727, 1)
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_wu5e4")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_ijxj1")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HardMode" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HardMode/MarginContainer2" index="0"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Hard"
+label_settings = SubResource("LabelSettings_gig2j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NormalMode" to="." method="_on_normal_mode_pressed"]
+[connection signal="pressed" from="VBoxContainer/HardMode" to="." method="_on_hard_mode_pressed"]

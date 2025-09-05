@@ -1,0 +1,40 @@
+[gd_scene load_steps=15 format=3 uid="uid://weiruktqerkp"]
+
+[ext_resource type="PackedScene" uid="uid://cc0brk7cc5lrr" path="res://Entities/Enemies/Bosses/Base/BossBase.tscn" id="1_744l1"]
+[ext_resource type="Resource" uid="uid://bh47u4wtcrbv7" path="res://Entities/Enemies/Bosses/Miniboss 1/Hard/Miniboss1Hard.tres" id="2_744l1"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_i8sbl"]
+[ext_resource type="PackedScene" uid="uid://dj5afbjfmhc3w" path="res://Entities/Enemies/Enemy Gimmicks/Morimens/MorimensGimmick.tscn" id="3_qkgs5"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_xl73s"]
+[ext_resource type="Resource" uid="uid://bqwqocb7p0spr" path="res://Entities/Cards/Status Cards/Debuff Cards/Attack Debuff/AttackDebuff.tres" id="5_o0524"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/Cards/AI Cards/AI Attack/AiAttack.tres" id="6_5yhim"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Entities/Cards/Recover Cards/Basic Heal/BasicHeal.tres" id="7_t3e45"]
+[ext_resource type="Resource" uid="uid://c77gmb0oh3q7q" path="res://Entities/Cards/Defence Cards/Shield For Attack/ShieldforAttack.tres" id="8_1kb8s"]
+[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Entities/Cards/Defence Cards/Shield For Crit Damage/ShieldForCritDmg.tres" id="9_6tr6g"]
+[ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Entities/Cards/Status Cards/Debuff Cards/Ignore Shield/IgnoreShield.tres" id="10_2gnd7"]
+[ext_resource type="Resource" uid="uid://dfnvasq4284or" path="res://Entities/Cards/Malware Cards/Malware 1/Malware1.tres" id="11_fqi24"]
+[ext_resource type="Resource" uid="uid://bcunpe4kbo0ip" path="res://Entities/Cards/Malware Cards/Malware 2/Malware2.tres" id="12_834j1"]
+[ext_resource type="Texture2D" uid="uid://yita7wqo7fhe" path="res://Entities/Enemies/Bosses/Miniboss 1/TextureAtlas.tres" id="14_jabdj"]
+
+[node name="Miniboss1Hard" instance=ExtResource("1_744l1")]
+stats = ExtResource("2_744l1")
+enemy_deck = Array[ExtResource("3_i8sbl")]([ExtResource("4_xl73s"), ExtResource("4_xl73s"), ExtResource("5_o0524"), ExtResource("5_o0524"), ExtResource("5_o0524"), ExtResource("6_5yhim"), ExtResource("6_5yhim"), ExtResource("6_5yhim"), ExtResource("7_t3e45"), ExtResource("7_t3e45"), ExtResource("8_1kb8s"), ExtResource("8_1kb8s"), ExtResource("9_6tr6g"), ExtResource("9_6tr6g"), ExtResource("10_2gnd7"), ExtResource("10_2gnd7"), ExtResource("11_fqi24"), ExtResource("12_834j1")])
+max_moves = 3
+crypto_price = 3521
+
+[node name="MorimensGimmick" parent="GimmickMessageControl" index="0" instance=ExtResource("3_qkgs5")]
+
+[node name="TextureRect" parent="." index="1"]
+custom_minimum_size = Vector2(500, 350)
+offset_left = -251.0
+offset_top = -226.0
+offset_right = 249.0
+offset_bottom = 124.0
+
+[node name="EnemyTexture" parent="TextureRect" index="0"]
+self_modulate = Color(1, 0.137385, 0.304887, 1)
+texture = ExtResource("14_jabdj")
+
+[node name="Shadow" parent="TextureRect" index="1"]
+texture = ExtResource("14_jabdj")
+
+[editable path="TextureRect"]

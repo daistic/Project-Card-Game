@@ -5,6 +5,7 @@ extends Control
 @onready var credit_screen: TextureRect = $Parallax/CreditScreen
 @onready var how_to_screen: TextureRect = $Parallax/HowToScreen
 @onready var settings_screen: TextureRect = $Parallax/SettingsScreen
+@onready var play_screen: PlayScreen = $Parallax/PlayScreen
 @onready var reset_layer: ResetLayer = $ResetLayer
 @onready var fade: ColorRect = $PostProcessing/Fade
 @onready var fade_animation: AnimationPlayer = $PostProcessing/Fade/FadeAnimation
@@ -21,16 +22,7 @@ func handle_screen_display(new_screen: Control) -> void:
 	SoundManager.play_sfx("Button Click")
 
 func _on_start_pressed() -> void:
-	BattleManager.reset_battle_manager()
-	BattleManager.clear_player_deck()
-	BattleManager.set_starting_deck()
-	Global.load_data()
-	
-	fade.show()
-	fade_animation.play("Fade")
-	await fade_animation.animation_finished
-	
-	Global.go_to_prologue()
+	play_screen.show()
 
 func _on_upgrade_pressed() -> void:
 	handle_screen_display(upgrade_screen)
@@ -50,3 +42,10 @@ func _on_credits_pressed() -> void:
 func _on_reset_button_pressed() -> void:
 	reset_layer.show()
 	reset_layer.fade_in()
+
+func _on_play_screen_mode_selected() -> void:
+	fade.show()
+	fade_animation.play("Fade")
+	await fade_animation.animation_finished
+	
+	Global.go_to_prologue()

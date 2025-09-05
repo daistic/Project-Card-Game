@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://wwtca1lmwyls"]
+[gd_scene load_steps=4 format=3 uid="uid://wwtca1lmwyls"]
 
 [ext_resource type="Material" uid="uid://csecmndxv2frl" path="res://Entities/Enemies/EnemyVHS.tres" id="1_bk6wd"]
 [ext_resource type="Script" uid="uid://bph0lcafujvu3" path="res://Entities/Enemies/Texture Rect/EnemyTextureRect.gd" id="2_gi20b"]
-[ext_resource type="Texture2D" uid="uid://b8uuwn1c0dar5" path="res://Entities/Enemies/Base Enemy/Art/EnemyBase.png" id="3_bk6wd"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkj5j"]
-atlas = ExtResource("3_bk6wd")
-region = Rect2(95.0665, 321.3, 782.839, 544.872)
+[ext_resource type="Texture2D" uid="uid://dx4ey5am41yyv" path="res://Entities/Enemies/Normal Enemies/Art/EnemyBaseAtlas.tres" id="3_3l43n"]
 
 [node name="EnemyTextureRect" type="ColorRect"]
 z_index = -5
@@ -34,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_hkj5j")
+texture = ExtResource("3_3l43n")
 expand_mode = 3
 stretch_mode = 5
 
@@ -52,6 +48,6 @@ offset_right = 10.0
 offset_bottom = 8.66501
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_hkj5j")
+texture = ExtResource("3_3l43n")
 expand_mode = 3
 stretch_mode = 5

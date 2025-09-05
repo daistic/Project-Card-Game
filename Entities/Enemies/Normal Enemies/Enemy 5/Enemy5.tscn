@@ -1,0 +1,24 @@
+[gd_scene load_steps=10 format=3 uid="uid://dubgkia5u3f8l"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_sa620"]
+[ext_resource type="Resource" uid="uid://dob4b37hskb0l" path="res://Entities/Enemies/Normal Enemies/Enemy 5/Enemy5.tres" id="2_bdjmr"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_jgcqd"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_8dosx"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Entities/Cards/Break Cards/Shield Down/ShieldDown.tres" id="5_kokqq"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/Cards/AI Cards/AI Attack/AiAttack.tres" id="6_8g4bp"]
+[ext_resource type="Resource" uid="uid://c77gmb0oh3q7q" path="res://Entities/Cards/Defence Cards/Shield For Attack/ShieldforAttack.tres" id="7_hgr7t"]
+[ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Entities/Cards/Defence Cards/Shield For Crit Damage/ShieldForCritDmg.tres" id="8_xrsec"]
+[ext_resource type="Texture2D" uid="uid://01xkq5c4sf0f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyPlaceholderAtlas.tres" id="9_jgcqd"]
+
+[node name="Enemy5" instance=ExtResource("1_sa620")]
+stats = ExtResource("2_bdjmr")
+enemy_deck = Array[ExtResource("3_jgcqd")]([ExtResource("4_8dosx"), ExtResource("4_8dosx"), ExtResource("4_8dosx"), ExtResource("5_kokqq"), ExtResource("5_kokqq"), ExtResource("6_8g4bp"), ExtResource("6_8g4bp"), ExtResource("6_8g4bp"), ExtResource("7_hgr7t"), ExtResource("7_hgr7t"), ExtResource("8_xrsec")])
+crypto_price = 1556
+
+[node name="EnemyTexture" parent="TextureRect" index="0"]
+texture = ExtResource("9_jgcqd")
+
+[node name="Shadow" parent="TextureRect" index="1"]
+texture = ExtResource("9_jgcqd")
+
+[editable path="TextureRect"]

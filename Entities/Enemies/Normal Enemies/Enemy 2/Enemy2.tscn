@@ -1,0 +1,18 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2gt71af6k1xn"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_f1y8x"]
+[ext_resource type="Resource" uid="uid://d0qpiw01ueesy" path="res://Entities/Enemies/Normal Enemies/Enemy 2/Enemy2.tres" id="2_ofn4g"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_bg12c"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_flf1t"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.tres" id="6_flf1t"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/Cards/AI Cards/AI Attack/AiAttack.tres" id="8_8xoks"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Damage Buff/CritDmgBuff.tres" id="11_xf02t"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Entities/Cards/Attack Cards/Attack Take Damage/AttackTakeDamage.tres" id="13_yvtyc"]
+
+[node name="Enemy2" instance=ExtResource("1_f1y8x")]
+stats = ExtResource("2_ofn4g")
+enemy_deck = Array[ExtResource("3_bg12c")]([ExtResource("4_flf1t"), ExtResource("4_flf1t"), ExtResource("4_flf1t"), ExtResource("4_flf1t"), ExtResource("11_xf02t"), ExtResource("11_xf02t"), ExtResource("6_flf1t"), ExtResource("6_flf1t"), ExtResource("13_yvtyc"), ExtResource("8_8xoks"), ExtResource("8_8xoks")])
+crypto_price = 1412
+
+[node name="TextureRect" parent="." index="0"]
+modulate = Color(1, 1, 0.67451, 1)

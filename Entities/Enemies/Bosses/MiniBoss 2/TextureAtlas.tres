@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ciyruqn7ye77i"]
+
+[ext_resource type="Texture2D" uid="uid://clytusrubr6o" path="res://Entities/Enemies/Bosses/MiniBoss 2/miniboss2.png" id="1_li1lv"]
+
+[resource]
+atlas = ExtResource("1_li1lv")
+region = Rect2(58.8953, 191.769, 1118.32, 674.404)

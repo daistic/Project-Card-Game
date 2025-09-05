@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://irkm2tgjcgy5"]
+
+[ext_resource type="Texture2D" uid="uid://pu1a87wvscul" path="res://Entities/Enemies/Bosses/Boss/boss.png" id="1_mpgos"]
+
+[resource]
+atlas = ExtResource("1_mpgos")
+region = Rect2(58.895, 24.679, 1118.32, 1131.66)

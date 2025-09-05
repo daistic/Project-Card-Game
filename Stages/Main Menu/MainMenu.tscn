@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bvu7pirbbb227"]
+[gd_scene load_steps=25 format=3 uid="uid://bvu7pirbbb227"]
 
 [ext_resource type="Script" uid="uid://ckgrihnd0a3n0" path="res://Stages/Main Menu/MainMenu.gd" id="1_0nmkc"]
 [ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Common/Parallax/Parallax.gd" id="2_0gfro"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://r0lurvrabhid" path="res://Stages/Main Menu/Screens/Credits Screen/CreditScreen.tscn" id="7_0gk5e"]
 [ext_resource type="PackedScene" uid="uid://biui2lf4kj5s7" path="res://Stages/Main Menu/Screens/How To Screen/HowToScreen.tscn" id="8_nnqyk"]
 [ext_resource type="PackedScene" uid="uid://bfqnj4phlfd22" path="res://Stages/Main Menu/Screens/Settings Screen/SettingsScreen.tscn" id="9_r7ain"]
+[ext_resource type="PackedScene" uid="uid://c081qt7d152w4" path="res://Stages/Main Menu/Screens/Play Screen/PlayScreen.tscn" id="10_0gfro"]
 [ext_resource type="Texture2D" uid="uid://debgp12vx7d75" path="res://Stages/Main Menu/Arts/GameTitle.png" id="10_pgsnf"]
 [ext_resource type="Texture2D" uid="uid://bselagskc8btp" path="res://Common/Game Button/GameButton.png" id="11_t0nfn"]
 [ext_resource type="Script" uid="uid://ccu4a4ttx02ue" path="res://Common/Game Button/GameButton.gd" id="12_6txp8"]
@@ -196,6 +197,14 @@ offset_right = 1002.13
 offset_bottom = 540.0
 
 [node name="SettingsScreen" parent="Parallax" instance=ExtResource("9_r7ain")]
+visible = false
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 1002.13
+offset_bottom = 540.0
+
+[node name="PlayScreen" parent="Parallax" instance=ExtResource("10_0gfro")]
 visible = false
 layout_mode = 0
 offset_left = 53.0
@@ -393,6 +402,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Parallax/UpgradeScreen/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="mode_selected" from="Parallax/PlayScreen" to="." method="_on_play_screen_mode_selected"]
 [connection signal="pressed" from="Parallax/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Parallax/VBoxContainer/upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Parallax/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

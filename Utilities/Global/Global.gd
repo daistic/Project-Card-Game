@@ -3,12 +3,6 @@ extends Node
 const STARTING_DECK: CardPackedList = preload("res://Utilities/Global/Decks/StartingDeck.tres")
 const WINNER_DECK: CardPackedList = preload("res://Utilities/Global/Decks/WinnerDeck.tres")
 const MALWAREDECK: CardPackedList = preload("res://Utilities/Global/Decks/MalwareDeck.tres")
-const ENEMY_LIST: Array[PackedScene] = [
-	preload("res://Entities/Enemies/Base Enemy/Enemy 1/Enemy1.tscn"),
-	preload("res://Entities/Enemies/Base Enemy/Enemy 2/Enemy2.tscn"),
-	preload("res://Entities/Enemies/Base Enemy/Enemy 3/Enemy3.tscn"),
-	preload("res://Entities/Enemies/Base Enemy/Enemy 4/Enemy4.tscn")
-]
 const SAVE_PATH: String = "user://save_data.tres"
 const MAIN_MENU: PackedScene = preload("res://Stages/Main Menu/MainMenu.tscn")
 const PROLOGUE: PackedScene = preload("res://Utilities/Cutscene/Prologue/Prologue.tscn")
@@ -52,9 +46,6 @@ func reset_save_data() -> void:
 
 func get_starting_deck() -> CardPackedList:
 	return STARTING_DECK
-
-func get_random_enemy() -> PackedScene:
-	return ENEMY_LIST.pick_random()
 
 func get_3_random_winner_cards() -> Array[PackedScene]:
 	var winner_deck: Array[PackedScene] = WINNER_DECK.packed_scenes

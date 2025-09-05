@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx4xd52shm7q7"]
+
+[ext_resource type="Script" uid="uid://dvxb6f0j0l0fd" path="res://Entities/Enemies/Normal Enemies/Enemy.gd" id="1_0p7db"]
+[ext_resource type="Resource" uid="uid://et5d4anvll1p" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBaseDamageable.tres" id="2_t24r1"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_hkj5j"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_dleq2"]
+[ext_resource type="Resource" uid="uid://b8cklu4ds6x02" path="res://Entities/Cards/Recover Cards/Basic Heal/BasicHeal.tres" id="5_oy7bm"]
+[ext_resource type="Resource" uid="uid://bd6nnog6su5rx" path="res://Entities/Cards/Defence Cards/Basic Shield/BasicShield.tres" id="6_rihe7"]
+[ext_resource type="PackedScene" uid="uid://wwtca1lmwyls" path="res://Entities/Enemies/Texture Rect/EnemyTextureRect.tscn" id="7_t24r1"]
+[ext_resource type="PackedScene" uid="uid://dcpgwrtsvm52k" path="res://Entities/Enemies/Message/EnemyMessage.tscn" id="7_u615p"]
+[ext_resource type="PackedScene" uid="uid://c83dprq02wfgx" path="res://Entities/Battle Bars/Enemy Bar/EnemyBarsContainer.tscn" id="8_wp4y0"]
+[ext_resource type="PackedScene" uid="uid://dmtoneowdgmpv" path="res://Entities/Battle Bars/Status Effect UI/Container/StatusEffectContainer.tscn" id="9_iuv51"]
+
+[node name="EnemyBase" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_0p7db")
+stats = ExtResource("2_t24r1")
+enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource("5_oy7bm"), ExtResource("6_rihe7")])
+
+[node name="TextureRect" parent="." instance=ExtResource("7_t24r1")]
+layout_mode = 1
+offset_left = -320.0
+offset_top = -175.0
+offset_right = 180.0
+offset_bottom = 25.0
+
+[node name="EnemyMessage" parent="." instance=ExtResource("7_u615p")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -279.0
+offset_top = 86.0
+offset_right = -17.8555
+offset_bottom = 261.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = -15
+
+[node name="EnemyBarsContainer" parent="VBoxContainer" instance=ExtResource("8_wp4y0")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="StatusEffectGrid" parent="VBoxContainer/HBoxContainer" instance=ExtResource("9_iuv51")]
+layout_mode = 2

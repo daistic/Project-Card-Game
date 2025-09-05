@@ -1,0 +1,26 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcxt21mjhpd1c"]
+
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_4hn0a"]
+[ext_resource type="Texture2D" uid="uid://01xkq5c4sf0f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyPlaceholderAtlas.tres" id="2_p1dsl"]
+[ext_resource type="Resource" uid="uid://dxktxvla73jc8" path="res://Entities/Enemies/Normal Enemies/Enemy 6/Enemy6.tres" id="2_rw6w1"]
+[ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/Cards/CardInterface.gd" id="3_5yfnh"]
+[ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/Cards/Attack Cards/Basic Attack/BasicAttack.tres" id="4_ul1f0"]
+[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.tres" id="5_opyw2"]
+[ext_resource type="Resource" uid="uid://cdtyoynjh6hol" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Damage Buff/CritDmgBuff.tres" id="6_kmbal"]
+[ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Entities/Cards/Attack Cards/Attack Take Damage/AttackTakeDamage.tres" id="7_fbdg6"]
+[ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Entities/Cards/Attack Cards/Attack Based On HP/AttackBasedOnHP.tres" id="8_ulvks"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/Cards/AI Cards/AI Attack/AiAttack.tres" id="9_sfb72"]
+
+[node name="Enemy6" instance=ExtResource("1_4hn0a")]
+stats = ExtResource("2_rw6w1")
+enemy_deck = Array[ExtResource("3_5yfnh")]([ExtResource("4_ul1f0"), ExtResource("4_ul1f0"), ExtResource("4_ul1f0"), ExtResource("5_opyw2"), ExtResource("5_opyw2"), ExtResource("6_kmbal"), ExtResource("6_kmbal"), ExtResource("7_fbdg6"), ExtResource("7_fbdg6"), ExtResource("8_ulvks"), ExtResource("9_sfb72"), ExtResource("9_sfb72")])
+crypto_price = 2118
+
+[node name="EnemyTexture" parent="TextureRect" index="0"]
+self_modulate = Color(0.817496, 0.931791, 0.484262, 1)
+texture = ExtResource("2_p1dsl")
+
+[node name="Shadow" parent="TextureRect" index="1"]
+texture = ExtResource("2_p1dsl")
+
+[editable path="TextureRect"]

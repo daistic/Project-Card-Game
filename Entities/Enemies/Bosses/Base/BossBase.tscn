@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc0brk7cc5lrr"]
 
-[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Base Enemy/Base/EnemyBase.tscn" id="1_m8sru"]
+[ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_m8sru"]
 [ext_resource type="PackedScene" uid="uid://4juatuxy1jjq" path="res://Entities/Enemies/Enemy Gimmicks/Message Control/GimmickMessageControl.tscn" id="2_5h4gb"]
 
 [node name="BossBase" instance=ExtResource("1_m8sru")]

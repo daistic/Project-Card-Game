@@ -20,7 +20,7 @@ func _new_enemy() -> void:
 	if BattleManager.is_fighting_boss:
 		enemy_scene = BattleManager.get_story_boss()
 	else:
-		enemy_scene = Global.get_random_enemy()
+		enemy_scene = BattleManager.get_random_normal_enemy()
 	
 	var instance: Enemy = enemy_scene.instantiate()
 	enemy_parallax.add_child(instance)

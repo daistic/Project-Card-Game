@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="StoryScript" load_steps=13 format=3 uid="uid://chyyi1mu2d5oi"]
+
+[ext_resource type="PackedScene" uid="uid://dubgkia5u3f8l" path="res://Entities/Enemies/Normal Enemies/Enemy 5/Enemy5.tscn" id="1_3mmb4"]
+[ext_resource type="Script" uid="uid://b35qq1etmlbg7" path="res://Utilities/Battle Manager/Story/StoryScript.gd" id="1_wdug2"]
+[ext_resource type="Script" uid="uid://dr8f5oqv4ghat" path="res://Utilities/Battle Manager/Story/StoryStruct.gd" id="2_2d0uy"]
+[ext_resource type="PackedScene" uid="uid://dcxt21mjhpd1c" path="res://Entities/Enemies/Normal Enemies/Enemy 6/Enemy6.tscn" id="2_tvhge"]
+[ext_resource type="PackedScene" uid="uid://ck0ita4bw8e3g" path="res://Entities/Enemies/Normal Enemies/Enemy 7/Enemy7.tscn" id="3_5todk"]
+[ext_resource type="PackedScene" uid="uid://weiruktqerkp" path="res://Entities/Enemies/Bosses/Miniboss 1/Hard/Miniboss1Hard.tscn" id="3_5xdvm"]
+[ext_resource type="PackedScene" uid="uid://cck2pliitp1hw" path="res://Entities/Enemies/Normal Enemies/Enemy 8/Enemy8.tscn" id="4_cnjwe"]
+[ext_resource type="PackedScene" uid="uid://clfgj6827v5g6" path="res://Entities/Enemies/Bosses/MiniBoss 2/Hard/Miniboss2Hard.tscn" id="4_ssyqs"]
+[ext_resource type="PackedScene" uid="uid://ohf5ab7y0an6" path="res://Entities/Enemies/Bosses/Boss/Hard/BossHard.tscn" id="5_jv24v"]
+
+[sub_resource type="Resource" id="Resource_wdug2"]
+script = ExtResource("2_2d0uy")
+next_boss = ExtResource("3_5xdvm")
+battles_to_meet = 3
+story_messages = Array[String](["Warning: intrusion detected… trace initialized. [color=yellow]%d[/color] more battles", "The deeper I go, the less the code obeys. [color=yellow]%d[/color] more battles", "The firewall isn’t blocking me… it’s hunting me.", "Each command I send feels like a scream in the void."])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[sub_resource type="Resource" id="Resource_2d0uy"]
+script = ExtResource("2_2d0uy")
+next_boss = ExtResource("4_ssyqs")
+battles_to_meet = 2
+story_messages = Array[String](["Decryption complete… but the data bites back. [color=yellow]%d[/color] more battles", "The system’s countermeasures are rewriting themselves.", "Every exploit I uncover leads me further into its design."])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[sub_resource type="Resource" id="Resource_lr44c"]
+script = ExtResource("2_2d0uy")
+next_boss = ExtResource("5_jv24v")
+battles_to_meet = 2
+story_messages = Array[String](["The core is alive. I feel it pulsing through the grid. [color=yellow]%d[/color] more battles", "The system no longer defends itself… it wants to consume me.", "I won this battle, but the network is endless. Shadows remain."])
+metadata/_custom_type_script = "uid://dr8f5oqv4ghat"
+
+[resource]
+script = ExtResource("1_wdug2")
+story = Array[ExtResource("2_2d0uy")]([SubResource("Resource_wdug2"), SubResource("Resource_2d0uy"), SubResource("Resource_lr44c")])
+normal_enemies = Array[PackedScene]([ExtResource("1_3mmb4"), ExtResource("2_tvhge"), ExtResource("3_5todk"), ExtResource("4_cnjwe")])
+metadata/_custom_type_script = "uid://b35qq1etmlbg7"
