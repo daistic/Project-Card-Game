@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0iyidwt2kfsw"]
+[gd_scene load_steps=15 format=3 uid="uid://d0iyidwt2kfsw"]
 
 [ext_resource type="Script" uid="uid://drij3gdl56y45" path="res://Stages/Card Game/CardGame.gd" id="1_nhykh"]
-[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Stages/Card Game/Background/Background4tres.tres" id="2_co46d"]
+[ext_resource type="PackedScene" uid="uid://b3qctmxtsfinp" path="res://Common/Background/Background.tscn" id="2_nhykh"]
+[ext_resource type="Material" uid="uid://b5uyqmqo40ydu" path="res://Stages/BossBG.tres" id="3_co46d"]
 [ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Common/Parallax/Parallax.gd" id="3_oj71w"]
 [ext_resource type="PackedScene" uid="uid://pkka7c8d3yxx" path="res://Entities/Player/Player.tscn" id="4_8kvg2"]
 [ext_resource type="PackedScene" uid="uid://0dnbilvg84cq" path="res://Stages/Card Game/Card Hit Zone/CardHitZone.tscn" id="5_ry6d3"]
@@ -32,22 +33,9 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_nhykh")
 
-[node name="Background" type="ColorRect" parent="."]
-z_index = -5
-texture_filter = 1
-texture_repeat = 2
-material = ExtResource("2_co46d")
+[node name="Background" parent="." instance=ExtResource("2_nhykh")]
+material = ExtResource("3_co46d")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -35.0
-offset_right = -74.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.1, 1.1)
 
 [node name="EnemyParallax" type="Control" parent="."]
 layout_mode = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bblhelu2xlnbg" path="res://Assets/Placeholders/white_texture.png" id="1_m030s"]
 [ext_resource type="Script" uid="uid://dft06778xc061" path="res://Stages/After Battle/Battle Won/BattleWonScreen.gd" id="2_yswim"]
-[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Stages/Card Game/Background/Background4tres.tres" id="3_x51s3"]
+[ext_resource type="PackedScene" uid="uid://b3qctmxtsfinp" path="res://Common/Background/Background.tscn" id="3_m030s"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_abt7p"]
 [ext_resource type="PackedScene" uid="uid://k8dkcus6ddqc" path="res://Stages/After Battle/Battle Won/Add To Deck Panel/AddToDeckPanel.tscn" id="4_e2ejy"]
 [ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Common/Parallax/Parallax.gd" id="4_lpyfn"]
@@ -84,22 +84,8 @@ script = ExtResource("2_yswim")
 max_parallax_offset = null
 smoothing = null
 
-[node name="Background" type="ColorRect" parent="."]
-z_index = -5
-texture_filter = 1
-texture_repeat = 2
-material = ExtResource("3_x51s3")
+[node name="Background" parent="." instance=ExtResource("3_m030s")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -35.0
-offset_right = -74.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.1, 1.1)
 
 [node name="Parallax" type="Control" parent="."]
 layout_mode = 1

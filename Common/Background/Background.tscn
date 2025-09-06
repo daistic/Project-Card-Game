@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qctmxtsfinp"]
+
+[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Stages/NormalBG.tres" id="1_gvfaj"]
+[ext_resource type="Script" uid="uid://dvfwkjyc3g2jq" path="res://Stages/GameBackground.gd" id="2_4pl54"]
+
+[node name="Background" type="ColorRect"]
+z_index = -5
+texture_filter = 1
+texture_repeat = 2
+material = ExtResource("1_gvfaj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = -74.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+mouse_filter = 2
+script = ExtResource("2_4pl54")

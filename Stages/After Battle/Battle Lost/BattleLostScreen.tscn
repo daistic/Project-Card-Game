@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bvo0dlvi72c7i" path="res://Stages/After Battle/Battle Lost/BattleLostScreen.gd" id="2_211x1"]
 [ext_resource type="Texture2D" uid="uid://qwkgjcyqiqdn" path="res://Stages/After Battle/Battle Lost/Arts/AfterBattleRedBG.png" id="2_mbpu6"]
 [ext_resource type="Texture2D" uid="uid://bv0igp0g5dyf2" path="res://Stages/After Battle/Battle Lost/Arts/AfterBattleRed.png" id="3_211x1"]
-[ext_resource type="Material" uid="uid://bravom4carx8x" path="res://Stages/Card Game/Background/Background4tres.tres" id="3_m4xni"]
+[ext_resource type="PackedScene" uid="uid://b3qctmxtsfinp" path="res://Common/Background/Background.tscn" id="3_yd1sn"]
 [ext_resource type="Script" uid="uid://fm65gmeoowak" path="res://Common/Parallax/Parallax.gd" id="4_c2pnw"]
 [ext_resource type="Shader" uid="uid://viaxeqgmbgae" path="res://Stages/After Battle/RetroSun.gdshader" id="4_iknsa"]
 [ext_resource type="FontFile" uid="uid://b2lwqd3u504hn" path="res://Assets/Fonts/BigSpace-rPKx.ttf" id="4_wmc8l"]
@@ -58,22 +58,8 @@ grow_vertical = 2
 texture = ExtResource("1_jagbd")
 script = ExtResource("2_211x1")
 
-[node name="Background" type="ColorRect" parent="."]
-z_index = -5
-texture_filter = 1
-texture_repeat = 2
-material = ExtResource("3_m4xni")
+[node name="Background" parent="." instance=ExtResource("3_yd1sn")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -35.0
-offset_right = -74.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.1, 1.1)
 
 [node name="Parallax" type="Control" parent="."]
 layout_mode = 1

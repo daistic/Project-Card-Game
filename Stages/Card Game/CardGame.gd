@@ -2,6 +2,7 @@ class_name CardGame
 
 extends Control
 
+@onready var background: ColorRect = $Background
 @onready var player_parallax: Control = $PlayerParallax
 @onready var enemy_parallax: Control = $EnemyParallax
 @onready var paused_layer: ColorRect = $PausedLayer

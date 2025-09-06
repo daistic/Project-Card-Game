@@ -3,10 +3,17 @@ extends Node
 const STARTING_DECK: CardPackedList = preload("res://Utilities/Global/Decks/StartingDeck.tres")
 const WINNER_DECK: CardPackedList = preload("res://Utilities/Global/Decks/WinnerDeck.tres")
 const MALWAREDECK: CardPackedList = preload("res://Utilities/Global/Decks/MalwareDeck.tres")
+
 const SAVE_PATH: String = "user://save_data.tres"
+
 const MAIN_MENU: PackedScene = preload("res://Stages/Main Menu/MainMenu.tscn")
 const PROLOGUE: PackedScene = preload("res://Utilities/Cutscene/Prologue/Prologue.tscn")
 const EPILOGUE: PackedScene = preload("res://Utilities/Cutscene/Epilogue/Epilogue.tscn")
+
+const BACKGROUND_MAP: Dictionary[String, ShaderMaterial] = {
+	"Normal": preload("res://Stages/NormalBG.tres"),
+	"Boss": preload("res://Stages/BossBG.tres")
+}
 
 var cards_scene: Array[PackedScene]= []
 var cards_resources: Array[CardInterface] = []
@@ -72,3 +79,9 @@ func go_to_prologue() -> void:
 
 func go_to_epilogue() -> void:
 	get_tree().change_scene_to_packed(EPILOGUE)
+
+func get_background(key: String) -> ShaderMaterial:
+	if !BACKGROUND_MAP.has(key):
+		return
+	
+	return BACKGROUND_MAP[key]

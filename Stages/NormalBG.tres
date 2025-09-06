@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bravom4carx8x"]
 
-[ext_resource type="Shader" uid="uid://dde441t43r3fd" path="res://Stages/Card Game/Background/Background4.gdshader" id="1_vjcrb"]
+[ext_resource type="Shader" uid="uid://dde441t43r3fd" path="res://Stages/Background4.gdshader" id="1_v70cu"]
 
 [resource]
-shader = ExtResource("1_vjcrb")
+shader = ExtResource("1_v70cu")
 shader_parameter/spin_rotation_speed = 2.0
 shader_parameter/move_speed = 5.0
 shader_parameter/offset = Vector2(0.73, 0.21)
