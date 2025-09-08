@@ -55,7 +55,6 @@ func _on_card_used(_card_resource: CardInterface) -> void:
 	
 	_update_player_bars()
 	update_player_energy_info()
-	print(ai_energy.current)
 
 func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_card_resource.degenerate_stat(stats)

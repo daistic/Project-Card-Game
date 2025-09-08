@@ -11,7 +11,7 @@ extends Control
 @export var max_moves: int = 2
 @export var crypto_price: int = 1000
 
-var next_cards: Array[CardInterface] = []
+var discard_deck: Array[CardInterface] = []
 
 func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _enemy_setup() -> void:
 	stats.reset_stats()
-	_new_next_cards()
+	_shuffle_deck()
 	enemy_bars.bars_setup(stats.max_hp, stats.max_shield)
 	_update_enemy_bars()
 
@@ -51,13 +51,13 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_card_resource.play_sfx()
 	
 	_update_enemy_bars()
-	#print(BattleManager.player.stats.cur_hp)
 
 func _on_player_turn_finished() -> void:
 	var move_number: int = 0
 	
 	while(move_number < max_moves):
-		SignalHub.emit_enemy_card_used(next_cards[move_number])
+		SignalHub.emit_enemy_card_used(enemy_deck[move_number])
+		discard_deck.append(enemy_deck.pop_at(move_number))
 		move_number += 1
 	
 	SignalHub.emit_enemy_turn_finished()
@@ -75,16 +75,18 @@ func _on_enemy_turn_finished() -> void:
 			effect.apply_effect()
 			status_effect_container.update_ui_desc(effect)
 	
-	_new_next_cards()
+	_shuffle_deck()
 
-func _new_next_cards() -> void:
-	next_cards.clear()
-	var draws: int = 0
-	while(draws < max_moves):
-		next_cards.append(enemy_deck.pick_random())
-		draws += 1
+func _shuffle_deck() -> void:
+	if enemy_deck.size() < max_moves:
+		_reset_deck()
 	
-	enemy_message.update_next_move_label(next_cards)
+	enemy_deck.shuffle()
+	enemy_message.update_next_move_label(enemy_deck, max_moves)
+
+func _reset_deck() -> void:
+	while discard_deck.size() > 0:
+		enemy_deck.append(discard_deck.pop_front())
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):
@@ -95,6 +97,8 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
+		_reset_deck()
+		
 		BattleManager.crypto_collected += crypto_price
 		SignalHub.emit_battle_won()
 
