@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://y6ogxh4x1ucs"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_rifdj"]
+[ext_resource type="Texture2D" uid="uid://cyibk0j4km0cb" path="res://Entities/On Screen Cards/Arts/ShieldCard.png" id="2_08qis"]
+[ext_resource type="Resource" uid="uid://b4y6qejb8h50g" path="res://Entities/On Screen Cards/Resources/AI Cards/AI Shield/AiShield.tres" id="3_08qis"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Entities/On Screen Cards/Gradients/AiEnergyBar.tres" id="3_260hg"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_08qis"]
+gradient = ExtResource("3_260hg")
+fill_from = Vector2(0.495726, 1)
+fill_to = Vector2(0.495726, 0)
+
+[node name="AIShield" instance=ExtResource("1_rifdj")]
+texture = ExtResource("2_08qis")
+card_resource = ExtResource("3_08qis")
+
+[node name="EnergyCostBar" parent="." index="1"]
+texture_progress = SubResource("GradientTexture2D_08qis")

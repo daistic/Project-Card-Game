@@ -21,7 +21,7 @@ func _ready() -> void:
 	information_default_pos = information.position
 
 func update_desc() -> void:
-	desc = status_effect.desc % status_effect.get_desc_format()
+	desc = status_effect.ui_desc % status_effect.get_desc_format()
 
 func _on_area_2d_mouse_entered() -> void:
 	var viewport_size: Vector2 = get_viewport_rect().size

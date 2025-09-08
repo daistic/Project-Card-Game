@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShieldForAttack" load_steps=2 format=3 uid="uid://c77gmb0oh3q7q"]
+
+[ext_resource type="Script" uid="uid://df86ubjth5ty7" path="res://Entities/On Screen Cards/Resources/Defence Cards/Shield For Attack/ShieldForAttack.gd" id="1_3ix3v"]
+
+[resource]
+script = ExtResource("1_3ix3v")
+shield = 0.175
+attack_debuff = 0.13
+is_debuff = false
+turns = 2
+ui_desc = "Receive [color=darkgray]%.1f%%[/color] shield once, but get a [color=red]%.1f%%[/color] attack debuff for [color=khaki]%d[/color] turns"
+name = "Wary"
+desc = "Receive [color=darkgray]%.1f%%[/color] shield once, but get a [color=red]%.1f%%[/color] attack debuff for [color=khaki]%d[/color] turns"
+energy_cost = 2
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://df86ubjth5ty7"

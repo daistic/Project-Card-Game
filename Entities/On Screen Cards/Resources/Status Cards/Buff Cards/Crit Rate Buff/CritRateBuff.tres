@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CritRateBuff" load_steps=2 format=3 uid="uid://dd6dufdojg1jy"]
+
+[ext_resource type="Script" uid="uid://cb7n6m2v04hwg" path="res://Entities/On Screen Cards/Resources/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.gd" id="1_westv"]
+
+[resource]
+script = ExtResource("1_westv")
+buff = 0.35
+is_debuff = false
+turns = 3
+ui_desc = "Increase [color=khaki]%.1f%%[/color] of critical rates. Active for [color=khaki]%d[/color] turns"
+name = "Enumeration"
+desc = "Increase [color=khaki]%.1f%%[/color] of critical rates. Active for [color=khaki]%d[/color] turns"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://cb7n6m2v04hwg"

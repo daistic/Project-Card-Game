@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IgnoreShield" load_steps=2 format=3 uid="uid://ctttu08gmvo2j"]
+
+[ext_resource type="Script" uid="uid://rqoqkrq5ukd8" path="res://Entities/On Screen Cards/Resources/Status Cards/Debuff Cards/Ignore Shield/IgnoreShield.gd" id="1_ds177"]
+
+[resource]
+script = ExtResource("1_ds177")
+debuff = 0.5
+is_debuff = true
+turns = 3
+ui_desc = "Ignore [color=red]%.1f%%[/color] of current shield. Active for [color=khaki]%d[/color] turns"
+name = "Bypass Security"
+desc = "Ignore [color=red]%.1f%%[/color] of opponent's current shield. Active for [color=khaki]%d[/color] turns"
+energy_cost = 0
+ai_energy_cost = 4
+is_malware = false
+metadata/_custom_type_script = "uid://rqoqkrq5ukd8"

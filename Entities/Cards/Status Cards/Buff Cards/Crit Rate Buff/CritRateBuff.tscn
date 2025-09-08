@@ -1,9 +1,0 @@
-[gd_scene load_steps=4 format=3 uid="uid://kc66ujo0fqp8"]
-
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_ib8xi"]
-[ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Entities/Cards/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.tres" id="2_ib8xi"]
-[ext_resource type="Texture2D" uid="uid://dqdi7y52svs4m" path="res://Entities/On Screen Cards/Arts/BuffCard.png" id="2_lvgoc"]
-
-[node name="CritRateBuff" instance=ExtResource("1_ib8xi")]
-texture = ExtResource("2_lvgoc")
-card_resource = ExtResource("2_ib8xi")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BasicShield" load_steps=2 format=3 uid="uid://bd6nnog6su5rx"]
+
+[ext_resource type="Script" uid="uid://dparogoq4lnbt" path="res://Entities/On Screen Cards/Resources/Defence Cards/Basic Shield/BasicShield.gd" id="1_e68v0"]
+
+[resource]
+script = ExtResource("1_e68v0")
+shield_amount = 0.13
+name = "Defend"
+desc = "Shield [color=darkgray]%.1f%%[/color] of your max shield"
+energy_cost = 2
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://dparogoq4lnbt"

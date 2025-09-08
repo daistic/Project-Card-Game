@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackBuff" load_steps=2 format=3 uid="uid://coc8xyap5x0fi"]
+
+[ext_resource type="Script" uid="uid://cx3ovmf6dom73" path="res://Entities/On Screen Cards/Resources/Status Cards/Buff Cards/Attack Buff/AttackBuff.gd" id="1_82otg"]
+
+[resource]
+script = ExtResource("1_82otg")
+buff = 0.15
+is_debuff = false
+turns = 3
+ui_desc = "[color=khaki]%.1f%%[/color] attack buff. Active for [color=khaki]%d[/color] turns"
+name = "Improve Code"
+desc = "Get a [color=khaki]%.1f%%[/color] attack buff. Active for [color=khaki]%d[/color] turns"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://cx3ovmf6dom73"

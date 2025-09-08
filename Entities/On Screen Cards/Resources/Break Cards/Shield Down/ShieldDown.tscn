@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://be5kk5vaqgkr1"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_6l4wq"]
+[ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Entities/On Screen Cards/Resources/Break Cards/Shield Down/ShieldDown.tres" id="2_eq7oj"]
+[ext_resource type="Texture2D" uid="uid://jrv5xffrca6q" path="res://Entities/On Screen Cards/Arts/ShieldDownCard.png" id="2_igf3g"]
+
+[node name="ShieldDown" instance=ExtResource("1_6l4wq")]
+offset_left = -57.0
+offset_right = 56.9722
+texture = ExtResource("2_igf3g")
+card_resource = ExtResource("2_eq7oj")

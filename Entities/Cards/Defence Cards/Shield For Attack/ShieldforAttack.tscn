@@ -1,9 +1,0 @@
-[gd_scene load_steps=4 format=3 uid="uid://rjy0ktllkecn"]
-
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_y3uj6"]
-[ext_resource type="Texture2D" uid="uid://cyibk0j4km0cb" path="res://Entities/On Screen Cards/Arts/ShieldCard.png" id="2_dlq57"]
-[ext_resource type="Resource" uid="uid://c77gmb0oh3q7q" path="res://Entities/Cards/Defence Cards/Shield For Attack/ShieldforAttack.tres" id="3_dlq57"]
-
-[node name="ShieldforAttack" instance=ExtResource("1_y3uj6")]
-texture = ExtResource("2_dlq57")
-card_resource = ExtResource("3_dlq57")

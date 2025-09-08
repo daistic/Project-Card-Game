@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackDebuff" load_steps=2 format=3 uid="uid://bqwqocb7p0spr"]
+
+[ext_resource type="Script" uid="uid://tf5japeb3ugs" path="res://Entities/On Screen Cards/Resources/Status Cards/Debuff Cards/Attack Debuff/AttackDebuff.gd" id="1_hjo4o"]
+
+[resource]
+script = ExtResource("1_hjo4o")
+debuff = 0.2
+is_debuff = true
+turns = 3
+ui_desc = "Debuff [color=red]%.1f%%[/color] of attack. Active for [color=khaki]%d[/color] turns"
+name = "Jam Signal"
+desc = "Debuff [color=red]%.1f%%[/color] of opponent's attack for [color=khaki]%d[/color] turns"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://tf5japeb3ugs"

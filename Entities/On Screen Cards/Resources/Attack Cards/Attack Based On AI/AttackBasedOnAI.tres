@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AttackBasedOnAI" load_steps=2 format=3 uid="uid://dc8am31sbh6ub"]
+
+[ext_resource type="Script" uid="uid://bih6qc3tojg7b" path="res://Entities/On Screen Cards/Resources/Attack Cards/Attack Based On AI/AttackBasedOnAI.gd" id="1_jmdav"]
+
+[resource]
+script = ExtResource("1_jmdav")
+base_damage = 0.9
+name = "AI Support"
+desc = "Attack based on the current [color=purple]AI's[/color] energy (the higher the better)"
+energy_cost = 4
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://bih6qc3tojg7b"

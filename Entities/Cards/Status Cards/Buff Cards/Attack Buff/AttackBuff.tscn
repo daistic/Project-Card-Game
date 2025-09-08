@@ -1,9 +1,0 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgajc7e6x10uv"]
-
-[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_q5xja"]
-[ext_resource type="Texture2D" uid="uid://dqdi7y52svs4m" path="res://Entities/On Screen Cards/Arts/BuffCard.png" id="2_3l4o7"]
-[ext_resource type="Resource" uid="uid://coc8xyap5x0fi" path="res://Entities/Cards/Status Cards/Buff Cards/Attack Buff/AttackBuff.tres" id="2_xcov8"]
-
-[node name="AttackBuff" instance=ExtResource("1_q5xja")]
-texture = ExtResource("2_3l4o7")
-card_resource = ExtResource("2_xcov8")

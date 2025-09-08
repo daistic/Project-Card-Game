@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddo08wwuin2xp"]
+
+[ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_vcqti"]
+[ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/On Screen Cards/Resources/AI Cards/AI Attack/AiAttack.tres" id="2_1s24n"]
+[ext_resource type="Texture2D" uid="uid://c4vdnylsue7xw" path="res://Entities/On Screen Cards/Arts/AttackCard.png" id="2_qaq0a"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Entities/On Screen Cards/Gradients/AiEnergyBar.tres" id="3_hohfm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1s24n"]
+gradient = ExtResource("3_hohfm")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="AIAttack" instance=ExtResource("1_vcqti")]
+texture = ExtResource("2_qaq0a")
+card_resource = ExtResource("2_1s24n")
+
+[node name="EnergyCostBar" parent="." index="1"]
+value = 5.0
+texture_progress = SubResource("GradientTexture2D_1s24n")

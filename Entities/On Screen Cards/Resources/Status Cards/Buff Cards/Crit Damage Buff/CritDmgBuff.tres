@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CritDmgBuff" load_steps=2 format=3 uid="uid://cdtyoynjh6hol"]
+
+[ext_resource type="Script" uid="uid://gsgkow6dj0pm" path="res://Entities/On Screen Cards/Resources/Status Cards/Buff Cards/Crit Damage Buff/CritDmgBuff.gd" id="1_4wnnu"]
+
+[resource]
+script = ExtResource("1_4wnnu")
+buff = 0.25
+is_debuff = false
+turns = 3
+ui_desc = "Buff [color=khaki]%.1f%%[/color] of crit damage for [color=khaki]%d[/color] turns"
+name = "Exploitation"
+desc = "Buff [color=khaki]%.1f%%[/color] of your crit damage for [color=khaki]%d[/color] turns"
+energy_cost = 3
+ai_energy_cost = 0
+is_malware = false
+metadata/_custom_type_script = "uid://gsgkow6dj0pm"
