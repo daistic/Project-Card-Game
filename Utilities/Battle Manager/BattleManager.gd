@@ -14,6 +14,7 @@ var player: Player
 var enemy: Enemy
 
 var player_deck: Array[PackedScene] = []
+var player_discard_deck: Array[PackedScene] = []
 
 var cur_story: StoryScript = CYBER_STORY
 var battles_to_boss: int
@@ -55,7 +56,17 @@ func add_to_player_deck(card_scene: PackedScene) -> void:
 	player_deck.append(card_scene.duplicate())
 
 func draw_player_deck() -> PackedScene:
-	return player_deck.pick_random()
+	if player_deck.size() < MAXIMUM_CARDS_ON_HAND:
+		reset_player_deck()
+	
+	var card_scene: PackedScene = player_deck.pick_random()
+	player_discard_deck.append(card_scene)
+	player_deck.erase(card_scene)
+	return card_scene
+
+func reset_player_deck() -> void:
+	while (player_discard_deck.size() > 0):
+		player_deck.append(player_discard_deck.pop_front())
 
 func new_player(_new_player: Player) -> void:
 	player = _new_player
