@@ -17,7 +17,7 @@ func _enter_tree() -> void:
 	SignalHub.card_used.connect(_on_card_used)
 	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
-	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
+	SignalHub.enemy_turn_finished.connect(_on_enemy_turned_finished)
 
 func _ready() -> void:
 	_enemy_setup()
@@ -53,16 +53,16 @@ func _on_enemy_card_used(_card_resource: CardInterface) -> void:
 	_update_enemy_bars()
 
 func _on_player_turn_finished() -> void:
-	var move_number: int = 0
+	var move_played: int = 0
 	
-	while(move_number < max_moves):
-		SignalHub.emit_enemy_card_used(enemy_deck[move_number])
-		discard_deck.append(enemy_deck.pop_at(move_number))
-		move_number += 1
+	while(move_played < max_moves):
+		SignalHub.emit_enemy_card_used(enemy_deck[0])
+		discard_deck.append(enemy_deck.pop_front())
+		move_played += 1
 	
 	SignalHub.emit_enemy_turn_finished()
 
-func _on_enemy_turn_finished() -> void:
+func _on_enemy_turned_finished() -> void:
 	for effect in stats.status_effects:
 		if effect is StatusEffector:
 			effect.turns -= 1

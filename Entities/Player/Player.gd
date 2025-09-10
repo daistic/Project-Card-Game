@@ -112,8 +112,6 @@ func _draw_cards() -> void:
 		var card: OnScreenCard = BattleManager.draw_player_deck().instantiate()
 		card_container.add_child(card)
 		draws += 1
-	
-	print(BattleManager.player_discard_deck)
 
 func _update_player_bars() -> void:
 	player_bars.update_bars(stats.cur_hp, stats.cur_shield)
