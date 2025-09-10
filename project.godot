@@ -37,6 +37,10 @@ project/assembly_name="Card Game"
 naming/scene_name_casing=1
 naming/script_name_casing=1
 
+[global_group]
+
+Malwares=""
+
 [input]
 
 "Mouse Click"={

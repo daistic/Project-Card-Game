@@ -19,10 +19,12 @@ func add_malwares_to_deck() -> void:
 		BattleManager.add_to_player_deck(card)
 
 func rid_malwares_from_deck() -> void:
-	var index: int = 0
-	while(index < malware_deck.size()):
-		BattleManager.player_deck.pop_back()
-		index += 1
+	BattleManager.player_deck = BattleManager.player_deck.filter(
+		func(packed_scene: PackedScene) -> bool:
+			var state: SceneState = packed_scene.get_state()
+			var groups: PackedStringArray = state.get_node_groups(0)
+			return not groups.has("Malwares")
+	)
 
 func _on_player_turn_finished() -> void:
 	if has_been_added:
@@ -32,4 +34,5 @@ func _on_player_turn_finished() -> void:
 	has_been_added = true
 
 func _on_battle_won() -> void:
+	BattleManager.reset_player_deck()
 	rid_malwares_from_deck()

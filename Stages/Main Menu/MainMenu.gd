@@ -22,7 +22,7 @@ func handle_screen_display(new_screen: Control) -> void:
 	SoundManager.play_sfx("Button Click")
 
 func _on_start_pressed() -> void:
-	play_screen.show()
+	handle_screen_display(play_screen)
 
 func _on_upgrade_pressed() -> void:
 	handle_screen_display(upgrade_screen)
