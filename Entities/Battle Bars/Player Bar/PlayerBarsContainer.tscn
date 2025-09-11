@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://drxjmjmrf8736"]
+[gd_scene load_steps=7 format=3 uid="uid://drxjmjmrf8736"]
 
 [ext_resource type="Script" uid="uid://bw6uqerass0b7" path="res://Entities/Battle Bars/BattleBars.gd" id="1_3d88r"]
 [ext_resource type="Texture2D" uid="uid://da36hyt3i1rrv" path="res://Entities/Battle Bars/Player Bar/Arts/PlayerCircle.png" id="1_nh2up"]
 [ext_resource type="Texture2D" uid="uid://8xeiircuaiih" path="res://Entities/Battle Bars/Player Bar/Arts/PlayerBar.png" id="2_4iixn"]
 [ext_resource type="Texture2D" uid="uid://dta23cx31yj4g" path="res://Entities/Battle Bars/Player Bar/PlayerHealthBar.tres" id="3_83qdx"]
 [ext_resource type="Texture2D" uid="uid://cn0ab4lstqe2r" path="res://Entities/Battle Bars/Shared Images/ShieldBar.tres" id="4_3d88r"]
+[ext_resource type="LabelSettings" uid="uid://brvg5gbuvlsvi" path="res://Entities/Battle Bars/bar_indication_font.tres" id="5_xxdea"]
 
 [node name="PlayerBarsContainer" type="HBoxContainer"]
 pivot_offset = Vector2(293, 25)
@@ -37,6 +38,18 @@ nine_patch_stretch = true
 texture_under = ExtResource("2_4iixn")
 texture_progress = ExtResource("3_83qdx")
 
+[node name="HPLabel" type="Label" parent="VBoxContainer/HPBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "90/90"
+label_settings = ExtResource("5_xxdea")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ShieldBar" type="TextureProgressBar" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -45,6 +58,18 @@ value = 20.0
 nine_patch_stretch = true
 texture_under = ExtResource("2_4iixn")
 texture_progress = ExtResource("4_3d88r")
+
+[node name="ShieldLabel" type="Label" parent="VBoxContainer/ShieldBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2.5/2.5"
+label_settings = ExtResource("5_xxdea")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Spacer2" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
