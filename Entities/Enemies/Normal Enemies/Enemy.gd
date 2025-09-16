@@ -100,6 +100,7 @@ func _check_health() -> void:
 		_reset_deck()
 		
 		BattleManager.crypto_collected += crypto_price
+		stats.reset_stats()
 		SignalHub.call_deferred("emit_battle_won")
 
 func _update_enemy_bars() -> void:
