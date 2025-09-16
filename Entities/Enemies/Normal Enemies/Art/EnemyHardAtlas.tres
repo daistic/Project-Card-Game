@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dt4w3yh7nxg6f"]
+
+[ext_resource type="Texture2D" uid="uid://c4xksie8devar" path="res://Entities/Enemies/Normal Enemies/Art/EnemyHard.png" id="1_g6e1e"]
+
+[resource]
+atlas = ExtResource("1_g6e1e")
+region = Rect2(308.825, 131.891, 1274.2, 1242.82)

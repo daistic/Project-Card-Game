@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_jaasn"]
 [ext_resource type="Resource" uid="uid://dm0dkl8rwmub8" path="res://Entities/Enemies/Normal Enemies/Enemy 8/Enemy8.tres" id="2_5xelc"]
-[ext_resource type="Texture2D" uid="uid://01xkq5c4sf0f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyPlaceholderAtlas.tres" id="2_d1m1k"]
 [ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/On Screen Cards/Resources/CardInterface.gd" id="3_00hra"]
 [ext_resource type="Resource" uid="uid://btitqm353wa47" path="res://Entities/On Screen Cards/Resources/Attack Cards/Random Attack/RandomAttack.tres" id="4_7c7xa"]
 [ext_resource type="Resource" uid="uid://bb20xbweeedmc" path="res://Entities/On Screen Cards/Resources/Break Cards/Shield Down/ShieldDown.tres" id="5_rtunv"]
@@ -10,17 +9,25 @@
 [ext_resource type="Resource" uid="uid://dd6dufdojg1jy" path="res://Entities/On Screen Cards/Resources/Status Cards/Buff Cards/Crit Rate Buff/CritRateBuff.tres" id="7_o52tn"]
 [ext_resource type="Resource" uid="uid://c77gmb0oh3q7q" path="res://Entities/On Screen Cards/Resources/Defence Cards/Shield For Attack/ShieldforAttack.tres" id="8_7qxvs"]
 [ext_resource type="Resource" uid="uid://dvp1dj75y0r5e" path="res://Entities/On Screen Cards/Resources/Defence Cards/Shield For Crit Damage/ShieldForCritDmg.tres" id="9_bpyw2"]
+[ext_resource type="Texture2D" uid="uid://dt4w3yh7nxg6f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyHardAtlas.tres" id="10_00hra"]
 
 [node name="Enemy8" instance=ExtResource("1_jaasn")]
 stats = ExtResource("2_5xelc")
 enemy_deck = Array[ExtResource("3_00hra")]([ExtResource("4_7c7xa"), ExtResource("4_7c7xa"), ExtResource("4_7c7xa"), ExtResource("4_7c7xa"), ExtResource("5_rtunv"), ExtResource("6_rvi5o"), ExtResource("6_rvi5o"), ExtResource("6_rvi5o"), ExtResource("7_o52tn"), ExtResource("7_o52tn"), ExtResource("8_7qxvs"), ExtResource("9_bpyw2")])
 crypto_price = 2209
 
+[node name="TextureRect" parent="." index="0"]
+custom_minimum_size = Vector2(500, 350)
+offset_left = -222.0
+offset_top = -246.0
+offset_right = 278.0
+offset_bottom = 104.0
+
 [node name="EnemyTexture" parent="TextureRect" index="0"]
-self_modulate = Color(0.92446, 0.60197, 1, 1)
-texture = ExtResource("2_d1m1k")
+self_modulate = Color(0.843732, 0.677113, 0.954939, 1)
+texture = ExtResource("10_00hra")
 
 [node name="Shadow" parent="TextureRect" index="1"]
-texture = ExtResource("2_d1m1k")
+texture = ExtResource("10_00hra")
 
 [editable path="TextureRect"]

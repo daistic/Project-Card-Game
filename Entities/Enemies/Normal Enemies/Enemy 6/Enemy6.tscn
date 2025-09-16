@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dcxt21mjhpd1c"]
 
 [ext_resource type="PackedScene" uid="uid://dx4xd52shm7q7" path="res://Entities/Enemies/Normal Enemies/Base/EnemyBase.tscn" id="1_4hn0a"]
-[ext_resource type="Texture2D" uid="uid://01xkq5c4sf0f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyPlaceholderAtlas.tres" id="2_p1dsl"]
 [ext_resource type="Resource" uid="uid://dxktxvla73jc8" path="res://Entities/Enemies/Normal Enemies/Enemy 6/Enemy6.tres" id="2_rw6w1"]
 [ext_resource type="Script" uid="uid://dmjymo0nvqdas" path="res://Entities/On Screen Cards/Resources/CardInterface.gd" id="3_5yfnh"]
 [ext_resource type="Resource" uid="uid://cvc6tl7xk7b0x" path="res://Entities/On Screen Cards/Resources/Attack Cards/Basic Attack/BasicAttack.tres" id="4_ul1f0"]
@@ -10,17 +9,25 @@
 [ext_resource type="Resource" uid="uid://boj4teluo0pol" path="res://Entities/On Screen Cards/Resources/Attack Cards/Attack Take Damage/AttackTakeDamage.tres" id="7_fbdg6"]
 [ext_resource type="Resource" uid="uid://b7bxj1foecqpp" path="res://Entities/On Screen Cards/Resources/Attack Cards/Attack Based On HP/AttackBasedOnHP.tres" id="8_ulvks"]
 [ext_resource type="Resource" uid="uid://bvwtgmkmaxcsb" path="res://Entities/On Screen Cards/Resources/AI Cards/AI Attack/AiAttack.tres" id="9_sfb72"]
+[ext_resource type="Texture2D" uid="uid://dt4w3yh7nxg6f" path="res://Entities/Enemies/Normal Enemies/Art/EnemyHardAtlas.tres" id="10_rw6w1"]
 
 [node name="Enemy6" instance=ExtResource("1_4hn0a")]
 stats = ExtResource("2_rw6w1")
 enemy_deck = Array[ExtResource("3_5yfnh")]([ExtResource("4_ul1f0"), ExtResource("4_ul1f0"), ExtResource("4_ul1f0"), ExtResource("5_opyw2"), ExtResource("5_opyw2"), ExtResource("6_kmbal"), ExtResource("6_kmbal"), ExtResource("7_fbdg6"), ExtResource("7_fbdg6"), ExtResource("8_ulvks"), ExtResource("9_sfb72"), ExtResource("9_sfb72")])
 crypto_price = 2118
 
+[node name="TextureRect" parent="." index="0"]
+custom_minimum_size = Vector2(500, 350)
+offset_left = -222.0
+offset_top = -246.0
+offset_right = 278.0
+offset_bottom = 104.0
+
 [node name="EnemyTexture" parent="TextureRect" index="0"]
-self_modulate = Color(0.817496, 0.931791, 0.484262, 1)
-texture = ExtResource("2_p1dsl")
+self_modulate = Color(0.942402, 0.873389, 0.632982, 1)
+texture = ExtResource("10_rw6w1")
 
 [node name="Shadow" parent="TextureRect" index="1"]
-texture = ExtResource("2_p1dsl")
+texture = ExtResource("10_rw6w1")
 
 [editable path="TextureRect"]
