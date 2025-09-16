@@ -36,6 +36,7 @@ func reset_battle_manager() -> void:
 	story_messages_index = 0
 	message_index = -1
 	crypto_collected = 0
+	set_starting_deck()
 
 func set_story(is_hard_mode: bool) -> void:
 	if is_hard_mode:
@@ -47,6 +48,7 @@ func set_story(is_hard_mode: bool) -> void:
 
 func set_starting_deck() -> void:
 	player_deck.clear()
+	player_discard_deck.clear()
 	
 	var starting_deck: CardPackedList = Global.get_starting_deck()
 	for scene in starting_deck.packed_scenes:

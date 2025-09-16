@@ -51,3 +51,4 @@ func reset_stats() -> void:
 	cur_hp = max_hp
 	cur_shield = 0.0
 	status_effects.clear()
+	print(cur_hp, cur_shield)
