@@ -86,7 +86,7 @@ func _on_player_turn_finished() -> void:
 	#print(stats.status_effects)
 
 func _on_enemy_turn_finished() -> void:
-	call_deferred("_draw_cards")
+	_draw_cards()
 
 func new_status_effect(_card_resource: StatusEffector) -> void:
 	if _card_resource.can_be_applied(stats):

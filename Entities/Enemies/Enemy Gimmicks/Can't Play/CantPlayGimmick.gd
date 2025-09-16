@@ -27,7 +27,7 @@ func _on_enemy_turn_finished() -> void:
 		apply_in -= 1
 		
 		if apply_in <= 0:
-			_apply_gimmick()
+			call_deferred("_apply_gimmick")
 			is_active = true
 	
 	SignalHub.emit_gimmick_finished_calculations()
