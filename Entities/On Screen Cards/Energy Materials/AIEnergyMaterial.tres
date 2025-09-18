@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cadf22neov6r1"]
+
+[ext_resource type="Shader" uid="uid://0phmwiybs5cu" path="res://Entities/On Screen Cards/Energy Materials/EnergyPulse.gdshader" id="1_ohpij"]
+
+[resource]
+shader = ExtResource("1_ohpij")
+shader_parameter/base_color = Color(0.941176, 0.258824, 0.941176, 1)
+shader_parameter/glow_color = Color(0.658824, 0, 0.658824, 1)
+shader_parameter/glow_strength = 0.4
+shader_parameter/flow_speed = 1.5
+shader_parameter/flow_freq = 6.0

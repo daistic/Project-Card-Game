@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bchtrpajlhui6"]
+[gd_scene load_steps=7 format=3 uid="uid://bchtrpajlhui6"]
 
 [ext_resource type="PackedScene" uid="uid://dkcyc2y6wpdfm" path="res://Entities/On Screen Cards/BaseOnScreenCard.tscn" id="1_bdnri"]
 [ext_resource type="Texture2D" uid="uid://ifcrjax0q0g7" path="res://Entities/On Screen Cards/Arts/DebuffCard.png" id="2_fevyf"]
 [ext_resource type="Resource" uid="uid://ctttu08gmvo2j" path="res://Entities/On Screen Cards/Resources/Status Cards/Debuff Cards/Ignore Shield/IgnoreShield.tres" id="2_ywh3h"]
-[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Entities/On Screen Cards/Gradients/AiEnergyBar.tres" id="3_ywh3h"]
+[ext_resource type="Gradient" uid="uid://cyl2gk52hrxe2" path="res://Entities/On Screen Cards/Energy Materials/AiEnergyBar.tres" id="3_ywh3h"]
+[ext_resource type="Material" uid="uid://cadf22neov6r1" path="res://Entities/On Screen Cards/Energy Materials/AIEnergyMaterial.tres" id="4_124r0"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v1k2k"]
 gradient = ExtResource("3_ywh3h")
@@ -16,4 +17,5 @@ texture = ExtResource("2_fevyf")
 card_resource = ExtResource("2_ywh3h")
 
 [node name="EnergyCostBar" parent="." index="1"]
+material = ExtResource("4_124r0")
 texture_progress = SubResource("GradientTexture2D_v1k2k")

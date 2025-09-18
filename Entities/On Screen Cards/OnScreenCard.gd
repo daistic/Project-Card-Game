@@ -20,7 +20,7 @@ var mouse_velocity: Vector2
 var preview_card: OnScreenCard
 
 const NORMAL_SIZE: Vector2 = Vector2(1.0, 1.0)
-const SCALE_SIZE: Vector2 = Vector2(1.5, 1.5)
+const SCALE_SIZE: Vector2 = Vector2(1.65, 1.65)
 const SCALE_TIME: float = 0.15
 const MOUSE_ENTERING: bool = true
 const MAX_SHADOW_OFFSET: float = 20.0

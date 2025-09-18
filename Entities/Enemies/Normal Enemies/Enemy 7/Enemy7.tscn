@@ -20,9 +20,9 @@ crypto_price = 1929
 [node name="TextureRect" parent="." index="0"]
 custom_minimum_size = Vector2(500, 350)
 offset_left = -222.0
-offset_top = -246.0
+offset_top = -259.0
 offset_right = 278.0
-offset_bottom = 104.0
+offset_bottom = 91.0
 
 [node name="EnemyTexture" parent="TextureRect" index="0"]
 self_modulate = Color(0.55358, 0.792179, 0.878416, 1)
