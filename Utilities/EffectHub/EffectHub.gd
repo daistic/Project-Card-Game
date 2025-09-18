@@ -17,8 +17,11 @@ func display_damage(value: float, parent: Node, enemy_damaged: bool,
 	
 	number.label_settings.font_color = color
 	parent.call_deferred("add_child", number)
-	if enemy_damaged == false && value > 0:
-		trigger_camera_shake()
+	if value > 0:
+		if enemy_damaged == false:
+			trigger_camera_shake()
+		else:
+			trigger_slash_effect(is_critical)
 	
 	await number.resized
 	number.pivot_offset = Vector2(number.size / 2)
@@ -47,6 +50,17 @@ func trigger_camera_shake() -> void:
 		return
 	
 	game_camera.trigger_shake()
+
+func trigger_slash_effect(is_critical: bool) -> void:
+	var slash_effect: AnimatedSprite2D = get_tree().get_first_node_in_group("Slash")
+	
+	if is_critical:
+		slash_effect.modulate = "#FFAC1C"
+	else:
+		slash_effect.modulate = "#FFF"
+	
+	slash_effect.stop()
+	slash_effect.play("slash")
 
 func handle_attack_sfx(damage: float, is_crit: bool, enemy_damaged: bool) -> void:
 	if damage <= 0:
