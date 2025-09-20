@@ -6,6 +6,7 @@ extends Control
 @onready var player_bars: BattleBars = $VBoxContainer/VBoxContainer/PlayerBarsContainer
 @onready var energy_info: EnergyInfo = $EnergyInfoContainer
 @onready var status_effect_container: StatusEffectGrid = $VBoxContainer/VBoxContainer/HBoxContainer/StatusEffectContainer
+@onready var end_turn_button: GameButton = $EndTurnButton
 
 @export var stats: Damageable
 @export var max_char_energy: int = 5
@@ -25,6 +26,7 @@ func _enter_tree() -> void:
 	SignalHub.enemy_card_used.connect(_on_enemy_card_used)
 	SignalHub.player_turn_finished.connect(_on_player_turn_finished)
 	SignalHub.enemy_turn_finished.connect(_on_enemy_turn_finished)
+	SignalHub.battle_paused.connect(_on_battle_paused)
 
 func _ready() -> void:
 	_player_setup()
@@ -122,3 +124,6 @@ func update_player_energy_info() -> void:
 
 func _on_end_turn_button_pressed() -> void:
 	SignalHub.emit_player_turn_finished()
+
+func _on_battle_paused() -> void:
+	end_turn_button.disabled = true
