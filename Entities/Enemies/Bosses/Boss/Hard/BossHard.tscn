@@ -42,18 +42,19 @@ crypto_price = 9357
 
 [node name="CantPlayGimmick" parent="GimmickMessageControl" index="2" instance=ExtResource("5_6s0kt")]
 
-[node name="TextureRect" parent="." index="1"]
-custom_minimum_size = Vector2(500, 375)
-offset_left = -253.0
-offset_top = -233.0
-offset_right = 247.0
-offset_bottom = 142.0
+[node name="EnemyRect" parent="." index="1"]
+modulate = Color(0.39815, 0.79258, 0.926836, 1)
 
-[node name="EnemyTexture" parent="TextureRect" index="0"]
-self_modulate = Color(0.358371, 0.802905, 1, 1)
+[node name="EnemyTexture" parent="EnemyRect" index="0"]
+custom_minimum_size = Vector2(150, 375)
+offset_left = -7.0
+offset_right = -7.0
 texture = ExtResource("3_cllbg")
 
-[node name="Shadow" parent="TextureRect" index="1"]
+[node name="Shadow" parent="EnemyRect" index="1"]
+custom_minimum_size = Vector2(150, 375)
+offset_left = -7.0
+offset_right = -7.0
 texture = ExtResource("3_cllbg")
 
-[editable path="TextureRect"]
+[editable path="EnemyRect"]

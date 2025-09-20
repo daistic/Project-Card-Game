@@ -26,18 +26,25 @@ crypto_price = 4187
 
 [node name="MorimensGimmick" parent="GimmickMessageControl" index="1" instance=ExtResource("14_ghy4e")]
 
-[node name="TextureRect" parent="." index="1"]
-custom_minimum_size = Vector2(500, 350)
-offset_left = -271.0
-offset_top = -239.0
-offset_right = 229.0
-offset_bottom = 111.0
+[node name="EnemyRect" parent="." index="1"]
+modulate = Color(0.808694, 0.432542, 0.233656, 1)
+offset_left = -275.0
+offset_right = 225.0
 
-[node name="EnemyTexture" parent="TextureRect" index="0"]
-self_modulate = Color(0.835661, 0.499212, 0.211104, 1)
+[node name="EnemyTexture" parent="EnemyRect" index="0"]
+custom_minimum_size = Vector2(150, 350)
+offset_left = -13.0
+offset_top = -75.0
+offset_right = 67.5638
+offset_bottom = 75.0
 texture = ExtResource("14_m2omb")
 
-[node name="Shadow" parent="TextureRect" index="1"]
+[node name="Shadow" parent="EnemyRect" index="1"]
+custom_minimum_size = Vector2(150, 350)
+offset_left = -13.0
+offset_top = -66.335
+offset_right = 67.5638
+offset_bottom = 83.665
 texture = ExtResource("14_m2omb")
 
-[editable path="TextureRect"]
+[editable path="EnemyRect"]

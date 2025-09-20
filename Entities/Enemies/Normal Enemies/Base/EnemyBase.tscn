@@ -24,12 +24,12 @@ script = ExtResource("1_0p7db")
 stats = ExtResource("2_t24r1")
 enemy_deck = Array[ExtResource("3_hkj5j")]([ExtResource("4_dleq2"), ExtResource("5_oy7bm"), ExtResource("6_rihe7")])
 
-[node name="TextureRect" parent="." instance=ExtResource("7_t24r1")]
+[node name="EnemyRect" parent="." instance=ExtResource("7_t24r1")]
 layout_mode = 1
-offset_left = -320.0
-offset_top = -175.0
-offset_right = 180.0
-offset_bottom = 25.0
+offset_left = -257.0
+offset_top = -198.0
+offset_right = 243.0
+offset_bottom = 2.0
 
 [node name="EnemyMessage" parent="." instance=ExtResource("7_u615p")]
 layout_mode = 1

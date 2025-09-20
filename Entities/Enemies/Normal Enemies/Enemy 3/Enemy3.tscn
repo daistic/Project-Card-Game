@@ -14,5 +14,5 @@ stats = ExtResource("2_hjnne")
 enemy_deck = Array[ExtResource("3_pu2rg")]([ExtResource("4_kp20v"), ExtResource("4_kp20v"), ExtResource("5_podhh"), ExtResource("5_podhh"), ExtResource("5_podhh"), ExtResource("6_podhh"), ExtResource("6_podhh"), ExtResource("8_814j2"), ExtResource("8_uf21d"), ExtResource("8_uf21d")])
 crypto_price = 1286
 
-[node name="TextureRect" parent="." index="0"]
-modulate = Color(0.460386, 0.995358, 1, 1)
+[node name="EnemyRect" parent="." index="0"]
+modulate = Color(0.440894, 0.8743, 0.791025, 1)

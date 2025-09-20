@@ -5,6 +5,7 @@ extends Control
 @onready var enemy_bars: BattleBars = $VBoxContainer/EnemyBarsContainer
 @onready var enemy_message: EnemyMessage = $EnemyMessage
 @onready var status_effect_container: StatusEffectGrid = $VBoxContainer/HBoxContainer/StatusEffectGrid
+@onready var enemy_rect: EnemyRect = $EnemyRect
 
 @export var stats: Damageable
 @export var enemy_deck: Array[CardInterface] = []
@@ -98,6 +99,7 @@ func new_status_effect(_card_resource: StatusEffector) -> void:
 func _check_health() -> void:
 	if stats.cur_hp <= 0:
 		_reset_deck()
+		await enemy_rect.play_death_animation()
 		
 		BattleManager.crypto_collected += crypto_price
 		stats.reset_stats()

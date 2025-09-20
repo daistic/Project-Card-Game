@@ -17,18 +17,17 @@ stats = ExtResource("2_jdk8v")
 enemy_deck = Array[ExtResource("3_l7v73")]([ExtResource("4_fvoxo"), ExtResource("4_fvoxo"), ExtResource("5_lo3l6"), ExtResource("5_lo3l6"), ExtResource("5_lo3l6"), ExtResource("6_b2eh1"), ExtResource("7_jyi13"), ExtResource("8_5rmpq"), ExtResource("8_5rmpq"), ExtResource("9_wnjy4"), ExtResource("9_wnjy4"), ExtResource("10_p7e0b"), ExtResource("10_p7e0b")])
 crypto_price = 1929
 
-[node name="TextureRect" parent="." index="0"]
-custom_minimum_size = Vector2(500, 350)
-offset_left = -222.0
-offset_top = -259.0
-offset_right = 278.0
-offset_bottom = 91.0
+[node name="EnemyRect" parent="." index="0"]
+modulate = Color(0.539862, 0.960866, 0.87388, 1)
+offset_left = -238.0
+offset_right = 262.0
 
-[node name="EnemyTexture" parent="TextureRect" index="0"]
-self_modulate = Color(0.55358, 0.792179, 0.878416, 1)
+[node name="EnemyTexture" parent="EnemyRect" index="0"]
+custom_minimum_size = Vector2(150, 325)
 texture = ExtResource("11_l7v73")
 
-[node name="Shadow" parent="TextureRect" index="1"]
+[node name="Shadow" parent="EnemyRect" index="1"]
+custom_minimum_size = Vector2(150, 325)
 texture = ExtResource("11_l7v73")
 
-[editable path="TextureRect"]
+[editable path="EnemyRect"]
